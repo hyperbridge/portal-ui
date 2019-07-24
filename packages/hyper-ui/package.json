@@ -1,6 +1,6 @@
 {
     "name": "hyper-ui",
-    "version": "1.0.0rc1",
+    "version": "1.0.0-alpha.0",
     "description": "Hyper UI",
     "license": "SEE LICENSE IN LICENSE.md",
     "main": "build/index.js",
