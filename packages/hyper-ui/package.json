@@ -1,6 +1,6 @@
 {
     "name": "@hyper-ui/vue",
-    "version": "1.0.0-alpha.1",
+    "version": "1.0.0-alpha.2",
     "description": "Hyper UI",
     "license": "SEE LICENSE IN LICENSE.md",
     "main": "build/index.js",
@@ -53,5 +53,5 @@
             ]
         }
     },
-    "gitHead": "3f04b31376831e0e8f4c5c85767b44d408cab87f"
+    "gitHead": "ce082e800806b0ee919bf667133432155efa6fdf"
 }
