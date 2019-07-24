@@ -1,6 +1,6 @@
 {
     "name": "@hyper-ui/vue",
-    "version": "1.0.0-alpha.5",
+    "version": "1.0.0-alpha.6",
     "description": "Hyper UI",
     "license": "SEE LICENSE IN LICENSE.md",
     "main": "build/index.js",
