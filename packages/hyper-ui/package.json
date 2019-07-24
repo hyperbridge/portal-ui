@@ -4,7 +4,9 @@
     "description": "Hyper UI",
     "license": "SEE LICENSE IN LICENSE.md",
     "main": "build/index.js",
-    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {},
     "engines": {
         "node": ">8.11.1"
@@ -54,5 +56,5 @@
             ]
         }
     },
-    "gitHead": "37480df76d74a7da8f09a73f305542cf1008a882"
+    "gitHead": "38fdb7b1009d869efccec90510fec8c9d149f599"
 }
