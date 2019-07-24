@@ -1,0 +1,21 @@
+{
+    "packages": [
+        "packages/*"
+    ],
+    "npmClient": "yarn",
+    "version": "1.0.0-rc1",
+    "useWorkspaces": true,
+    "command": {
+        "publish": {
+            "allowBranch": [
+                "master",
+                "dev",
+                "next"
+            ],
+            "message": "chore(release): publish %s"
+        },
+        "version": {
+        "push": true
+        }
+    }
+}
