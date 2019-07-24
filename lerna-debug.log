@@ -1,0 +1,73 @@
+0 silly argv { _: [ 'publish' ],
+0 silly argv   composed: 'publish',
+0 silly argv   lernaVersion: '3.8.0',
+0 silly argv   '$0': 'lerna' }
+1 notice cli v3.8.0
+2 verbose rootPath /Users/ericmuyser/ude/hyper-ui
+3 verbose session f8a951153a132452
+4 verbose user-agent lerna/3.8.0/node@v8.11.1+x64 (darwin)
+5 info Verifying npm credentials
+6 verbose Retrieving npm user profile
+7 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 932ms
+8 silly npm profile get received {"tfa":false,"name":"ericmuyser","email":"eric@muyser.com","email_verified":true,"created":"2015-02-26T01:10:52.839Z","updated":"2018-10-14T01:26:35.001Z","cidr_whitelist":null,"fullname":"","homepage":"","freenode":"","twitter":"","github":""}
+9 silly npm whoami received {"username":"ericmuyser"}
+10 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '3.8.0' }
+11 verbose rootPath /Users/ericmuyser/ude/hyper-ui
+12 info current version 1.0.0-rc1
+13 silly isAnythingCommitted
+14 verbose isAnythingCommitted 1
+15 silly currentBranch
+16 verbose currentBranch master
+17 silly remoteBranchExists
+18 silly isBehindUpstream
+19 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 3
+20 silly hasTags
+21 verbose hasTags false
+22 info Looking for changed packages since initial commit.
+23 verbose updated hyper-ui
+24 verbose git-describe undefined => "e148149"
+25 silly git-describe parsed => {"refCount":"6","sha":"e148149","isDirty":false}
+26 silly batched [ PackageGraphNode {
+26 silly batched     name: 'hyper-ui',
+26 silly batched     externalDependencies: Map {},
+26 silly batched     localDependencies: Map {},
+26 silly batched     localDependents: Map {} } ]
+27 silly run-lifecycle No script for "preversion" in "hyper-ui", continuing
+28 silly run-lifecycle No script for "preversion" in "hyper-ui", continuing
+29 silly run-lifecycle No script for "version" in "hyper-ui", continuing
+30 silly run-lifecycle No script for "version" in "hyper-ui", continuing
+31 silly gitAdd [ '/Users/ericmuyser/ude/hyper-ui/packages/hyper-ui/package.json',
+31 silly gitAdd   '/Users/ericmuyser/ude/hyper-ui/lerna.json' ]
+32 silly gitCommit chore(release): publish v1.0.0-alpha.0
+33 verbose git [ 'commit', '-m', 'chore(release): publish v1.0.0-alpha.0' ]
+34 silly gitTag v1.0.0-alpha.0
+35 verbose git [ 'tag', 'v1.0.0-alpha.0', '-m', 'v1.0.0-alpha.0' ]
+36 silly run-lifecycle No script for "postversion" in "hyper-ui", continuing
+37 silly run-lifecycle No script for "postversion" in "hyper-ui", continuing
+38 info git Pushing tags...
+39 silly gitPush origin master
+40 silly batched [ PackageGraphNode {
+40 silly batched     name: 'hyper-ui',
+40 silly batched     externalDependencies: Map {},
+40 silly batched     localDependencies: Map {},
+40 silly batched     localDependents: Map {} } ]
+41 info publish Publishing packages to npm...
+42 silly verifyNpmPackageAccess
+43 http fetch GET 200 https://registry.npmjs.org/-/org/ericmuyser/package?format=cli 502ms
+44 silly getCurrentSHA
+45 verbose getCurrentSHA 3f04b31376831e0e8f4c5c85767b44d408cab87f
+46 silly run-lifecycle No script for "prepare" in "hyper-ui", continuing
+47 silly run-lifecycle No script for "prepublishOnly" in "hyper-ui", continuing
+48 silly run-lifecycle No script for "prepack" in "hyper-ui", continuing
+49 verbose pack-directory packages/hyper-ui
+50 silly run-lifecycle No script for "prepublish" in "hyper-ui", continuing
+51 silly run-lifecycle No script for "prepare" in "hyper-ui", continuing
+52 silly run-lifecycle No script for "prepublishOnly" in "hyper-ui", continuing
+53 silly run-lifecycle No script for "prepack" in "hyper-ui", continuing
+54 silly run-lifecycle No script for "postpack" in "hyper-ui", continuing
+55 silly run-lifecycle No script for "postpack" in "hyper-ui", continuing
+56 verbose publish hyper-ui
+57 http fetch PUT 403 https://registry.npmjs.org/hyper-ui 4650ms
+58 error Error: 403 Forbidden - PUT https://registry.npmjs.org/hyper-ui - You do not have permission to publish "hyper-ui". Are you logged in as the correct user?
+58 error     at res.buffer.catch.then.body (/Users/ericmuyser/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/npm-registry-fetch/check-response.js:104:15)
+58 error     at <anonymous>
