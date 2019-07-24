@@ -5,6 +5,9 @@
     "npmClient": "yarn",
     "version": "1.0.0-alpha.4",
     "useWorkspaces": true,
+    "publishConfig": {
+        "access": "public"
+    },
     "command": {
         "publish": {
             "allowBranch": [
