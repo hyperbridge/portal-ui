@@ -56,5 +56,10 @@
             ]
         }
     },
-    "gitHead": "90606585cf99e0396f49a43df8833ce96dbd7978"
+    "gitHead": "90606585cf99e0396f49a43df8833ce96dbd7978",
+    "dependencies": {
+        "emoji-mart-vue": "^2.6.6",
+        "howler": "^2.1.2",
+        "moment": "^2.24.0"
+    }
 }
