@@ -4,12 +4,12 @@
     ],
     "npmClient": "yarn",
     "version": "1.0.1",
-    "useWorkspaces": true,
     "command": {
         "publish": {
             "allowBranch": [
                 "master",
                 "dev",
+                "eric",
                 "next"
             ],
             "message": "chore(release): publish %s"
