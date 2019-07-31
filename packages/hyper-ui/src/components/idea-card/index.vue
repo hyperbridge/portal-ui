@@ -8,37 +8,37 @@
             <div
                 v-if="parentImage"
                 class="img">
-                <c-img :src="parentImage" />
+                <Img :src="parentImage" />
             </div>
             <div class="text">
-                <c-button
+                <Button
                     status="none"
                     :to="`/idea/${id}`">
                     <h4>{{ parentName }}</h4>
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     v-if="parentDeveloperName"
                     status="none"
                     :to="`/profile/${parentDeveloperId}`">
                     <p>{{ parentDeveloperName }}</p>
-                </c-button>
+                </Button>
             </div>
         </div>
-        <c-button
+        <Button
             status="none"
             :to="`/idea/${id}`">
-            <c-img :src="image" />
+            <Img :src="image" />
             <div class="description">
                 {{ description }}
             </div>
-        </c-button>
+        </Button>
         <div class="item-action">
-            <c-button
+            <Button
                 status="info"
                 :to="`/idea/${id}`"
                 iconHide>
                 Check it out
-            </c-button>
+            </Button>
         </div>
     </div>
 </template>

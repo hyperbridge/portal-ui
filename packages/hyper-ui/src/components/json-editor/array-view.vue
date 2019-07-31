@@ -49,13 +49,13 @@
 
                     <span class="json-val">
                         <template v-if="member.type === 'array'">
-                            <c-array-view
+                            <ArrayView
                                 v-model="parsedData[index].childParams"
                                 :parsedData="parsedData[index].childParams" />
                         </template>
 
                         <template v-if="member.type === 'object'">
-                            <c-json-view
+                            <JsonView
                                 v-model="parsedData[index].childParams"
                                 :parsedData="parsedData[index].childParams" />
                         </template>
@@ -83,7 +83,7 @@
                 :pointer="false"
                 :class="viewType"
                 style="position: fixed;left: 0px;top: 0px;">
-                <c-item-add-form
+                <ItemAddForm
                     :needName="false"
                     @confirm="newItem"
                     @popoverView="popoverClass" />
@@ -98,7 +98,7 @@ import ItemAddForm from './item-add-form.vue'
 export default {
 
     components: {
-        'c-item-add-form': ItemAddForm
+        'ItemAddForm': ItemAddForm
     },
     props: ['parsedData'],
 

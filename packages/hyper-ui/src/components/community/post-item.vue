@@ -28,7 +28,7 @@
                 </div>
                 <div v-if="author" class="user">
                     <div>
-                        <c-img :src="author.img" />
+                        <Img :src="author.img" />
                         <span class="name">{{ author.name }}</span>
                     </div>
                     <div class="time">
@@ -39,7 +39,7 @@
         </div>
         <div v-if="contentText" class="community-item__post">
             <p>{{ contentText }}</p>
-            <c-img :src="contentImg" />
+            <Img :src="contentImg" />
         </div>
         <div v-if="contentText" class="community-item__action text-right">
             <a
@@ -48,12 +48,12 @@
                 class="btn btn-sm btn-icon">
                 <i class="fas fa-thumbs-down" />
             </a>
-            <c-reply
+            <CommunityReply
                 :class="{ 'w-100' : reply }"
                 @replyMode="reply = $event" />
         </div>
 
-        <c-post-comment
+        <PostComment
             v-for="(comment, index) in comments"
             v-if="comments"
             :key="index"
@@ -61,7 +61,7 @@
             :author="comment.author"
             :date="comment.date"
             :text="comment.text">
-            <c-post-comment
+            <PostComment
                 v-for="(subcomment, index) in comment.replies"
                 v-if="comment.replies"
                 :key="index"
@@ -69,7 +69,7 @@
                 :author="subcomment.author"
                 :date="subcomment.date"
                 :text="subcomment.text" />
-        </c-post-comment>
+        </PostComment>
     </div>
 </template>
 
@@ -78,8 +78,8 @@ import moment from 'moment'
 
 export default {
     components: {
-        'c-post-comment': import('~/components/community/comment').then(m => m.default || m),
-        'c-reply': () => import('~/components/community/reply').then(m => m.default || m)
+        'PostComment': import('../../').then(m => m.PostComment),
+        'CommunityReply': () => import('../../').then(m => m.CommunityReply)
     },
     props: {
         id: {

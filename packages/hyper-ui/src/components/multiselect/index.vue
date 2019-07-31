@@ -1,5 +1,5 @@
 <template>
-    <c-multiselect v-bind="object" />
+    <Multiselect v-bind="object" />
 </template>
 
 <script>
@@ -8,7 +8,7 @@ import 'vue-multiselect/dist/vue-multiselect.min.css'
 
 export default {
     components: {
-        'c-multiselect': Multiselect
+        'Multiselect': Multiselect
     },
     props: {
     }

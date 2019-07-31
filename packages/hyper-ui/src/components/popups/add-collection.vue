@@ -1,5 +1,5 @@
 <template>
-    <c-basic-popup
+    <BasicPopup
         :activated="activated"
         @close="close">
         <template slot="body">
@@ -23,19 +23,19 @@
                 </div>
             </div>
             <!-- <div v-if="name">
-                <c-button
+                <Button
                     status="plain"
                     icon="star"
                     class="p-0">
                     Highlight this
-                </c-button>
+                </Button>
             </div> -->
             <div class="add-to-collection__filter d-flex align-items-end justify-content-between mt-3 mb-4 pb-4">
                 <div class="h4 font-weight-bold m-0 p-0 mr-4">
                     Choose collection
                 </div>
                 <div>
-                    <c-input
+                    <Input
                         v-model="searchQuery"
                         bgColor="rgba(255, 255, 255, .07)"
                         placeholder="Filter Collections" />
@@ -43,38 +43,38 @@
             </div>
             <div class="create-collection d-flex">
                 <template v-if="createForm">
-                    <c-button
+                    <Button
                         status="second-success"
                         size="sm"
                         class="mx-2"
                         @click="addCollection(createCollectionRequest)">
                         Add
-                    </c-button>
-                    <c-input
+                    </Button>
+                    <Input
                         v-model="createCollectionRequest.name"
                         bgColor="rgba(255, 255, 255, .07)"
                         placeholder="Collection name" />
-                    <c-button
+                    <Button
                         status="second-warning"
                         size="sm"
                         @click="createForm = false">
                         Cancel
-                    </c-button>
+                    </Button>
                 </template>
                 <template v-if="!createForm">
-                    <c-button
+                    <Button
                         status="second-info"
                         icon="plus"
                         size="sm"
                         @click="createForm = true">
                         Create New
-                    </c-button>
+                    </Button>
                 </template>
             </div>
             <div class="add-to-collection__list mt-3">
                 <template v-if="collections">
-                    <c-checkbox-group v-if="filteredList.length">
-                        <c-checkbox
+                    <CheckboxGroup v-if="filteredList.length">
+                        <Checkbox
                             v-for="(collection, idx) in filteredList"
                             :id="`collection_${idx}`"
                             :key="idx"
@@ -83,8 +83,8 @@
                             :checked="(collection.resources || []).find(r => r.toProductId === resourceId)"
                             @change="updateResource(collection, $event)">
                             {{ collection.name }}
-                        </c-checkbox>
-                    </c-checkbox-group>
+                        </Checkbox>
+                    </CheckboxGroup>
                     <div
                         v-else
                         class="h6 mt-3">
@@ -98,15 +98,15 @@
                 </div>
             </div>
         </template>
-    </c-basic-popup>
+    </BasicPopup>
 </template>
 
 <script>
 export default {
     components: {
-        'c-basic-popup': () => import('~/components/popups/basic').then(m => m.default || m),
-        'c-checkbox-group': () => import('~/components/checkbox/group').then(m => m.default || m),
-        'c-checkbox': () => import('~/components/checkbox').then(m => m.default || m)
+        'BasicPopup': () => import('../../').then(m => m.BasicPopup),
+        'CheckboxGroup': () => import('../../').then(m => m.CheckboxGroup),
+        'Checkbox': () => import('../../').then(m => m.Checkbox)
     },
     props: {
         activated: Boolean,

@@ -1,5 +1,5 @@
 <template>
-    <c-block
+    <Block
         title="System Requirements"
         :noGutter="true"
         :bgGradient="true"
@@ -7,10 +7,10 @@
         <template slot="heading-bar">
             <i class="fas fa-laptop title-icon" />
         </template>
-        <c-tabs
+        <Tabs
             :tabNames="['Mac', 'Win', 'Linux']"
             :setActiveTab="activeTab">
-            <c-tab
+            <Tab
                 v-for="(os, index) in ['Mac', 'Win', 'Linux']"
                 :key="index"
                 :tabId="index + 1">
@@ -41,14 +41,19 @@
                 <h4 v-else>
                     Not currently supported.
                 </h4>
-            </c-tab>
-        </c-tabs>
-    </c-block>
+            </Tab>
+        </Tabs>
+    </Block>
 </template>
 
 <script>
 export default {
     name: 'SystemRequirements',
+    components: {
+        'Block': () => import('../../').then(m => m.Block),
+        'Tab': () => import('../../').then(m => m.Tab),
+        'Tabs': () => import('../../').then(m => m.Tabs)
+    },
     filters: {
         reqProp(val) {
             return val.replace(/[\s_]+/g, ' ').toUpperCase()

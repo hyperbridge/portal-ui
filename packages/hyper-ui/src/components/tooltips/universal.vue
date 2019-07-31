@@ -5,7 +5,7 @@
             @mouseover="debounce(() => show_tooltip = true, delay)"
             @mouseout="debounce(() => show_tooltip = false, delay + 1)">
             <slot />
-            <c-icon
+            <Icon
                 v-if="!iconHide"
                 name="question-circle" />
         </div>
@@ -33,6 +33,9 @@ import { debounce } from '@/mixins'
 export default {
     name: 'TooltipUniversal',
     mixins: [debounce],
+    components: {
+        'Icon': () => import('../../').then(m => m.Icon)
+    },
     props: {
         position: {
             type: String,

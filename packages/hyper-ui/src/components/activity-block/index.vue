@@ -11,47 +11,47 @@
         </div>
         <div class="activity-block__body align-items-center">
             <div>
-                <c-button
+                <Button
                     status="second-info"
                     size="md"
                     class="mr-3"
                     @click="$emit('install')">
                     Install BlockHub
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="second-info"
                     size="md"
                     class="mr-3"
                     @click="$emit('play')">
                     Play Now
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="second-info"
                     size="md"
                     class="mr-3"
                     @click="$emit('help')">
                     Get Help
-                </c-button>
+                </Button>
             </div>
             <div class="d-flex flex-column text-center">
                 <div style="font-size: 14px;line-height: 15px;opacity: .6">
                     <slot name="description" />
                 </div>
                 <div class="d-flex justify-content-between">
-                    <c-button
+                    <Button
                         status="plain"
                         size="sm"
                         class="p-0"
                         style="min-height: 20px; line-height: 14px">
                         View your stats
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="plain"
                         size="sm"
                         class="p-0"
                         style="min-height: 20px; line-height: 14px">
                         View global stats
-                    </c-button>
+                    </Button>
                 </div>
             </div>
             <div
@@ -60,7 +60,7 @@
                 <div class="mb-1">
                     {{ earnedAchievements }} of {{ totalAchievements }}({{ getPercent }}%) achievements earned:
                 </div>
-                <c-progress-bar :percentages="getPercent" />
+                <ProgressBar :percentages="getPercent" />
             </div>
         </div>
     </div>
@@ -69,7 +69,7 @@
 <script>
 export default {
     components: {
-        'c-progress-bar': () => import('~/components/progress-bar/').then(m => m.default || m)
+        'ProgressBar': () => import('../progress-bar').then(m => m.ProgressBar)
     },
     props: {
         labelIcon: {

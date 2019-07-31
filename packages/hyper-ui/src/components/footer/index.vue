@@ -2,122 +2,122 @@
     <footer>
         <div class="row justify-content-center">
             <div class="col-12 py-5 text-center margin-bottom-30">
-                <c-button
+                <Button
                     status="second-info"
                     size="lg">
                     Go to Blog
-                </c-button>
+                </Button>
             </div>
             <div class="col-12 col-lg-2">
-                <c-sidebar-menu
+                <SidebarMenu
                     subTitle="Tools"
                     mClass="margin-bottom-20">
-                    <c-sidebar-menu-link to="/">
+                    <SidebarMenuItem to="/">
                         Bridge
-                    </c-sidebar-menu-link>
-                    <c-sidebar-menu-link to="/">
+                    </SidebarMenuItem>
+                    <SidebarMenuItem to="/">
                         Mixer
-                    </c-sidebar-menu-link>
-                    <c-sidebar-menu-link to="/">
+                    </SidebarMenuItem>
+                    <SidebarMenuItem to="/">
                         Suite
-                    </c-sidebar-menu-link>
-                </c-sidebar-menu>
+                    </SidebarMenuItem>
+                </SidebarMenu>
             </div>
             <div class="col-12 col-lg-2">
-                <c-sidebar-menu
+                <SidebarMenu
                     subTitle="Company"
                     mClass="margin-bottom-20">
-                    <c-sidebar-menu-link to="/">
+                    <SidebarMenuItem to="/">
                         Press
-                    </c-sidebar-menu-link>
-                    <c-sidebar-menu-link to="/">
+                    </SidebarMenuItem>
+                    <SidebarMenuItem to="/">
                         Jobs
-                    </c-sidebar-menu-link>
-                    <c-sidebar-menu-link to="/">
+                    </SidebarMenuItem>
+                    <SidebarMenuItem to="/">
                         Pricing
-                    </c-sidebar-menu-link>
-                </c-sidebar-menu>
+                    </SidebarMenuItem>
+                </SidebarMenu>
             </div>
             <div class="col-12 col-lg-2">
-                <c-sidebar-menu
+                <SidebarMenu
                     subTitle="Inspiration & Learning"
                     mClass="margin-bottom-20">
-                    <c-sidebar-menu-link to="/">
+                    <SidebarMenuItem to="/">
                         Blog
-                    </c-sidebar-menu-link>
-                    <c-sidebar-menu-link to="/">
+                    </SidebarMenuItem>
+                    <SidebarMenuItem to="/">
                         Gallery
-                    </c-sidebar-menu-link>
-                    <c-sidebar-menu-link to="/">
+                    </SidebarMenuItem>
+                    <SidebarMenuItem to="/">
                         Tutorials
-                    </c-sidebar-menu-link>
-                </c-sidebar-menu>
+                    </SidebarMenuItem>
+                </SidebarMenu>
             </div>
             <div class="col-12 col-lg-2">
-                <c-sidebar-menu
+                <SidebarMenu
                     subTitle="Community & Support"
                     mClass="margin-bottom-20">
-                    <c-sidebar-menu-link to="/">
+                    <SidebarMenuItem to="/">
                         Artist Community
-                    </c-sidebar-menu-link>
-                    <c-sidebar-menu-link to="/">
+                    </SidebarMenuItem>
+                    <SidebarMenuItem to="/">
                         Get Help
-                    </c-sidebar-menu-link>
-                    <c-sidebar-menu-link to="/">
+                    </SidebarMenuItem>
+                    <SidebarMenuItem to="/">
                         FAQ
-                    </c-sidebar-menu-link>
-                </c-sidebar-menu>
+                    </SidebarMenuItem>
+                </SidebarMenu>
             </div>
             <div class="col-12 col-lg-4">
                 <div class="h5 text-uppercase text-white font-weight-bold p-0 margin-bottom-10 margin-top-10">
                     Connect
                 </div>
                 <div class="d-flex justify-content-between align-items-stretch mt-3 mb-4">
-                    <c-input placeholder="Join our mailing list" />
-                    <c-button
+                    <Input placeholder="Join our mailing list" />
+                    <Button
                         status="second-info"
                         size="sm"
                         class="ml-3 px-4">
                         Join
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="social-list d-flex justify-content-between mt-3">
-                    <c-social-link
+                    <SocialLink
                         size="xl"
                         icon="facebook" />
-                    <c-social-link
+                    <SocialLink
                         size="xl"
                         icon="twitter" />
-                    <c-social-link
+                    <SocialLink
                         size="xl"
                         icon="slack" />
-                    <c-social-link
+                    <SocialLink
                         size="xl"
                         icon="instagram" />
-                    <c-social-link
+                    <SocialLink
                         size="xl"
                         icon="youtube" />
-                    <c-social-link
+                    <SocialLink
                         size="xl"
                         icon="discord" />
-                    <c-social-link
+                    <SocialLink
                         size="xl"
                         icon="linkedin" />
                 </div>
             </div>
             <div class="col-12 logos-slider">
-                <c-swiper
+                <Swiper
                     :options="sliderOptions"
                     class="padding-bottom-30 margin-bottom-30 padding-top-40 margin-top-50 border-top border-bottom ">
-                    <c-swiper-slide
+                    <SwiperSlide
                         v-for="logo in logos"
                         :key="logo">
                         <img
                             :src="logo"
                             alt=""
                             class="img-fluid image-white">
-                    </c-swiper-slide>
-                </c-swiper>
+                    </SwiperSlide>
+                </Swiper>
             </div>
             <div class="col-12 col-md-6">
                 <ul class="list-unstyled d-flex align-items-center">
@@ -156,9 +156,9 @@
 <script>
     export default {
         components: {
-            'c-sidebar-menu-link': () => import('~/components/sidebar-menu/menu-item').then(m => m.default || m),
-            'c-sidebar-menu': () => import('~/components/sidebar-menu').then(m => m.default || m),
-            'c-social-link': () => import('~/components/buttons/social-icon').then(m => m.default || m)
+            'SidebarMenuItem': () => import('../../').then(m => m.SidebarMenuItem),
+            'SidebarMenu': () => import('../../').then(m => m.SidebarMenu),
+            'SocialLink': () => import('../../').then(m => m.SocialLink)
         },
         data() {
             return {

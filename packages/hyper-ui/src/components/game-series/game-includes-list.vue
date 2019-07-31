@@ -10,7 +10,7 @@
                 :key="item.id"
                 class="game-includes__item-container"
                 :style="{ width: 'calc(100% / ' + showNumber + ')'}">
-                <c-includes-item
+                <IncludesItem
                     :id="item.id"
                     :name="item.name"
                     :developer="item.developer"
@@ -19,26 +19,26 @@
             </div>
         </div>
         <!--Show buttons-->
-        <c-load-more
+        <LoadMore
             v-if="showMore && list.length > showNumber - 1"
             @click="showAll">
             Load More <span class="ml-3">+{{ hiddenCount() }}</span>
-        </c-load-more>
+        </LoadMore>
 
         <!--Hide buttons-->
-        <c-load-more
+        <LoadMore
             v-if="!showMore"
             @click="hideAll">
             Hide
-        </c-load-more>
+        </LoadMore>
     </div>
 </template>
 
 <script>
 export default {
     components: {
-        'c-includes-item': () => import('~/components/game-series/game-includes-item').then(m => m.default || m),
-        'c-load-more': () => import('~/components/buttons/load-more').then(m => m.default || m)
+        'IncludesItem': () => import('../../').then(m => m.IncludesItem),
+        'LoadMore': () => import('../../').then(m => m.LoadMore)
     },
     props: {
         list: {

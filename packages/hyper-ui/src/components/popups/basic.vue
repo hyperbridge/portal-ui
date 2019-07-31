@@ -4,32 +4,32 @@
         :duration="100">
         <div
             v-if="activated"
-            class="basic-popup"
+            class="basiPopup"
             @click.self.prevent="$emit('close')">
             <div
-                class="basic-popup__item"
+                class="basiPopup__item"
                 :style="{ 'width': + width + 'px'}">
                 <div class="position-relative">
-                    <div class="basic-popup__content">
+                    <div class="basiPopup__content">
                         <div
-                            class="basic-popup__close"
+                            class="basiPopup__close"
                             @click="$emit('close')">
                             <i class="fas fa-times" />
                         </div>
                         <div
                             v-if="$slots.header"
-                            class="basic-popup__header">
+                            class="basiPopup__header">
                             <slot name="header" />
                         </div>
                         <div
                             v-if="$slots.body"
-                            class="basic-popup__body"
+                            class="basiPopup__body"
                             :class="{'margin-top-20' : $slots.header, 'margin-bottom-20' : $slots.footer}">
                             <slot name="body" />
                         </div>
                         <div
                             v-if="$slots.footer"
-                            class="basic-popup__footer">
+                            class="basiPopup__footer">
                             <slot name="footer" />
                         </div>
                     </div>
@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .basic-popup {
+    .basiPopup {
         display: flex;
         width: 100%;
         height: 100vh;
@@ -70,7 +70,7 @@ export default {
         background: rgba(0, 0, 0, 0.7);
     }
 
-    .basic-popup__close {
+    .basiPopup__close {
         position: absolute;
         top: 10px;
         right: 10px;
@@ -92,7 +92,7 @@ export default {
         }
     }
 
-    .basic-popup__item {
+    .basiPopup__item {
         display: flex;
         position: relative;
         z-index: 30;
@@ -102,7 +102,7 @@ export default {
         color: #fff;
     }
 
-    .basic-popup__content {
+    .basiPopup__content {
         background: #1C2032;
         padding: 20px;
         border-radius: 5px;
@@ -110,7 +110,7 @@ export default {
         box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     }
 
-    .basic-popup__header{
+    .basiPopup__header{
         padding-bottom: 10px;
         margin-bottom: 10px;
         border-bottom: 1px solid rgba(255, 255, 255, .1);
@@ -125,7 +125,7 @@ export default {
             margin: 0;
         }
     }
-    .basic-popup__body{
+    .basiPopup__body{
         display: flex;
         flex-direction: column;
         overflow-y: auto;
@@ -134,13 +134,13 @@ export default {
         max-height: 60vh;
         /*margin: 20px 0;*/
     }
-    .basic-popup__footer{
+    .basiPopup__footer{
         display: flex;
         justify-content: flex-end;
         align-items: center;
         margin-top: 30px;
         flex-wrap: wrap;
-        .c-button{
+        .Button{
             &.color-red{
                 color: #F75D5D;
                 &:hover{

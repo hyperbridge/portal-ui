@@ -18,7 +18,7 @@
         </h5>
         <ul class="sidebar-menu__list">
             <slot>
-                <c-sidebar-menu-link
+                <SidebarMenuItem
                     v-for="(link, index) in links"
                     :key="index"
                     :to="link.to">
@@ -30,7 +30,7 @@
                             :class="link.icon" />
                         {{ link.title }}
                     </slot>
-                </c-sidebar-menu-link>
+                </SidebarMenuItem>
             </slot>
         </ul>
     </div>
@@ -39,7 +39,7 @@
 <script>
 export default {
     components: {
-        'c-sidebar-menu-link': () => import('~/components/sidebar-menu/menu-item').then(m => m.default || m)
+        'SidebarMenuItem': () => import('../../').then(m => m.SidebarMenuItem)
     },
     props: {
         icon: {

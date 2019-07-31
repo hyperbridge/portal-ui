@@ -5,7 +5,7 @@
         :class="{ 'transparent-bg' : isTransparent }"
         :to="`/asset/${id}`">
         <div class="thumb">
-            <c-img :src="image" />
+            <Img :src="image" />
         </div>
         <div class="info">
             <h5>{{ name }}</h5>
@@ -14,7 +14,7 @@
                     {{ currentPrice }}
                 </span>
                 <span class="float-right box">
-                    <c-icon name="box" />
+                    <Icon name="box" />
                     {{ count }}
                 </span>
             </slot>

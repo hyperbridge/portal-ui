@@ -20,7 +20,7 @@
         </div>
         <div class="comparison">
             <div class="comparison__add-asset">
-                <c-icon
+                <Icon
                     name="plus-circle"
                     @click="$emit('addMore')" />
             </div>
@@ -28,11 +28,11 @@
                 v-for="(asset, assetKey) in assets"
                 :key="asset.id"
                 class="comparison__item">
-                <c-icon
+                <Icon
                     name="times"
                     class="comparison__del-btn"
                     @click="$emit('delete', asset)" />
-                <c-asset-preview :asset="asset" />
+                <AssetPreview :asset="asset" />
                 <table class="comparison__table">
                     <thead>
                         <th>Property</th>
@@ -62,7 +62,7 @@
                                 <span
                                     v-if="calculateDiffs[assetKey][prop] != null"
                                     :class="colorClass(calculateDiffs[assetKey][prop])">
-                                    <c-icon
+                                    <Icon
                                         class="differences-arrow"
                                         :class="{
                                             'differences-arrow--down': calculateDiffs[assetKey][prop] < 100
@@ -83,7 +83,7 @@
 export default {
     name: 'AssetComparison',
     components: {
-        'c-asset-preview': () => import('~/components/asset-preview').then(m => m.default || m)
+        'AssetPreview': () => import('../../').then(m => m.AssetPreview)
     },
     filters: {
         parseProp: val => val.replace(/_/g, ' '),

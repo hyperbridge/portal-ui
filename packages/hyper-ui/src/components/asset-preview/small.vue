@@ -1,6 +1,6 @@
 <template>
     <div class="asset-preview-small">
-        <c-img
+        <Img
             class="asset-preview-small__image"
             :src="image" />
         <span>{{ name }}</span>

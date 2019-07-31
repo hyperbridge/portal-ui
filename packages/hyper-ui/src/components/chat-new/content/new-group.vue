@@ -7,22 +7,22 @@
         </a>
         <div class="new-group__wrapper">
             <div class="new-group__nav">
-                <c-button
+                <Button
                     status="plain"
                     size="lg"
                     tag="button"
                     :class="{ 'active': create_new }"
                     @click="selectNew">
                     Create New
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="plain"
                     size="lg"
                     tag="button"
                     :class="{ 'active': join }"
                     @click="selectJoin">
                     Join Group
-                </c-button>
+                </Button>
             </div>
             <div
                 v-if="join"
@@ -36,9 +36,9 @@
                         name="group_name">
                 </div>
                 <div class="text-right w-100">
-                    <c-button status="opacity-info">
+                    <Button status="opacity-info">
                         Join
-                    </c-button>
+                    </Button>
                 </div>
             </div>
             <div
@@ -46,9 +46,9 @@
                 class="new-group__create-group">
                 <div class="create-group__avatar">
                     <img src="https://cdn1.iconfinder.com/data/icons/people-std/512/customers-512.png">
-                    <c-button status="plain">
+                    <Button status="plain">
                         Select
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="create-group__info">
                     <div class="form-group invert w-100">
@@ -67,16 +67,16 @@
                             name="group_description" />
                     </div>
                     <div class="w-100 text-right margin-top-20">
-                        <c-button
+                        <Button
                             status="opacity-success"
                             class="ml-2">
                             Create
-                        </c-button>
-                        <c-button
+                        </Button>
+                        <Button
                             status="opacity-warning"
                             class="ml-2">
                             Cancel
-                        </c-button>
+                        </Button>
                     </div>
                 </div>
             </div>
@@ -135,7 +135,7 @@ export default {
         justify-content: space-between;
         align-items: center;
         margin-bottom: 40px;
-        .c-button{
+        .Button{
             padding: 5px 0;
             border-radius: 0;
             border-bottom: 2px solid transparent;

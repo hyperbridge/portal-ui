@@ -10,11 +10,11 @@
             <div class="margin-bottom-10">
                 4 steps left!
             </div>
-            <c-progress-bar :values="{ reached: '1', goal: '4'}" />
+            <ProgressBar :values="{ reached: '1', goal: '4'}" />
             <div class="text-right margin-top-15">
-                <c-button status="second-info" @click=" showDetails = !showDetails ">
+                <Button status="second-info" @click=" showDetails = !showDetails ">
                     Learn More
-                </c-button>
+                </Button>
             </div>
         </div>
         <div
@@ -26,16 +26,16 @@
                 :key="`step-${idx}`"
                 class="contributor-box__details-item margin-right-40">
                 <div class="d-flex flex-column">
-                    <c-checkbox :value="step.value">
+                    <Checkbox :value="step.value">
                         {{ step.label }}
-                    </c-checkbox>
+                    </Checkbox>
                     <div v-if="step.description" class="margin-left-20 padding-left-5 margin-top-5">
                         {{ step.description }}
                     </div>
                 </div>
-                <c-button status="second-success">
+                <Button status="second-success">
                     Completed
-                </c-button>
+                </Button>
             </div>
         </div>
     </div>
@@ -44,8 +44,8 @@
 <script>
 export default {
     components: {
-        'c-progress-bar': () => import('~/components/progress-bar').then(m => m.default || m),
-        'c-checkbox': () => import('~/components/checkbox').then(m => m.default || m)
+        'ProgressBar': () => import('../../').then(m => m.ProgressBar),
+        'Checkbox': () => import('../../').then(m => m.Checkbox)
     },
     props: {
         steps: Array

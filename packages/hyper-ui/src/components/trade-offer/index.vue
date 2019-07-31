@@ -16,23 +16,23 @@
         <div
             class="trade-offer__content"
             @click="expandDetails()">
-            <c-author
+            <Author
                 :name="offer.contractor.name"
                 :img="offer.contractor.img" />
             <span>
                 Trade {{ offer.yourOffer.length }} for {{ offer.contractorOffer.length }} assets
             </span>
             <div>
-                <c-button
+                <Button
                     status="success"
                     iconHide>
                     Accept
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="danger"
                     iconHide>
                     Decline
-                </c-button>
+                </Button>
             </div>
         </div>
         <transition name="slide-in-top">
@@ -53,17 +53,17 @@
                             v-for="(asset, index) in assets"
                             :key="index">
                             <td>
-                                <c-tooltip>
-                                    <c-asset-preview
+                                <Tooltip>
+                                    <AssetPreview
                                         slot="tooltip"
                                         :asset="asset" />
                                     <div class="asset__info">
-                                        <c-img
+                                        <Img
                                             :src="asset.image"
                                             class="asset__image" />
                                         {{ asset.name }}
                                     </div>
-                                </c-tooltip>
+                                </Tooltip>
                             </td>
                             <td>{{ asset.price.current | convertCurrency }}</td>
                         </tr>
@@ -107,21 +107,21 @@
                     </tfoot>
                 </table>
                 <div class="trade-offer__action">
-                    <c-button
+                    <Button
                         status="info"
                         iconHide
                         @click="$router.push({
                             path: '/marketplace/trade/' + offer.id
                         })">
                         Go to transaction
-                    </c-button>
+                    </Button>
                     <span>
-                        <c-button
+                        <Button
                             status="success"
-                            iconHide>Accept</c-button>
-                        <c-button
+                            iconHide>Accept</Button>
+                        <Button
                             status="danger"
-                            iconHide>Decline</c-button>
+                            iconHide>Decline</Button>
                     </span>
                 </div>
             </div>
@@ -133,9 +133,9 @@
 export default {
     name: 'TradeOffer',
     components: {
-        'c-author': () => import('~/components/author').then(m => m.default || m),
-        'c-tooltip': () => import('~/components/tooltips/universal').then(m => m.default || m),
-        'c-asset-preview': () => import('~/components/asset-preview').then(m => m.default || m)
+        'Author': () => import('../../').then(m => m.Author),
+        'Tooltip': () => import('../../').then(m => m.Tooltip),
+        'AssetPreview': () => import('../../').then(m => m.AssetPreview)
     },
     props: {
         offer: {

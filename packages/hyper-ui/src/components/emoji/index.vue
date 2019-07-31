@@ -11,7 +11,7 @@
                 class="emojis__list-item"
                 :class="{'couple-items' : emoji.count > 0 }"
                 @click="addEmoji(emoji)">
-                <c-emoji
+                <Emoji
                     :emoji="emoji"
                     :size="18"
                     :native="true" />
@@ -23,16 +23,16 @@
             </div>
         </div>
         <div class="emoji-picker__container">
-            <c-button
+            <Button
                 status="plain"
                 class="p-0 align-items-center"
                 @click="openPicker">
                 <i
                     class="fas fa-plus mr-0"
                     :class="{'rotate-icon' : showPicker }" />
-            </c-button>
+            </Button>
             <transition name="fade">
-                <c-emoji-picker
+                <EmojiPicker
                     v-show="showPicker"
                     set="apple"
                     title=""
@@ -52,8 +52,8 @@ import { Picker, Emoji } from 'emoji-mart-vue'
 
 export default {
     components: {
-        'c-emoji-picker': Picker,
-        'c-emoji': Emoji
+        'EmojiPicker': Picker,
+        'Emoji': Emoji
     },
     data() {
         return {
@@ -127,7 +127,7 @@ export default {
         position: relative;
         z-index: 999;
         display: inline-flex;
-        .c-button{
+        .Button{
             line-height: 26px;
             font-size: 13px;
             color: rgba(255, 255, 255, .6);

@@ -1,13 +1,13 @@
 <template>
     <div class="games-list">
         <div class="col-3 p-0">
-            <c-games-navigation
+            <GamesNavigation
                 :list="games"
                 :activeId="currentID"
                 @choose="getGame" />
         </div>
         <div class="col-9 p-0">
-            <c-game-tab :name="game.name"
+            <GameTab :name="game.name"
                         :subName="game.sub_name"
                         :image="game.image"
                         :friends="game.friends"
@@ -21,8 +21,8 @@
 <script>
 export default {
     components: {
-        'c-game-tab': () => import('~/components/games-list/list-item').then(m => m.default || m),
-        'c-games-navigation': () => import('~/components/games-list/list-navigation').then(m => m.default || m)
+        'GameTab': () => import('../../').then(m => m.GameTab),
+        'GamesNavigation': () => import('../../').then(m => m.GamesNavigation)
     },
     props: {
         games: {

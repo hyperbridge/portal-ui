@@ -1,10 +1,10 @@
 <template>
     <div class="curator-review">
-        <c-img
+        <Img
             :src="review.game.img"
             class="curator-review__img" />
         <div class="curator-review__header">
-            <c-author
+            <Author
                 :name="review.author.name"
                 :img="review.author.img" />
             <span style="font-size: 22px">
@@ -36,7 +36,7 @@
                 v-for="(sub_review, index) in review.moreReviews"
                 :key="index"
                 class="sub-review">
-                <c-img
+                <Img
                     :src="sub_review.game.img"
                     class="sub-review__img" />
                 <div class="sub-review__details">
@@ -46,15 +46,15 @@
                             class="text-white font-weight-bold">{{ sub_review.game.title }}</a>
                     </h5>
                     <div class="text-white font-weight-bold">
-                        <!--<c-rating-stars :number="sub_review.rate"/>-->
+                        <!--<RatingStars :number="sub_review.rate"/>-->
                         <span style="font-size: 22px">{{ sub_review.rate }}</span>
                     </div>
                 </div>
             </li>
         </ul>
-        <c-button>
+        <Button>
             <strong>VIEW CURATOR PAGE</strong>
-        </c-button>
+        </Button>
     </div>
 </template>
 
@@ -62,9 +62,9 @@
 export default {
     name: 'CuratorReview',
     components: {
-        'c-author': () => import('~/components/author').then(m => m.default || m),
-        'c-rating-stars': () => import('~/components/rating-stars').then(m => m.default || m),
-        'c-button': () => import('~/components/buttons/wide').then(m => m.default || m)
+        'Author': () => import('../../').then(m => m.Author),
+        'RatingStars': () => import('../../').then(m => m.RatingStars),
+        'Button': () => import('../../').then(m => m.Button)
     },
     props: {
         review: {

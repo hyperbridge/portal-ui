@@ -13,7 +13,7 @@
         <div
             v-if="img"
             class="purchase-option__img">
-            <c-img :src="img" />
+            <Img :src="img" />
         </div>
         <div class="purchase-option__info">
             <div class="small text-uppercase">
@@ -23,21 +23,21 @@
                 {{ title }}
             </div>
             <div class="mt-2">
-                <c-button
+                <Button
                     icon="cart-plus"
                     size="xs">
                     ADD TO CART
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     icon="play"
                     size="xs">
                     QUICK BUY
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     icon="gift"
                     size="xs">
                     GIFT
-                </c-button>
+                </Button>
             </div>
         </div>
     </div>
@@ -46,6 +46,10 @@
 <script>
 export default {
     name: 'PurchaseOption',
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+        'Img': () => import('../../').then(m => m.Img)
+    },
     props: {
         price: {
             type: String,

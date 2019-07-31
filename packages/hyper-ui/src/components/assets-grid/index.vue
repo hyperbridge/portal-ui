@@ -9,10 +9,10 @@
             :key="index"
             class="assets-grid__item-container">
             <div class="assets-grid__item">
-                <c-img :src="item.image" />
+                <Img :src="item.image" />
                 <div class="assets-grid__item-info">
                     <div class="assets-grid__item-thumb">
-                        <c-img :src="item.image" />
+                        <Img :src="item.image" />
                     </div>
                     <div class="assets-grid__item-tooltip">
                         <h5>{{ item.name }}</h5>

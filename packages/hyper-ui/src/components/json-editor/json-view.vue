@@ -37,13 +37,13 @@
             </span>
             <span class="json-val">
                 <template v-if="item.type === 'object'">
-                    <c-json-view
+                    <JsonView
                         v-model="item.childParams"
                         :parsedData="item.childParams" />
                 </template>
 
                 <template v-else-if="item.type === 'array'">
-                    <c-array-view
+                    <ArrayView
                         v-model="item.childParams"
                         :parsedData="item.childParams" />
                 </template>
@@ -88,7 +88,7 @@
                 :pointer="true"
                 :class="viewType"
                 style="position: fixed;left: 0px;top: 0px;">
-                <c-item-add-form
+                <ItemAddForm
                     :existingNames="flowDataKeys"
                     @confirm="newItem"
                     @popoverView="popoverClass" />
@@ -103,7 +103,7 @@ import ItemAddForm from './item-add-form.vue'
 export default {
 
     components: {
-        'c-item-add-form': ItemAddForm
+        'ItemAddForm': ItemAddForm
     },
     props: { parsedData: {} },
 

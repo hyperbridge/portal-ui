@@ -1,7 +1,7 @@
 <template>
     <div class="row margin-bottom-30">
         <div class="col-12">
-            <c-block
+            <Block
                 title="Top 20 Items"
                 :noGutter="true"
                 :onlyContentBg="true"
@@ -11,7 +11,7 @@
                     <span
                         class="margin-right-15"
                         hidden>Sort by:</span>
-                    <c-heading-bar-fields
+                    <HeadingBarFields
                         v-for="(opt, index) in sortOptions"
                         :key="index"
                         :name="opt.title"
@@ -23,21 +23,21 @@
 
                 <div class="filter-block d-flex justify-content-between align-items-center margin-bottom-20">
                     <div class="d-inline-flex align-items-center">
-                        <c-dropdown-menu
+                        <Dropdown-menu
                             class="margin-right-10"
                             title="FILTER BY PRODUCTS">
-                            <c-list
+                            <List
                                 :items="selectableProducts"
                                 @click="item => item.selected = !item.selected" />
-                        </c-dropdown-menu>
-                        <c-dropdown-menu
+                        </Dropdown-menu>
+                        <Dropdown-menu
                             class="margin-right-10"
                             title="FILTER BY GENRE">
-                            <c-list
+                            <List
                                 :items="selectableGenres"
                                 @click="item => item.selected = !item.selected" />
-                        </c-dropdown-menu>
-                        <c-input-searcher
+                        </Dropdown-menu>
+                        <InputSearcher
                             v-model="phrase"
                             class="assets-explorer__input-searcher" />
                     </div>
@@ -47,50 +47,50 @@
                             name: 'Marketplace',
                             query: { showFilters: true }
                         }">
-                        <c-button
+                        <Button
                             v-if="assets.length"
                             tag="div"
                             status="lightpurple"
                             iconHide>
                             View All
-                        </c-button>
+                        </Button>
                     </nuxt-link>
                 </div>
                 <transition name="slide-in-top">
                     <div v-if="filtersActive">
                         <div class="flex-center-wrap">
-                            <c-option-tag
+                            <OptionTag
                                 v-if="phrase"
                                 title="Name:"
                                 :text="phrase"
                                 @delete="phrase = ''" />
-                            <c-option-tag
+                            <OptionTag
                                 v-if="selectedProducts.length"
                                 title="PRODUCTS:"
                                 @delete="selectedProducts.forEach(product => product.selected = false)">
-                                <c-option-tag
+                                <OptionTag
                                     v-for="(product, index) in selectedProducts"
                                     :key="index"
                                     :text="product.name"
                                     isChildren
                                     @delete="product.selected = false" />
-                            </c-option-tag>
-                            <c-option-tag
+                            </OptionTag>
+                            <OptionTag
                                 v-if="selectedGenres.length"
                                 title="GENRES:"
                                 @delete="selectedGenres.forEach(genre => genre.selected = false)">
-                                <c-option-tag
+                                <OptionTag
                                     v-for="(genre, index) in selectedGenres"
                                     :key="index"
                                     :text="genre.name"
                                     isChildren
                                     @delete="genre.selected = false" />
-                            </c-option-tag>
-                            <c-option-tag
+                            </OptionTag>
+                            <OptionTag
                                 v-if="sortBy.property"
                                 title="SORT BY:"
                                 @delete="sortBy.property = ''; sortBy.asc = true">
-                                <c-option-tag
+                                <OptionTag
                                     title="Property:"
                                     isChildren
                                     :isParent="false"
@@ -103,8 +103,8 @@
                                             {{ opt.title }}
                                         </option>
                                     </select>
-                                </c-option-tag>
-                                <c-option-tag
+                                </OptionTag>
+                                <OptionTag
                                     v-if="sortBy.property === 'price'"
                                     title="Price:"
                                     :isParent="false"
@@ -117,56 +117,56 @@
                                             {{ priceProp | upperFirstChar }}
                                         </option>
                                     </select>
-                                </c-option-tag>
-                                <c-option-tag
+                                </OptionTag>
+                                <OptionTag
                                     title="Direction:"
                                     isChildren
                                     :isParent="false"
                                     hideButton
                                     @delete="sortBy.asc = !sortBy.asc">
                                     {{ sortBy.asc ? 'Ascending' : 'Descending' }}
-                                    <c-icon
+                                    <Icon
                                         name="arrow-up"
                                         class="sort-button"
                                         :class="{ 'desc': !sortBy.asc }"
                                         @click="sortBy.asc = !sortBy.asc" />
-                                </c-option-tag>
-                            </c-option-tag>
+                                </OptionTag>
+                            </OptionTag>
                         </div>
                     </div>
                 </transition>
-                <c-content-navigation
+                <ContentNavigation
                     v-if="filteredAssets.length"
                     :items="filteredAssets">
-                    <c-assets-list
+                    <AssetsList
                         slot-scope="{ items }"
                         :items="items"
                         :itemInRow="2" />
-                </c-content-navigation>
+                </ContentNavigation>
                 <div v-else-if="filtersActive">
                     <p>
-                        No products were found using these filters. Want to <c-button
+                        No products were found using these filters. Want to <Button
                             status="plain"
                             @click="$store.commit('application/activeModal', 'comingSoon')">
                             Check for updates
-                        </c-button>?
+                        </Button>?
                     </p>
-                    <c-button
+                    <Button
                         status="info"
                         size="md"
                         iconHide
                         @click="clearFilters()">
                         Clear filters
-                    </c-button>
+                    </Button>
                 </div>
                 <p v-else>
-                    Nothing could be found. Want to <c-button
+                    Nothing could be found. Want to <Button
                         status="plain"
                         @click="$store.commit('application/activeModal', 'comingSoon')">
                         Check for updates
-                    </c-button>?
+                    </Button>?
                 </p>
-            </c-block>
+            </Block>
         </div>
     </div>
 </template>
@@ -177,15 +177,15 @@ import { mapGetters } from 'vuex'
 export default {
     name: 'AssetsExplorer',
     components: {
-        'c-content-navigation': () => import('~/components/content-navigation').then(m => m.default || m),
-        'c-block': () => import('~/components/block').then(m => m.default || m),
-        'c-heading-bar-fields': () => import('~/components/heading-bar/additional-action').then(m => m.default || m),
-        'c-dropdown': () => import('~/components/dropdown-menu/type-2').then(m => m.default || m),
-        'c-input-searcher': () => import('~/components/inputs/searcher').then(m => m.default || m),
-        'c-assets-list': () => import('~/components/assets-list-item').then(m => m.default || m),
-        'c-dropdown-menu': () => import('~/components/dropdown-menu/type-3').then(m => m.default || m),
-        'c-list': () => import('~/components/list').then(m => m.default || m),
-        'c-option-tag': () => import('~/components/option-tag').then(m => m.default || m)
+        'ContentNavigation': () => import('../../').then(m => m.ContentNavigation),
+        'Block': () => import('../../').then(m => m.Block),
+        'HeadingBarFields': () => import('../../').then(m => m.HeadingBarFields),
+        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'InputSearcher': () => import('../../').then(m => m.InputSearcher),
+        'AssetsList': () => import('../../').then(m => m.AssetsList),
+        'Dropdown-menu': () => import('../../').then(m => m.Dropdown-menu),
+        'List': () => import('../../').then(m => m.List),
+        'OptionTag': () => import('../../').then(m => m.OptionTag)
     },
     props: {
         assets: {

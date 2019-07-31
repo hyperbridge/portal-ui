@@ -1,7 +1,7 @@
 <template>
     <div class="plans-list__item invert">
         <h6>{{ plan.title }}</h6>
-        <c-button
+        <Button
             status="success"
             :icon="plan.price ? 'shopping-bag': '' "
             :href="plan.link"
@@ -22,7 +22,7 @@
                     Play Now
                 </template>
             </span>
-        </c-button>
+        </Button>
     </div>
 </template>
 
@@ -30,6 +30,9 @@
 <script>
 export default {
     name: 'GamePlan',
+    components: {
+        'Button': () => import('../../').then(m => m.Button)
+    },
     props: {
         plan: {
             type: Object,
@@ -64,7 +67,7 @@ export default {
             max-width: calc( 100% - 115px );
             display: inline-block;
         }
-        .c-button {
+        .Button {
             min-width: 90px;
             height: 24px;
         }

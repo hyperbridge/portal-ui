@@ -1,20 +1,20 @@
 <template>
-    <c-popup
+    <Popup
         title="Privacy policy"
         :activated="activated"
         width="800"
         @close="$emit('close')">
         <div class="scroll_block">
-            <c-privacy-block />
+            <PrivacyBlock />
         </div>
-    </c-popup>
+    </Popup>
 </template>
 
 <script>
 export default {
     components: {
-        'c-popup': () => import('~/components/popups').then(m => m.default || m),
-        'c-privacy-block': () => import('~/components/privacy-block').then(m => m.default || m)
+        'Popup': () => import('../../').then(m => m.Popup),
+        'PrivacyBlock': () => import('../../').then(m => m.PrivacyBlock)
     },
     props: ['activated']
 }

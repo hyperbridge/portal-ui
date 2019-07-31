@@ -3,7 +3,7 @@
         v-if="user"
         class="user-data"
         :class="{ 'preview-mode': previewMode }">
-        <c-loading
+        <Loading
             :enabled="removing"
             size="lg" />
 
@@ -22,19 +22,19 @@
             <div
                 v-if="previewMode"
                 class="user-data__avatar">
-                <c-button
+                <Button
                     status="none"
                     :to="`/profiles/${user.id}`"
                     class="user-data__avatar-upload-btn">
-                    <c-img
+                    <Img
                         v-if="user.img"
                         class="user-data__avatar no-avatar"
                         :src="user.img" />
-                    <c-img
+                    <Img
                         v-else
                         class="user-data__avatar user-avatar"
                         src="../../static/img/user.png" />
-                </c-button>
+                </Button>
             </div>
             <div
                 v-if="!previewMode"
@@ -43,9 +43,9 @@
                     v-if="!user.img"
                     href="#"
                     class="user-data__avatar-upload-btn">
-                    <c-img src="https://via.placeholder.com/150" />
+                    <Img src="https://via.placeholder.com/150" />
                 </a>
-                <c-img
+                <Img
                     v-else
                     src="../../static/img/user.png" />
             </div>
@@ -109,18 +109,22 @@
             </button>
         </div>
         <div v-if="previewMode && !user.address">
-            <c-button
+            <Button
                 status="dark"
                 size="small"
                 @click="generateAddress(user.id)">
                 Generate Address
-            </c-button>
+            </Button>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+        'Loading': () => import('../../').then(m => m.Loading)
+    },
     props: {
         id: {
             type: String,

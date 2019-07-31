@@ -17,7 +17,7 @@
                         <label>Tags</label>
                     </label>
                     <div class="col-sm-8">
-                        <c-multiselect
+                        <Multiselect
                             v-model="model.tags"
                             tag-placeholder="Add this as new tag"
                             placeholder="Search or add a tag"
@@ -33,7 +33,7 @@
             </div>
 
             <div class="col-12">
-                <c-html-editor
+                <HtmlEditor
                     height="200"
                     :model.sync="model.value" />
 
@@ -41,13 +41,13 @@
             </div>
 
             <div class="col-12 margin-top-10">
-                <c-heading-bar-color
+                <HeadingBarWithSimpleColor
                     class="mt-4 mb-4"
                     colorCode="#444"
                     textAlign="center"
                     hidden>
                     Advanced Options
-                </c-heading-bar-color>
+                </HeadingBarWithSimpleColor>
 
                 <div @click="toggleAdvanced">
                     <i
@@ -81,7 +81,7 @@
                         @input="updateModelRaw($event.target.value)" />
                     <br><br>
                     <span class="form-text" />
-                    <c-json-editor
+                    <JsonEditor
                         v-model="model"
                         :objData="model"
                         style="margin: 0 auto" />
@@ -95,32 +95,32 @@
             <div
                 v-if="model.id"
                 class="col-12 text-right">
-                <c-button
+                <Button
                     status="info"
                     size="lg"
                     :href="`/model/${model.id}`"
                     target="_blank"
                     icon="eye">
                     View Community
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="success"
                     size="lg"
                     icon="save"
                     @click="save">
                     Save
-                </c-button>
+                </Button>
             </div>
             <div
                 v-if="!model.id"
                 class="col-12 text-right">
-                <c-button
+                <Button
                     status="success"
                     size="lg"
                     icon="plus"
                     @click="create">
                     Create
-                </c-button>
+                </Button>
             </div>
         </div>
     </div>
@@ -131,9 +131,9 @@ import beautify from 'json-beautify'
 
 export default {
     components: {
-        'c-html-editor': () => import('~/components/html-editor').then(m => m.default || m),
-        'c-json-editor': () => import('~/components/json-editor').then(m => m.default || m),
-        'c-multiselect': () => import('vue-multiselect').then(m => m.default || m)
+        'HtmlEditor': () => import('../../').then(m => m.HtmlEditor),
+        'JsonEditor': () => import('../../').then(m => m.JsonEditor),
+        'Multiselect': () => import('vue-multiselect').then(m => m.default)
     },
     props: {
         serviceKey: String

@@ -1,13 +1,13 @@
 <template>
     <div class="game-installer">
         <div class="game-installer__product-preview">
-            <c-img
+            <Img
                 class="game-installer__image"
                 :src="productImagesMediumTile" />
             <div class="game-installer__description">
                 <h3>{{ productName }}</h3>
                 <p v-html="description" />
-                <c-icon
+                <Icon
                     v-for="(reqs, index) in productSystemRequirements"
                     :key="index"
                     cat="fab"
@@ -20,7 +20,7 @@
                 Location:
             </span>
             <div class="game-installer__input-wrapper">
-                <c-icon name="folder-open" />
+                <Icon name="folder-open" />
                 <input
                     v-model="path"
                     class="game-installer__input"
@@ -59,7 +59,7 @@
                 type="button"
                 class="game-installer__button--install"
                 :class="{ 'disabled': !path }">
-                <c-icon name="hdd" />
+                <Icon name="hdd" />
                 <span>Install</span>
             </button>
         </div>
@@ -70,8 +70,8 @@
 export default {
     name: 'GameInstaller',
     components: {
-        'c-dropdown': () => import('~/components/dropdown-menu/type-3').then(m => m.default || m),
-        'c-list': () => import('~/components/list').then(m => m.default || m)
+        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'List': () => import('../../').then(m => m.List)
     },
     props: {
         productImagesMediumTile: {

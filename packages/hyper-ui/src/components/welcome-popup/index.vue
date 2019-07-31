@@ -1,5 +1,5 @@
 <template>
-    <c-popup
+    <Popup
         ref="modal"
         :activated="activated"
         type="custom"
@@ -11,31 +11,31 @@
         <div
             slot="customContent"
             class="welcome-modal">
-            <c-tabs :tabNames="['Welcome']">
-                <c-tab :tabId="1">
+            <Tabs :tabNames="['Welcome']">
+                <Tab :tabId="1">
                     <div>
-                        <c-welcome-box :prompt="true" />
+                        <WelcomeBox :prompt="true" />
                     </div>
                     <div
                         slot="footer"
                         class="d-flex align-items-center justify-content-end">
                         <div>
-                            <c-button @click="$emit('close')">
+                            <Button @click="$emit('close')">
                                 Close
-                            </c-button>
+                            </Button>
                         </div>
                     </div>
-                </c-tab>
-            </c-tabs>
+                </Tab>
+            </Tabs>
         </div>
-    </c-popup>
+    </Popup>
 </template>
 
 <script>
 export default {
     components: {
-        'c-popup': () => import('~/components/popups').then(m => m.default || m),
-        'c-welcome-box': () => import('~/components/welcome-box').then(m => m.default || m)
+        'Popup': () => import('../../').then(m => m.Popup),
+        'WelcomeBox': () => import('../../').then(m => m.WelcomeBox)
     },
     props: ['activated'],
     data() {
@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .c-popup__content {
+    .Popup__content {
         background: transparent;
         color: #fff;
     }

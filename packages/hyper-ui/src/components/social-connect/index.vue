@@ -12,17 +12,17 @@
             </div>
         </div>
         <div class="social-connect__item-action">
-            <c-button
+            <Button
                 v-if="connected"
                 status="second-warning"
                 @click="disconnect">
                 Disconnect
-            </c-button>
-            <c-button
+            </Button>
+            <Button
                 status="second-info"
                 @click="connect">
                 Connect
-            </c-button>
+            </Button>
         </div>
     </div>
 </template>

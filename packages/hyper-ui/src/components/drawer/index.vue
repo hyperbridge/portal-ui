@@ -9,7 +9,7 @@
                         Your Realms
                     </h5>
 
-                    <c-button
+                    <Button
                         v-for="(realm, index) in realms"
                         :key="`realm${realm.id}`"
                         v-access="'realm.read'"
@@ -17,14 +17,14 @@
                         :to="`/realm/${realm.id}`">
                         <span class="icon icon-letter-circle">{{ realm.name && realm.name.slice(0) }}</span>
                         <span class="text">{{ realm.name }}</span>
-                    </c-button>
+                    </Button>
 
-                    <c-button
+                    <Button
                         v-access="'realm.read'"
                         status="none"
                         to="/profile/1/realms">
                         See More...
-                    </c-button>
+                    </Button>
 
                     <hr v-access="'realm.read'">
 
@@ -32,64 +32,64 @@
                         Your Products
                     </h5>
 
-                    <c-button
+                    <Button
                         v-for="(product) in products"
                         :key="`product${product.id}`"
                         status="none"
                         :to="`/product/${product.id}`">
                         <span class="icon icon-letter-circle">{{ product.name.slice(0, 1) }}</span>
                         <span class="text">{{ product.name }}</span>
-                    </c-button>
+                    </Button>
 
-                    <c-button
+                    <Button
                         v-if="developerMode && products.length > 3"
                         status="none"
                         to="/business/products">
                         See More...
-                    </c-button>
+                    </Button>
 
                     <hr v-if="developerMode && products.length">
 
                     <h5><i class="fas fa-code" /> Developer</h5>
 
-                    <c-button
+                    <Button
                         status="none"
                         to="/business">
                         <span class="icon fas fa-list-alt" />
                         <span class="text">My Content</span>
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         v-access="'payments'"
                         status="none"
                         to="/business/developer/payment">
                         <span class="icon fas fa-info-circle" />
                         <span class="text">Payment Settings</span>
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         v-access="'realm.read'"
                         status="none"
                         to="/business/realm/new">
                         <span class="icon fa fa-plus" />
                         <span class="text">New Realm</span>
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="none"
                         to="/business/product/new">
                         <span class="icon fa fa-plus" />
                         <span class="text">New Game</span>
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="none"
                         to="/business/project/new">
                         <span class="icon fa fa-plus" />
                         <span class="text">New Crowdfund</span>
-                    </c-button>
+                    </Button>
 
                     <hr>
                 </template>
 
                 <div v-if="signedIn">
-                    <c-button
+                    <Button
                         status="plain"
                         tag="button"
                         to="/account"
@@ -97,8 +97,8 @@
                         size="md"
                         icon="user">
                         Account
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="plain"
                         tag="button"
                         to="/account/profiles"
@@ -106,8 +106,8 @@
                         size="md"
                         icon="id-card">
                         Profiles
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         v-access="'wallet.read'"
                         status="plain"
                         tag="button"
@@ -116,11 +116,11 @@
                         size="md"
                         icon="credit-card">
                         Wallets
-                    </c-button>
+                    </Button>
 
                     <hr>
 
-                    <c-button
+                    <Button
                         status="plain"
                         tag="button"
                         to="/profile/1"
@@ -128,8 +128,8 @@
                         size="md"
                         icon="user">
                         Current Profile
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="plain"
                         tag="button"
                         to="/settings/activity"
@@ -137,8 +137,8 @@
                         size="md"
                         icon="list-alt">
                         Activity Log
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         v-access="'contact'"
                         status="plain"
                         tag="button"
@@ -147,11 +147,11 @@
                         size="md"
                         icon="users">
                         Contacts
-                    </c-button>
+                    </Button>
 
                     <hr>
 
-                    <c-button
+                    <Button
                         status="plain"
                         to="/settings"
                         class="text-left"
@@ -159,9 +159,9 @@
                         tag="button"
                         icon="cog">
                         Settings
-                    </c-button>
+                    </Button>
 
-                    <c-button
+                    <Button
                         status="plain"
                         tag="button"
                         to="/account/signout"
@@ -169,12 +169,12 @@
                         size="md"
                         icon="sign-out-alt">
                         Sign Out
-                    </c-button>
+                    </Button>
 
                     <hr>
                 </div>
 
-                <c-button
+                <Button
                     status="plain"
                     to="/sitemap"
                     tag="button"
@@ -182,7 +182,7 @@
                     size="md"
                     icon="list-alt">
                     Sitemap
-                </c-button>
+                </Button>
 
                 <div
                     v-if="!developerMode"
@@ -194,18 +194,18 @@
                     <div class="text">
                         <h3>Are you a developer?</h3>
                         <p>Start developing for blockchain with BlockHub SDK</p>
-                        <c-button
+                        <Button
                             status="info"
                             to="/developer#apply"
                             iconHide>
                             Start Developing
-                        </c-button>
-                        <c-button
+                        </Button>
+                        <Button
                             status="dark"
                             to="/help/topic/0/article/developer-program"
                             iconHide>
                             Learn More
-                        </c-button>
+                        </Button>
                     </div>
                 </div>
 
@@ -216,20 +216,20 @@
                         <h5><i class="fas fa-code" />Become Developer</h5>
                         <ul>
                             <li>
-                                <c-button
+                                <Button
                                     status="none"
                                     to="/developer#apply">
                                     <i class="fas fa-list-alt" />
                                     Apply Now
-                                </c-button>
+                                </Button>
                             </li>
                             <li>
-                                <c-button
+                                <Button
                                     status="none"
                                     to="/developer#faq">
                                     <i class="fas fa-info-circle" />
                                     Developer FAQ
-                                </c-button>
+                                </Button>
                             </li>
                         </ul>
                     </div>
@@ -239,74 +239,74 @@
                     v-if="showPreviewPanel"
                     class="preview-panel col-12 mt-4">
                     <div>
-                        <c-button @click="toggleDesktopMode()">
+                        <Button @click="toggleDesktopMode()">
                             Desktop Mode {{ desktopMode ? 'ON' : 'OFF' }}
-                        </c-button>
-                        <c-button @click="rotateOperatingSystem()">
+                        </Button>
+                        <Button @click="rotateOperatingSystem()">
                             Operating System {{ operatingSystem === 'mac' ? 'MAC' : (operatingSystem === 'windows' ? 'WINDOWS' : 'LINUX' ) }}
-                        </c-button>
-                        <c-button @click="rotateEnvironmentMode()">
+                        </Button>
+                        <Button @click="rotateEnvironmentMode()">
                             Environment Mode {{ environmentMode ? environmentMode.toUpperCase() : 'NOT FOUND' }}
-                        </c-button>
-                        <c-button @click="toggleSignedIn()">
+                        </Button>
+                        <Button @click="toggleSignedIn()">
                             Signed {{ signedIn ? 'IN' : 'OUT' }}
-                        </c-button>
-                        <c-button @click="$store.state.application.account.isVerified = !$store.state.application.account.isVerified">
+                        </Button>
+                        <Button @click="$store.state.application.account.isVerified = !$store.state.application.account.isVerified">
                             Account {{ $store.state.application.account.isVerified ? 'VERIFIED' : 'NOT VERIFIED' }}
-                        </c-button>
-                        <c-button @click="toggleDeveloperMode()">
+                        </Button>
+                        <Button @click="toggleDeveloperMode()">
                             Developer Mode {{ developerMode ? 'ON' : 'OFF' }}
-                        </c-button>
-                        <c-button @click="rotateEditorMode()">
+                        </Button>
+                        <Button @click="rotateEditorMode()">
                             Editor Mode {{ $store.state.application.editorMode.toUpperCase() }}
-                        </c-button>
-                        <c-button @click="toggleAccessOverride()">
+                        </Button>
+                        <Button @click="toggleAccessOverride()">
                             Access Override {{ $store.state.application.accessOverride ? 'ON' : 'OFF' }}
-                        </c-button>
-                        <c-button @click="toggleSimulator()">
+                        </Button>
+                        <Button @click="toggleSimulator()">
                             Simulator {{ simulatorMode ? 'ON' : 'OFF' }}
-                        </c-button>
+                        </Button>
 
                         <br><br>
                     </div>
                     <div>
-                        <c-button @click="importSeedData()">
+                        <Button @click="importSeedData()">
                             Import Seed Data
-                        </c-button>
-                        <c-button @click="resetSeedData()">
+                        </Button>
+                        <Button @click="resetSeedData()">
                             Reset Seed Data
-                        </c-button>
+                        </Button>
                         <br><br>
                     </div>
                     <div>
-                        <c-button @click="$store.state.application.connection.auto = !$store.state.application.connection.auto">
+                        <Button @click="$store.state.application.connection.auto = !$store.state.application.connection.auto">
                             Auto Connect is {{ $store.state.application.connection.auto ? 'ON' : 'OFF' }}
-                        </c-button>
-                        <c-button @click="$store.state.application.connection.internet = !$store.state.application.connection.internet">
+                        </Button>
+                        <Button @click="$store.state.application.connection.internet = !$store.state.application.connection.internet">
                             Internet is {{ $store.state.application.connection.internet ? 'CONNECTED' : 'DISCONNECTED' }}
-                        </c-button>
-                        <c-button @click="$store.state.application.connection.datasource = !$store.state.application.connection.datasource">
+                        </Button>
+                        <Button @click="$store.state.application.connection.datasource = !$store.state.application.connection.datasource">
                             Datasource is {{ $store.state.application.connection.datasource ? 'CONNECTED' : 'DISCONNECTED' }}
-                        </c-button>
-                        <c-button
+                        </Button>
+                        <Button
                             v-if="desktopMode"
                             @click="$store.state.application.connection.operator = !$store.state.application.connection.operator">
                             Operator is {{ $store.state.application.connection.operator ? 'CONNECTED' : 'DISCONNECTED' }}
-                        </c-button>
-                        <c-button
+                        </Button>
+                        <Button
                             v-if="desktopMode"
                             @click="$store.state.application.connection.ethereum = !$store.state.application.connection.ethereum">
                             Ethereum is {{ $store.state.application.connection.ethereum ? 'CONNECTED' : 'DISCONNECTED' }}
-                        </c-button>
+                        </Button>
                         <br><br>
                     </div>
                     <div>
-                        <c-button @click="saveSettings()">
+                        <Button @click="saveSettings()">
                             Save Settings
-                        </c-button>
-                        <c-button @click="resetSettings()">
+                        </Button>
+                        <Button @click="resetSettings()">
                             Reset Settings
-                        </c-button>
+                        </Button>
                         <br><br>
                     </div>
                     <div
@@ -315,9 +315,9 @@
                         <input
                             ref="desktopMessage"
                             type="text">
-                        <c-button @click="sendDesktopMessage">
+                        <Button @click="sendDesktopMessage">
                             Send Message To Desktop
-                        </c-button>
+                        </Button>
                     </div>
                     <div
                         v-if="developerMode"
@@ -347,7 +347,6 @@
 
 <script>
 import Vue from 'vue'
-import * as DB from '@/db'
 
 export default {
     components: {

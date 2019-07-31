@@ -1,21 +1,21 @@
 <template>
     <div class="browser-ui">
         <div class="browser-ui__nav mr-2">
-            <c-button
+            <Button
                 status="plain"
                 class="p-0 mr-2"
                 @click="back">
                 <i class="fas fa-arrow-left" />
-            </c-button>
-            <c-button
+            </Button>
+            <Button
                 status="plain"
                 class="p-0 ml-2"
                 @click="forward">
                 <i class="fas fa-arrow-right" />
-            </c-button>
+            </Button>
         </div>
         <div class="browser-ui__search-bar">
-            <c-dropdown class="browser-ui__lock-dropdown">
+            <Dropdown class="browser-ui__lock-dropdown">
                 <template slot="title">
                     <span class="lock-dropdown__icon">
                         <i class="fa fa-lock" />
@@ -29,34 +29,34 @@
                     odio mi, at consequat ante laoreet quis.
                 </p>
                 <hr>
-                <c-button
+                <Button
                     status="plain"
                     icon="cookie-bite"
                     class="text-dark">
                     <span class="ml-3">
                         Cookies
                     </span>
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="plain"
                     icon="cookie-bite"
                     class="text-dark">
                     <span class="ml-3">
                         Settings
                     </span>
-                </c-button>
-            </c-dropdown>
+                </Button>
+            </Dropdown>
 
-            <c-input
+            <Input
                 ref="searchInput"
                 v-model="searchQuery"
                 @focus="$event.target.select()" />
 
-            <c-button
+            <Button
                 status="plain"
                 class="p-0 ml-3">
                 <i class="fas fa-cog" />
-            </c-button>
+            </Button>
         </div>
     </div>
 </template>
@@ -64,7 +64,7 @@
 <script>
 export default {
     components: {
-        'c-dropdown': () => import('~/components/dropdown-menu/type-4').then(m => m.default || m)
+        'Dropdown': () => import('../../').then(m => m.Dropdown)
     },
     data() {
         return {

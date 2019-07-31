@@ -16,13 +16,13 @@
                             {{ subName }}
                         </div>
                     </div>
-                    <c-button
+                    <Button
                         status="second-info"
                         icon="play"
                         class="margin-top-15"
                         size="xl">
                         Play Now
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="game-info">
                     <div>
@@ -79,26 +79,26 @@
                                 v-if="downloadContent"
                                 class="game-downloadable-list__list-item">
                                 <div>
-                                    <c-button status="plain">
+                                    <Button status="plain">
                                         {{ item.name }}
-                                    </c-button>
+                                    </Button>
                                 </div>
                                 <div class="item-action">
                                     <span>
                                         $ {{ item.price }}
                                     </span>
-                                    <c-button
+                                    <Button
                                         v-if=" item.price == 'free' || 'Free'"
                                         status="opacity-success"
                                         size="xs">
                                         Install
-                                    </c-button>
-                                    <c-button
+                                    </Button>
+                                    <Button
                                         v-else
                                         status="opacity-success"
                                         size="xs">
                                         Buy
-                                    </c-button>
+                                    </Button>
                                 </div>
                             </div>
                             <div v-else>
@@ -121,13 +121,13 @@
                                     <p>
                                         {{ item.text }}
                                     </p>
-                                    <c-button
+                                    <Button
                                         status="plain"
                                         :href="item.link"
                                         class="pl-0">
                                         <i class="fas fa-external-link-alt margin-right-5" />
                                         Read More
-                                    </c-button>
+                                    </Button>
                                 </li>
                             </ul>
                         </div>
@@ -436,7 +436,7 @@ export default {
                 &:last-child{
                     margin-bottom: 0;
                 }
-                .c-button.plain{
+                .Button.plain{
                     color: #0f85ca;
                 }
             }

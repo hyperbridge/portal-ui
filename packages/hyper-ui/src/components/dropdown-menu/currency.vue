@@ -3,11 +3,11 @@
         <div
             class="currency-dropdown__current"
             @click="toggleList">
-            <c-country-flag
+            <CountryFlag
                 v-if="currentCurrency.country"
                 :country="currentCurrency.country"
                 size="small" />
-            <c-crypto-icon
+            <CryptoIcon
                 v-else
                 :name="currentCurrency.code" />
             <span class="currency-name">
@@ -28,11 +28,11 @@
                         :key="index"
                         class="currency-dropdown__list-item"
                         @click="changeCurrency(currency)">
-                        <c-country-flag
+                        <CountryFlag
                             v-if="currency.country"
                             :country="currency.country"
                             size="small" />
-                        <c-crypto-icon
+                        <CryptoIcon
                             v-else
                             :name="currency.code" />
                         <span class="currency-name">
@@ -49,7 +49,7 @@
 export default {
     name: 'CurrencyDropdown',
     components: {
-        'c-crypto-icon': () => import('~/components/icon/crypto').then(m => m.default || m)
+        'CryptoIcon': () => import('../../').then(m => m.CryptoIcon)
     },
     props: {
         currentCurrency: Object,

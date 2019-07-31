@@ -1,5 +1,5 @@
 <template>
-    <c-block
+    <Block
         title="Rating"
         :noGutter="true"
         :bgGradient="true"
@@ -15,40 +15,42 @@
                         <span class="rating-block__name">{{ item.name }}</span>
                         <span class="rating-block__number">{{ item.value }}</span>
                     </div>
-                    <c-rating-stars
+                    <RatingStars
                         :number="item.value"
                         class="rating-block__stars" />
                 </li>
             </ul>
-            <c-button
+            <Button
                 v-if="fullReviewsPath"
                 status="outline-white"
                 :to="fullReviewsPath">
                 See Full Reviews
-            </c-button>
-            <c-button
+            </Button>
+            <Button
                 v-if="rateGamePath"
                 status="outline-white"
                 :to="rateGamePath">
                 Rate this game
-            </c-button>
+            </Button>
         </div>
         <div v-else>
             <h4>No reviews yet.</h4>
-            <c-button
+            <Button
                 tag="button"
                 status="outline-white"
                 @click="$emit('goto')">
                 Be the first reviewer
-            </c-button>
+            </Button>
         </div>
-    </c-block>
+    </Block>
 </template>
 
 <script>
 export default {
     components: {
-        'c-rating-stars': () => import('~/components/rating-stars').then(m => m.default || m)
+        'RatingStars': () => import('../../').then(m => m.RatingStars),
+        'Button': () => import('../../').then(m => m.Button),
+        'Block': () => import('../../').then(m => m.Block)
     },
     props: {
         items: {

@@ -1,7 +1,7 @@
 <template>
     <div class="milestones-list__item">
         <div class="thumb">
-            <c-img :src="milestone.img" />
+            <Img :src="milestone.img" />
         </div>
         <div class="info">
             <div class="head">
@@ -12,21 +12,21 @@
                 <div class="milestones_progress">
                     <div class="progress_line">
                         <i class="fas fa-clock icon" />
-                        <c-progress-bar :percentages="milestone.progress['percentDays']" />
+                        <ProgressBar :percentages="milestone.progress['percentDays']" />
                         <span class="ml-auto">
                             {{ milestone.progress['daysLeft'] }} days left
                         </span>
                     </div>
                     <div class="progress_line">
                         <i class="fas fa-check icon" />
-                        <c-progress-bar :percentages="milestone.progress['percentDone']" />
+                        <ProgressBar :percentages="milestone.progress['percentDone']" />
                         <span class="ml-auto">
                             {{ milestone.progress['percentDone'] }}% Done
                         </span>
                     </div>
                     <div class="progress_line">
                         <i class="fas fa-dollar-sign icon" />
-                        <c-progress-bar :percentages="milestone.progress['percentSpent']" />
+                        <ProgressBar :percentages="milestone.progress['percentSpent']" />
                         <span class="ml-auto">
                             {{ milestone.progress['percentSpent'] }}% Spent
                         </span>
@@ -44,7 +44,8 @@
 export default {
     name: 'ProjectMilestone',
     components: {
-        'c-progress-bar': () => import('~/components/progress-bar').then(m => m.default || m)
+        'ProgressBar': () => import('../../').then(m => m.ProgressBar),
+        'Img': () => import('../../').then(m => m.Img)
     },
     props: {
         milestone: {

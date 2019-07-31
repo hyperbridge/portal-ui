@@ -9,10 +9,10 @@
                 class="product-grid__item-price">
                 <strong>{{ price | convertCurrency }}</strong>
             </div>
-            <c-button
+            <Button
                 status="none"
                 :to="`/product/${id}`">
-                <c-img
+                <Img
                     v-if="!displayPreview"
                     class="card-img-top"
                     :src="mediumTile" />
@@ -39,7 +39,7 @@
                         v-else
                         tag="div"
                         name="slide-left">
-                        <c-img
+                        <Img
                             v-for="(image, index) in previewImages"
                             v-if="index === currentImage"
                             :key="image"
@@ -55,8 +55,8 @@
                     hidden>
                     {{ shortDescription }}
                 </div>
-            </c-button>
-            <c-tags class="product-tags" v-if="developerTags" :tags="developerTags.slice(0,3)" />
+            </Button>
+            <Tags class="product-tags" v-if="developerTags" :tags="developerTags.slice(0,3)" />
         </div>
     </div>
 </template>
@@ -66,7 +66,7 @@ import { debounce } from '@/mixins'
 
 export default {
     components: {
-        'c-tags': () => import('~/components/tags').then(m => m.default || m)
+        'Tags': () => import('../../').then(m => m.Tags)
     },
     mixins: [debounce],
     props: {

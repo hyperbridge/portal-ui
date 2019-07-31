@@ -12,12 +12,12 @@
             <p class="mb-4">
                 {{ item.text | stringLength }}
             </p>
-            <c-button
+            <Button
                 status="info"
                 :to="`/project/${projectId}/updates/${item.id}`"
                 iconHide>
                 Read more
-            </c-button>
+            </Button>
         </div>
     </div>
 </template>
@@ -27,6 +27,9 @@ import moment from 'moment'
 
 export default {
     name: 'TimelineItem',
+    components: {
+        'Button': () => import('../../').then(m => m.Button)
+    },
     filters: {
         stringLength(str) {
             if (str.length > 250) {
@@ -97,7 +100,7 @@ export default {
                 text-align: right;
                 padding-right: 50px;
                 margin-right: -1px;
-                .c-button{
+                .Button{
                     margin-right: 0;
                 }
                 &:after{
@@ -111,7 +114,7 @@ export default {
                 text-align: left;
                 align-self: flex-end;
                 padding-left: 50px;
-                .c-button{
+                .Button{
                     margin-left: 0;
                 }
                 &:after{
@@ -151,7 +154,7 @@ export default {
             padding-right: 30px;
             margin-right: -1px;
             width: calc( 100% - 10px );
-            .c-button{
+            .Button{
                 margin-right: 0;
             }
             &:after{

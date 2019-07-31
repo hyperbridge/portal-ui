@@ -2,13 +2,12 @@
     <div class="pro-mode-notice-1">
         <div class="pro-mode-notice-1__wrapper text-center">
             <div class="notice-close">
-                <c-button status="plain">
+                <Button status="plain">
                     <i class="fas fa-times fa-1x"/>
-                </c-button>
+                </Button>
             </div>
             <div class="pro-mode-notice-1__img">
-                <svg width="2169px" height="2290px" viewBox="0 0 2169 2290" version="1.1" xmlns="http://www.w3.org/2000/svg"
-xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg width="2169px" height="2290px" viewBox="0 0 2169 2290" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <title>Group</title>
                     <desc>Created with Sketch.</desc>
                     <defs>
@@ -63,9 +62,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
             <div class="pro-mode-notice-1__content">
                 Hey {{ name }}, you're on a Basic account. Unlock more space and sharing controls!
                 <div class="margin-top-30">
-                    <c-button status="second-success">
+                    <Button status="second-success">
                         Upgrade now
-                    </c-button>
+                    </Button>
                 </div>
             </div>
         </div>
@@ -74,6 +73,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <script>
 export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button)
+    },
     props: {
         name: {
             type: String,

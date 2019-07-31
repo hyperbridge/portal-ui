@@ -15,7 +15,7 @@
         <div
             v-if="open"
             class="friends-list__list">
-            <c-chat-user
+            <ChatUser
                 v-for="item in list"
                 :key="item.name"
                 :avatar="item.avatar"
@@ -29,7 +29,7 @@
 <script>
 export default {
     components: {
-        'c-chat-user': () => import('~/components/chat-new/user').then(m => m.default || m)
+        'ChatUser': () => import('../../').then(m => m.ChatUser)
     },
     props: {
         title: {

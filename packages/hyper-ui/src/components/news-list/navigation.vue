@@ -17,7 +17,7 @@
                 aria-expanded="true"
                 data-toggle="tab">
                 <div class="img" v-if="item.image">
-                    <c-img :src="item.image" />
+                    <Img :src="item.image" />
                 </div>
                 <div class="text">
                     <h4>{{ item.heading }}</h4>

@@ -5,11 +5,11 @@
             class="icon-delete-btn fa fa-times"
             @mousedown="remove" />
         <slot>
-            <c-button status="none" :href="href" :to="to" :style="{ 'background-image': image ? 'url(' + image + ')' : 'none', 'color': 'inherit', 'justify-content': 'center' }" @click="click">
+            <Button status="none" :href="href" :to="to" :style="{ 'background-image': image ? 'url(' + image + ')' : 'none', 'color': 'inherit', 'justify-content': 'center' }" @click="click">
                 <i v-if="icon" :class="icon" />
-            </c-button>
+            </Button>
         </slot>
-        <c-progress-bar v-if="percent" :percentages="74" style="height: 3px; min-height: 3px; margin-top: 7px" />
+        <ProgressBar v-if="percent" :percentages="74" style="height: 3px; min-height: 3px; margin-top: 7px" />
         <transition v-if="text && show" name="fade">
             <div class="shortcut-icon__title">
                 {{ text }}
@@ -22,8 +22,8 @@
 <script>
 export default {
     components: {
-        'c-tooltip': () => import('~/components/tooltips/universal').then(m => m.default || m),
-        'c-progress-bar': () => import('~/components/progress-bar').then(m => m.default || m)
+        'Tooltip': () => import('../../').then(m => m.Tooltip),
+        'ProgressBar': () => import('../../').then(m => m.ProgressBar)
     },
     props: {
         index: {
@@ -207,7 +207,7 @@ export default {
         top: 4px;
     }
 
-    .c-grid-item-dragging .shortcut-icon {
+    .Grid-item-dragging .shortcut-icon {
         animation-name: shake;
         animation-duration: 0.07s;
         animation-iteration-count: infinite;

@@ -16,7 +16,7 @@
                         <div class="item__container">
                             <span>
                                 <slot name="item-content">
-                                    <c-icon
+                                    <Icon
                                         name="arrow-right"
                                         class="arrow"
                                         :class="{ 'arrow--opened': title === subItem }" />
@@ -27,7 +27,7 @@
                                     </span>
                                 </slot>
                             </span>
-                            <c-tag-count :number="listLength(list)" />
+                            <TagCount :number="listLength(list)" />
                         </div>
                     </slot>
                 </a>
@@ -46,7 +46,7 @@
 export default {
     name: 'ListSubmenu',
     components: {
-        'c-tag-count': () => import('~/components/tags/count').then(m => m.default || m)
+        'TagCount': () => import('../../').then(m => m.TagCount)
     },
     props: {
         items: [Object, Array],

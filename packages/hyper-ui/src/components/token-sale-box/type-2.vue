@@ -26,13 +26,13 @@
                     </div>
                 </div>
                 <div>
-                    <c-button
+                    <Button
                         status="success"
                         size="lg"
                         iconHide
                         @click="$emit('purchase')">
                         Purchase HBX
-                    </c-button>
+                    </Button>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                     </span>
                 </div>
                 <div class="mt-3">
-                    <c-progress-bar :percentages="percentProgress" />
+                    <ProgressBar :percentages="percentProgress" />
                 </div>
                 <div class="token-sale-box__money-info">
                     <div>
@@ -140,7 +140,7 @@
 export default {
     name: 'TokenSale',
     components: {
-        'c-progress-bar': () => import('~/components/progress-bar').then(m => m.default || m)
+        'ProgressBar': () => import('../../').then(m => m.ProgressBar)
     },
     props: {
         hardCap: {

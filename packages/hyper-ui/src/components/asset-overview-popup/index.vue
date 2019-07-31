@@ -2,10 +2,10 @@
     <div class="asset-overview-popup">
         <div class="asset-overview-popup__head">
             <div class="link">
-                <c-icon name="link" />
+                <Icon name="link" />
             </div>
             <div class="img">
-                <c-img :src="image" />
+                <Img :src="image" />
             </div>
             <div class="info">
                 <h4>{{ name }}</h4>
@@ -19,22 +19,22 @@
         </div>
         <div class="asset-overview-popup__action">
             <div class="button-line d-flex w-100 justify-content-between">
-                <c-button
+                <Button
                     status="danger"
                     iconHide>
-                    <c-icon name="trash-alt" />
-                </c-button>
+                    <Icon name="trash-alt" />
+                </Button>
                 <div class="text-right">
-                    <c-button status="share">
+                    <Button status="share">
                         Send
-                    </c-button>
-                    <c-button status="success">
+                    </Button>
+                    <Button status="success">
                         Use
-                    </c-button>
+                    </Button>
                 </div>
             </div>
             <div class="w-100 py-4">
-                <c-switch
+                <Toggle
                     label="Accept offers for this item?"
                     :checked="acceptOffers"
                     labelSize="18px"
@@ -45,7 +45,7 @@
         </div>
         <div class="asset-overview-popup__info-list">
             <div class="metadata">
-                <c-heading-bar
+                <HeadingBar
                     name="Game Metadata"
                     :showArrows="false"
                     :showBackground="false" />
@@ -73,7 +73,7 @@
 <script>
 export default {
     components: {
-        'c-heading-bar': () => import('~/components/heading-bar').then(m => m.default || m)
+        'HeadingBar': () => import('../../').then(m => m.HeadingBar)
     },
     props: {
         image: {

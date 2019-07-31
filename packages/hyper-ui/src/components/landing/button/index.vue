@@ -4,7 +4,7 @@
         :href="href"
         :target="target"
         class="landing-btn"
-        :class="['c-button-' + size]"
+        :class="['Button-' + size]"
         style="font-size: 14px"
         :style="{ 'font-size': fontSize + 'px', 'width' : width + 'px' }"
         @click="$emit('click')">

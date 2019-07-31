@@ -3,7 +3,7 @@
         class="chat-message"
         :class="{ 'chat-message--own': message.author && userId == message.author.id }">
         <div class="chat-message__content-wrapper">
-            <c-img
+            <Img
                 v-if="userId != message.author.id"
                 class="chat-message__img"
                 :src="message.author.img" />
@@ -14,7 +14,7 @@
                 v-if="message.author && userId == message.author.id"
                 class="chat-message__delete-btn"
                 @click="$emit('delete', message.id)">
-                <c-icon name="trash-alt" />
+                <Icon name="trash-alt" />
             </button>
         </div>
         <span class="chat-message__date">

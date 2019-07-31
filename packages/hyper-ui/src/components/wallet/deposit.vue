@@ -14,11 +14,11 @@
                     Vestibulum magna nisl, vehicula eu orci sed, viverra venenatis nisi.
                     Vivamus nulla metus, tempus id rhoncus ac, ullamcorper eget felis.
                 </p>
-                <c-button
+                <Button
                     status="opacity-info"
                     size="lg">
                     Buy
-                </c-button>
+                </Button>
             </div>
             <div class="wallet-deposit__item">
                 <div class="h4">
@@ -28,11 +28,11 @@
                     Vestibulum magna nisl, vehicula eu orci sed, viverra venenatis nisi.
                     Vivamus nulla metus, tempus id rhoncus ac, ullamcorper eget felis.
                 </p>
-                <c-button
+                <Button
                     status="opacity-info"
                     size="lg">
                     Buy
-                </c-button>
+                </Button>
             </div>
             <div class="wallet-deposit__item">
                 <div class="h4">
@@ -42,11 +42,11 @@
                     Vestibulum magna nisl, vehicula eu orci sed, viverra venenatis nisi.
                     Vivamus nulla metus, tempus id rhoncus ac, ullamcorper eget felis.
                 </p>
-                <c-button
+                <Button
                     status="opacity-info"
                     size="lg">
                     Buy
-                </c-button>
+                </Button>
             </div>
             <div class="wallet-deposit__item">
                 <div class="h4">
@@ -56,11 +56,11 @@
                     Vestibulum magna nisl, vehicula eu orci sed, viverra venenatis nisi.
                     Vivamus nulla metus, tempus id rhoncus ac, ullamcorper eget felis.
                 </p>
-                <c-button
+                <Button
                     status="opacity-info"
                     size="lg">
                     Buy
-                </c-button>
+                </Button>
             </div>
         </div>
     </div>
@@ -69,8 +69,8 @@
 <script>
 export default {
     components: {
-        'c-dropdown': () => import('~/components/dropdown-menu/type-4').then(m => m.default || m),
-        'c-multiselect': () => import('vue-multiselect').then(m => m.default || m)
+        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'Multiselect': () => import('vue-multiselect').then(m => m.default)
     },
     data() {
         return {
@@ -136,7 +136,7 @@ export default {
             border-bottom: 0;
             padding-bottom: 0;
         }
-        .c-button{
+        .Button{
             margin-top: 15px;
         }
     }

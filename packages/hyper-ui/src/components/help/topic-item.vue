@@ -1,14 +1,14 @@
 <template>
     <div
-        class="topic-list-item"
+        class="topiListItem"
         :class="['block-size-' + size]">
-        <c-button
+        <Button
             status="none"
             :href="link"
             :to="to">
             <i :class="['fas fa-' + icon ]" />
             <slot />
-        </c-button>
+        </Button>
     </div>
 </template>
 
@@ -20,8 +20,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .topic-list-item{
-        .c-button {
+    .topiListItem{
+        .Button {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -45,7 +45,7 @@ export default {
             }
         }
         &.block-size-lg{
-            .c-button{
+            .Button{
                 font-size: 18px;
                 i{
                     font-size: 32px;

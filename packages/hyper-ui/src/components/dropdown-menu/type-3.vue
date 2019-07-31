@@ -6,7 +6,7 @@
             :class="{ 'dropdown-vue__button--active': showMenu }"
             @click.stop="showMenu = !showMenu">
             {{ title }}
-            <c-icon
+            <Icon
                 name="caret-down"
                 class="dropdown-vue__icon"
                 :class="{ 'dropdown-vue__icon--active': showMenu }" />
@@ -26,7 +26,7 @@
 <script>
 export default {
     components: {
-        'c-list': () => import('~/components/list').then(m => m.default || m)
+        'List': () => import('../../').then(m => m.List)
     },
     props: {
         title: {

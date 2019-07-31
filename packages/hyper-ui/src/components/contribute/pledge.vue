@@ -55,7 +55,7 @@
                 <div class="h6 font-weight-bold text-uppercase mb-3">
                     Pledge amount
                 </div>
-                <c-contribute-form
+                <ContributeForm
                     v-model="toBePaid"
                     :defaultValue="minPrice"
                     :currency="currency"
@@ -67,12 +67,11 @@
 </template>
 
 <script>
-import ContributeForm from '@/components/contribute/form.vue'
 import moment from 'moment'
 
 export default {
     components: {
-        'c-contribute-form': ContributeForm
+        'ContributeForm': () => import('../../').then(m => m.ContributeForm)
     },
     props: {
         currency: {
@@ -104,7 +103,7 @@ export default {
             default: null
         },
         backers: {
-            type: String,
+            type: Number,
             default: null
         }
     },

@@ -1,386 +1,386 @@
 <template>
     <div class="container-fluid p-4">
         <!--Buttons block -->
-        <c-block
+        <Block
             title="Buttons"
             class="margin-bottom-30">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button>default</c-button>
-                    <c-button size="md">
+                    <Button>default</Button>
+                    <Button size="md">
                         default
-                    </c-button>
-                    <c-button size="lg">
+                    </Button>
+                    <Button size="lg">
                         default
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="success">
+                    <Button status="success">
                         success
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="success"
                         size="md">
                         success
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="success"
                         size="lg">
                         success
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="support">
+                    <Button status="support">
                         support
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="support"
                         size="md">
                         support
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="support"
                         size="lg">
                         support
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="info">
+                    <Button status="info">
                         info
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="info"
                         size="md">
                         info
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="info"
                         size="lg">
                         info
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="share">
+                    <Button status="share">
                         share
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="share"
                         size="md">
                         share
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="share"
                         size="lg">
                         share
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="warning">
+                    <Button status="warning">
                         warning
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="warning"
                         size="md">
                         warning
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="warning"
                         size="lg">
                         warning
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="danger">
+                    <Button status="danger">
                         danger
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="danger"
                         size="md">
                         danger
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="danger"
                         size="lg">
                         danger
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="dark">
+                    <Button status="dark">
                         dark
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="dark"
                         size="md">
                         dark
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="dark"
                         size="lg">
                         dark
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="plain">
+                    <Button status="plain">
                         plain
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="plain"
                         size="md">
                         plain
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="plain"
                         size="lg">
                         plain
-                    </c-button>
+                    </Button>
                 </div>
             </div>
-        </c-block>
-        <c-block
+        </Block>
+        <Block
             title="Outline Buttons"
             class="margin-bottom-30">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="outline-white">
+                    <Button status="outline-white">
                         White
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-white"
                         size="md">
                         White
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-white"
                         size="lg">
                         White
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="outline-success">
+                    <Button status="outline-success">
                         success
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-success"
                         size="md">
                         success
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-success"
                         size="lg">
                         success
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="outline-support">
+                    <Button status="outline-support">
                         support
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-support"
                         size="md">
                         support
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-support"
                         size="lg">
                         support
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="outline-info">
+                    <Button status="outline-info">
                         info
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-info"
                         size="md">
                         info
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-info"
                         size="lg">
                         info
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="outline-share">
+                    <Button status="outline-share">
                         share
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-share"
                         size="md">
                         share
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-share"
                         size="lg">
                         share
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="outline-warning">
+                    <Button status="outline-warning">
                         warning
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-warning"
                         size="md">
                         warning
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-warning"
                         size="lg">
                         warning
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="outline-danger">
+                    <Button status="outline-danger">
                         danger
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-danger"
                         size="md">
                         danger
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="outline-danger"
                         size="lg">
                         danger
-                    </c-button>
+                    </Button>
                 </div>
             </div>
-        </c-block>
-        <c-block
+        </Block>
+        <Block
             title="Gradient Buttons"
             class="margin-bottom-30">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="gradient-success">
+                    <Button status="gradient-success">
                         success
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="gradient-success"
                         size="md">
                         success
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="gradient-success"
                         size="lg">
                         success
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="gradient-info">
+                    <Button status="gradient-info">
                         Info
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="gradient-info"
                         size="md">
                         Info
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="gradient-info"
                         size="lg">
                         Info
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="gradient-danger">
+                    <Button status="gradient-danger">
                         danger
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="gradient-danger"
                         size="md">
                         danger
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="gradient-danger"
                         size="lg">
                         danger
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="gradient-warning">
+                    <Button status="gradient-warning">
                         warning
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="gradient-warning"
                         size="md">
                         warning
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="gradient-warning"
                         size="lg">
                         warning
-                    </c-button>
+                    </Button>
                 </div>
             </div>
-        </c-block>
-        <c-block
+        </Block>
+        <Block
             title="Buttons with opacity bg"
             class="margin-bottom-30">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="opacity-success">
+                    <Button status="opacity-success">
                         success
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="opacity-success"
                         size="md">
                         success
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="opacity-success"
                         size="lg">
                         success
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="opacity-info">
+                    <Button status="opacity-info">
                         Info
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="opacity-info"
                         size="md">
                         Info
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="opacity-info"
                         size="lg">
                         Info
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="opacity-danger">
+                    <Button status="opacity-danger">
                         danger
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="opacity-danger"
                         size="md">
                         danger
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="opacity-danger"
                         size="lg">
                         danger
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 buttons-container">
-                    <c-button status="opacity-warning">
+                    <Button status="opacity-warning">
                         warning
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="opacity-warning"
                         size="md">
                         warning
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="opacity-warning"
                         size="lg">
                         warning
-                    </c-button>
+                    </Button>
                 </div>
             </div>
-        </c-block>
+        </Block>
 
-        <c-block title="Heading">
+        <Block title="Heading">
             <div class="row">
                 <div class="col-12">
                     <table class="table table-borderless">
@@ -483,7 +483,7 @@
                     </table>
                 </div>
             </div>
-        </c-block>
+        </Block>
         <!--Title block end-->
     </div>
 </template>
@@ -491,8 +491,8 @@
 <script>
 export default {
     components: {
-        'c-button': () => import('~/components/buttons').then(m => m.default || m),
-        'c-block': () => import('~/components/block').then(m => m.default || m)
+        'Button': () => import('../../').then(m => m.Button),
+        'Block': () => import('../../').then(m => m.Block)
     }
 }
 </script>
@@ -501,7 +501,7 @@ export default {
     .buttons-container{
         flex-direction: column;
         display: flex;
-        .c-button{
+        .Button{
             margin: 10px auto;
         }
     }

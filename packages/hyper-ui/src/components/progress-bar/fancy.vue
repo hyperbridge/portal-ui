@@ -16,7 +16,7 @@
 export default {
     props: {
         percent: {
-            type: String,
+            type: Number,
             default: 0
         }
     },
@@ -87,7 +87,7 @@ export default {
             &--green {
                 @include innerColor($green);
             }
-            .c-fancy-progress__bar-shadow{
+            .fancy-progress__bar-shadow{
                 position: absolute;
                 top: 0;
                 bottom: 0;

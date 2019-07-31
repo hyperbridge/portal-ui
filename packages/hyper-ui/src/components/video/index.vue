@@ -1,6 +1,6 @@
 <template>
     <div class="video">
-        <c-loading-bar-circle v-if="showLoader" />
+        <LoadingBarCircle v-if="showLoader" />
         <youtube
             v-if="youtube"
             :video-id="youtube"
@@ -11,14 +11,14 @@
             :resize="true"
             class="youtube-video"
             @ready="isReady" />
-        <c-twitch
+        <Twitch
             v-else-if="twitch"
             :channel="twitch"
             :height="height"
             :width="width"
             class="twitch-video"
             @ready="isReady" />
-        <c-local-video
+        <LocalVideo
             v-else-if="src"
             :src="src"
             :height="height"
@@ -36,9 +36,9 @@ Vue.use(VueYoutube)
 
 export default {
     components: {
-        'c-twitch': () => import('~/components/twitch').then(m => m.default || m),
-        'c-local-video': () => import('./_local.vue').then(m => m.default || m),
-        'c-loading-bar-circle': () => import('~/components/loading-bar/circle').then(m => m.default || m)
+        'Twitch': () => import('../../').then(m => m.Twitch),
+        'LocalVideo': () => import('./_local.vue').then(m => m.default),
+        'LoadingBarCircle': () => import('../../').then(m => m.LoadingBarCircle)
     },
     props: {
         src: {

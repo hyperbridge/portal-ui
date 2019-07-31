@@ -1,6 +1,6 @@
 <template>
     <div class="product-grid-wrapper">
-        <c-product-card-dynamic
+        <ProductCardDynamic
             v-for="(product, index) in products"
             :key="index"
             :id="product.id"
@@ -16,7 +16,7 @@
 <script>
 export default {
     components: {
-        'c-product-card-dynamic': () => import('~/components/product-card/product-card-dynamic').then(m => m.default || m)
+        'ProductCardDynamic': () => import('../../').then(m => m.ProductCardDynamic)
     },
     props: {
         products: {

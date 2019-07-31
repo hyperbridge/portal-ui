@@ -11,29 +11,29 @@
             </div>
         </div>
         <div class="collection-list__container">
-            <c-swiper
+            <Swiper
                 v-if="collections.length"
                 :options="options"
                 class="padding-10">
-                <c-swiper-slide
+                <SwiperSlide
                     v-for="(collection, index) in collections"
                     :key="index">
-                    <c-collection-item
+                    <CollectionItem
                         :id="collection.id"
                         :name="collection.name"
                         :author="collection.meta.author"
                         :background="collection.meta.background"
                         :assets="collection.meta.assets" />
-                </c-swiper-slide>
-            </c-swiper>
+                </SwiperSlide>
+            </Swiper>
             <div
                 v-if="!collections.length"
                 style="padding: 20px; text-align: center;">
-                No collections yet. <c-button
+                No collections yet. <Button
                     status="plain"
                     @click="$store.commit('application/activeModal', 'addCollection')">
                     Create one
-                </c-button>?
+                </Button>?
             </div>
         </div>
     </div>
@@ -43,7 +43,10 @@
 
 export default {
     components: {
-        'c-collection-item': () => import('~/components/collection/item').then(m => m.default || m)
+        'Button': () => import('../../').then(m => m.Button),
+        'Swiper': () => import('../../').then(m => m.Swiper),
+        'SwiperSlide': () => import('../../').then(m => m.SwiperSlide),
+        'CollectionItem': () => import('../../').then(m => m.CollectionItem)
     },
     props: {
         title: {

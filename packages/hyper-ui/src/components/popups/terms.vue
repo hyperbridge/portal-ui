@@ -26,17 +26,17 @@
                             <slot name="body" />
                         </div>
                         <div class="terms-popup__footer">
-                            <c-button
+                            <Button
                                 status="plain"
                                 class="color-red">
                                 Cancel
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 status="gradient-info"
                                 class="ml-3"
                                 :class="{'not-accept' : !isRead}">
                                 I Agree
-                            </c-button>
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -166,7 +166,7 @@ export default {
         justify-content: flex-end;
         align-items: center;
         margin-top: 30px;
-        .c-button{
+        .Button{
             &.color-red{
                 color: #F75D5D;
                 &:hover{

@@ -14,7 +14,7 @@
                         class="row justify-content-center">
                         <div class="col-12">
                             <div class="frontpage-product">
-                                <c-vote
+                                <Vote
                                     v-if="activeElementIndex === index"
                                     v-access="'rating.read'"
                                     :votes="item.data.meta.rating" />
@@ -22,7 +22,7 @@
                                     <div
                                         v-if="item.data.meta.images"
                                         class="col-12 col-lg-6 frontpage-product__slider">
-                                        <c-img
+                                        <Img
                                             :src="item.data.meta.images.mediumTile"
                                             :data-link="`/product/${item.data.id}`" />
                                     </div>
@@ -33,7 +33,7 @@
                                             </nuxt-link>
                                         </h2>
                                         <p>{{ item.data.meta.shortDescription }}</p>
-                                        <c-tags v-if="item.data.meta.developerTags" :tags="item.data.meta.developerTags" />
+                                        <Tags v-if="item.data.meta.developerTags" :tags="item.data.meta.developerTags" />
                                         <div class="frontpage-product__footer">
                                             <div
                                                 v-if="item.data.meta.price"
@@ -47,11 +47,11 @@
                                                     {{ item.data.meta.price | convertCurrency }}
                                                 </div>
                                             </div>
-                                            <c-button
+                                            <Button
                                                 v-if="item.data.meta.price"
                                                 status="success">
                                                 Proceed to Purchase
-                                            </c-button>
+                                            </Button>
                                         </div>
                                     </div>
                                 </div>
@@ -63,12 +63,12 @@
                         v-if="item.type === 'featuredProductGallery'"
                         class="row margin-bottom-30">
                         <div class="col-12">
-                            <c-banner
+                            <Banner
                                 v-if="item.data.slides"
                                 class="margin-bottom-30"
                                 :slides="item.data.slides" />
 
-                            <c-block
+                            <Block
                                 v-else
                                 class="margin-bottom-30"
                                 :title="item.data.title"
@@ -76,13 +76,13 @@
                                 :onlyContentBg="true"
                                 :bgGradient="true">
                                 <div v-if="!item.data.products.length">
-                                    Nothing could be found. Want to <c-button
+                                    Nothing could be found. Want to <Button
                                         status="plain"
                                         @click="$store.commit('application/activeModal', 'comingSoon')">
                                         Check for updates
-                                    </c-button>?
+                                    </Button>?
                                 </div>
-                            </c-block>
+                            </Block>
                         </div>
                     </div>
 
@@ -90,14 +90,14 @@
                         v-if="item.type === 'productSlider'"
                         class="row">
                         <div class="col-12">
-                            <c-product-slider
+                            <ProductSlider
                                 v-if="item.data.products.length"
                                 :dynamic="true"
                                 :products="item.data.products"
                                 :title="item.data.title"
                                 :maxPerView="item.data.slidesPerView" />
 
-                            <c-block
+                            <Block
                                 v-else
                                 class="margin-bottom-30"
                                 :title="item.data.title"
@@ -105,13 +105,13 @@
                                 :onlyContentBg="true"
                                 :bgGradient="true">
                                 <div v-if="!item.data.products.length">
-                                    Nothing could be found. Want to <c-button
+                                    Nothing could be found. Want to <Button
                                         status="plain"
                                         @click="$store.commit('application/activeModal', 'comingSoon')">
                                         Check for updates
-                                    </c-button>?
+                                    </Button>?
                                 </div>
-                            </c-block>
+                            </Block>
                         </div>
                     </div>
 
@@ -119,7 +119,7 @@
                         v-if="item.type === 'collectionsList'"
                         class="row margin-bottom-30">
                         <div class="col-12">
-                            <c-collection-list
+                            <CollectionList
                                 :title="`Get Started` | translate"
                                 :description="`Start building your collection today, share it and save it!` | translate"
                                 :collections="item.data.collectionsList" />
@@ -130,7 +130,7 @@
                         v-if="item.type === 'banners'"
                         class="row align-items-stretch">
                         <div class="col-12 col-md-5 col-lg-4 margin-bottom-30">
-                            <c-simple-banner
+                            <SimpleBanner
                                 imgSrc="/img/banners/banner-1.png"
                                 to="/battlepass/1">
                                 <h4 class="text-yellow">
@@ -138,10 +138,10 @@
                                 </h4>
                                 <h3>Championship</h3>
                                 <p>You won't believe the prize!</p>
-                            </c-simple-banner>
+                            </SimpleBanner>
                         </div>
                         <div class="col-12 col-md-7 col-lg-8 margin-bottom-30">
-                            <c-simple-banner
+                            <SimpleBanner
                                 imgSrc="/img/banners/banner-2.png"
                                 to="/curators">
                                 <div class="align-items-start">
@@ -152,7 +152,7 @@
                                         What are they<br>playing?
                                     </h4>
                                 </div>
-                            </c-simple-banner>
+                            </SimpleBanner>
                         </div>
                     </div>
 
@@ -163,7 +163,7 @@
                             v-for="(banner, index) in item.data.banners"
                             :key="index"
                             :class="banner.class">
-                            <c-simple-banner
+                            <SimpleBanner
                                 v-if="item.type == 3"
                                 :imgSrc="banner.image"
                                 :link="banner.link">
@@ -175,16 +175,16 @@
                                         <p>{{ banner.subtitle }}</p>
                                     </div>
                                     <div class="banner-action">
-                                        <c-button
+                                        <Button
                                             status="info"
                                             iconHide
                                             size="lg">
                                             {{ banner.buttonText }}
-                                        </c-button>
+                                        </Button>
                                     </div>
                                 </div>
-                            </c-simple-banner>
-                            <c-simple-banner
+                            </SimpleBanner>
+                            <SimpleBanner
                                 v-if="item.type == 4"
                                 :imgSrc="banner.imagee"
                                 :link="banner.link">
@@ -192,7 +192,7 @@
                                     {{ banner.title }}
                                 </h3>
                                 <p>{{ banner.subtitle }}</p>
-                            </c-simple-banner>
+                            </SimpleBanner>
                         </div>
                     </div>
 
@@ -201,10 +201,10 @@
                         class="row margin-bottom-30">
                         <div class="col-12">
                             <div class="home-tabs">
-                                <c-news-list-navigation
+                                <NewsListNavigation
                                     :list="item.data.headings" />
                                 <div class="tab-content">
-                                    <c-news-list-articles
+                                    <NewsListArticles
                                         v-for="(list, index) in item.data.lists"
                                         :key="index"
                                         :articles="list"
@@ -218,11 +218,11 @@
                         v-if="item.type === 'curatorReviews'"
                         class="row margin-bottom-30">
                         <div class="col-12">
-                            <c-block
+                            <Block
                                 :noGutter="true"
                                 :bgGradient="true"
                                 :onlyContentBg="true">
-                                <c-heading-bar
+                                <HeadingBar
                                     slot="title"
                                     class="mb-0"
                                     :name="item.data.title"
@@ -232,31 +232,31 @@
                                     :itemsLength="item.data.reviews.length"
                                     @prevClick="swiperCurators.slidePrev(); updateIndex('curatorsIndex', -1, item.data.reviews.length)"
                                     @nextClick="swiperCurators.slideNext(); updateIndex('curatorsIndex', 1, item.data.reviews.length)" />
-                                <c-swiper
+                                <Swiper
                                     ref="swiper"
                                     :options="item.data.options">
-                                    <c-swiper-slide
+                                    <SwiperSlide
                                         v-for="(review, index) in item.data.reviews"
                                         :key="index">
-                                        <c-curator-review :review="review" />
-                                    </c-swiper-slide>
-                                </c-swiper>
+                                        <CuratorReview :review="review" />
+                                    </SwiperSlide>
+                                </Swiper>
                                 <div v-if="!item.data.reviews.length">
-                                    Nothing could be found. Want to <c-button
+                                    Nothing could be found. Want to <Button
                                         status="plain"
                                         @click="$store.commit('application/activeModal', 'comingSoon')">
                                         Check for updates
-                                    </c-button>?
+                                    </Button>?
                                 </div>
-                            </c-block>
+                            </Block>
                         </div>
                     </div>
 
-                    <c-games-explorer
+                    <GamesExplorer
                         v-if="item.type === 'gamesExplorer'"
                         :products="item.data.products" />
 
-                    <c-assets-explorer
+                    <AssetsExplorer
                         v-if="item.type === 'assetGrid'"
                         :assets="assets" />
 
@@ -264,11 +264,11 @@
                         v-if="item.type === 'trendingProjectsRow'"
                         class="row margin-bottom-30">
                         <div class="col-12">
-                            <c-block
+                            <Block
                                 :noGutter="true"
                                 :bgGradient="true"
                                 :onlyContentBg="true">
-                                <c-heading-bar
+                                <HeadingBar
                                     slot="title"
                                     class="mb-0"
                                     :name="item.data.title"
@@ -276,13 +276,13 @@
                                     showActions
                                     @prevClick="swiperProjects.slidePrev()"
                                     @nextClick="swiperProjects.slideNext()" />
-                                <c-swiper
+                                <Swiper
                                     ref="swiper"
                                     :options="item.data.options">
-                                    <c-swiper-slide
+                                    <SwiperSlide
                                         v-for="(project, index) in item.data.projects"
                                         :key="index">
-                                        <c-project-card
+                                        <ProjectCard
                                             :id="project.id"
                                             class="p-2"
                                             :image="project.images.mediumTile"
@@ -291,35 +291,35 @@
                                             :parentName="project.product && project.product.name"
                                             :parentDeveloper="project.product && project.product.developer"
                                             :parentImage="project.product && project.product.images.mediumTile" />
-                                    </c-swiper-slide>
-                                </c-swiper>
+                                    </SwiperSlide>
+                                </Swiper>
                                 <div v-if="!item.data.projects.length">
-                                    Nothing could be found. Want to <c-button
+                                    Nothing could be found. Want to <Button
                                         status="plain"
                                         @click="$store.commit('application/activeModal', 'comingSoon')">
                                         Check for updates
-                                    </c-button>?
+                                    </Button>?
                                 </div>
-                            </c-block>
+                            </Block>
                         </div>
                     </div>
 
                     <div v-if="item.type === 'realmsRow'">
-                        <c-swiper
+                        <Swiper
                             :options="item.data.options"
                             class="padding-10">
-                            <c-swiper-slide
+                            <SwiperSlide
                                 v-for="(realm, index) in item.data.realms"
                                 :key="index">
-                                <c-collection-item :item="realm" />
-                            </c-swiper-slide>
-                        </c-swiper>
+                                <CollectionItem :item="realm" />
+                            </SwiperSlide>
+                        </Swiper>
 
-                        <c-block
+                        <Block
                             :noGutter="true"
                             :bgGradient="true"
                             :onlyContentBg="true">
-                            <c-heading-bar
+                            <HeadingBar
                                 slot="title"
                                 class="mb-0"
                                 :name="item.data.title"
@@ -327,39 +327,39 @@
                                 :showActions="true"
                                 @prevClick="swiperRealms.slidePrev()"
                                 @nextClick="swiperRealms.slideNext()" />
-                            <c-swiper
+                            <Swiper
                                 :ref="swiper"
                                 :options="item.data.options">
-                                <c-swiper-slide
+                                <SwiperSlide
                                     v-for="(realm, index) in item.data.realms"
                                     :key="index">
-                                    <c-button :to="`/realm/${realm.id}`">
+                                    <Button :to="`/realm/${realm.id}`">
                                         {{ realm.name }}
-                                    </c-button>
-                                </c-swiper-slide>
-                            </c-swiper>
+                                    </Button>
+                                </SwiperSlide>
+                            </Swiper>
                             <p v-if="!item.data.realms.length">
-                                Nothing could be found. Want to <c-button
+                                Nothing could be found. Want to <Button
                                     status="plain"
                                     @click="$store.commit('application/activeModal', 'comingSoon')">
                                     Check for updates
-                                </c-button>?
+                                </Button>?
                             </p>
-                        </c-block>
+                        </Block>
                     </div>
 
                     <div
                         v-if="item.type === 'gameSeries'"
                         class="row margin-bottom-30">
                         <div class="col-12">
-                            <c-game-series
+                            <GameSeries
                                 v-for="(game, index) in item.data.list"
                                 :key="index">
-                                <c-game-description :game="game" />
-                                <c-game-includes-list
+                                <GameDescription :game="game" />
+                                <GameIncludesList
                                     :list="game.products"
                                     :showNumber="item.data.showNumber" />
-                            </c-game-series>
+                            </GameSeries>
                         </div>
                     </div>
 
@@ -367,26 +367,26 @@
                         v-if="item.type === 'newReleasesGrid'"
                         class="row margin-bottom-30">
                         <div class="col-md-12 col-lg-6 margin-bottom-30">
-                            <c-block
+                            <Block
                                 title="New Releases"
                                 :noGutter="true"
                                 :bgGradient="true"
                                 :onlyContentBg="true"
                                 showActions>
                                 <template slot="additional-action">
-                                    <c-heading-bar-fields
+                                    <HeadingBarFields
                                         name="Reviews"
                                         icon="star"
                                         @clickUp=""
                                         @clickDown="" />
-                                    <c-heading-bar-fields
+                                    <HeadingBarFields
                                         name="Date"
                                         icon="calendar"
                                         @clickUp=""
                                         @clickDown="" />
                                 </template>
 
-                                <c-game-grid
+                                <GameGrid
                                     :itemInRow="2"
                                     :showRating="true"
                                     :showDate="false"
@@ -394,7 +394,7 @@
                                     :items="item.products.slice(0,5)"
                                     itemBg="transparent"
                                     pricePosition="right" />
-                            </c-block>
+                            </Block>
                         </div>
                     </div>
 
@@ -402,40 +402,40 @@
                         v-if="item.type === 'topItemsGrid'"
                         class="row margin-bottom-30">
                         <div class="col-md-12 col-lg-6 margin-bottom-30">
-                            <c-block
+                            <Block
                                 title="Top 20 Items"
                                 :noGutter="true"
                                 :bgGradient="true"
                                 :onlyContentBg="true"
                                 showActions>
                                 <template slot="additional-action">
-                                    <c-heading-bar-fields
+                                    <HeadingBarFields
                                         name="Price"
                                         icon="dollar-sign"
                                         @clickUp=""
                                         @clickDown="" />
-                                    <c-heading-bar-fields
+                                    <HeadingBarFields
                                         name="Trading"
                                         icon="star"
                                         @clickUp=""
                                         @clickDown="" />
                                 </template>
 
-                                <c-assets-list
+                                <AssetsList
                                     v-if="assets.length"
                                     :items="assets"
                                     itemInRow="2" />
 
                                 <div v-if="!assets.length">
-                                    Nothing could be found. Want to <c-button
+                                    Nothing could be found. Want to <Button
                                         status="plain"
                                         @click="$store.commit('application/activeModal', 'comingSoon')">
                                         Check for updates
-                                    </c-button>?
+                                    </Button>?
                                 </div>
 
-                                <c-content-navigation v-if="assets.length" />
-                            </c-block>
+                                <ContentNavigation v-if="assets.length" />
+                            </Block>
                         </div>
                     </div>
                 </div>
@@ -449,7 +449,7 @@
                 v-if="end && !$store.state.application.signedIn"
                 class="row">
                 <div class="col-12 mb-4 mt-4">
-                    <c-recommendation-block />
+                    <RecommendationBlock />
                 </div>
             </div>
             <div
@@ -464,39 +464,37 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
     components: {
-        'c-button': () => import('~/components/buttons/index').then(m => m.default || m),
-        'c-heading-bar': () => import('~/components/heading-bar').then(m => m.default || m),
-        'c-heading-bar-fields': () => import('~/components/heading-bar/additional-action').then(m => m.default || m),
-        'c-product-card': () => import('~/components/product-card/product-card').then(m => m.default || m),
-        'c-product-card-dynamic': () => import('~/components/product-card/product-card-dynamic').then(m => m.default || m),
-        'c-product-cards': () => import('~/components/product-card/product-cards').then(m => m.default || m),
-        'c-product-slider': () => import('~/components/product-slider').then(m => m.default || m),
-        'c-project-card': () => import('~/components/project/card').then(m => m.default || m),
-        'c-curator-review': () => import('~/components/curator-review').then(m => m.default || m),
-        'c-game-grid': () => import('~/components/game-grid/with-description').then(m => m.default || m),
-        'c-dropdown': () => import('~/components/dropdown-menu/type-2').then(m => m.default || m),
-        'c-searcher': () => import('~/components/searcher').then(m => m.default || m),
-        'c-content-navigation': () => import('~/components/content-navigation').then(m => m.default || m),
-        'c-assets-list-item': () => import('~/components/assets-list-item/item').then(m => m.default || m),
-        'c-news-list-navigation': () => import('~/components/news-list/navigation').then(m => m.default || m),
-        'c-news-list-articles': () => import('~/components/news-list/articles').then(m => m.default || m),
-        'c-block': () => import('~/components/block').then(m => m.default || m),
-        'c-simple-banner': () => import('~/components/banner/simple').then(m => m.default || m),
-        'c-games-explorer': () => import('~/components/games-explorer').then(m => m.default || m),
-        'c-assets-explorer': () => import('~/components/assets-explorer').then(m => m.default || m),
-        'c-assets-list': () => import('~/components/assets-list-item').then(m => m.default || m),
-        'c-download-block': () => import('~/components/download-block').then(m => m.default || m),
-        'c-banner': () => import('~/components/banner').then(m => m.default || m),
-        'c-game-series': () => import('~/components/game-series').then(m => m.default || m),
-        'c-game-description': () => import('~/components/game-series/game-description').then(m => m.default || m),
-        'c-game-includes-list': () => import('~/components/game-series/game-includes-list').then(m => m.default || m),
-        'c-collection-list': () => import('~/components/collection/list').then(m => m.default || m),
-        'c-collection-item': () => import('~/components/collection/item').then(m => m.default || m),
-        'c-recommendation-block': () => import('~/components/infinite-content/recommendation-block').then(m => m.default || m)
+        'Button': () => import('../../').then(m => m.Button),
+        'HeadingBar': () => import('../../').then(m => m.HeadingBar),
+        'HeadingBarFields': () => import('../../').then(m => m.HeadingBarFields),
+        'ProductCard': () => import('../../').then(m => m.ProductCard),
+        'ProductCardDynamic': () => import('../../').then(m => m.ProductCardDynamic),
+        'ProductCards': () => import('../../').then(m => m.ProductCards),
+        'ProductSlider': () => import('../../').then(m => m.ProductSlider),
+        'ProjectCard': () => import('../../').then(m => m.ProjectCard),
+        'CuratorReview': () => import('../../').then(m => m.CuratorReview),
+        'GameGrid': () => import('../../').then(m => m.GameGrid),
+        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'Searcher': () => import('../../').then(m => m.Searcher),
+        'ContentNavigation': () => import('../../').then(m => m.ContentNavigation),
+        'AssetsListItem': () => import('../../').then(m => m.AssetsListItem),
+        'NewsListNavigation': () => import('../../').then(m => m.NewsListNavigation),
+        'NewsListArticles': () => import('../../').then(m => m.NewsListArticles),
+        'Block': () => import('../../').then(m => m.Block),
+        'SimpleBanner': () => import('../../').then(m => m.SimpleBanner),
+        'GamesExplorer': () => import('../../').then(m => m.GamesExplorer),
+        'AssetsExplorer': () => import('../../').then(m => m.AssetsExplorer),
+        'AssetsList': () => import('../../').then(m => m.AssetsList),
+        'DownloadBlock': () => import('../../').then(m => m.DownloadBlock),
+        'Banner': () => import('../../').then(m => m.Banner),
+        'GameSeries': () => import('../../').then(m => m.GameSeries),
+        'GameDescription': () => import('../../').then(m => m.GameDescription),
+        'GameIncludesList': () => import('../../').then(m => m.GameIncludesList),
+        'CollectionList': () => import('../../').then(m => m.CollectionList),
+        'CollectionItem': () => import('../../').then(m => m.CollectionItem),
+        'RecommendationBlock': () => import('../../').then(m => m.RecommendationBlock)
     },
     props: {
         list: {

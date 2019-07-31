@@ -7,23 +7,23 @@
         }"
         @click="$emit('click', asset)">
         <slot>
-            <c-tooltip
+            <Tooltip
                 v-if="showTooltip"
                 class="asset__wrapper"
                 iconHide>
-                <c-asset-preview
+                <AssetPreview
                     slot="tooltip"
                     :name="asset.name"
                     :productName="asset.productName"
                     :image="asset.image"
                     :price="asset.price" />
-                <c-img
+                <Img
                     :src="asset.image"
                     class="asset__image" />
                 <span class="asset__price">{{ asset.price.current | convertCurrency }}</span>
-            </c-tooltip>
+            </Tooltip>
             <div v-else>
-                <c-img
+                <Img
                     :src="asset.image"
                     class="asset__image" />
                 <span class="asset__price">{{ asset.price.current | convertCurrency }}</span>
@@ -40,8 +40,8 @@
 <script>
 export default {
     components: {
-        'c-tooltip': () => import('~/components/tooltips/universal').then(m => m.default || m),
-        'c-asset-preview': () => import('~/components/asset-preview').then(m => m.default || m)
+        'Tooltip': () => import('../../').then(m => m.Tooltip),
+        'AssetPreview': () => import('../../').then(m => m.AssetPreview)
     },
     props: {
         asset: Object,

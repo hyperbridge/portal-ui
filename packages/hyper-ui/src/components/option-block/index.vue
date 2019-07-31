@@ -1,7 +1,7 @@
 <template>
     <div
         class="option-block"
-        :class="{'box-shadow' : shadow }">
+        :class="{'box-shadow' : shadow}">
         <div class="option-block__head">
             <div class="option-block__head-logo">
                 <img :src="image">
@@ -22,7 +22,7 @@
         </div>
         <div class="option-block__body">
             <div class="option-block__list">
-                <c-option-list-item
+                <OptionListItem
                     v-for="item in list"
                     :key="item.id"
                     :selected="selectedId == item.id ? true : false"
@@ -30,25 +30,25 @@
                     :price="item.price"
                     @select="selectThis(item.id)">
                     {{ item.name }}
-                </c-option-list-item>
+                </OptionListItem>
             </div>
             <div class="option-block__action-list">
-                <c-button
+                <Button
                     status="second-info"
                     size="xl"
                     class="my-2"
                     @click="$emit('buy')">
                     Buy now
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="opacity-info"
                     class="my-2"
                     size="xl"
                     style="border-radius: 2px"
                     @click="$emit('gift')">
                     Gift
-                </c-button>
-                <c-button-fav
+                </Button>
+                <ButtonFav
                     target="Wishlist"
                     :active="inWishlist"
                     class="text-center wishlist-btn"
@@ -62,8 +62,8 @@
 export default {
     name: 'OptionBlock',
     components: {
-        'c-button-fav': () => import('~/components/buttons/favorite').then(m => m.default || m),
-        'c-option-list-item': () => import('~/components/option-block/list-item').then(m => m.default || m)
+        'ButtonFav': () => import('../../').then(m => m.ButtonFav),
+        'OptionListItem': () => import('../../').then(m => m.OptionListItem)
     },
     props: {
         image: {

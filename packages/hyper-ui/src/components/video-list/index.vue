@@ -2,7 +2,7 @@
     <div class="video-item">
         <div class="video-item__wrapper">
             <div class="video-item__img">
-                <c-img :src="poster" />
+                <Img :src="poster" />
                 <a
                     href="#"
                     class="video-item__run-btn"
@@ -12,7 +12,7 @@
             </div>
             <div class="video-item__info">
                 <div>
-                    <c-img :src="avatar" />
+                    <Img :src="avatar" />
                 </div>
                 <div>
                     <div class="h6 p-0 m-0 font-weight-bold user-name">
@@ -25,28 +25,29 @@
                 </div>
             </div>
         </div>
-        <c-video-popup
+        <VideoPopup
             :video="video"
             :activated="showModal"
             @close="toggleModal">
             <template v-for="comment in comments">
                 <div class="mb-3">
-                    <c-author
+                    <Author
                         :name="comment.author.name"
                         :img="comment.author.img"
                         class="mb-1" />
                     {{ comment.text }}
                 </div>
             </template>
-        </c-video-popup>
+        </VideoPopup>
     </div>
 </template>
 
 <script>
 export default {
     components: {
-        'c-video-popup': () => import('~/components/video-popup').then(m => m.default || m),
-        'c-author': () => import('~/components/author').then(m => m.default || m)
+        'VideoPopup': () => import('../../').then(m => m.VideoPopup),
+        'Img': () => import('../../').then(m => m.Img),
+        'Author': () => import('../../').then(m => m.Author)
     },
     props: {
         poster: {

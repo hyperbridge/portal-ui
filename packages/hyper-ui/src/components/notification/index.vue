@@ -11,7 +11,7 @@
                 <h5
                     class="text-left"
                     @click.self="$emit('showPopup')">
-                    <c-img
+                    <Img
                         v-if="icon"
                         :src="icon" />
                     <i

@@ -1,10 +1,10 @@
 <template>
-    <c-block
+    <Block
         class="margin-bottom-30"
         :noGutter="true"
         :bgGradient="true"
         :onlyContentBg="true">
-        <c-heading-bar
+        <HeadingBar
             v-if="products"
             slot="title"
             class="mb-0"
@@ -13,14 +13,14 @@
             :showBackground="true"
             @prevClick="slider.slidePrev()"
             @nextClick="slider.slideNext()" />
-        <c-swiper
+        <Swiper
             v-if="products"
             ref="slider"
             :options="sliderOptions">
-            <c-swiper-slide
+            <SwiperSlide
                 v-for="(product, index) in products"
                 :key="index">
-                <c-product-card-dynamic
+                <ProductCardDynamic
                     v-if="dynamic"
                     class="m-0"
                     :id="product.id"
@@ -31,7 +31,7 @@
                     :shortDescription="product.meta.shortDescription"
                     :previewImages="product.meta.images.preview"
                     :developerTags="product.meta.developerTags" />
-                <c-product-card
+                <ProductCard
                     v-else
                     class="m-0"
                     :id="product.id"
@@ -39,16 +39,16 @@
                     :mediumTile="product.meta.images.mediumTile"
                     :shortDescription="product.meta.shortDescription"
                     :developerTags="product.meta.developerTags" />
-            </c-swiper-slide>
-        </c-swiper>
-    </c-block>
+            </SwiperSlide>
+        </Swiper>
+    </Block>
 </template>
 
 <script>
 export default {
     components: {
-        'c-product-card': () => import('~/components/product-card/product-card').then(m => m.default || m),
-        'c-product-card-dynamic': () => import('~/components/product-card/product-card-dynamic').then(m => m.default || m)
+        'ProductCard': () => import('../../').then(m => m.ProductCard),
+        'ProductCardDynamic': () => import('../../').then(m => m.ProductCardDynamic)
     },
     props: {
         products: {

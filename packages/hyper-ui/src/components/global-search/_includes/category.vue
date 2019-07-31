@@ -9,12 +9,12 @@
             <div class="count">
                 {{ category.items.length }}
             </div>
-            <c-button
+            <Button
                 status="plain"
                 size="sm"
                 class="p-0 ml-auto">
                 MORE
-            </c-button>
+            </Button>
         </div>
         <div class="search-category__body">
             <div
@@ -50,13 +50,13 @@
                 <div
                     class="search-category__head"
                     :class="{'mb-0' : $slots.filters }">
-                    <c-button
+                    <Button
                         status="plain"
                         size="sm"
                         class="p-0 mr-3"
                         @click="closeCategory">
                         <i class="fas fa-angle-left" />
-                    </c-button>
+                    </Button>
                     <div>
                         {{ category.name }}
                     </div>

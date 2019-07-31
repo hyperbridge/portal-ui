@@ -5,21 +5,21 @@
             class="cookie-policy">
             <p class="p-0 m-0">
                 By using this website, you agree to our
-                <c-button
+                <Button
                     status="plain"
                     class="p-0 m-0"
                     @click="showPopup">
                     cookie policy
-                </c-button>
+                </Button>
             </p>
-            <c-button
+            <Button
                 status="info"
                 class="margin-left-20"
                 iconHide
                 @click="updateClientSettings()">
                 Dismiss
-            </c-button>
-            <c-popup
+            </Button>
+            <Popup
                 :activated="show"
                 title="Cookie Policy"
                 @close="closePopup">
@@ -28,16 +28,16 @@
                     to better understand how they are used and to tailor advertising.
                 </p>
                 <p>
-                    You can <c-button
+                    You can <Button
                         status="plain"
                         href="#">
                         read more
-                    </c-button>
-                    and <c-button
+                    </Button>
+                    and <Button
                         status="plain"
                         href="#">
                         make you cookies choices here
-                    </c-button>.
+                    </Button>.
                 </p>
                 <p>
                     By continuing to use this site you are giving
@@ -45,15 +45,15 @@
                 </p>
                 <template slot="footer">
                     <div class="text-right w-100">
-                        <c-button
+                        <Button
                             status="success"
                             iconHide
                             @click="updateClientSettings()">
                             Accept
-                        </c-button>
+                        </Button>
                     </div>
                 </template>
-            </c-popup>
+            </Popup>
         </div>
     </transition>
 </template>
@@ -61,7 +61,8 @@
 <script>
 export default {
     components: {
-        'c-popup': () => import('~/components/popups').then(m => m.default || m)
+        'Popup': () => import('../../').then(m => m.Popup),
+        'Button': () => import('../../').then(m => m.Button)
     },
     data() {
         return {

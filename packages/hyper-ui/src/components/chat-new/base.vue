@@ -1,7 +1,7 @@
 <template>
     <div class="chat">
         <!--<div class="chat-shortcuts">
-            <c-shortcut-sidebar :items="shortcuts" />
+            <ShortcutSidebar :items="shortcuts" />
         </div>-->
         <div
             v-if="$slots.sidebar"
@@ -30,7 +30,7 @@
 <script>
 export default {
     components: {
-        // 'c-shortcut-sidebar': () => import('~/components/shortcut-sidebar').then(m => m.default || m)
+        // 'ShortcutSidebar': () => import('../../').then(m => m.ShortcutSidebar)
     },
     props: {
         shortcuts: {

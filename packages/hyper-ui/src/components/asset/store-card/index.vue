@@ -5,14 +5,14 @@
         <div
             v-if="tags.length"
             class="store-card__badges">
-            <c-badge-card
+            <BadgeCard
                 v-for="(tag, index) in tags"
                 :key="index"
                 class="store-card__single-badge"
                 :title="tag.value | space"
                 :tag="tag.value" />
         </div>
-        <c-img
+        <Img
             :src="image"
             class="store-card__image" />
         <div class="store-card__info">
@@ -27,7 +27,7 @@
 <script>
 export default {
     components: {
-        'c-badge-card': () => import('~/components/badge-card').then(m => m.default || m)
+        'BadgeCard': () => import('../../').then(m => m.BadgeCard)
     },
     props: {
         image: String,

@@ -1,5 +1,5 @@
 <template>
-    <c-terms-popup
+    <TermsPopup
         title="Terms"
         :activated="activated"
         width="800"
@@ -11,17 +11,17 @@
         </div>
         <div slot="body">
             <div class="termsBlock">
-                <c-terms-block />
+                <TermsBlock />
             </div>
         </div>
-    </c-terms-popup>
+    </TermsPopup>
 </template>
 
 <script>
 export default {
     components: {
-        'c-terms-popup': () => import('~/components/popups/terms').then(m => m.default || m),
-        'c-terms-block': () => import('~/components/terms-block').then(m => m.default || m)
+        'TermsPopup': () => import('../../').then(m => m.TermsPopup),
+        'TermsBlock': () => import('../../').then(m => m.TermsBlock)
     },
     props: ['activated']
 }

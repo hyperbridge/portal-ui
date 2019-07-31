@@ -16,7 +16,7 @@
                 @click="saveChanges" />
         </div>
         <div class="qr-code">
-            <c-img src="https://images-eu.ssl-images-amazon.com/images/I/31Umxl57vfL.png" />
+            <Img src="https://images-eu.ssl-images-amazon.com/images/I/31Umxl57vfL.png" />
         </div>
         <div class="account-number">
             <span>
@@ -24,19 +24,19 @@
             </span>
         </div>
 
-        <c-button
+        <Button
             status="opacity-info"
             class="mb-3 w-100 justify-content-center"
             size="lg">
             View account on EtherScan
-        </c-button>
+        </Button>
 
-        <c-button
+        <Button
             status="opacity-info"
             size="lg"
             class="w-100 justify-content-center">
             Export private key
-        </c-button>
+        </Button>
     </div>
 </template>
 

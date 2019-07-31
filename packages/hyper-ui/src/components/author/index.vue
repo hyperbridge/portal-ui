@@ -1,12 +1,15 @@
 <template>
     <div class="author">
-        <c-img class="author__img" :src="img" />
+        <Img class="author__img" :src="img" />
         {{ name }}
     </div>
 </template>
 
 <script>
 export default {
+    components: {
+        'Img': () => import('../../').then(m => m.Img)
+    },
     props: {
         img: {
             type: String,

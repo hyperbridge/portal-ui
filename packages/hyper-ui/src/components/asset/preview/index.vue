@@ -1,6 +1,6 @@
 <template>
     <div class="asset-preview">
-        <c-asset-preview-basic :asset="asset" />
+        <AssetPreviewBasic :asset="asset" />
         <table class="asset-preview__table">
             <thead>
                 <th>Property</th>
@@ -35,7 +35,7 @@
 <script>
 export default {
     components: {
-        'c-asset-preview-basic': () => import('~/components/asset/preview-basic').then(m => m.default || m)
+        'AssetPreviewBasic': () => import('../../').then(m => m.AssetPreviewBasic)
     },
     filters: {
         parseProp(val) {

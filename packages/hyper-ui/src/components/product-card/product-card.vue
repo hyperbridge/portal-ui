@@ -1,10 +1,10 @@
 <template>
     <div class="product-grid__item">
         <div class="card-body padding-0">
-            <c-button
+            <Button
                 status="none"
                 :to="`/product/${id}`">
-                <c-img
+                <Img
                     v-if="mediumTile"
                     class="card-img-top"
                     :src="mediumTile" />
@@ -16,8 +16,8 @@
                     hidden>
                     {{ shortDescription }}
                 </p>
-            </c-button>
-            <c-tags v-if="developerTags" :tags="developerTags.slice(0,3)" />
+            </Button>
+            <Tags v-if="developerTags" :tags="developerTags.slice(0,3)" />
         </div>
     </div>
 </template>
@@ -25,7 +25,7 @@
 <script>
 export default {
     components: {
-        'c-tags': () => import('~/components/tags').then(m => m.default || m)
+        'Tags': () => import('../../').then(m => m.Tags)
     },
     props: {
         id: Number,

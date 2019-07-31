@@ -5,7 +5,7 @@
         :style="{'background-image' : 'url(' + image + ')' }"
         @mouseover="hovered=true"
         @mouseleave="hovered=false">
-        <c-loading-bar-circle v-if="isLoading" />
+        <LoadingBarCircle v-if="isLoading" />
         <div
             class="game-library__item-info"
             @mouseleave="showButtons = false">
@@ -16,30 +16,30 @@
                 class="item-action"
                 :class="{'active' : hovered }">
                 <div class="item-action__icons px-2">
-                    <c-button status="plain">
+                    <Button status="plain">
                         <i class="fas fa-cog" />
-                    </c-button>
-                    <c-button status="plain">
+                    </Button>
+                    <Button status="plain">
                         <i class="fas fa-camera" />
-                    </c-button>
-                    <c-button status="plain">
+                    </Button>
+                    <Button status="plain">
                         <i class="fas fa-star" />
-                    </c-button>
-                    <c-button status="plain">
+                    </Button>
+                    <Button status="plain">
                         <i class="fas fa-play" />
-                    </c-button>
+                    </Button>
                 </div>
 
-                <c-button status="plain">
+                <Button status="plain">
                     <i
                         class="fas"
                         :class="showButtons ? 'fa-chevron-up' : 'fa-chevron-down' "
                         @click=" showButtons = !showButtons " />
-                </c-button>
+                </Button>
                 <div
                     hidden
                     style="height: 20px; width: 20px;margin-right: -5px">
-                    <c-dropdown
+                    <Dropdown
                         :class="{'no-right-border' : shareList}"
                         @click="activeMenu()">
                         <ul class="item-dropdown">
@@ -65,7 +65,7 @@
                             <li @click="toggleList">
                                 <i class="fas fa-share" />
                                 Share
-                                <c-share-list
+                                <ShareList
                                     class="in-dropdown"
                                     :onlineList="online"
                                     :favoritesList="favorites"
@@ -84,7 +84,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </c-dropdown>
+                    </Dropdown>
                 </div>
             </div>
 
@@ -112,9 +112,9 @@
 export default {
     name: 'GameLibraryItem',
     components: {
-        'c-dropdown': () => import('~/components/dropdown-menu/type-4').then(m => m.default || m),
-        'c-share-list': () => import('~/components/share/type-1').then(m => m.default || m),
-        'c-loading-bar-circle': () => import('~/components/loading-bar/circle').then(m => m.default || m)
+        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'ShareList': () => import('../../').then(m => m.ShareList),
+        'LoadingBarCircle': () => import('../../').then(m => m.LoadingBarCircle)
     },
     props: ['name', 'image', 'isLoading', 'online', 'favorites'],
     data() {

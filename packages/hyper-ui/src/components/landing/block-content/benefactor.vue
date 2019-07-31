@@ -1,7 +1,7 @@
 <template>
     <div class="landing-benefactor">
         <div class="landing-benefactor__preview">
-            <c-img :src="currentItem.src" />
+            <Img :src="currentItem.src" />
         </div>
         <div class="landing-benefactor__list">
             <div
@@ -25,15 +25,15 @@
                 <div
                     class="img"
                     :style="{'background-image' : 'url(' + item.src + ')'}" />
-                <c-landing-block-title
+                <LandingBlockTitle
                     fontSize="18"
                     class="text-uppercase">
                     {{ item.name }}
-                </c-landing-block-title>
+                </LandingBlockTitle>
                 <div
-                    v-if="item.includes_list"
+                    v-if="item.includesList"
                     class="landing-benefactor__more-link"
-                    @mouseover="toggleList(item.includes_list)"
+                    @mouseover="toggleList(item.includesList)"
                     @mouseleave="showList = false">
                     Whats include?
                 </div>
@@ -54,7 +54,7 @@
 export default {
     name: 'Benefactor',
     components: {
-        'c-landing-block-title': () => import('~/components/landing/block-title/simple').then(m => m.default || m)
+        'LandingBlockTitle': () => import('../../').then(m => m.LandingBlockTitle)
     },
     props: {
         items: {

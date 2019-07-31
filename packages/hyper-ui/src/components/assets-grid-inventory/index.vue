@@ -1,6 +1,6 @@
 <template>
     <div class="assets-grid">
-        <c-asset
+        <Asset
             v-for="(asset, index) in assets"
             v-if="assets.length"
             :key="index"
@@ -13,7 +13,7 @@
 export default {
     name: 'AssetsGridInventory',
     components: {
-        'c-asset': () => import('~/components/assets-grid-inventory/asset').then(m => m.default || m)
+        'Asset': () => import('../../').then(m => m.Asset)
     },
     props: {
         assets: {

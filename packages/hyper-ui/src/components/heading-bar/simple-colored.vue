@@ -20,7 +20,7 @@
 
 <script>
 export default {
-    name: 'HeadingBarColored',
+    name: 'HeadingBarWithSimpleColored',
     props: {
         colorCode: {
             type: String,

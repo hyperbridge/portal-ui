@@ -1,17 +1,17 @@
 <template>
     <div class="private-content">
-        <c-scrollable-content>
+        <ScrollableContent>
             <slot />
-        </c-scrollable-content>
-        <c-chat-answer-field />
+        </ScrollableContent>
+        <ChatAnswerField />
     </div>
 </template>
 
 <script>
 export default {
     components: {
-        'c-chat-answer-field': () => import('~/components/chat-new/answer-field/field').then(m => m.default || m),
-        'c-scrollable-content': () => import('~/components/chat-new/content/scrollable-content').then(m => m.default || m)
+        'ChatAnswerField': () => import('../../').then(m => m.ChatAnswerField),
+        'ScrollableContent': () => import('../../').then(m => m.ScrollableContent)
     }
 }
 </script>

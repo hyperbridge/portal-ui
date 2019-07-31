@@ -16,25 +16,25 @@
         </div>
         <div class="chat-friends-list__body">
             <div class="chat-friends-list__action">
-                <c-button
+                <Button
                     status="opacity-info"
                     size="xs">
                     <i class="fas fa-plus" /> Add friends
-                </c-button>
-                <c-search
+                </Button>
+                <Search
                     v-model="query"
                     placeholder="Search"
                     class="px-0" />
             </div>
             <div class="chat-friends-list__list">
-                <c-chat-friends-list
+                <ChatFriendsList
                     :list="users"
                     title="Favorites" />
-                <c-chat-friends-list
+                <ChatFriendsList
                     :list="users"
                     title="All" />
             </div>
-            <c-chat-suggestion-list :list="users" />
+            <ChatSuggestionList :list="users" />
         </div>
     </div>
 </template>
@@ -42,10 +42,10 @@
 <script>
 export default {
     components: {
-        'c-search': () => import('~/components/inputs/searcher').then(m => m.default || m),
-        'c-chat-user': () => import('~/components/chat-new/user').then(m => m.default || m),
-        'c-chat-friends-list': () => import('~/components/chat-new/friends-list/list').then(m => m.default || m),
-        'c-chat-suggestion-list': () => import('~/components/chat-new/friends-list/suggestion-list').then(m => m.default || m)
+        'Search': () => import('../../').then(m => m.Search),
+        'ChatUser': () => import('../../').then(m => m.ChatUser),
+        'ChatFriendsList': () => import('../../').then(m => m.ChatFriendsList),
+        'ChatSuggestionList': () => import('../../').then(m => m.ChatSuggestionList)
     },
     data() {
         return {

@@ -7,7 +7,7 @@
                 Results: {{ resultsCount }}
             </span>
         </transition>
-        <c-input-searcher
+        <InputSearcher
             :value="phrase"
             placeholder="Search"
             aria-label="Search"
@@ -25,11 +25,11 @@
                 <p
                     v-else-if="resultsCount != null && !resultsCount"
                     class="results__text">
-                    Nothing could be found. Want to <c-button
+                    Nothing could be found. Want to <Button
                         status="plain"
                         @click="$store.commit('application/activeModal', 'comingSoon')">
                         Check for updates
-                    </c-button>?
+                    </Button>?
                 </p>
                 <ul
                     v-else
@@ -53,7 +53,7 @@ import { debounce } from '@/mixins'
 
 export default {
     components: {
-        'c-input-searcher': () => import('~/components/inputs/searcher').then(m => m.default || m)
+        'InputSearcher': () => import('../../').then(m => m.InputSearcher)
     },
     mixins: [debounce],
     inheritAttrs: false,

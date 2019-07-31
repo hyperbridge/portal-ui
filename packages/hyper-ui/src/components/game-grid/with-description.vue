@@ -18,12 +18,12 @@
                     :class="['price-position-' + pricePosition]">
                     <strong>{{ item.price | convertCurrency }}</strong>
                 </div>
-                <c-button
+                <Button
                     status="none"
                     class="w-100"
                     :to="`/product/${item.id}`">
-                    <c-img :src="item.meta.images.mediumTile" />
-                </c-button>
+                    <Img :src="item.meta.images.mediumTile" />
+                </Button>
                 <div
                     v-if="item.meta.crowdfund"
                     class="crowdfund-icon">
@@ -47,12 +47,12 @@
                                 style="color: #499fd3">Pre Release</span>
                         </template>
                     </div>
-                    <c-button
+                    <Button
                         status="none"
                         :to="`/product/${item.id}`"
                         :title="item.name + ' - product page'">
                         <h4>{{ item.name }}</h4>
-                    </c-button>
+                    </Button>
                     <div
                         v-if="item.meta.crowdfund"
                         class="crowdfund-tag">
@@ -71,7 +71,7 @@
                             v-if="item.meta.releaseDate && showDate"
                             class="time mr-3">
                             <i class="fas fa-calendar-alt" />
-                            <c-tooltip
+                            <Tooltip
                                 :name="calculateSince(item.meta.releaseDate)"
                                 position="center">
                                 <div
@@ -80,57 +80,57 @@
                                     <strong>Released</strong><br>
                                     {{ formatDate(item.meta.releaseDate) }}
                                 </div>
-                            </c-tooltip>
+                            </Tooltip>
                         </div>
                         <div
                             v-if="item.meta.followers"
                             class="followers mr-3">
                             <i class="fas fa-eye" />
-                            <c-tooltip position="center">
+                            <Tooltip position="center">
                                 <div
                                     class="text-center"
                                     style="white-space: nowrap">
                                     <strong>Followers</strong><br>
                                     {{ item.meta.followers }}
                                 </div>
-                            </c-tooltip>
+                            </Tooltip>
                         </div>
                         <div
                             v-if="item.meta.players"
                             class="players">
                             <i class="fas fa-user" />
-                            <c-tooltip position="center">
+                            <Tooltip position="center">
                                 <div
                                     class="text-center"
                                     style="white-space: nowrap">
                                     <strong>Players</strong><br>
                                     {{ item.meta.players }}
                                 </div>
-                            </c-tooltip>
+                            </Tooltip>
                         </div>
                     </div>
-                    <c-rating-stars
+                    <RatingStars
                         v-if="item.rating && showRating"
                         :number="item.rating.overall"
                         class="rating_stars" />
-                    <c-button
+                    <Button
                         v-if="showLink"
                         status="success"
                         :to="`/product/${item.id}`"
                         iconHide>
                         More
-                    </c-button>
+                    </Button>
                 </div>
             </div>
         </div>
         <p
             v-if="!items || !items.length"
             key="nothing">
-            Nothing could be found. Want to <c-button
+            Nothing could be found. Want to <Button
                 status="plain"
                 @click="$store.commit('application/activeModal', 'comingSoon')">
                 Check for updates
-            </c-button>?
+            </Button>?
         </p>
     </transition-group>
 </template>
@@ -140,9 +140,11 @@ import moment from 'moment'
 export default {
     name: 'GameGridDescription',
     components: {
-        'c-tags': () => import('~/components/tags').then(m => m.default || m),
-        'c-rating-stars': () => import('~/components/rating-stars').then(m => m.default || m),
-        'c-tooltip': () => import('~/components/tooltips').then(m => m.default || m)
+        'Tags': () => import('../../').then(m => m.Tags),
+        'Button': () => import('../../').then(m => m.Button),
+        'Img': () => import('../../').then(m => m.Img),
+        'RatingStars': () => import('../../').then(m => m.RatingStars),
+        'Tooltip': () => import('../../').then(m => m.Tooltip)
     },
     props: {
         items: {

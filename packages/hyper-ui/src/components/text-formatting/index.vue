@@ -72,11 +72,11 @@
                 [url=google.com] Url link [/i]
             </div>
             <div class="text-formatting__example">
-                <c-button
+                <Button
                     status="plain"
                     href="https://google.com.ua/">
                     Url link
-                </c-button>
+                </Button>
             </div>
         </div>
         <div class="text-formatting__item">
@@ -166,7 +166,7 @@
                 [/table]
             </div>
             <div class="text-formatting__example">
-                <c-table-simple :bordered="true">
+                <SimpleTable :bordered="true">
                     <tbody>
                         <tr>
                             <td>
@@ -193,7 +193,7 @@
                             </td>
                         </tr>
                     </tbody>
-                </c-table-simple>
+                </SimpleTable>
             </div>
         </div>
     </div>
@@ -202,7 +202,7 @@
 <script>
 export default {
     components: {
-        'c-table-simple': () => import('~/components/table-simple').then(m => m.default || m)
+        'SimpleTable': () => import('../../').then(m => m.SimpleTable)
     }
 }
 </script>

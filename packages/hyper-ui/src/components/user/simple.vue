@@ -1,6 +1,6 @@
 <template>
     <div class="user-simple">
-        <c-img
+        <Img
             class="user-simple__img"
             :src="user.img" />
         {{ user.name }}

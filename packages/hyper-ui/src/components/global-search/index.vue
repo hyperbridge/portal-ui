@@ -1,6 +1,6 @@
 <template>
     <div class="global-search">
-        <c-input
+        <Input
             v-model="searchQuery"
             placeholder="Type to search"
             @input="startSearch" />
@@ -8,7 +8,7 @@
             <div
                 v-if="isLoading"
                 class="global-search__results-loader my-2">
-                <c-loading-bar-circle
+                <LoadingBarCircle
                     size="sm"
                     :showBg="false" />
             </div>
@@ -60,8 +60,8 @@
 <script>
 export default {
     components: {
-        'c-input': () => import('~/components/inputs').then(m => m.default || m),
-        'c-loading-bar-circle': () => import('~/components/loading-bar/circle').then(m => m.default || m)
+        'Input': () => import('../../').then(m => m.Input),
+        'LoadingBarCircle': () => import('../../').then(m => m.LoadingBarCircle)
     },
     data() {
         return {

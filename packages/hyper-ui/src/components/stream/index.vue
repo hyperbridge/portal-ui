@@ -4,7 +4,7 @@
         :class="{'stream-item-bg': background}">
         <div class="stream-item__wrapper">
             <div class="stream-item__img">
-                <c-img :src="streamImg" />
+                <Img :src="streamImg" />
                 <div class="stream-item__run-container">
                     <nuxt-link
                         :to="streamLink + '/' + streamId"
@@ -15,7 +15,7 @@
             </div>
             <div class="stream-item__info">
                 <div>
-                    <c-img :src="streamAvatar" />
+                    <Img :src="streamAvatar" />
                 </div>
                 <div class="w-100">
                     <div class="h6 p-0 m-0 font-weight-bold user-name">
@@ -40,6 +40,9 @@
 
 <script>
 export default {
+    components: {
+        'Img': () => import('../../').then(m => m.Img)
+    },
     props: {
         streamGame: {
             type: String,

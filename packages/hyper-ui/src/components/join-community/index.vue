@@ -3,18 +3,18 @@
         v-if="!signedIn"
         class="join-community">
         <div class="join-community__wrapper">
-            <c-img src="../../static/img/logo.fw.png" />
+            <Img src="../../static/img/logo.fw.png" />
             <div class="h5 font-weight-bold">
                 Join the BlockHub community!
             </div>
             <div>
                 Discover the best games before they're mainstream.
             </div>
-            <c-button
+            <Button
                 status="outline-white"
                 @click="$store.commit('application/activeModal', 'register')">
                 Sign Up
-            </c-button>
+            </Button>
         </div>
     </div>
 </template>
@@ -43,7 +43,7 @@ export default {
             margin: 0 auto 15px;
             display: block;
         }
-        .c-button{
+        .Button{
             margin: 20px auto auto;
         }
     }

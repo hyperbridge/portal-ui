@@ -1,5 +1,5 @@
 <template>
-    <c-block
+    <Block
         title="Security check"
         noGutter
         :bgColor="false">
@@ -33,35 +33,35 @@
             <template v-if="confirmType == 'email' && !codeIsSend">
                 <div class="invert">
                     <div class="form-group">
-                        <c-input
+                        <Input
                             v-model="value"
                             type="email"
                             class="form-control"
                             placeholder="Your email" />
                     </div>
                 </div>
-                <c-button
+                <Button
                     status="second-info"
                     @click="sendCode">
                     Send Code
-                </c-button>
+                </Button>
             </template>
 
             <template v-if="confirmType == 'phone' && !codeIsSend">
                 <div class="invert">
                     <div class="form-group">
-                        <c-input
+                        <Input
                             v-model="value"
                             type="number"
                             class="form-control"
                             placeholder="Your phone number" />
                     </div>
                 </div>
-                <c-button
+                <Button
                     status="second-info"
                     @click="sendCode">
                     Send Code
-                </c-button>
+                </Button>
             </template>
 
             <template v-if="codeIsSend">
@@ -71,7 +71,7 @@
                 </p>
                 <div class="invert">
                     <div class="form-group">
-                        <c-input
+                        <Input
                             v-model="code"
                             type="text"
                             class="form-control"
@@ -84,36 +84,36 @@
                         </small>
                     </div>
                 </div>
-                <c-button
+                <Button
                     status="second-info"
                     @click="$emit('codeSubmit', code)">
                     Submit
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="opacity-info"
                     class="mt-3"
                     @click="$emit('codeCancel')">
                     Cancel
-                </c-button>
+                </Button>
                 <div class="d-flex justify-content-between mt-3">
-                    <c-button
+                    <Button
                         status="plain"
                         size="sm"
                         class="p-0"
                         @click="$emit('reset')">
                         Can't login?
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="plain"
                         size="sm"
                         class="p-0"
                         @click="$emit('login')">
                         Reset Code
-                    </c-button>
+                    </Button>
                 </div>
             </template>
         </div>
-    </c-block>
+    </Block>
 </template>
 
 <script>

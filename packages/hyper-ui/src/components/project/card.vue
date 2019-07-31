@@ -10,7 +10,7 @@
             <div
                 v-if="parentImage"
                 class="img">
-                <c-img :src="parentImage" />
+                <Img :src="parentImage" />
             </div>
             <div class="text">
                 <h4>{{ parentName }}</h4>
@@ -19,36 +19,36 @@
                 </p>
             </div>
         </div>
-        <c-button
+        <Button
             status="none"
             :to="`/project/${id}`">
-            <c-img :src="image" />
+            <Img :src="image" />
             <div class="description">
                 {{ description }}
             </div>
-        </c-button>
-        <c-money-info
+        </Button>
+        <MoneyInfo
             label="Obtained Funds"
             :percent="goalProgress"
             :amount="funds ? funds.obtained : 0"
             :goal="funds ? funds.goal : 0" />
         <div class="item-action">
-            <c-button
+            <Button
                 status="info"
                 :to="`/project/${id}`"
                 iconHide>
                 Check it out
-            </c-button>
-            <c-button
+            </Button>
+            <Button
                 status="success"
                 :to="`/project/${id}`"
                 iconHide
                 hidden>
                 Donate Funds
-            </c-button>
+            </Button>
         </div>
 
-        <c-vote
+        <Vote
             v-if="hovering"
             v-access="'rating.read'"
             :votes="rating" />
@@ -58,7 +58,10 @@
 <script>
 export default {
     components: {
-        'c-money-info': () => import('~/components/money-info').then(m => m.default || m)
+        'MoneyInfo': () => import('../../').then(m => m.MoneyInfo),
+        'Vote': () => import('../../').then(m => m.Vote),
+        'Button': () => import('../../').then(m => m.Button),
+        'Img': () => import('../../').then(m => m.Img)
     },
     filters: {
         currencySign(cur_name) {

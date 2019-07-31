@@ -12,10 +12,10 @@
                 v-if="showToolTip"
                 class="tooltips__content"
                 :class="{
-                    'left-position' : position == 'left',
-                    'right-position' : position == 'right',
-                    'center-position' : position == 'center',
-                    'light-style' : lightStyle == true
+                    'left-position': position == 'left',
+                    'right-position': position == 'right',
+                    'center-position': position == 'center',
+                    'light-style': lightStyle == true
                 }"
                 style="animation-duration: 0.25s">
                 <div class="tooltips__content-default">

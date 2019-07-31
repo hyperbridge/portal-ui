@@ -1,5 +1,5 @@
 <template>
-    <c-input-searcher
+    <InputSearcher
         @input="searchFor" />
 </template>
 

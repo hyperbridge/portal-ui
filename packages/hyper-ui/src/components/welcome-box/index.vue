@@ -1,7 +1,7 @@
 <template>
     <div class="welcome-block">
         <div class="welcome-block__header">
-            <c-img
+            <Img
                 src="/img/logo-white.svg"
                 alt="Logo" />
         </div>
@@ -32,7 +32,7 @@
                 <div
                     v-if="defaultDownload"
                     class="action d-flex align-items-center">
-                    <c-button
+                    <Button
                         v-if="!downloading"
                         status="none"
                         :to="defaultDownload.to"
@@ -40,13 +40,13 @@
                         @click="startDownload(defaultDownload)">
                         <strong>Download Now</strong>
                         <small>for {{ defaultDownload.text }}</small>
-                    </c-button>
+                    </Button>
                     <div v-if="downloading">
-                        Downloading now. <c-button
+                        Downloading now. <Button
                             status="none"
                             :to="downloading.to">
                             Click here
-                        </c-button><br> if it doesn't start in 10 seconds.
+                        </Button><br> if it doesn't start in 10 seconds.
                     </div>
                     <div
                         class="download_info"
@@ -65,7 +65,7 @@
                 <div
                     v-for="(item, index) in downloads"
                     :key="index">
-                    <c-button
+                    <Button
                         v-for="(item, index) in item"
                         :key="index"
                         status="none"
@@ -73,18 +73,22 @@
                         class="btn">
                         <strong>{{ item.text }}</strong>
                         <small>{{ item.subtext }}</small>
-                    </c-button>
+                    </Button>
                 </div>
             </div>
         </div>
         <div class="welcome-block__screen">
-            <c-img src="/img/welcome-box.png" />
+            <Img src="/img/welcome-box.png" />
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+        'Img': () => import('../../').then(m => m.Img)
+    },
     props: {
         prompt: {
             type: Boolean,

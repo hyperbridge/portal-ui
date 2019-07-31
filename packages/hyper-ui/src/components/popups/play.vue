@@ -1,10 +1,10 @@
 <template>
-    <c-basic-popup
+    <BasicPopup
         :activated="activated"
         @close="$emit('close')">
         <template slot="header">
             <div class="h2 p-0">
-                Got steam?
+                Got BlockHub?
             </div>
         </template>
 
@@ -50,22 +50,23 @@
                     class="mr-4">
                 <div>
                     BlockHub is premier desktop gaming platform. It's free to join and ease to use.
-                    <c-button
+                    <Button
                         status="plain"
                         href="https://store.steampowered.com/about/"
                         class="p-0">
                         Learn more about BlockHub
-                    </c-button>
+                    </Button>
                 </div>
             </div>
         </template>
-    </c-basic-popup>
+    </BasicPopup>
 </template>
 
 <script>
 export default {
     components: {
-        'c-basic-popup': () => import('~/components/popups/basic').then(m => m.default || m)
+        'BasicPopup': () => import('../../').then(m => m.BasicPopup),
+        'Button': () => import('../../').then(m => m.Button)
     },
     props: {
         activated: {

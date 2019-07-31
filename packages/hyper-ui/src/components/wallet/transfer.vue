@@ -16,7 +16,7 @@
                     </label>
                 </div>
                 <div class="col-9">
-                    <c-multiselect
+                    <Multiselect
                         v-model="value"
                         :options="options"
                         :show-labels="false">
@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                         </template>
-                    </c-multiselect>
+                    </Multiselect>
                 </div>
             </div>
             <div class="form-group row align-items-center">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-9 d-flex align-items-center justify-content-between">
                     <div style="width: calc(100% - 30px)">
-                        <c-multiselect
+                        <Multiselect
                             v-model="value2"
                             :options="options2"
                             :taggable="true"
@@ -70,7 +70,7 @@
                                     {{ props.option }}
                                 </div>
                             </template>
-                        </c-multiselect>
+                        </Multiselect>
                     </div>
                     <a
                         href="#"
@@ -125,16 +125,16 @@
                 </div>
             </div>
             <div class="d-flex justify-content-between">
-                <c-button
+                <Button
                     status="opacity-danger"
                     size="lg">
                     Cancel
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="opacity-success"
                     size="lg">
                     Next
-                </c-button>
+                </Button>
             </div>
         </div>
     </div>
@@ -143,8 +143,8 @@
 <script>
 export default {
     components: {
-        'c-dropdown': () => import('~/components/dropdown-menu/type-4').then(m => m.default || m),
-        'c-multiselect': () => import('vue-multiselect').then(m => m.default || m)
+        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'Multiselect': () => import('vue-multiselect').then(m => m.default)
     },
     data() {
         return {

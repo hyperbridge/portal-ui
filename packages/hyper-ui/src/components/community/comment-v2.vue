@@ -3,7 +3,7 @@
         <div
             class="community-item__comment"
             :class="{ 'is-reply': reply }">
-            <c-button-arrows
+            <ButtonArrows
                 size="xl"
                 colored>
                 <span
@@ -11,14 +11,14 @@
                         'up': rate > 400,
                         'down': rate < 0
                     }">{{ rate }}</span>
-            </c-button-arrows>
+            </ButtonArrows>
             <div class="comment-container">
-                <c-dropdown-menu
+                <Dropdown-menu
                     dropPosition="right"
                     style="right: 5px; top: 10px;" />
                 <div class="comment-content">
                     <div class="user-info">
-                        <c-img :src="authorImg" />
+                        <Img :src="authorImg" />
                         <div>
                             <h6>{{ authorName }}</h6>
                             <!--<span class="time">{{ comment.date | timeAgoShort }}</span>-->
@@ -35,12 +35,12 @@
         </div>
         <div class="d-flex justify-content-between align-items-center">
             <div>
-                <c-emoji-picker
+                <EmojiPicker
                     v-model="emojiList"
                     @reaction="onReaction"
                     @emojiClick="onEmojiClick" />
             </div>
-            <c-reply
+            <CommunityReply
                 @replyMode="reply = $event" />
         </div>
     </div>
@@ -52,10 +52,10 @@ import VueEmojiReact from 'vue-emoji-react'
 
 export default {
     components: {
-        'c-dropdown-menu': () => import('~/components/dropdown-menu').then(m => m.default || m),
-        'c-reply': () => import('~/components/community/reply').then(m => m.default || m),
-        'c-button-arrows': () => import('~/components/buttons/arrows').then(m => m.default || m),
-        'c-emoji-picker': VueEmojiReact
+        'Dropdown-menu': () => import('../../').then(m => m.Dropdown-menu),
+        'CommunityReply': () => import('../../').then(m => m.CommunityReply),
+        'ButtonArrows': () => import('../../').then(m => m.ButtonArrows),
+        'EmojiPicker': VueEmojiReact
     },
     props: {
         rate: Number,

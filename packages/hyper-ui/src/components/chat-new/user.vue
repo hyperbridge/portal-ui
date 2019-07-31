@@ -1,6 +1,6 @@
 <template>
     <div class="chat__user-item">
-        <c-chat-user-avatar
+        <ChatUserAvatar
             :name="name"
             :status="status"
             :avatar="avatar"
@@ -42,7 +42,7 @@
 <script>
 export default {
     components: {
-        'c-chat-user-avatar': () => import('~/components/chat-new/user-avatar').then(m => m.default || m)
+        'ChatUserAvatar': () => import('../../').then(m => m.ChatUserAvatar)
     },
     props: {
         avatar: String,

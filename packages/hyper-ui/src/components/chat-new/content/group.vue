@@ -1,10 +1,10 @@
 <template>
     <div class="group-content">
         <div class="group-content__msgs">
-            <c-scrollable-content>
+            <ScrollableContent>
                 <slot name="messages" />
-            </c-scrollable-content>
-            <c-chat-answer-field :user="currentUser" :sendMessage="sendMessage" />
+            </ScrollableContent>
+            <ChatAnswerField :user="currentUser" :sendMessage="sendMessage" />
         </div>
         <div class="chat__user-list">
             <slot name="users" />
@@ -15,9 +15,9 @@
 <script>
 export default {
     components: {
-        // 'c-chat-user': () => import('~/components/chat-new/user').then(m => m.default || m),
-        'c-chat-answer-field': () => import('~/components/chat-new/answer-field/field').then(m => m.default || m),
-        'c-scrollable-content': () => import('~/components/chat-new/content/scrollable-content').then(m => m.default || m)
+        // 'ChatUser': () => import('../../').then(m => m.ChatUser),
+        'ChatAnswerField': () => import('../../').then(m => m.ChatAnswerField),
+        'ScrollableContent': () => import('../../').then(m => m.ScrollableContent)
     },
     props: {
         currentUser: Object,

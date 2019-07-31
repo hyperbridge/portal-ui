@@ -13,16 +13,16 @@
                 v-if="!item.evolvesTo.length && hovered && !hideButtons"
                 class="navigator-item__btn navigator-item__btn--right"
                 @click="handleEvolve(item.id)">
-                <c-icon name="plus" />
+                <Icon name="plus" />
             </button>
 
             <button
                 v-if="index === listLength - 1 && hovered && !hideButtons"
                 class="navigator-item__btn navigator-item__btn--bottom"
                 @click="handleEvolve(parentId)">
-                <c-icon name="plus" />
+                <Icon name="plus" />
             </button>
-            <c-asset
+            <Asset
                 :asset="item.asset"
                 class="navigator-item__asset"
                 @click="handleDevolve" />
@@ -48,12 +48,9 @@
 </template>
 
 <script>
-// import { EventBus } from '@/event-bus';
-
 export default {
-    name: 'NavigatorItem',
     components: {
-        'c-asset': () => import('~/components/assets-grid-inventory/asset').then(m => m.default || m)
+        'Asset': () => import('../../').then(m => m.Asset)
     },
     props: {
         item: Object,
@@ -71,7 +68,7 @@ export default {
         },
         useComp: {
             type: String,
-            default: 'c-asset'
+            default: 'Asset'
         },
         parentId: {
             type: Number,

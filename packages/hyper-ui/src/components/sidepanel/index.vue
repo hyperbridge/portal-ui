@@ -3,21 +3,21 @@
         id="page-sidepanel"
         class="page-sidepanel invert text-right">
         <div class="page-sidepanel__content">
-            <c-swiper ref="slider">
-                <c-swiper-slide v-if="$store.state.application.signedIn">
+            <Swiper ref="slider">
+                <SwiperSlide v-if="$store.state.application.signedIn">
                     <div class="item">
                         <h3>NOTIFICATION</h3>
 
                         <div class="slide-chooser">
-                            <c-button
+                            <Button
                                 v-if="$store.state.application.signedIn"
                                 icon-hide
                                 status="plain"
                                 class="active"
                                 @click="showSlide('notification')">
                                 <i class="fa fa-bell" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 v-if="$store.state.application.signedIn"
                                 v-access="'message.read'"
                                 status="plain"
@@ -25,28 +25,28 @@
                                 style="box-shadow: none"
                                 @click="showSlide('messages')">
                                 <i class="fa fa-envelope" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 v-if="$store.state.application.desktopMode"
                                 status="plain"
                                 icon-hide
                                 style="box-shadow: none"
                                 @click="showSlide('updates')">
                                 <i class="fa fa-star" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 v-if="navigationKey === 'store'"
                                 status="plain"
                                 icon-hide
                                 style="box-shadow: none"
                                 @click="showSlide('topLists')">
                                 <i class="fa fa-trophy" />
-                            </c-button>
+                            </Button>
                         </div>
 
                         <div class="navigation">
                             <div v-if="$store.state.application.account.notifications.length > 0">
-                                <c-notification
+                                <Notification
                                     v-for="(notif, index) in $store.state.application.account.notifications"
                                     :key="`${notif.title}index`"
                                     :notification="notif"
@@ -58,86 +58,86 @@
                             </div>
                         </div>
                     </div>
-                </c-swiper-slide>
-                <c-swiper-slide
+                </SwiperSlide>
+                <SwiperSlide
                     v-if="$store.state.application.signedIn"
                     v-access="'message.read'">
                     <div class="item">
                         <h3>MESSAGES</h3>
 
                         <div class="slide-chooser">
-                            <c-button
+                            <Button
                                 v-if="$store.state.application.signedIn"
                                 status="plain"
                                 icon-hide
                                 style="box-shadow: none"
                                 @click="showSlide('notification')">
                                 <i class="fa fa-bell" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 v-if="$store.state.application.signedIn"
                                 status="plain"
                                 icon-hide
                                 class="active"
                                 @click="showSlide('messages')">
                                 <i class="fa fa-envelope" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 v-if="$store.state.application.desktopMode"
                                 status="plain"
                                 icon-hide
                                 style="box-shadow: none"
                                 @click="showSlide('updates')">
                                 <i class="fa fa-star" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 v-if="navigationKey === 'store'"
                                 status="plain"
                                 icon-hide
                                 style="box-shadow: none"
                                 @click="showSlide('topLists')">
                                 <i class="fa fa-trophy" />
-                            </c-button>
+                            </Button>
                         </div>
 
                         <div class="navigation">
                             <div class="messages-action">
-                                <c-button
+                                <Button
                                     status="info"
                                     icon="angle-double-right"
                                     size="sm">
                                     Quick Send
-                                </c-button>
-                                <c-button
+                                </Button>
+                                <Button
                                     status="info"
                                     icon="envelope"
                                     size="sm">
                                     View All
-                                </c-button>
+                                </Button>
                             </div>
                             <div class="message-list">
-                                <c-message
+                                <Message
                                     v-for="(msg, index) in messages"
                                     :key="index"
                                     :msg="msg" />
                             </div>
                         </div>
                     </div>
-                </c-swiper-slide>
-                <c-swiper-slide v-if="$store.state.application.desktopMode">
+                </SwiperSlide>
+                <SwiperSlide v-if="$store.state.application.desktopMode">
                     <div class="item">
                         <h3>UPDATES</h3>
 
                         <div class="slide-chooser">
-                            <c-button
+                            <Button
                                 v-if="$store.state.application.signedIn"
                                 status="plain"
                                 icon-hide
                                 style="box-shadow: none"
                                 @click="showSlide('notification')">
                                 <i class="fa fa-bell" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 v-if="$store.state.application.signedIn"
                                 v-access="'message.read'"
                                 status="plain"
@@ -145,23 +145,23 @@
                                 style="box-shadow: none"
                                 @click="showSlide('messages')">
                                 <i class="fa fa-envelope" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 v-if="$store.state.application.desktopMode"
                                 status="plain"
                                 icon-hide
                                 class="active"
                                 @click="showSlide('updates')">
                                 <i class="fa fa-star" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 v-if="navigationKey === 'store'"
                                 status="plain"
                                 icon-hide
                                 style="box-shadow: none"
                                 @click="showSlide('topLists')">
                                 <i class="fa fa-trophy" />
-                            </c-button>
+                            </Button>
                         </div>
 
                         <div class="navigation">
@@ -191,21 +191,21 @@
                             </ul>
                         </div>
                     </div>
-                </c-swiper-slide>
-                <c-swiper-slide v-if="navigationKey === 'store'">
+                </SwiperSlide>
+                <SwiperSlide v-if="navigationKey === 'store'">
                     <div class="item">
                         <h3>TOP LISTS</h3>
 
                         <div class="slide-chooser">
-                            <c-button
+                            <Button
                                 v-if="$store.state.application.signedIn"
                                 status="plain"
                                 icon-hide
                                 style="box-shadow: none"
                                 @click="showSlide('notification')">
                                 <i class="fa fa-bell" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 v-if="$store.state.application.signedIn"
                                 v-access="'message.read'"
                                 status="plain"
@@ -213,22 +213,22 @@
                                 style="box-shadow: none"
                                 @click="showSlide('messages')">
                                 <i class="fa fa-envelope" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 v-if="$store.state.application.desktopMode"
                                 status="plain"
                                 icon-hide
                                 style="box-shadow: none"
                                 @click="showSlide('updates')">
                                 <i class="fa fa-star" />
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 status="plain"
                                 icon-hide
                                 class="active"
                                 @click="showSlide('topLists')">
                                 <i class="fa fa-trophy" />
-                            </c-button>
+                            </Button>
                         </div>
 
                         <div class="navigation">
@@ -240,18 +240,18 @@
                                     v-for="(product, index) in $store.state.marketplace.top5"
                                     v-if="index < 5"
                                     :key="index">
-                                    <c-button
+                                    <Button
                                         status="none"
                                         :to="`/product/${product.id}`">
                                         <span class="text">{{ product.name }}</span>
-                                    </c-button>
+                                    </Button>
                                 </li>
                                 <li class="more">
-                                    <c-button
+                                    <Button
                                         status="none"
                                         to="/search">
                                         <span class="text">MORE...</span>
-                                    </c-button>
+                                    </Button>
                                 </li>
                             </ul>
                         </div>
@@ -263,24 +263,24 @@
                                 <li
                                     v-for="(product, index) in $store.state.marketplace.topFree.slice(0, 5)"
                                     :key="index">
-                                    <c-button
+                                    <Button
                                         status="none"
                                         :to="`/product/${product.id}`">
                                         <span class="text">{{ product.name }}</span>
-                                    </c-button>
+                                    </Button>
                                 </li>
                                 <li class="more">
-                                    <c-button
+                                    <Button
                                         status="none"
                                         to="/search">
                                         <span class="text">MORE...</span>
-                                    </c-button>
+                                    </Button>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                </c-swiper-slide>
-            </c-swiper>
+                </SwiperSlide>
+            </Swiper>
         </div>
 
         <div
@@ -290,7 +290,7 @@
         </div>
 
 
-        <c-basic-popup
+        <BasicPopup
             :activated="showModal"
             class="text-left"
             @close="hideUpdateModal">
@@ -308,11 +308,11 @@
                 slot="body"
                 v-html="currentUpdate.content" />
             <small slot="footer">
-                Missed an update? <c-button
+                Missed an update? <Button
                     status="plain"
-                    to="/updates">Check our previous updates here.</c-button>
+                    to="/updates">Check our previous updates hButtonbutton>
             </small>
-        </c-basic-popup>
+        </BasicPopup>
     </div>
 </template>
 
@@ -324,11 +324,11 @@ import DottedList from '@/components/list/dots'
 
 export default {
     components: {
-        'c-notification': () => import('~/components/notification/index').then(m => m.default || m),
-        'c-message': () => import('~/components/message').then(m => m.default || m),
-        'c-basic-popup': () => import('~/components/popups/basic').then(m => m.default || m),
-        'c-dotted-list': () => import('~/components/list/dots').then(m => m.default || m),
-        'c-heading-bar-color': () => import('~/components/heading-bar/simple-colored').then(m => m.default || m)
+        'Notification': () => import('../../').then(m => m.Notification),
+        'Message': () => import('../../').then(m => m.Message),
+        'BasicPopup': () => import('../../').then(m => m.BasicPopup),
+        'DottedList': () => import('../../').then(m => m.DottedList),
+        'HeadingBarWithSimpleColor': () => import('../../').then(m => m.HeadingBarWithSimpleColor)
     },
     props: {
         navigationKey: {
@@ -374,8 +374,8 @@ export default {
                 let el = Vue.compile(`<div>${entry.gsx$content.$t}</div>`)
                 el = new Vue({
                     components: {
-                        'c-heading-bar-color': HeadingBar,
-                        'c-dotted-list': DottedList
+                        'HeadingBarWithSimpleColor': HeadingBar,
+                        'DottedList': DottedList
                     },
                     render: el.render,
                     staticRenderFns: el.staticRenderFns

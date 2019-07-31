@@ -8,7 +8,7 @@
                 v-if="index < 4"
                 :key="index"
                 :to="{ name: 'asset-id', params: { id: asset.id } }">
-                <c-img :src="asset.image" />
+                <Img :src="asset.image" />
             </nuxt-link>
         </div>
         <div class="collection-item__info">

@@ -2,8 +2,7 @@
     <div class="pro-mode-notice-1">
         <div class="pro-mode-notice-1__wrapper">
             <div class="pro-mode-notice-1__img">
-                <svg width="2169px" height="2290px" viewBox="0 0 2169 2290" version="1.1" xmlns="http://www.w3.org/2000/svg"
-xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg width="2169px" height="2290px" viewBox="0 0 2169 2290" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <title>Group</title>
                     <desc>Created with Sketch.</desc>
                     <defs>
@@ -58,12 +57,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
             <div class="pro-mode-notice-1__content">
                 <slot />
                 <div class="margin-top-15">
-                    <c-button status="second-success" class="margin-right-15">
+                    <Button status="second-success" class="margin-right-15">
                         Upgrade now
-                    </c-button>
-                    <c-button status="second-warning">
+                    </Button>
+                    <Button status="second-warning">
                         No, thanks
-                    </c-button>
+                    </Button>
                 </div>
             </div>
         </div>

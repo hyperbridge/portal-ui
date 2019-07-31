@@ -9,7 +9,6 @@
                 <source
                     type="video/webm"
                     src="https://steamcdn-a.akamaihd.net/apps/dota2/videos/international2018/battlepass/keyart.webm">
-
             </video>
         </div>
     </div>

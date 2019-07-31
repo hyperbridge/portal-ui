@@ -1,7 +1,5 @@
 <template>
-    <ul
-        v-if="links.length"
-        class="breadcrumb">
+    <ul class="breadcrumb">
         <li
             v-for="(link, index) in links"
             :key="index"
@@ -18,8 +16,8 @@
 export default {
     props: {
         links: {
-            type: [Array, Boolean],
-            default: [],
+            type: Array,
+            default: () => ([]),
             required: false
         }
     }

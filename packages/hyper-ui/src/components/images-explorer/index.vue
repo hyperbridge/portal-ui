@@ -8,7 +8,7 @@
         <transition-group
             tag="div"
             name="fade-transform">
-            <c-img
+            <Img
                 v-for="(image, index) in images"
                 v-if="index === activeItem"
                 :key="image"
@@ -26,6 +26,9 @@
 <script>
 export default {
     name: 'ImagesExplorer',
+    components: {
+        'Img': () => import('../../').then(m => m.Img)
+    },
     props: {
         images: {
             type: Array

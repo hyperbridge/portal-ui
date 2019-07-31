@@ -1,19 +1,19 @@
 <template>
-    <c-block
+    <Block
         :title="title"
         :noGutter="true"
         :bgGradient="true"
         :onlyContentBg="true">
         <slot />
-    </c-block>
+    </Block>
 </template>
 
 <script>
 export default {
     name: 'PromotionsList',
     components: {
-        'c-block': () => import('~/components/block').then(m => m.default || m),
-        'c-promotion-item': () => import('~/components/promotion-box/item').then(m => m.default || m)
+        'Block': () => import('../../').then(m => m.Block),
+        'PromotionItem': () => import('../../').then(m => m.PromotionItem)
     },
     props: ['title']
 }

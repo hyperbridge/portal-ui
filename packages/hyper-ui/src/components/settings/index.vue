@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="settings__block-container">
-            <c-block
+            <Block
                 v-if=" currentBlock == 'client' "
                 key="block_1"
                 class="margin-bottom-30"
@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="settings_item">
-                            <c-switch
+                            <Toggle
                                 :checked="settings.client.openStartup"
                                 @change="setOpenStartup(settings.client.openStartup)" />
                             <div class="text">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="settings_item">
-                            <c-switch
+                            <Toggle
                                 :checked="settings.client.systemWarnings"
                                 @change="updateClientSettings('systemWarnings')" />
                             <div class="text">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="settings_item">
-                            <c-switch
+                            <Toggle
                                 :checked="settings.client.pagination"
                                 @change="updateClientSettings('pagination')" />
                             <div class="text">
@@ -58,7 +58,7 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="settings_item">
-                            <c-switch
+                            <Toggle
                                 :checked="systemPermissions"
                                 @change="requestNotifPerm()" />
                             <div class="text">
@@ -68,8 +68,8 @@
                         </div>
                     </div>
                 </div>
-            </c-block>
-            <c-block
+            </Block>
+            <Block
                 v-if=" currentBlock == 'sound' "
                 key="block_2"
                 class="margin-bottom-30"
@@ -80,7 +80,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="settings_item">
-                            <c-switch
+                            <Toggle
                                 :checked="settings.client.sounds"
                                 @change="updateClientSettings('sounds')" />
                             <div class="text">
@@ -91,7 +91,7 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="settings_item">
-                            <c-switch
+                            <Toggle
                                 :checked="settings.client.interfaceInteractionSounds"
                                 @change="updateClientSettings('interfaceInteractionSounds')" />
                             <div class="text">
@@ -101,8 +101,8 @@
                         </div>
                     </div>
                 </div>
-            </c-block>
-            <c-block
+            </Block>
+            <Block
                 v-if=" currentBlock == 'decentralization' "
                 key="block_3"
                 v-decentralized-mode
@@ -114,7 +114,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="settings_item">
-                            <c-switch
+                            <Toggle
                                 :checked="settings.client.ethereumConnection"
                                 @change="updateClientSettings('ethereumConnection')" />
                             <div class="text">
@@ -125,7 +125,7 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="settings_item">
-                            <c-switch
+                            <Toggle
                                 :checked="settings.client.ethereumConnection"
                                 @change="updateClientSettings('ethereumConnection')" />
                             <div class="text">
@@ -135,8 +135,8 @@
                         </div>
                     </div>
                 </div>
-            </c-block>
-            <c-block
+            </Block>
+            <Block
                 v-if=" currentBlock == 'performance' "
                 key="block_4"
                 class="margin-bottom-30"
@@ -147,7 +147,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="settings_item">
-                            <c-switch
+                            <Toggle
                                 :checked="settings.client.animations"
                                 @change="updateClientSettings('animations')" />
                             <div class="text">
@@ -158,7 +158,7 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="settings_item">
-                            <c-switch
+                            <Toggle
                                 :checked="settings.client.autoplay"
                                 @change="updateClientSettings('autoplay')" />
                             <div class="text">
@@ -167,12 +167,12 @@
                             </div>
                         </div>
                     </div>
-                    <c-benchmark
+                    <Benchmark
                         :settings="settings"
                         class="col-12 d-flex justify-content-between align-items-center" />
                 </div>
-            </c-block>
-            <c-block
+            </Block>
+            <Block
                 v-if=" currentBlock == 'advanced' "
                 key="block_5"
                 class="margin-bottom-30"
@@ -187,16 +187,16 @@
                             <br><strong>Warning:</strong> Only use these if you know what you're doing.
                         </div>
                         <div class="w-100 mt-3">
-                            <c-button
+                            <Button
                                 status="warning"
                                 @click="clearDatabase">
                                 DELETE DATABASE
-                            </c-button>
+                            </Button>
                         </div>
                     </div>
                 </div>
-            </c-block>
-            <c-block
+            </Block>
+            <Block
                 v-if=" currentBlock == 'game-activity' "
                 key="block_6"
                 class="margin-bottom-30"
@@ -204,25 +204,25 @@
                 :noGutter="true"
                 :onlyContentBg="true"
                 :bgGradient="true">
-                <c-inline-ntf type="warning">
+                <InlineNotification type="warning">
                     <div class="h4 font-weight-bold p-0 m-0">
                         No game activity!
                     </div>
                     <div class="h5 p-0 m-0">
                         What are you playing!?
                     </div>
-                </c-inline-ntf>
+                </InlineNotification>
                 <div class="h5 margin-top-20">
-                    Not seeing your game? <c-button status="plain">
+                    Not seeing your game? <Button status="plain">
                         Add it!
-                    </c-button>
+                    </Button>
                 </div>
                 <div class="margin-top-20">
-                    <c-switch label="Display currently running games as a status message" />
+                    <Toggle label="Display currently running games as a status message" />
                 </div>
-            </c-block>
-            <c-block
-                v-if=" currentBlock == 'added-games' "
+            </Block>
+            <Block
+                v-if="currentBlock == 'added-games'"
                 key="block_7"
                 class="margin-bottom-30"
                 title="Added games"
@@ -256,8 +256,8 @@
                 <div class="h5 d-none">
                     No added games yet.
                 </div>
-            </c-block>
-            <c-block
+            </Block>
+            <Block
                 v-if=" currentBlock == 'language' "
                 key="block_8"
                 class="margin-bottom-30"
@@ -286,23 +286,23 @@
                 <p>
                     Additionally, show me content only available on this languages:
                 </p>
-                <c-checkbox-group>
-                    <c-checkbox
+                <CheckboxGroup>
+                    <Checkbox
                         v-for="(lang, index) in languages"
                         :id="lang.name.toLowerCase()"
                         :key="index"
                         class="lang-checkbox">
                         {{ lang.nativeName }}
-                    </c-checkbox>
-                </c-checkbox-group>
+                    </Checkbox>
+                </CheckboxGroup>
                 <div class="text-right">
-                    <c-button
+                    <Button
                         status="success"
                         class="margin-top-30">
                         Save
-                    </c-button>
+                    </Button>
                 </div>
-            </c-block>
+            </Block>
         </div>
     </div>
 </template>
@@ -310,11 +310,11 @@
 <script>
 export default {
     components: {
-        'c-benchmark': () => import('~/components/benchmark').then(m => m.default || m),
-        'c-inline-ntf': () => import('~/components/notification/inline').then(m => m.default || m),
-        'c-switch': () => import('~/components/switch').then(m => m.default || m),
-        'c-checkbox': () => import('~/components/checkbox').then(m => m.default || m),
-        'c-checkbox-group': () => import('~/components/checkbox/group').then(m => m.default || m)
+        'Benchmark': () => import('../../').then(m => m.Benchmark),
+        'InlineNotification': () => import('../../').then(m => m.InlineNotification),
+        'Toggle': () => import('../../').then(m => m.Toggle),
+        'Checkbox': () => import('../../').then(m => m.Checkbox),
+        'CheckboxGroup': () => import('../../').then(m => m.CheckboxGroup)
     },
     data() {
         return {

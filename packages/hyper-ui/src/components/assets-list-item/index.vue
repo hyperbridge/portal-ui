@@ -8,7 +8,7 @@
             :key="item.id"
             class="assets-list__item-container"
             :style="{ width: 'calc( 100% / ' + itemInRow + ')'}">
-            <c-assets-item
+            <AssetsItem
                 :id="item.id"
                 :image="item.image"
                 :name="item.name"
@@ -22,7 +22,7 @@
     export default {
         name: 'AssetsListItems',
         components: {
-            'c-assets-item': () => import('~/components/assets-list-item/item').then(m => m.default || m)
+            'AssetsItem': () => import('../../').then(m => m.AssetsItem)
         },
         props: {
             items: {

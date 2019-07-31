@@ -1,6 +1,6 @@
 <template>
     <div class="money-info">
-        <c-progress-bar
+        <ProgressBar
             :percentages="percentage"
             direction="vertical" />
         <div class="money-info__detail">
@@ -18,7 +18,7 @@
 <script>
 export default {
     components: {
-        'c-progress-bar': () => import('~/components/progress-bar').then(m => m.default || m)
+        'ProgressBar': () => import('../../').then(m => m.ProgressBar)
     },
     filters: {
         currency_sign(cur_name) {

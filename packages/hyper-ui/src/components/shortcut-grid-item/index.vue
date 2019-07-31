@@ -67,10 +67,10 @@ export default {
             const { animate, dragging } = this
 
             return [
-                'c-grid-item-wrapper',
+                'Grid-item-wrapper',
                 {
-                    'c-grid-item-animate': animate,
-                    'c-grid-item-dragging': dragging
+                    'Grid-item-animate': animate,
+                    'Grid-item-dragging': dragging
                 }
             ]
         },
@@ -218,7 +218,7 @@ export default {
 </script>
 
 <style>
-    .c-grid-item-wrapper {
+    .Grid-item-wrapper {
         display: block;
         position: absolute;
         box-sizing: border-box;
@@ -232,7 +232,7 @@ export default {
         z-index: 1;
     }
 
-    .c-grid-item-animate {
+    .Grid-item-animate {
         transition: transform 200ms ease;
     }
 </style>

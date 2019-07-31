@@ -6,14 +6,14 @@
 
         <nav
             class="pagination__nav"
-            :class="{ 'show-bg' : showBg }">
+            :class="{'show-bg' : showBg}">
             <ul>
                 <li v-show="activePage > 1">
                     <a
                         href="#first"
                         class="first"
                         @click.prevent="$emit('pageChange', 1)">
-                        <c-icon name="angle-double-left" />
+                        <Icon name="angle-double-left" />
                     </a>
                 </li>
                 <li v-show="activePage > 1">
@@ -21,14 +21,14 @@
                         href="#prev"
                         class="prev"
                         @click.prevent="change_page('prev')">
-                        <c-icon name="angle-left" />
+                        <Icon name="angle-left" />
                     </a>
                 </li>
 
                 <li
                     v-for="page in visiblePages"
                     :key="page"
-                    :class="{ 'active': page === activePage }">
+                    :class="{'active': page === activePage}">
                     <a
                         :href="`#${page}`"
                         @click.prevent="change_page(page)">{{ page }}</a>
@@ -38,7 +38,7 @@
                         href="#next"
                         class="next"
                         @click.prevent="change_page('next')">
-                        <c-icon name="angle-right" />
+                        <Icon name="angle-right" />
                     </a>
                 </li>
                 <li v-show="activePage < pages">
@@ -46,7 +46,7 @@
                         href="#last"
                         class="last"
                         @click.prevent="$emit('pageChange', pages)">
-                        <c-icon name="angle-double-right" />
+                        <Icon name="angle-double-right" />
                     </a>
                 </li>
             </ul>
@@ -62,6 +62,9 @@
 <script>
 export default {
     name: 'Pagination',
+    components: {
+        'Icon': () => import('../../').then(m => m.Icon)
+    },
     props: {
         pages: {
             type: [Number, String],

@@ -78,7 +78,7 @@ export default {
 /* some simple transitions to make the upvote and downvote
 buttons fade in as a visual cue for the user */
 
-.c-vote__value {
+.Vote__value {
     width: 100%;
 }
 

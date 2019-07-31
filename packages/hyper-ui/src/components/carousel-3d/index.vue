@@ -6,11 +6,11 @@
                 :css="css" />
         </div>
         <template v-if="items.length > limitTo">
-            <c-icon
+            <Icon
                 name="arrow-circle-left"
                 class="carousel-3d__btn carousel-3d__btn--left"
                 @click="focusedItem--" />
-            <c-icon
+            <Icon
                 name="arrow-circle-right"
                 class="carousel-3d__btn carousel-3d__btn--right"
                 @click="focusedItem++" />

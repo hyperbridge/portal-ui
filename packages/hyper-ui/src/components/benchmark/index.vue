@@ -27,25 +27,25 @@
             </div>
         </div>
         <div class="w-100 mt-3">
-            <c-button
+            <Button
                 class="mr-4"
                 :class="{ 'avoid-clicks': running }"
                 icon="play"
                 @click="benchmark">
                 {{ finished ? 'Try again' : running ? 'Running...' : 'Run Test' }}
-            </c-button>
-            <c-button
+            </Button>
+            <Button
                 v-if="settings.client.autoUpdateSettings"
                 status="success"
                 @click="toggleAutoUpdateSettings">
                 SETTINGS UPDATED AUTOMATICALLY
-            </c-button>
-            <c-button
+            </Button>
+            <Button
                 v-if="!settings.client.autoUpdateSettings"
                 status="warning"
                 @click="toggleAutoUpdateSettings">
                 SETTINGS NOT UPDATED AUTOMATICALLY
-            </c-button>
+            </Button>
         </div>
     </div>
 </template>

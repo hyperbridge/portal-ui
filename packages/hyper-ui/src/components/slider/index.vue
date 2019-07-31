@@ -1,10 +1,10 @@
 <template>
-    <c-block
+    <Block
         class="margin-bottom-30"
         :noGutter="true"
         :bgGradient="true"
         :onlyContentBg="true">
-        <c-heading-bar
+        <HeadingBar
             v-if="products"
             slot="title"
             class="mb-0"
@@ -14,12 +14,12 @@
             @prevClick="slider.slidePrev()"
             @nextClick="slider.slideNext()" />
 
-        <c-swiper
+        <Swiper
             ref="slider"
             :options="sliderOptions">
             <slot />
-        </c-swiper>
-    </c-block>
+        </Swiper>
+    </Block>
 </template>
 
 <script>

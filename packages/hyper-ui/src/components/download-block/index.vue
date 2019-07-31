@@ -4,10 +4,10 @@
             <div
                 v-if="!minimal"
                 class="sub-bg position-relative">
-                <c-img
+                <Img
                     src="/img/logo-white-text.png"
                     alt="Logo" />
-                <c-img
+                <Img
                     v-if="showPreview"
                     src="static/img/download-block-bg.png"
                     class="absolute_img"
@@ -23,7 +23,7 @@
                     Blockchain Based Creations for the Masses
                 </h4>
                 <div class="action d-flex align-items-center">
-                    <c-button
+                    <Button
                         v-if="!downloading"
                         status="none"
                         :to="defaultDownload.to"
@@ -31,13 +31,13 @@
                         @click="startDownload(defaultDownload)">
                         <strong>Download Now</strong>
                         <small>for {{ defaultDownload.text }}</small>
-                    </c-button>
+                    </Button>
                     <div v-if="downloading">
-                        Downloading now. <c-button
+                        Downloading now. <Button
                             status="none"
                             :href="downloading.to">
                             Click here
-                        </c-button> if it doesn't start in 10 seconds.
+                        </Button> if it doesn't start in 10 seconds.
                     </div>
                     <div
                         class="downloadInfo"
@@ -56,7 +56,7 @@
                 <div
                     v-for="(item, index) in downloads"
                     :key="index">
-                    <c-button
+                    <Button
                         v-for="(item, index) in item"
                         :key="index"
                         status="none"
@@ -64,7 +64,7 @@
                         class="btn">
                         <strong>{{ item.text }}</strong>
                         <small>{{ item.subtext }}</small>
-                    </c-button>
+                    </Button>
                 </div>
             </div>
         </div>

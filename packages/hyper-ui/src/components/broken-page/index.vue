@@ -29,12 +29,12 @@
             </div>
             <br>
             <br><br>
-            <c-button
-                class="c-button--xl"
+            <Button
+                class="Button--xl"
                 status="gradient-info"
                 @click="goHome">
                 Go Home
-            </c-button>
+            </Button>
         </div>
     </div>
 </template>

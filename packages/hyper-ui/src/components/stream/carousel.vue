@@ -1,11 +1,11 @@
 <template>
-    <c-block
+    <Block
         v-if="streams"
         class="margin-bottom-30"
         :noGutter="true"
         :bgGradient="true"
         :onlyContentBg="true">
-        <c-heading-bar
+        <HeadingBar
             slot="title"
             class="mb-0"
             :name="title"
@@ -15,29 +15,29 @@
             @prevClick="slider.slidePrev()"
             @nextClick="slider.slideNext()" />
 
-        <c-swiper
+        <Swiper
             ref="slider"
             :options="sliderOptions">
-            <c-swiper-slide
+            <SwiperSlide
                 v-for="(stream, index) in streams"
                 :key="index">
-                <c-stream-item
+                <StreamItem
                     :streamName="stream.userName"
                     :streamAvatar="stream.userAvatar"
                     :streamImg="stream.previews"
                     :streamLink="stream.src"
                     :streamViews="stream.views"
                     :streamId="stream.id" />
-            </c-swiper-slide>
-        </c-swiper>
-    </c-block>
+            </SwiperSlide>
+        </Swiper>
+    </Block>
 </template>
 
 <script>
 export default {
     name: 'ProductSlider',
     components: {
-        'c-stream-item': () => import('~/components/stream').then(m => m.default || m)
+        'StreamItem': () => import('../../').then(m => m.StreamItem)
     },
     props: {
         streams: {

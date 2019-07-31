@@ -1,7 +1,7 @@
 <template>
     <li class="asset">
         <div class="asset__info">
-            <c-img
+            <Img
                 :src="asset.image"
                 class="asset__image" />
             <div class="asset__meta">
@@ -21,17 +21,17 @@
             <span
                 v-if="asset.userName"
                 class="asset__user">
-                <c-icon
+                <Icon
                     name="user"
                     class="margin-right-5" />
                 {{ asset.userName }}
             </span>
             <span class="asset__price">{{ asset.price.current | convertCurrency }}</span>
-            <c-button
+            <Button
                 status="success"
                 icon="cart-plus">
                 Proceed to Purchase
-            </c-button>
+            </Button>
         </div>
     </li>
 </template>

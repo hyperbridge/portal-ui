@@ -3,6 +3,10 @@ export default {
     name: 'InputSearcher',
     inheritAttrs: false,
     props: ['value', 'bgColor', 'textColor'],
+    components: {
+        'Icon': () => import('../../').then(m => m.Icon),
+        'Input': () => import('../../').then(m => m.Input)
+    },
     computed: {
         listeners() {
             const listeners = {
@@ -17,9 +21,9 @@ export default {
         return h('div', {
             staticClass: 'input-searcher'
         }, [
-            h('input', {
+            h('Input', {
                 on: this.listeners,
-                staticClass: 'c-input',
+                staticClass: 'input',
                 attrs: this.$attrs,
                 domProps: {
                     value: this.value
@@ -29,7 +33,7 @@ export default {
                     'color': this.textColor
                 }
             }),
-            h('c-icon', {
+            h('Icon', {
                 staticClass: 'input-searcher__icon',
                 on: { click: () => this.$emit('click') },
                 props: {
@@ -47,7 +51,7 @@ export default {
         height: 36px;
         display: flex;
         align-items: center;
-        .c-input {
+        .input {
             background: #222235;
             border-radius: 3px;
             padding: 0 25px 0 10px;

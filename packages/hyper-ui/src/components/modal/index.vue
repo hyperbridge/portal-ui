@@ -15,7 +15,7 @@
                         <a
                             class="close-btn"
                             @click.prevent="$emit('close')">
-                            <c-icon name="times" />
+                            <Icon name="times" />
                         </a>
                     </div>
                     <div class="content__body">

@@ -3,7 +3,7 @@
         <p class="asset-preview__product">
             {{ productName }}
         </p>
-        <c-img
+        <Img
             class="asset-preview__image"
             :src="image" />
         <h4 class="asset-preview__name">
