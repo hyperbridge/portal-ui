@@ -17,6 +17,9 @@
 <script>
 export default {
     name: 'SimpleBanner',
+    component: {
+        'Button': () => import('../../').then(m => m.Button)
+    },
     props: {
         imgSrc: String,
         link: String,

@@ -191,6 +191,7 @@
 <script>
 export default {
     components: {
+        'Popup': () => import('../../').then(m => m.Popup),
     },
     props: ['activated'],
     data() {

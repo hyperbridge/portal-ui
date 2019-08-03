@@ -308,9 +308,12 @@
                 slot="body"
                 v-html="currentUpdate.content" />
             <small slot="footer">
-                Missed an update? <Button
+                Missed an update?
+                <Button
                     status="plain"
-                    to="/updates">Check our previous updates hButtonbutton>
+                    to="/updates">
+                        Check our previous updates hButtonbutton>
+                </Button>
             </small>
         </BasicPopup>
     </div>
@@ -319,8 +322,6 @@
 <script>
 
 import Vue from 'vue'
-import HeadingBar from '@/components/heading-bar/simple-colored'
-import DottedList from '@/components/list/dots'
 
 export default {
     components: {
