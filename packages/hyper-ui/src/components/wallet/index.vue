@@ -2,7 +2,7 @@
     <div>
         <div class="wallet__info">
             <img
-                src="../../static/img/icons/token-icon.png"
+                src="/static/img/icons/token-icon.png"
                 alt="Token">
             <div class="h2">
                 0 HBX
@@ -41,7 +41,10 @@
 <script>
 export default {
     name: 'WalletPopup',
-    props: {}
+    props: {},
+    components: {
+        'Button': () => import('../../').then(m => m.Button)
+    },
 }
 </script>
 

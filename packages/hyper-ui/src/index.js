@@ -150,6 +150,13 @@ export const PricingTableV2 = require('./components/pricing-table/v2')
 export const Video = require('./components/video')
 export const DraggableVideo = require('./components/draggable-video')
 
+export const WalletBase = require('./components/wallet/base.vue')
+// export const WalletMain = require('./components/wallet/-video')
+export const WalletTransfer = require('./components/wallet/transfer')
+export const WalletDeposit = require('./components/wallet/deposit')
+export const WalletEdit = require('./components/wallet/account-edit')
+export const WalletToken = require('./components/wallet/token')
+
 
 
 //BlockContentWithFeatureItem': () => import('~/components/landing / block - content / feature - item').then(m => m.default),

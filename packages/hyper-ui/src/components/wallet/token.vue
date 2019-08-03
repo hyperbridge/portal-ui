@@ -97,7 +97,8 @@
 <script>
 export default {
     components: {
-        'Input': () => import('../../').then(m => m.Input)
+        'Input': () => import('../../').then(m => m.Input),
+        'Button': () => import('../../').then(m => m.Button)
     },
     data() {
         return {
