@@ -16,7 +16,7 @@
                 @click="saveChanges" />
         </div>
         <div class="qr-code">
-            <Img src="https://images-eu.ssl-images-amazon.com/images/I/31Umxl57vfL.png" />
+            <img src="https://images-eu.ssl-images-amazon.com/images/I/31Umxl57vfL.png" />
         </div>
         <div class="account-number">
             <span>

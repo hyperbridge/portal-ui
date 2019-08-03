@@ -151,7 +151,7 @@ export const Video = require('./components/video')
 export const DraggableVideo = require('./components/draggable-video')
 
 export const WalletBase = require('./components/wallet/base.vue')
-// export const WalletMain = require('./components/wallet/-video')
+export const WalletMain = require('./components/wallet')
 export const WalletTransfer = require('./components/wallet/transfer')
 export const WalletDeposit = require('./components/wallet/deposit')
 export const WalletEdit = require('./components/wallet/account-edit')
