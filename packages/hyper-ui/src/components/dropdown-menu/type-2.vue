@@ -5,14 +5,12 @@
             class="btn dropdown-toggle"
             :class="{ 'show-bg' : showBg}"
             href="#"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false">
+            @click="isOpen = !isOpen">
             {{ name }}
         </a>
         <div
             class="dropdown-menu"
+            :class="{'show': isOpen}"
             :aria-labelledby="[ id + '_button']">
             <slot />
         </div>
@@ -33,6 +31,11 @@ export default {
         showBg: {
             type: Boolean,
             default: false
+        }
+    },
+    data(){
+        return{
+            isOpen: false
         }
     }
 }

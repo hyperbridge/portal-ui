@@ -45,7 +45,8 @@ export default {
         'Search': () => import('../../').then(m => m.Search),
         'ChatUser': () => import('../../').then(m => m.ChatUser),
         'ChatFriendsList': () => import('../../').then(m => m.ChatFriendsList),
-        'ChatSuggestionList': () => import('../../').then(m => m.ChatSuggestionList)
+        'ChatSuggestionList': () => import('../../').then(m => m.ChatSuggestionList),
+        'Button': () => import('../../').then(m => m.Button),
     },
     data() {
         return {

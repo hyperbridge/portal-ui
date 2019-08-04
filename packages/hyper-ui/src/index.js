@@ -177,7 +177,27 @@ export const ShortcutSidebar = require('./components/shortcut-sidebar');
 export const Settings = require('./components/settings');
 export const SocialConnect = require('./components/social-connect');
 
+export const LoadingLogo = require('./components/loading-bar/logo-loader');
+export const CurrencyDropdown = require('./components/dropdown-menu/currency');
+export const LanguageDropdown = require('./components/dropdown-menu/language');
 
+export const ImageOverlay = require('./components/image-overlay');
+export const ProductCards = require('./components/product-card/product-cards');
+export const ProductSlider = require('./components/product-slider');
+export const GameGrid = require('./components/game-grid/simple');
+export const ContentNavigation = require('./components/content-navigation');
+export const AssetsListItem = require('./components/assets-list-item');
+export const NewsListNavigation = require('./components/news-list/navigation');
+export const NewsListArticles = require('./components/news-list/articles');
+export const GamesExplorer = require('./components/games-explorer');
+export const AssetsExplorer = require('./components/assets-explorer');
+export const DownloadBlock = require('./components/download-block');
+export const HeadingBarFields = require('./components/heading-bar');
+export const TermsBlock = require('./components/heading-bar');
+export const PrivacyBlock = require('./components/heading-bar');
+export const Loading = require('./components/loading-indicator');
+
+// export const Swiper = re
 
 
 

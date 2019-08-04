@@ -110,36 +110,36 @@
             <div
                 v-if="signedIn && developerMode"
                 class="app-header__options">
-                <button
+                <Button
                     v-if="!isViewing"
                     class="remove-btn btn btn-secondary btn-block btn--icon btn--icon-left"
                     @click="clickRemove()">
                     <img src="/img/remove-btn.png">
                     <p><span class="fa fa-trash" /> Remove</p>
-                </button>
-                <button
+                </Button>
+                <Button
                     v-if="!isViewing"
                     class="publish-btn btn btn-secondary btn-block btn--icon btn--icon-left"
                     @click="clickPublish()">
                     <img src="/img/publish-btn.png">
                     <p><span class="fa fa-check" /> Publish</p>
-                </button>
-                <button
+                </Button>
+                <Button
                     v-if="!isViewing"
                     class="exit-btn btn btn-secondary btn-block btn--icon btn--icon-left"
                     @click="clickExit()">
                     <p><span class="fa fa-arrow-alt-circle-left" /> Back</p>
-                </button>
+                </Button>
             </div>
             <nav
                 v-if="!signedIn || (signedIn && isViewing)"
                 class="app-header__nav hide-on-mobile">
                 <nav class="horizontal-navigation app-header__nav-left">
-                    <button
-                        class="btn btn-light btn--icon"
-                        data-action="horizontal-show">
-                        <span class="fa fa-bars" /> Toggle navigation
-                    </button>
+<!--                    <Button-->
+<!--                        class="btn btn-light btn&#45;&#45;icon"-->
+<!--                        data-action="horizontal-show">-->
+<!--                        <span class="fa fa-bars" /> Toggle navigation-->
+<!--                    </Button>-->
                     <ul>
                         <li
                             v-if="!signedIn && !isLocked"
@@ -213,6 +213,7 @@
                             <Dropdown
                                 class="ml-4 account-menu"
                                 style="z-index: 12"
+                                name="Ololo"
                                 @show="onShowMenu"
                                 @hide="onHideMenu">
                                 <template slot="title">
@@ -248,19 +249,19 @@
                     </ul>
                 </nav>
                 <nav class="horizontal-navigation app-header__nav-right">
-                    <button
-                        class="btn btn-light btn--icon"
-                        data-action="horizontal-show">
-                        <span class="fa fa-bars" /> Toggle navigation
-                    </button>
+<!--                    <Button-->
+<!--                        class="btn btn-light btn&#45;&#45;icon"-->
+<!--                        data-action="horizontal-show">-->
+<!--                        <span class="fa fa-bars" /> Toggle navigation-->
+<!--                    </Button>-->
                     <ul>
                         <li v-if="signedIn && developerMode && isViewing">
-                            <button
+                            <Button
                                 class="edit-btn btn btn-secondary btn-block btn--icon btn--icon-left"
                                 @click="clickEdit">
                                 <img src="/img/edit-btn.png">
                                 <p><span class="fa fa-edit" />Edit</p>
-                            </button>
+                            </Button>
                         </li>
                         <li
                             v-if="!isLocked"
@@ -428,7 +429,8 @@ export default {
         'QuickLaunch': () => import('../../').then(m => m.QuickLaunch),
         'Dropdown': () => import('../../').then(m => m.Dropdown),
         'CurrencyDropdown': () => import('../../').then(m => m.CurrencyDropdown),
-        'LanguageDropdown': () => import('../../').then(m => m.LanguageDropdown)
+        'LanguageDropdown': () => import('../../').then(m => m.LanguageDropdown),
+        'Button': () => import('../../').then(m => m.Button),
     },
     props: ['isLoader'],
     data() {

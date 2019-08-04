@@ -21,6 +21,9 @@
 
 <script>
 export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    },
     computed: {
         signedIn() {
             return this.$store.state.application.signedIn

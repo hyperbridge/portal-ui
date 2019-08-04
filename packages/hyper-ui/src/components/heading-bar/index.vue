@@ -84,6 +84,9 @@ export default {
         activeIndex: Number,
         itemsLength: Number
     },
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    },
     data() {
         return {
             activeTab: 0
