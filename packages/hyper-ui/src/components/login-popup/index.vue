@@ -138,8 +138,6 @@
 </template>
 
 <script>
-import FormData from 'form-data'
-
 export default {
     components: {
         'Popup': () => import('../../').then(m => m.Popup),

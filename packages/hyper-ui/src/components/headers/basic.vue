@@ -423,6 +423,7 @@
 </template>
 
 <script>
+
 export default {
     components: {
         'LoadingLogo': () => import('../../').then(m => m.LoadingLogo),

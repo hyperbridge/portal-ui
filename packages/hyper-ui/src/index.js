@@ -196,9 +196,9 @@ export const HeadingBarFields = require('./components/heading-bar');
 export const TermsBlock = require('./components/heading-bar');
 export const PrivacyBlock = require('./components/heading-bar');
 export const Loading = require('./components/loading-indicator');
+export const Message = require('./components/message');
 
 // export const Swiper = re
-
 
 
 //BlockContentWithFeatureItem': () => import('~/components/landing / block - content / feature - item').then(m => m.default),

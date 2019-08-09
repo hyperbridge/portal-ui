@@ -326,6 +326,7 @@ import Vue from 'vue'
 export default {
     components: {
         'Notification': () => import('../../').then(m => m.Notification),
+        'Button': () => import('../../').then(m => m.Button),
         'Message': () => import('../../').then(m => m.Message),
         'BasicPopup': () => import('../../').then(m => m.BasicPopup),
         'DottedList': () => import('../../').then(m => m.DottedList),

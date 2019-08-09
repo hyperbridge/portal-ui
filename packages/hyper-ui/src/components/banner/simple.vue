@@ -18,7 +18,7 @@
 export default {
     name: 'SimpleBanner',
     component: {
-        'Button': () => import('../../').then(m => m.Button)
+        'Button': () => import('../../')
     },
     props: {
         imgSrc: String,
