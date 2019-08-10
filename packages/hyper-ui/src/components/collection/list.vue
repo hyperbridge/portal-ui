@@ -90,6 +90,7 @@ export default {
         background: rgba(255, 255, 255, .1);
         position: relative;
         backdrop-filter: blur(2px);
+        display: flex;
     }
     .collection-list__header{
         display: flex;

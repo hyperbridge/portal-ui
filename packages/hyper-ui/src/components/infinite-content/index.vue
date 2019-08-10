@@ -534,7 +534,7 @@ export default {
     mounted() {
         // $(this.$refs.trendingSlider).ionRangeSlider();
 
-        this.scroll()
+        // this.scroll()
     },
     methods: {
         showArrowsState(el, count) {
