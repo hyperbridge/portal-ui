@@ -395,7 +395,7 @@ export default {
         })
     },
     created() {
-        if (process.client) {
+        // if (process.client) {
             this.$('body').off('click').on('click', "[data-action='fixedpanel-toggle']", e => {
                 const btn = this.$('#sidebar-toggle-btn span')
 
@@ -409,7 +409,7 @@ export default {
                     this.$('.snotify').hide()
                 }
             })
-        }
+        // }
     },
     methods: {
         ensureDesktopWelcome(to) {
