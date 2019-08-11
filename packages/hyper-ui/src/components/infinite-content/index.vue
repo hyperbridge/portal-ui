@@ -476,7 +476,7 @@ export default {
         'ProjectCard': () => import('../../').then(m => m.ProjectCard),
         'CuratorReview': () => import('../../').then(m => m.CuratorReview),
         'GameGrid': () => import('../../').then(m => m.GameGrid),
-        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'DropdownMenu': () => import('../../').then(m => m.DropdownMenu),
         'Searcher': () => import('../../').then(m => m.Searcher),
         'ContentNavigation': () => import('../../').then(m => m.ContentNavigation),
         'AssetsListItem': () => import('../../').then(m => m.AssetsListItem),

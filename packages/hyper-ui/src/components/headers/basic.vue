@@ -210,7 +210,7 @@
                             </Button>
                         </li>
                         <li>
-                            <Dropdown
+                            <DropdownMenu
                                 class="ml-4 account-menu"
                                 style="z-index: 12"
                                 name="Ololo"
@@ -244,7 +244,7 @@
                                         </Button>
                                     </li>
                                 </ul>
-                            </Dropdown>
+                            </DropdownMenu>
                         </li>
                     </ul>
                 </nav>
@@ -291,7 +291,7 @@
                             </Button>
                         </li>
                         <li v-if="signedIn">
-                            <Dropdown
+                            <DropdownMenu
                                 class="ml-4 account-menu mt-1"
                                 style="z-index: 12"
                                 @show="onShowMenu"
@@ -379,7 +379,7 @@
                                         </Button>
                                     </li>
                                 </ul>
-                            </Dropdown>
+                            </DropdownMenu>
                         </li>
                         <li v-if="!signedIn && !isLocked">
                             <Button
@@ -428,7 +428,7 @@ export default {
     components: {
         'LoadingLogo': () => import('../../').then(m => m.LoadingLogo),
         'QuickLaunch': () => import('../../').then(m => m.QuickLaunch),
-        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'DropdownMenu': () => import('../../').then(m => m.DropdownMenu),
         'CurrencyDropdown': () => import('../../').then(m => m.CurrencyDropdown),
         'LanguageDropdown': () => import('../../').then(m => m.LanguageDropdown),
         'Button': () => import('../../').then(m => m.Button),
