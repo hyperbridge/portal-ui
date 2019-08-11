@@ -47,7 +47,7 @@ export const Block = require('./components/block');
 export const SimpleBlock = require('./components/block/simple');
 export const CustomModal = require('./components/modal/custom');
 export const Modal = require('./components/modal/');
-export const Dropdown = require('./components/dropdown-menu/type-2');
+export const Dropdown = require('./components/dropdown');
 export const DropdownCustom = require('./components/dropdown-menu/type-3');
 export const DropdownPost = require('./components/dropdown-menu/index');
 export const DropdownCurrency = require('./components/dropdown-menu/currency');
@@ -198,6 +198,7 @@ export const PrivacyBlock = require('./components/heading-bar');
 export const Loading = require('./components/loading-indicator');
 export const Message = require('./components/message');
 export const Drawer = require('./components/drawer');
+export const SimpleTable = require('./components/table-simple');
 
 // export const Swiper = re
 
