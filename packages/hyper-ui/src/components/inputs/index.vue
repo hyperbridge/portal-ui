@@ -11,7 +11,7 @@ export default {
     },
     render(h) {
         return h('input', {
-            staticClass: 'Input',
+            staticClass: 'input',
             on: this.listeners,
             attrs: {
                 ...this.$attrs,
@@ -31,17 +31,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .Input {
+    .input {
         background: #222235;
         border-radius: 3px;
         padding: 0 10px;
         height: 33px;
-        border: none;
         color: #fff;
         user-select: none;
         box-shadow: none;
         outline: none;
         width: 100%;
+	    border: 1px solid #363742;
         &::placeholder{
             color: rgba(255, 255, 255, .5);
         }

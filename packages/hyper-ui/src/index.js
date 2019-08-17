@@ -199,6 +199,7 @@ export const Loading = require('./components/loading-indicator');
 export const Message = require('./components/message');
 export const Drawer = require('./components/drawer');
 export const SimpleTable = require('./components/table-simple');
+export const ScrollTable = require('./components/scroll-table');
 
 // export const Swiper = re
 

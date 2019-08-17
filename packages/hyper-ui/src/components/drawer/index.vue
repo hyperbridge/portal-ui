@@ -350,7 +350,7 @@ import Vue from 'vue'
 
 export default {
     components: {
-        'Button': () => import('@ericmuyser/hyper-ui').then(m => m.Button)
+        'Button': () => import('../../').then(m => m.Button)
     },
     props: [],
     data() {
