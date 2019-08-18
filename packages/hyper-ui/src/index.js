@@ -200,6 +200,7 @@ export const Message = require('./components/message');
 export const Drawer = require('./components/drawer');
 export const SimpleTable = require('./components/table-simple');
 export const ScrollTable = require('./components/scroll-table');
+export const TextFormatting = require('./components/text-formatting');
 
 // export const Swiper = re
 
