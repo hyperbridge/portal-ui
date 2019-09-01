@@ -3,13 +3,13 @@
         "packages/*"
     ],
     "npmClient": "yarn",
-    "version": "1.0.1",
-    "useWorkspaces": true,
+    "version": "1.0.2",
     "command": {
         "publish": {
             "allowBranch": [
                 "master",
                 "dev",
+                "eric",
                 "next"
             ],
             "message": "chore(release): publish %s"

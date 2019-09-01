@@ -4,7 +4,7 @@
         :class="{ 'favorite-btn--active': active }"
         :title="dynamicTitle"
         @click="$emit('click')">
-        <c-icon :name="`${active ? unactiveIcon : activeIcon} mr-2`" />
+        <Icon :name="`${active ? unactiveIcon : activeIcon} mr-2`" />
         {{ dynamicTitle }}
     </button>
 </template>

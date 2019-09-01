@@ -7,28 +7,28 @@
             @click="closeProfileChooser" />
         <div class="profile-chooser__wrapper">
             <div class="profile-chooser__content">
-                <c-heading-bar
+                <HeadingBar
                     slot="title"
                     class="mb-0"
                     name="Choose Profile"
                     :showBackground="false" />
                 <div class="profile-slider">
-                    <c-swiper :options="options">
-                        <c-swiper-slide
+                    <Swiper :options="options">
+                        <SwiperSlide
                             v-for="profile in profiles"
                             :key="profile.id">
                             <div
                                 class="user-card__container-link"
                                 @click="setDefault(profile)">
-                                <c-user-card
+                                <UserCard
                                     :user="profile"
                                     :previewMode="!profile.edit"
                                     :class="{
                                         'default': activeProfile && profile.id == activeProfile.id
                                     }" />
                             </div>
-                        </c-swiper-slide>
-                    </c-swiper>
+                        </SwiperSlide>
+                    </Swiper>
                     <div
                         v-if="profiles.length > 3"
                         slot="button-prev"
@@ -38,22 +38,22 @@
                         slot="button-next"
                         class="swiper-button-next" />
                 </div>
-                <c-heading-bar
+                <HeadingBar
                     slot="title"
                     class="mb-0"
                     name=""
                     :showBackground="false" />
                 <div class="profile-chooser__actions">
-                    <c-button
-                        class="profile-chooser__back-button c-button--lg outline-white"
+                    <Button
+                        class="profile-chooser__back-button Button--lg outline-white"
                         @click="closeProfileChooser">
                         Back
-                    </c-button>
-                    <c-button
-                        class="profile-chooser__ok-button c-button--lg outline-white"
+                    </Button>
+                    <Button
+                        class="profile-chooser__ok-button Button--lg outline-white"
                         @click="closeProfileChooser">
                         OK
-                    </c-button>
+                    </Button>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
 <script>
 export default {
     components: {
-        'c-user-card': () => import('~/components/user-card').then(m => m.default || m)
+        'UserCard': () => import('../../').then(m => m.UserCard)
     },
     props: {
         darkMode: {

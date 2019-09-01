@@ -1,14 +1,14 @@
 <template>
     <div class="game-includes__item">
         <nuxt-link :to="`/product/${id}`">
-            <c-img :src="image" />
+            <Img :src="image" />
         </nuxt-link>
         <nuxt-link :to="`/product/${id}`">
             <h4>{{ name }}</h4>
         </nuxt-link>
         <p>{{ developer }}</p>
         <div class="rating-stars">
-            <c-rating :number="rating" />
+            <Rating :number="rating" />
         </div>
     </div>
 </template>
@@ -16,7 +16,8 @@
 <script>
 export default {
     components: {
-        'c-rating': () => import('~/components/rating-stars').then(m => m.default || m)
+        'Rating': () => import('../../').then(m => m.Rating),
+        'Img': () => import('../../').then(m => m.Img)
     },
     props: {
         id: Number,

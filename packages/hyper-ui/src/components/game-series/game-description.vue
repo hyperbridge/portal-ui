@@ -6,30 +6,30 @@
                     slot="pagination"
                     class="swiper-pagination" />
             </div>
-            <c-swiper
+            <Swiper
                 v-if="images"
                 :options="sliderOptions"
                 class="custom-dots-top carousel-full-height">
-                <c-swiper-slide
+                <SwiperSlide
                     v-for="(img, index) in images"
                     :key="index">
-                    <c-button
+                    <Button
                         status="none"
                         :to="`/product/${id}`">
-                        <c-img :src="img" />
-                    </c-button>
-                </c-swiper-slide>
-            </c-swiper>
+                        <Img :src="img" />
+                    </Button>
+                </SwiperSlide>
+            </Swiper>
         </div>
         <div class="game-description__info">
-            <c-button
+            <Button
                 status="plain"
                 class="h2 p-0"
                 :to="`/product/${id}`">
                 {{ title }}
-            </c-button>
+            </Button>
             <p>{{ description }}</p>
-            <c-tags :tags="tags || []" />
+            <Tags :tags="tags || []" />
             <div
                 v-if="price"
                 class="game-description__info--bottom">
@@ -55,7 +55,10 @@ import moment from 'moment'
 
 export default {
     components: {
-        'c-tags': () => import('~/components/tags').then(m => m.default || m)
+        'Button': () => import('../../').then(m => m.Button),
+        'Swiper': () => import('../../').then(m => m.Swiper),
+        'SwiperSlide': () => import('../../').then(m => m.SwiperSlide),
+        'Tags': () => import('../../').then(m => m.Tags)
     },
     props: {
         id: Number,

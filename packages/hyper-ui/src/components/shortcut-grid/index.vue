@@ -44,7 +44,7 @@
                 class="grid__bottom position-relative"
                 :class="['h-' + fixedIconHeight]">
                 <div class="grid__bottom-divider" />
-                <c-icon
+                <Icon
                     v-for="(item, index) in fixedItems"
                     :key="index"
                     :color="item"
@@ -76,7 +76,7 @@ import GridItem from '@/components/shortcut-grid-item'
 export default {
     components: {
         GridItem,
-        'c-icon': () => import('~/components/shortcut-icon').then(m => m.default || m)
+        'Icon': () => import('../../').then(m => m.Icon)
     },
     mixins: [getWindowSize],
     props: {

@@ -1,21 +1,21 @@
 <template>
     <div class="curator-reviews-wrapper">
-        <c-swiper
+        <Swiper
             v-if="reviews.length"
             :options="sliderOptions">
-            <c-swiper-slide
+            <SwiperSlide
                 v-for="(review, index) in reviews"
                 :key="index"
                 ref="slider">
-                <c-curator-review :review="review" />
-            </c-swiper-slide>
-        </c-swiper>
+                <CuratorReview :review="review" />
+            </SwiperSlide>
+        </Swiper>
         <p v-if="!reviews.length">
-            Nothing could be found. Want to <c-button
+            Nothing could be found. Want to <Button
             status="plain"
             @click="$store.commit('application/activeModal', 'comingSoon')">
             Check for updates
-        </c-button>?
+        </Button>?
         </p>
     </div>
 </template>
@@ -23,8 +23,8 @@
 <script>
     export default {
         components: {
-            'c-heading-bar': () => import('~/components/heading-bar').then(m => m.default || m),
-            'c-curator-review': () => import('~/components/curator-review').then(m => m.default || m)
+            'HeadingBar': () => import('../../').then(m => m.HeadingBar),
+            'CuratorReview': () => import('../../').then(m => m.CuratorReview)
         },
         props: {
             reviews: {

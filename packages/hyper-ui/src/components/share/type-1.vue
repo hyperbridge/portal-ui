@@ -3,14 +3,14 @@
         <div
             v-if="show"
             class="share-block">
-            <c-searcher
+            <Searcher
                 class="margin-bottom-10" />
             <div class="share-block__users margin-top-20">
                 <div class="list">
                     <h5>
                         Favorites
                     </h5>
-                    <c-author
+                    <Author
                         v-for="(author, index) in favoritesList"
                         :key="index"
                         :name="author.name"
@@ -20,7 +20,7 @@
                     <h5>
                         Online
                     </h5>
-                    <c-author
+                    <Author
                         v-for="(author, index) in onlineList"
                         :key="index"
                         :name="author.name"
@@ -35,8 +35,8 @@
 export default {
     name: 'ShareList',
     components: {
-        'c-searcher': () => import('~/components/searcher').then(m => m.default || m),
-        'c-author': () => import('~/components/author').then(m => m.default || m)
+        'Searcher': () => import('../../').then(m => m.Searcher),
+        'Author': () => import('../../').then(m => m.Author)
     },
     props: ['onlineList', 'favoritesList', 'show'],
     // data(){
@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .c-input{
+    .Input{
         background: rgba(0, 0 ,0, .3);
     }
     .share-block{

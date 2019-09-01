@@ -2,7 +2,7 @@
     <div
         class="banner"
         :style="{ 'background-image' : 'url(' + imgSrc + ')' }">
-        <c-button
+        <Button
             status="none"
             :to="to"
             :href="link"
@@ -10,7 +10,7 @@
             <div class="banner__text">
                 <slot />
             </div>
-        </c-button>
+        </Button>
     </div>
 </template>
 

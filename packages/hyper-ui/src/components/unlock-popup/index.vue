@@ -1,5 +1,5 @@
 <template>
-    <c-popup
+    <Popup
         ref="modal"
         :activated="activated"
         type="custom"
@@ -26,19 +26,19 @@
                                     placeholder="Password"
                                     @keyup.enter="unlock()">
                                 <br>
-                                <c-button
+                                <Button
                                     :class="{'wrong': wrongPassword}"
-                                    class="c-button--lg"
+                                    class="Button--lg"
                                     @click="unlock()">
                                     Unlock
-                                </c-button>
+                                </Button>
                                 <br>
                                 <p class="margin-top-20">
-                                    <span style="color: #aaa">Can't remember?</span> <c-button
+                                    <span style="color: #aaa">Can't remember?</span> <Button
                                         class="plain"
                                         @click="recovery = true">
                                         Recover your account
-                                    </c-button>
+                                    </Button>
                                 </p>
                                 <div
                                     v-if="recovery"
@@ -66,7 +66,7 @@
                                         <div class="input-group">
                                             <p>What is your birthday?</p>
                                             <label class="sr-only">Enter your birthday</label>
-                                            <c-datepicker
+                                            <Datepicker
                                                 v-model="birthday"
                                                 placeholder="Birthday"
                                                 input-class="form-control form-calendar__text"
@@ -81,11 +81,11 @@
                                     <div
                                         v-if="!password"
                                         class="col-12 margin-bottom-20">
-                                        <c-button
+                                        <Button
                                             class="outline-green"
                                             @click="recoverPassword">
                                             Submit
-                                        </c-button>
+                                        </Button>
                                     </div>
                                     <div
                                         v-if="recoveryError"
@@ -105,9 +105,9 @@
                                         <br>
                                         {{ password }}
                                         <br><br>
-                                        <c-button @click="recovery = false">
+                                        <Button @click="recovery = false">
                                             I Understand
-                                        </c-button>
+                                        </Button>
                                     </p>
                                     <div
                                         v-if="!password"
@@ -115,14 +115,14 @@
                                         <p><strong>Can't remember?</strong></p>
                                         <p><em>If you can't remember, you can download your account file, reset your account and try again later.</em></p>
                                         <p>
-                                            <c-button @click="exportAccount">
+                                            <Button @click="exportAccount">
                                                 Export Saved Account
-                                            </c-button>
+                                            </Button>
                                         </p>
                                         <p>
-                                            <c-button @click="clearAccount">
+                                            <Button @click="clearAccount">
                                                 Clear Saved Account
-                                            </c-button>
+                                            </Button>
                                         </p>
                                     </div>
                                 </div>
@@ -132,16 +132,15 @@
                 </div>
             </div>
         </div>
-    </c-popup>
+    </Popup>
 </template>
 
 <script>
-import * as DB from '@/db'
 import moment from 'moment'
 
 export default {
     components: {
-        'c-popup': () => import('~/components/popups').then(m => m.default || m)
+        'Popup': () => import('../../').then(m => m.Popup)
     },
     props: ['activated'],
     data() {
@@ -240,7 +239,7 @@ export default {
             box-shadow: 0 0 3px rgba(0, 0, 0, .4) inset;
             background: #303049;
         }
-        .c-button--lg {
+        .Button--lg {
             border: 2px solid transparent;
 
             &.wrong {

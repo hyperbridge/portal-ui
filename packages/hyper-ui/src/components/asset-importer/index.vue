@@ -8,17 +8,17 @@
                 Now let's match the columns in your uploaded file to your MailChimp list.
             </p>
             <p><a href="#">See an example of the import field match process</a></p>
-            <c-notification-inline
+            <Notification-inline
                 type="info"
                 size="md"
                 class="my-4">
                 A simple primary alert—check it out!
-            </c-notification-inline>
-            <c-checkbox
+            </Notification-inline>
+            <Checkbox
                 id="test"
                 v-model="skippedState">
                 Show skipped columns
-            </c-checkbox>
+            </Checkbox>
             <div class="row mt-4">
                 <div class="col-12 col-md-4">
                     <div class="card">
@@ -26,16 +26,16 @@
                             <h4>Email Address</h4>
                             <h6>dedeqit@gmail.com</h6>
                             <div class="action">
-                                <c-button
+                                <Button
                                     status="outline-danger"
                                     class="mx-1">
                                     Edit
-                                </c-button>
-                                <c-button
+                                </Button>
+                                <Button
                                     status="outline-info"
                                     class="mx-1">
                                     Skip
-                                </c-button>
+                                </Button>
                             </div>
                         </div>
                         <div class="card-header invert p-3 d-none">
@@ -79,16 +79,16 @@
                             <h4>First Name</h4>
                             <h6>text field</h6>
                             <div class="action">
-                                <c-button
+                                <Button
                                     status="outline-danger"
                                     class="mx-1">
                                     Edit
-                                </c-button>
-                                <c-button
+                                </Button>
+                                <Button
                                     status="outline-info"
                                     class="mx-1">
                                     Skip
-                                </c-button>
+                                </Button>
                             </div>
                         </div>
                         <ul class="list">
@@ -110,16 +110,16 @@
                             <h4>Last Name</h4>
                             <h6>text field</h6>
                             <div class="action">
-                                <c-button
+                                <Button
                                     status="outline-danger"
                                     class="mx-1">
                                     Edit
-                                </c-button>
-                                <c-button
+                                </Button>
+                                <Button
                                     status="outline-info"
                                     class="mx-1">
                                     Skip
-                                </c-button>
+                                </Button>
                             </div>
                         </div>
                         <ul class="list">
@@ -136,18 +136,18 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 text-right">
-                    <c-button
+                    <Button
                         status="outline-success"
                         @click="uploadAssets">
                         Upload
-                    </c-button>
+                    </Button>
                 </div>
             </div>
         </div>
         <div
             v-if="step2"
             class="assets-import__loading">
-            <c-loading-bar class="loading-bar" />
+            <Loading-bar class="loading-bar" />
             <div class="text">
                 <h4>We'ar importing your list!( 3 sec delay )</h4>
                 <p>You can navigate away from this page - importing won't be affected!</p>
@@ -261,9 +261,9 @@
 
 export default {
     components: {
-        'c-loading-bar': () => import('~/components/loading-bar').then(m => m.default || m),
-        'c-notification-inline': () => import('~/components/notification/inline').then(m => m.default || m),
-        'c-checkbox': () => import('~/components/checkbox').then(m => m.default || m)
+        'Loading-bar': () => import('../../').then(m => m.Loading-bar),
+        'Notification-inline': () => import('../../').then(m => m.Notification-inline),
+        'Checkbox': () => import('../../').then(m => m.Checkbox)
     },
     props: ['showSkipped'],
     data() {

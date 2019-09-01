@@ -7,7 +7,7 @@
             'no-gutter': noGutter,
             'only-content-bg': onlyContentBg
         }">
-        <c-heading-bar
+        <HeadingBar
             v-if="title"
             :name="title"
             :class="{ 'mb-0' : onlyContentBg }"
@@ -16,7 +16,7 @@
             <template slot="additional-action">
                 <slot name="additional-action" />
             </template>
-        </c-heading-bar>
+        </HeadingBar>
         <slot name="title" />
         <div
             class="block__content"
@@ -29,7 +29,7 @@
 <script>
 export default {
     components: {
-        'c-heading-bar': () => import('~/components/heading-bar').then(m => m.default || m)
+        'HeadingBar': () => import('../../').then(m => m.HeadingBar)
     },
     props: {
         title: {

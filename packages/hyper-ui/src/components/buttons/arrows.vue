@@ -1,6 +1,6 @@
 <template>
     <span class="button-arrows">
-        <c-icon
+        <Icon
             name="caret-up"
             :class="[
                 { 'up': colored },
@@ -9,7 +9,7 @@
             ]"
             @click="$emit('clickUp')" />
         <slot />
-        <c-icon
+        <Icon
             name="caret-down"
             :class="[
                 { 'down': colored },
@@ -22,6 +22,9 @@
 
 <script>
 export default {
+    components: {
+        'Icon': () => import('../../').then(m => m.Icon)
+    },
     props: {
         size: {
             type: String,

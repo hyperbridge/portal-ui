@@ -4,7 +4,7 @@
         :href="to || href"
         :target="target"
         :class="[
-            'c-button', 'c-button--' + size, status,
+            'button', 'button--' + size, status,
             { 'swap-direction': swapDirection },
             { 'full': full },
             { 'centered': centered },
@@ -159,7 +159,7 @@ export default {
         background-image: linear-gradient(to left top, $first 0%, $second 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
 
-    .c-button {
+    .button {
         display: inline-flex;
         vertical-align: top;
         position: relative;
@@ -233,29 +233,29 @@ export default {
         &.centered {
             text-align: center;
         }
-        &.c-button--xs {
+        &.button--xs {
             padding: 0px 5px;
             font-size: 12px;
             line-height: 22px;
         }
-        &.c-button--sm {
+        &.button--sm {
             padding: 1px 5px;
             font-size: 13px;
             min-height: 20px;
             line-height: 20px;
         }
-        &.c-button--md {
+        &.button--md {
             padding: 3px 10px;
             font-size: 16px;
         }
-        &.c-button--lg {
+        &.button--lg {
             padding: 5px 13px;
             font-size: 18px;
             i {
                 margin-right: 10px;
             }
         }
-        &.c-button--xl {
+        &.button--xl {
             padding: 0px 15px;
             line-height: 40px;
             font-size: 18px;

@@ -1,11 +1,11 @@
 <template>
     <div class="article-list-item">
-        <c-button
+        <Button
             status="none"
             :to="to"
             :href="link">
             <slot />
-        </c-button>
+        </Button>
     </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
         padding: 0;
         margin-bottom: 15px;
         display: block;
-        .c-button{
+        .Button{
             display: flex;
             justify-content: space-between;
             align-items: center;

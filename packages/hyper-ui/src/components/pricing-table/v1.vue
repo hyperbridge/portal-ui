@@ -4,7 +4,7 @@
             <div class="pricing-table-v1__item"
                  v-for="(item, idx) in items"
                  :style="`width: calc( 100% / ${items.length} - 20px );`"
-                 :class="{'c-pricing-table__item--highline': item.highline }"
+                 :class="{'pricing-table__item--highline': item.highline }"
                  :key="`price-${idx}`">
                 <div class="pricing-table-v1__item-title">
                     {{ item.title }}
@@ -23,9 +23,9 @@
                     </ul>
                 </div>
                 <div class="pricing-table-v1__item-action margin-bottom-20 margin-top-10">
-                    <c-button status="second-success">
+                    <Button status="second-success">
                         Sign Up
-                    </c-button>
+                    </Button>
                 </div>
             </div>
         </div>

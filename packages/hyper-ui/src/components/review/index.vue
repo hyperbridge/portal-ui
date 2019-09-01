@@ -3,7 +3,7 @@
         class="review"
         :class="{ 'background-review': background, 'p-0': !background, 'margin-bottom-40': !background}">
         <div class="review__header">
-            <c-img
+            <Img
                 :src="review.author.img"
                 class="review__author-img" />
             <div class="review__author">
@@ -15,7 +15,7 @@
             <div class="review__rating">
                 <i class="review__rating-score">{{ review.rating }}</i>
                 <div>
-                    <c-rating-stars :number="review.rating" />
+                    <RatingStars :number="review.rating" />
                     <div>
                         <strong>Played for {{ time_played }}</strong>
                     </div>
@@ -64,9 +64,9 @@
                 {{ show_more ? 'HIDE REVIEW' : 'READ MORE...' }}
             </a>
         </div>
-        <!--<c-basic-popup :activated="show_more" @close=" show_more = !show_more " width="800">-->
-        <!--<c-post :post="post"/>-->
-        <!--</c-basic-popup>-->
+        <!--<BasicPopup :activated="show_more" @close=" show_more = !show_more " width="800">-->
+        <!--<Post :post="post"/>-->
+        <!--</BasicPopup>-->
     </div>
 </template>
 
@@ -74,10 +74,10 @@
 export default {
     name: 'Review',
     components: {
-        'c-rating-stars': () => import('~/components/rating-stars').then(m => m.default || m),
-        'c-author': () => import('~/components/author').then(m => m.default || m),
-        'c-basic-popup': () => import('~/components/popups/basic').then(m => m.default || m),
-        'c-post': () => import('~/components/community/post-item').then(m => m.default || m)
+        'RatingStars': () => import('../../').then(m => m.RatingStars),
+        'Author': () => import('../../').then(m => m.Author),
+        'BasicPopup': () => import('../../').then(m => m.BasicPopup),
+        'Post': () => import('../../').then(m => m.Post)
     },
     props: {
         review: {
@@ -103,10 +103,10 @@ export default {
     },
     computed: {
         time_played() {
-            const { minutes_played } = this.review
-            const hours_played = Math.floor(minutes_played / 60)
+            const { minutesPlayed } = this.review
+            const hours_played = Math.floor(minutesPlayed / 60)
 
-            return `${hours_played}h ${minutes_played - hours_played * 60}m`
+            return `${hours_played}h ${minutesPlayed - hours_played * 60}m`
         }
     }
 }

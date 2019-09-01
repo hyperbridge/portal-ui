@@ -1,5 +1,5 @@
 <template>
-    <c-popup
+    <Popup
         ref="modal"
         :activated="activated"
         type="custom"
@@ -15,8 +15,8 @@
         <div
             slot="customContent"
             class="purchase-modal">
-            <c-tabs>
-                <c-tab
+            <Tabs>
+                <Tab
                     name="Agreement"
                     :selected="agreement"
                     :showFooter="true">
@@ -228,27 +228,27 @@
                         slot="footer"
                         class="d-flex justify-content-between align-items-center">
                         <div>
-                            <c-switch
+                            <Toggle
                                 size="sm"
                                 :value="true"
                                 label="I agree with the terms" />
                         </div>
                         <div>
-                            <c-button
+                            <Button
                                 status="danger"
                                 c_class="mx-1"
                                 @click="">
                                 Cancel
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 status="success"
                                 @click="toggleSteps">
                                 Next
-                            </c-button>
+                            </Button>
                         </div>
                     </div>
-                </c-tab>
-                <c-tab
+                </Tab>
+                <Tab
                     name="Sending"
                     :selected="sending"
                     :showFooter="true">
@@ -257,7 +257,7 @@
                             <div class="grid">
                                 <div class="grid-item">
                                     <div>
-                                        <c-img src="https://www.touchtapplay.com/wp-content/uploads/2017/12/bitcoin-game-cheats-ketchapp.jpg" />
+                                        <Img src="https://www.touchtapplay.com/wp-content/uploads/2017/12/bitcoin-game-cheats-ketchapp.jpg" />
                                     </div>
                                 </div>
                                 <div class="grid-item">
@@ -367,34 +367,27 @@
                         slot="footer"
                         class="d-flex align-items-center justify-content-end">
                         <div>
-                            <c-button
+                            <Button
                                 status="danger"
                                 @click="">
                                 Cancel
-                            </c-button>
-                            <c-button
+                            </Button>
+                            <Button
                                 status="success"
                                 @click="">
                                 Complete
-                            </c-button>
+                            </Button>
                         </div>
                     </div>
-                </c-tab>
-            </c-tabs>
+                </Tab>
+            </Tabs>
         </div>
-    </c-popup>
+    </Popup>
 </template>
 
 <script>
-import Switch from '../switch/index'
-import Buttons from '../buttons/index.vue'
-import PopUp from '../popups/index'
-
 export default {
     components: {
-        'c-switch': Switch,
-        'c-button': Buttons,
-        'c-popup': PopUp
     },
     props: ['activated'],
     data() {

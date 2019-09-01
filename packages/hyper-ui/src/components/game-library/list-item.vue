@@ -3,7 +3,7 @@
         class="game-library__item loading--w-spinner"
         :class="{'is-active': active}">
         <div class="item-img">
-            <c-img :src="game.images.mediumTile" />
+            <Img :src="game.images.mediumTile" />
         </div>
         <div class="item-info">
             <div>
@@ -33,7 +33,7 @@
             </span>
         </div>
         <div class="dropdown-container">
-            <c-dropdown
+            <Dropdown
                 :class="{'no-right-border' : shareList}"
                 @click="activeMenu()">
                 <ul class="item-dropdown">
@@ -59,7 +59,7 @@
                     <li @click="toggleList">
                         <i class="fas fa-share" />
                         Share
-                        <c-share-list
+                        <ShareList
                             class="in-dropdown"
                             :onlineList="online"
                             :favoritesList="favorites"
@@ -78,7 +78,7 @@
                         </a>
                     </li>
                 </ul>
-            </c-dropdown>
+            </Dropdown>
         </div>
         <div
             v-if="isLoading"
@@ -92,8 +92,8 @@
 export default {
     name: 'GameLibraryItem',
     components: {
-        'c-dropdown': () => import('~/components/dropdown-menu/type-4').then(m => m.default || m),
-        'c-share-list': () => import('~/components/share/type-1').then(m => m.default || m)
+        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'ShareList': () => import('../../').then(m => m.ShareList)
     },
     props: ['game', 'isLoading', 'online', 'favorites'],
     data() {

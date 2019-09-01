@@ -1,5 +1,5 @@
 <template>
-    <c-basic-popup
+    <BasicPopup
         :activated="activated"
         @close="activated = false">
         <template slot="body">
@@ -7,7 +7,7 @@
                 <div class="grid__wrapper">
                     <div class="grid__top position-relative">
                         <div class="grid d-flex justify-content-center">
-                            <c-icon
+                            <Icon
                                 v-for="(item, index) in items"
                                 :key="index"
                                 :color="item"
@@ -32,14 +32,14 @@
                 </div>
             </div>
         </template>
-    </c-basic-popup>
+    </BasicPopup>
 </template>
 
 <script>
 export default {
     components: {
-        'c-icon': () => import('~/components/shortcut-icon').then(m => m.default || m),
-        'c-basic-popup': () => import('~/components/popups/basic').then(m => m.default || m)
+        'Icon': () => import('../../').then(m => m.Icon),
+        'BasicPopup': () => import('../../').then(m => m.BasicPopup)
     },
     props: {
         activated: Boolean

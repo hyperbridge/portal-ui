@@ -3,7 +3,7 @@
         ref="carousel"
         class="carousel-3d"
         @keyup.right="next()">
-        <c-icon
+        <Icon
             name="arrow-circle-left"
             class="carousel-3d__btn"
             @click="previous()" />
@@ -18,7 +18,7 @@
                 </div>
             </slot> -->
         </transition-group>
-        <c-icon
+        <Icon
             name="arrow-circle-right"
             class="carousel-3d__btn"
             @click="next()" />

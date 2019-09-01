@@ -15,7 +15,7 @@
         <div
             v-if="isSearch"
             class="token-search">
-            <c-input
+            <Input
                 v-model="query"
                 placeholder="Type to search"
                 class="w-100" />
@@ -25,7 +25,7 @@
                         Search result
                     </li>
                     <li v-for="item in results">
-                        <c-img :src="item.img" />
+                        <Img :src="item.img" />
                         {{ item.name }}({{ item.symbol.toUpperCase() }})
                     </li>
                 </ul>
@@ -37,16 +37,16 @@
                 </div>
             </div>
             <div class="token-search__action">
-                <c-button
+                <Button
                     status="opacity-danger"
                     size="lg">
                     Cancel
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="opacity-success"
                     size="lg">
                     Next
-                </c-button>
+                </Button>
             </div>
         </div>
         <div
@@ -79,16 +79,16 @@
                 </div>
             </div>
             <div class="token__custom-token-action">
-                <c-button
+                <Button
                     status="opacity-danger"
                     size="lg">
                     Cancel
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="opacity-success"
                     size="lg">
                     Next
-                </c-button>
+                </Button>
             </div>
         </div>
     </div>
@@ -97,7 +97,7 @@
 <script>
 export default {
     components: {
-        'c-input': () => import('~/components/inputs').then(m => m.default || m)
+        'Input': () => import('../../').then(m => m.Input)
     },
     data() {
         return {
@@ -267,7 +267,7 @@ export default {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        .c-button{
+        .Button{
             width: 45%;
             justify-content: center;
         }

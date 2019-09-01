@@ -1,6 +1,6 @@
 <template>
     <div class="quick-launch">
-        <c-searcher
+        <Searcher
             v-model="phrase"
             class="margin-bottom-20"
             :results="filteredResults"
@@ -15,16 +15,14 @@
                 v-html="$options.filters.highlightPhrase(
                     props.result.name, phrase, 'u'
                 )" />
-        </c-searcher>
+        </Searcher>
     </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
     components: {
-        'c-searcher': () => import('~/components/searcher').then(m => m.default || m)
+        'Searcher': () => import('../../').then(m => m.Searcher)
     },
     data() {
         return {
@@ -54,9 +52,9 @@ export default {
         }
     },
     computed: {
-        ...mapGetters({
-            getProductsByName: 'marketplace/getProductsByName'
-        }),
+        getProductsByName() {
+            return []
+        },
         filteredResults() {
             const { choosenPlatforms } = this
 
@@ -84,7 +82,7 @@ export default {
 <style lang="scss">
     .quick-launch {
         /*background: rgba(0, 0, 0, .2);*/
-        .c-input {
+        .Input {
             background: transparent  !important;
             border: 0 none !important;
             border-bottom: 1px solid rgba(255, 255, 255, 1) !important;

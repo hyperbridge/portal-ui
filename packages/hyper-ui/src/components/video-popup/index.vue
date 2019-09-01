@@ -1,5 +1,5 @@
 <template>
-    <c-popup
+    <Popup
         :activated="activated"
         :width="showComments ? '1000' : '800'"
         @close="closeModal">
@@ -7,7 +7,7 @@
             slot="customContent"
             class="video-popup">
             <div class="video-popup__video-container">
-                <c-loading-bar-circle v-if="showLoader" />
+                <LoadingBarCircle v-if="showLoader" />
                 <youtube
                     v-if="youtube"
                     :video-id="youtube"
@@ -17,13 +17,13 @@
                     width="800"
                     :resize="true"
                     @ready="isReady" />
-                <c-twitch
+                <Twitch
                     v-else-if="twitch"
                     :channel="twitch"
                     height="450"
                     width="800"
                     @ready="isReady" />
-                <c-video
+                <Video
                     v-else-if="video"
                     :video="video"
                     @ready="isReady" />
@@ -34,7 +34,7 @@
             <div
                 v-if="showComments"
                 class="video-popup__video-comments">
-                <c-heading-bar
+                <HeadingBar
                     name="Comments"
                     :bgColor="false" />
                 <div class="comments__wrapper">
@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-    </c-popup>
+    </Popup>
 </template>
 
 <script>
@@ -66,15 +66,16 @@ import Vue from 'vue'
 import VueYoutube from 'vue-youtube'
 
 Vue.use(VueYoutube)
+
 export default {
     name: 'VideoPopup',
     components: {
-        'c-popup': () => import('~/components/popups').then(m => m.default || m),
-        'c-heading-bar': () => import('~/components/heading-bar').then(m => m.default || m),
-        'c-youtube': () => import('~/components/youtube').then(m => m.default || m),
-        'c-video': () => import('~/components/video').then(m => m.default || m),
-        'c-twitch': () => import('~/components/twitch').then(m => m.default || m),
-        'c-loading-bar-circle': () => import('~/components/loading-bar/circle').then(m => m.default || m)
+        'Popup': () => import('../../').then(m => m.Popup),
+        'HeadingBar': () => import('../../').then(m => m.HeadingBar),
+        'Youtube': () => import('../../').then(m => m.Youtube),
+        'Video': () => import('../../').then(m => m.Video),
+        'Twitch': () => import('../../').then(m => m.Twitch),
+        'LoadingBarCircle': () => import('../../').then(m => m.LoadingBarCircle)
     },
     props: {
         activated: {

@@ -1,5 +1,5 @@
 <template>
-    <c-custom-modal
+    <CustomModal
         v-if="activated"
         title="Sign Up"
         @close="$store.state.application.activeModal = null">
@@ -7,7 +7,7 @@
             slot="body"
             class=""
             style="width: 100%">
-            <c-loading
+            <Loading
                 :enabled="loading"
                 size="lg" />
 
@@ -66,24 +66,24 @@
                     class="row"
                     hidden>
                     <div class="col">
-                        <c-switch
+                        <Toggle
                             v-model="agreement"
                             labelPosition="right"
                             :customLabel="true">
                             <template slot="label">
                                 I agree to the
-                                <c-button
+                                <Button
                                     status="plain"
                                     @click="terms = true">
                                     terms
-                                </c-button> and
-                                <c-button
+                                </Button> and
+                                <Button
                                     status="plain"
                                     @click="privacy = true">
                                     privacy policy
-                                </c-button>
+                                </Button>
                             </template>
-                        </c-switch>
+                        </Toggle>
                     </div>
                 </div>
 
@@ -107,20 +107,20 @@
             v-if="!loading"
             slot="footer"
             class="text-right w-100">
-            <c-button
+            <Button
                 status="plain"
                 style="float: left"
                 @click="$store.commit('application/activeModal', 'login')">
                 Already registered? Sign In
-            </c-button>
-            <c-button
+            </Button>
+            <Button
                 size="md"
                 @click="next()">
                 Continue
-            </c-button>
+            </Button>
         </div>
 
-        <c-terms-popup
+        <TermsPopup
             title="Terms"
             :activated="terms"
             width="800"
@@ -132,12 +132,12 @@
             </div>
             <div slot="body">
                 <div class="termsBlock">
-                    <c-terms-block />
+                    <TermsBlock />
                 </div>
             </div>
-        </c-terms-popup>
+        </TermsPopup>
 
-        <c-terms-popup
+        <TermsPopup
             title="Privacy"
             :activated="privacy"
             width="800"
@@ -149,20 +149,20 @@
             </div>
             <div slot="body">
                 <div class="termsBlock">
-                    <c-privacy-block />
+                    <PrivacyBlock />
                 </div>
             </div>
-        </c-terms-popup>
-    </c-custom-modal>
+        </TermsPopup>
+    </CustomModal>
 </template>
 
 <script>
 export default {
     components: {
-        'c-terms-popup': () => import('~/components/popups/terms').then(m => m.default || m),
-        'c-custom-modal': () => import('~/components/modal/custom').then(m => m.default || m),
-        'c-terms-block': () => import('~/components/terms-block').then(m => m.default || m),
-        'c-privacy-block': () => import('~/components/privacy-block').then(m => m.default || m)
+        'TermsPopup': () => import('../../').then(m => m.TermsPopup),
+        'CustomModal': () => import('../../').then(m => m.CustomModal),
+        'TermsBlock': () => import('../../').then(m => m.TermsBlock),
+        'PrivacyBlock': () => import('../../').then(m => m.PrivacyBlock)
     },
     props: ['activated'],
     data() {
@@ -218,7 +218,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .c-popup__content {
+    .Popup__content {
         background: transparent;
         color: #fff;
         text-align: left;

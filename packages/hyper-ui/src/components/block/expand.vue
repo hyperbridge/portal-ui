@@ -1,6 +1,6 @@
 <template>
     <div class="expand-block">
-        <c-img
+        <Img
             v-if="image"
             :src="image"
             class="expand-block__img" />
@@ -8,7 +8,7 @@
             <span
                 v-if="title"
                 class="title">
-                <c-img
+                <Img
                     v-if="icon"
                     class="title__img"
                     :src="icon" />
@@ -50,7 +50,7 @@
                 v-for="(item, index) in relatedItems"
                 :key="index"
                 class="related__item">
-                <c-img
+                <Img
                     :src="item.image"
                     class="related__item__img" />
                 <div class="related__item__details">
@@ -65,9 +65,9 @@
                 </div>
             </li>
         </ul>
-        <c-button v-if="actionText">
+        <Button v-if="actionText">
             <strong>{{ actionText }}</strong>
-        </c-button>
+        </Button>
     </div>
 </template>
 
@@ -75,9 +75,9 @@
 export default {
     name: 'ExpandBlock',
     components: {
-        'c-rating-stars': () => import('~/components/rating-stars').then(m => m.default || m),
-        'c-button': () => import('~/components/buttons/wide').then(m => m.default || m),
-        'c-heading-bar-color': () => import('~/components/heading-bar/simple-colored').then(m => m.default || m)
+        'RatingStars': () => import('../../').then(m => m.RatingStars),
+        'Button': () => import('../../').then(m => m.Button),
+        'HeadingBarWithSimpleColor': () => import('../../').then(m => m.HeadingBarWithSimpleColor)
     },
     props: {
         image: {

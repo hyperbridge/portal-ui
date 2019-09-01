@@ -1,11 +1,11 @@
 <template>
-    <c-block
+    <Block
         title="Community Spotlight"
         :noGutter="true"
         :bgGradient="true"
         :onlyContentBg="true">
         <template slot="heading-bar">
-            <c-button
+            <Button
                 status="none"
                 :to="communityPath"
                 class="title-icon text-white">
@@ -15,7 +15,7 @@
                 <i
                     v-else
                     class="fas fa-cog" />
-            </c-button>
+            </Button>
         </template>
         <div
             v-if="discussions.length > 0"
@@ -37,19 +37,19 @@
                     </a>
                 </li>
             </ul>
-            <c-button
+            <Button
                 status="outline-white"
                 :to="communityPath"
                 hide_icon>
                 Go To Community
-            </c-button>
+            </Button>
         </div>
         <div
             v-if="discussions.length === 0"
             class="w-100">
             <h4>No highlighted community activity yet.</h4>
         </div>
-    </c-block>
+    </Block>
 </template>
 
 
@@ -57,7 +57,8 @@
 export default {
     name: 'CommunitySpotlight',
     components: {
-        'c-block': () => import('~/components/block').then(m => m.default || m)
+        'Button': () => import('../../').then(m => m.Button),
+        'Block': () => import('../../').then(m => m.Block)
     },
     props: {
         discussions: {

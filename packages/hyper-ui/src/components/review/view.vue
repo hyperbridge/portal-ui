@@ -35,39 +35,39 @@
                 <span class="h5 mr-3">
                     Was this review helpful?
                 </span>
-                <c-button
+                <Button
                     status="second-info"
                     size="sm"
                     icon="thumbs-up">
                     Yes
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="second-info"
                     size="sm"
                     icon="thumbs-down"
                     class="ml-2">
                     No
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="second-info"
                     size="sm"
                     icon="smile"
                     class="ml-2">
                     Funny
-                </c-button>
+                </Button>
             </div>
-            <c-button
+            <Button
                 status="plain"
                 size="md"
                 class="ml-auto">
                 <i class="fas fa-flag" />
-            </c-button>
+            </Button>
         </div>
         <div class="view-review__comment">
             <div
                 v-if="comments"
                 class="w-100">
-                <c-comment
+                <Comment
                     v-for="(comment, idx) in comments"
                     :key="`comment=${idx}`"
                     :canReply="false"
@@ -89,7 +89,7 @@
 <script>
 export default {
     components: {
-        'c-comment': () => import('~/components/community/comment').then(m => m.default || m)
+        'Comment': () => import('../../').then(m => m.Comment)
     },
     props: {
         isRecommend: {

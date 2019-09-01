@@ -1,5 +1,5 @@
 <template>
-    <c-block
+    <Block
         title="Traded Assets"
         :noGutter="true"
         :bgGradient="true"
@@ -13,30 +13,30 @@
                     v-for="(item, index) in items"
                     :key="index"
                     class="traded-assets__item">
-                    <c-button
+                    <Button
                         status="none"
                         :to="`/asset/${item.id}`">
-                        <c-img :src="item.image_data" />
-                    </c-button>
+                        <Img :src="item.image_data" />
+                    </Button>
                 </li>
             </ul>
-            <c-button
+            <Button
                 status="outline-white"
                 :to="assetsPath">
                 Go To Assets
-            </c-button>
+            </Button>
         </div>
         <div v-else>
             <h4>No frequently traded assets yet.</h4>
         </div>
-    </c-block>
+    </Block>
 </template>
 
 <script>
 export default {
     name: 'FrequentlyTradedAssets',
     components: {
-        'c-block': () => import('~/components/block').then(m => m.default || m)
+        'Block': () => import('../../').then(m => m.Block)
     },
     props: {
         items: {

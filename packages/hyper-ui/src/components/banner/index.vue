@@ -1,7 +1,7 @@
 <template>
     <div class="main-banner text-white">
-        <c-swiper :options="sliderOptions">
-            <c-swiper-slide
+        <Swiper :options="sliderOptions">
+            <SwiperSlide
                 v-for="(slide, index) in slides"
                 :key="index">
                 <div class="main-banner__content">
@@ -12,11 +12,11 @@
                         class="main-banner__content--logo"
                         :class="[ slide.logo['size'] ? 'logo-size-' + slide.logo['size'] : 'logo-size-md', slide.logo['position'] ]"
                         :style="logoPosition(slide.logo)">
-                        <c-img
+                        <Img
                             :src="slide.logo.src"
                             :alt="slide.title" />
                     </div>
-                    <c-image-overlay
+                    <ImageOverlay
                         v-if="slide.overlay"
                         :title="slide.overlay.title"
                         :subtitle="slide.overlay.subtitle"
@@ -35,17 +35,17 @@
                                 slot="pagination"
                                 class="main-banner-swiper-pagination swiper-pagination" />
                         </div>
-                        <c-button
+                        <Button
                             status="lightpurple"
                             size="md"
                             iconHide
                             :to="`/product/${slide.id}`">
                             {{ slide.buttonText }}
-                        </c-button>
+                        </Button>
                     </div>
                 </div>
-            </c-swiper-slide>
-        </c-swiper>
+            </SwiperSlide>
+        </Swiper>
     </div>
 </template>
 
@@ -53,9 +53,11 @@
 export default {
     name: 'MainBanner',
     components: {
-        'c-button': () => import('~/components/buttons').then(m => m.default || m),
-        'c-image-overlay': () => import('~/components/image-overlay').then(m => m.default || m)
-
+        'Img': () => import('../../').then(m => m.Img),
+        'Swiper': () => import('../../').then(m => m.Swiper),
+        'SwiperSlide': () => import('../../').then(m => m.SwiperSlide),
+        'Button': () => import('../../').then(m => m.Button),
+        'ImageOverlay': () => import('../../').then(m => m.ImageOverlay)
     },
     props: {
         slides: {

@@ -7,16 +7,16 @@
             <div class="app-header__bar-left">
                 <div
                     v-if="desktopMode && operatingSystem === 'mac'"
-                    class="mac-icons">
-                    <c-button
+                    class="maIcons">
+                    <Button
                         status="none"
                         class="close_w"
                         @click="closeWindow" />
-                    <c-button
+                    <Button
                         status="none"
                         class="minimize"
                         @click="minimizeWindow" />
-                    <c-button
+                    <Button
                         status="none"
                         class="maximize"
                         @click="maximizeWindow" />
@@ -24,15 +24,15 @@
                 <div
                     v-if="desktopMode && operatingSystem === 'linux'"
                     class="linux-icons">
-                    <c-button
+                    <Button
                         status="none"
                         class="close_w"
                         @click="closeWindow" />
-                    <c-button
+                    <Button
                         status="none"
                         class="minimize"
                         @click="minimizeWindow" />
-                    <c-button
+                    <Button
                         status="none"
                         class="maximize"
                         @click="maximizeWindow" />
@@ -54,49 +54,49 @@
                             class="fa fa-home"
                             style="color: #000" />
                     </nuxt-link>
-                    <c-button
+                    <Button
                         status="none"
                         class="app-header__bar-left-link hide-on-mobile"
                         @click="$router.go(-1)">
                         <span
                             class="fa fa-arrow-left"
                             style="color: #000" />
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="none"
                         class="app-header__bar-left-link hide-on-mobile"
                         @click="$router.go(+1)">
                         <span
                             class="fa fa-arrow-right"
                             style="color: #000" />
-                    </c-button>
+                    </Button>
                 </div>
             </div>
             <div class="app-header__shadow" />
             <nuxt-link
                 class="app-header__bar-center"
                 :to="isLocked ? '#' : '/'">
-                <c-loading-logo :isLoading="isLoader" />
+                <LoadingLogo :isLoading="isLoader" />
             </nuxt-link>
             <div class="app-header__bar-right">
                 <div
                     v-if="desktopMode && operatingSystem === 'windows'"
                     class="windows-icons margin-right-5">
-                    <c-button
+                    <Button
                         status="none"
                         class="minimize"
                         @click.prevent="minimizeWindow" />
-                    <c-button
+                    <Button
                         status="none"
                         class="maximize"
                         @click.prevent="maximizeWindow" />
-                    <c-button
+                    <Button
                         status="none"
                         class="close_w"
                         @click.prevent="closeWindow" />
                 </div>
                 <div v-else>
-                    <c-button
+                    <Button
                         v-if="!isLocked"
                         status="none"
                         class="app-header__bar-left-link"
@@ -104,7 +104,7 @@
                         <span
                             class="fas fa-bars"
                             style="color: #000" />
-                    </c-button>
+                    </Button>
                 </div>
             </div>
             <div
@@ -144,73 +144,73 @@
                         <li
                             v-if="!signedIn && !isLocked"
                             class="app-header__create-account-btn">
-                            <c-button
+                            <Button
                                 status="none"
                                 to="/account/signup"
                                 class="">
                                 <span class="text">CREATE ACCOUNT</span> <span class="fa fa-user-plus" />
-                            </c-button>
+                            </Button>
                         </li>
                         <li
                             v-if="!desktopMode"
                             class="app-header__download-btn">
-                            <c-button
+                            <Button
                                 status="none"
                                 to="/download"
                                 class="">
                                 <span class="text">DOWNLOAD</span> <span class="fa fa-download" />
-                            </c-button>
+                            </Button>
                         </li>
                         <li v-if="signedIn">
-                            <c-button
+                            <Button
                                 status="none"
                                 to="/">
                                 <span class="icon fa fa-shopping-cart" />
                                 <span class="text">Store</span>
-                            </c-button>
+                            </Button>
                         </li>
                         <li
                             v-if="signedIn"
                             v-access="'chat'">
-                            <c-button
+                            <Button
                                 status="none"
                                 to="/chat">
                                 <span class="icon fa fa-comments" />
                                 <span class="text">Chat</span>
-                            </c-button>
+                            </Button>
                         </li>
                         <li
                             v-if="signedIn"
                             v-access="'chest'">
-                            <c-button
+                            <Button
                                 status="none"
                                 to="/chest">
                                 <span class="icon fa fa-box-open" />
                                 <span class="text">Chest</span>
-                            </c-button>
+                            </Button>
                         </li>
                         <li v-if="signedIn">
-                            <c-button
+                            <Button
                                 v-access="'stream.read'"
                                 status="none"
                                 to="/streams">
                                 <span class="icon fa fa-eye" />
                                 <span class="text">Streams</span>
                                 <!-- podcast  global hand-holding-heart -->
-                            </c-button>
+                            </Button>
                         </li>
                         <li
                             v-if="signedIn"
                             v-access="'community'">
-                            <c-button
+                            <Button
                                 status="none"
                                 to="/community">
                                 <span class="icon fa fa-globe-americas" />
                                 <span class="text">Community</span>
-                            </c-button>
+                            </Button>
                         </li>
                         <li>
-                            <c-dropdown
+                            <Dropdown
                                 class="ml-4 account-menu"
                                 style="z-index: 12"
                                 @show="onShowMenu"
@@ -222,28 +222,28 @@
                                 </template>
                                 <ul class="item-dropdown">
                                     <li>
-                                        <c-button
+                                        <Button
                                             status="none"
                                             to="/company">
                                             About
-                                        </c-button>
+                                        </Button>
                                     </li>
                                     <li>
-                                        <c-button
+                                        <Button
                                             status="none"
                                             to="/news">
                                             News
-                                        </c-button>
+                                        </Button>
                                     </li>
                                     <li>
-                                        <c-button
+                                        <Button
                                             status="none"
                                             to="/updates">
                                             Updates
-                                        </c-button>
+                                        </Button>
                                     </li>
                                 </ul>
-                            </c-dropdown>
+                            </Dropdown>
                         </li>
                     </ul>
                 </nav>
@@ -265,21 +265,21 @@
                         <li
                             v-if="!isLocked"
                             hidden>
-                            <c-quick-launch
+                            <QuickLaunch
                                 class="quick-launch"
                                 style="margin-top: -7px;" />
                         </li>
                         <li
                             v-if="signedIn"
                             class="token">
-                            <c-button
+                            <Button
                                 status="none"
                                 class="mt-1"
                                 to="/token">
                                 <span
                                     v-if="tokenCount === null"
                                     class="token__count token__count--loading">
-                                    <c-loading :enabled="true" />
+                                    <Loading :enabled="true" />
                                 </span>
                                 <span
                                     v-if="tokenCount !== null"
@@ -287,10 +287,10 @@
                                     {{ tokenCount }} <span class="icon fa fa-coins" />
                                 </span>
                                 <span class="text">Tokens</span>
-                            </c-button>
+                            </Button>
                         </li>
                         <li v-if="signedIn">
-                            <c-dropdown
+                            <Dropdown
                                 class="ml-4 account-menu mt-1"
                                 style="z-index: 12"
                                 @show="onShowMenu"
@@ -303,96 +303,96 @@
                                 </template>
                                 <ul class="item-dropdown">
                                     <li>
-                                        <c-button
+                                        <Button
                                             status="none"
                                             to="/account">
                                             <i class="fas fa-user" />
                                             Account Info
-                                        </c-button>
+                                        </Button>
                                     </li>
                                     <li v-access="'wallet.read'">
-                                        <c-button
+                                        <Button
                                             status="none"
                                             to="/account/wallets">
                                             <i class="fas fa-credit-card" />
                                             My Wallets
-                                        </c-button>
+                                        </Button>
                                     </li>
                                     <li v-if="activeProfile">
-                                        <c-button
+                                        <Button
                                             status="none"
                                             :to="`/profile/${activeProfile.id}`">
                                             <i class="fas fa-user" />
                                             View Public Profile
-                                        </c-button>
+                                        </Button>
                                     </li>
                                     <li
                                         v-if="signedIn && activeProfile"
                                         v-access="'contact'">
-                                        <c-button
+                                        <Button
                                             status="none"
                                             :to="`/profile/${activeProfile.id}/contacts`">
                                             <i class="fas fa-users" />
                                             Contacts
-                                        </c-button>
+                                        </Button>
                                     </li>
                                     <li>
-                                        <c-button
+                                        <Button
                                             status="none"
                                             to="/account/profiles">
                                             <i class="fas fa-users-cog" />
                                             Profile Manager
-                                        </c-button>
+                                        </Button>
                                     </li>
                                     <li>
-                                        <c-button
+                                        <Button
                                             status="none"
                                             @click="$store.commit('application/showProfileChooser', true)">
                                             <i class="fas fa-user-edit" />
                                             Switch Profile
-                                        </c-button>
+                                        </Button>
                                     </li>
                                     <li>
-                                        <c-button
+                                        <Button
                                             status="none"
                                             to="/account/signout">
                                             <i class="fa fa-sign-out-alt" />
                                             Sign Out
-                                        </c-button>
+                                        </Button>
                                     </li>
                                     <hr>
                                     <li v-access="'chat'">
-                                        <c-button
+                                        <Button
                                             status="none"
                                             to="/settings/chat">
                                             <i class="fas fa-comments" />
                                             Chat Settings
-                                        </c-button>
+                                        </Button>
                                     </li>
                                     <li>
-                                        <c-button
+                                        <Button
                                             status="none"
                                             to="/help">
                                             <i class="fas fa-info-circle" />
                                             FAQ
-                                        </c-button>
+                                        </Button>
                                     </li>
                                 </ul>
-                            </c-dropdown>
+                            </Dropdown>
                         </li>
                         <li v-if="!signedIn && !isLocked">
-                            <c-button
+                            <Button
                                 status="none"
                                 @click="$store.commit('application/activeModal', 'login')">
                                 <span class="icon fa fa-sign-out-alt" />
                                 <span class="text">Sign In</span>
-                            </c-button>
+                            </Button>
                         </li>
                         <li
                             v-if="!isLocked && languages"
                             v-access="'languages'"
                             class="ml-3">
-                            <c-language-dropdown
+                            <LanguageDropdown
                                 :currentLanguage="currentLanguage"
                                 :languages="languages"
                                 @change="selectLanguages" />
@@ -401,18 +401,18 @@
                             v-if="!isLocked && currencies"
                             v-access="'currency'"
                             class="ml-2">
-                            <c-currency-dropdown
+                            <CurrencyDropdown
                                 :currentCurrency="currentCurrency"
                                 :currencies="currencies"
                                 @change="selectCurrency" />
                         </li>
                         <li v-if="!isLocked">
-                            <c-button
+                            <Button
                                 status="none"
                                 to="/help">
                                 <span class="icon fa fa-question-circle" />
                                 <span class="text">Help</span>
-                            </c-button>
+                            </Button>
                         </li>
                     </ul>
                 </nav>
@@ -424,11 +424,11 @@
 <script>
 export default {
     components: {
-        'c-loading-logo': () => import('~/components/loading-bar/logo-loader').then(m => m.default || m),
-        'c-quick-launch': () => import('~/components/quick-launch').then(m => m.default || m),
-        'c-dropdown': () => import('~/components/dropdown-menu/type-4').then(m => m.default || m),
-        'c-currency-dropdown': () => import('~/components/dropdown-menu/currency').then(m => m.default || m),
-        'c-language-dropdown': () => import('~/components/dropdown-menu/language').then(m => m.default || m)
+        'LoadingLogo': () => import('../../').then(m => m.LoadingLogo),
+        'QuickLaunch': () => import('../../').then(m => m.QuickLaunch),
+        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'CurrencyDropdown': () => import('../../').then(m => m.CurrencyDropdown),
+        'LanguageDropdown': () => import('../../').then(m => m.LanguageDropdown)
     },
     props: ['isLoader'],
     data() {
@@ -1166,7 +1166,7 @@ export default {
             }
         }
     }
-    .mac-icons{
+    .maIcons{
         //colors
         $color_1: #383838;
         $color_2: #222;

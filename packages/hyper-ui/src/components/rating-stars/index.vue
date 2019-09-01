@@ -1,6 +1,6 @@
 <template>
     <span>
-        <c-icon
+        <Icon
             v-for="(star, index) in stars"
             :key="index"
             :name="star" />
@@ -9,6 +9,9 @@
 
 <script>
 export default {
+    components: {
+        'Icon': () => import('../../').then(m => m.Icon)
+    },
     props: {
         number: {
             required: true

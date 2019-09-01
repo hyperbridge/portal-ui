@@ -1,6 +1,10 @@
 {
-    "private": false,
-    "workspaces": [
-        "packages/*"
-    ]
+    "name": "hyper-ui",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+    },
+    "devDependencies": {
+        "lerna": "^3.8.0"
+    }
 }

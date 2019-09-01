@@ -1,13 +1,13 @@
 <template>
     <div class="flex flex-column col col-9">
         <main class="chat flex flex-column flex-1 clear">
-            <c-single-message
+            <SingleMessage
                 v-for="message in messages"
                 v-cloak
                 :key="message.id"
                 :message="message" />
         </main>
-        <c-compose-message :createMessage="createMessage" />
+        <ComposeMessage :createMessage="createMessage" />
     </div>
 </template>
 
@@ -17,8 +17,8 @@ import SingleMessage from './message.vue'
 
 export default {
     components: {
-        'c-compose-message': ComposeMessage,
-        'c-single-message': SingleMessage
+        'ComposeMessage': ComposeMessage,
+        'SingleMessage': SingleMessage
     },
     props: {
         messages: {

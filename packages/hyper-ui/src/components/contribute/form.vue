@@ -18,20 +18,23 @@
                 class="form-control"
                 placeholder="0.00">
         </div>
-        <c-button
+        <Button
             status="success"
             class="justify-content-center"
             iconHide
             size="xl"
             @click="$emit('click')">
             Continue
-        </c-button>
+        </Button>
     </div>
 </template>
 
 <script>
 export default {
     name: 'ContributeForm',
+    components: {
+        'Button': () => import('../../').then(m => m.Button)
+    },
     props: {
         active: {
             type: Boolean,

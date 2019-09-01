@@ -17,7 +17,7 @@
             :class="{'font-weight-bold' : basic}">
             {{ title }}
         </h5>
-        <c-button
+        <Button
             :href="link"
             status="outline-success"
             data-toggle="modal"
@@ -34,13 +34,16 @@
             <div v-else>
                 Free Download
             </div>
-        </c-button>
+        </Button>
     </div>
 </template>
 
 <script>
 export default {
     name: 'PromotionItem',
+    components: {
+        'Button': () => import('../buttons').then(m => m.Button),
+    },
     props: {
         title: {
             type: String,
@@ -99,7 +102,7 @@ export default {
         color: #fff;
         width: calc(80% - 40px);
     }
-    .c-button {
+    .Button {
         font-size: 16px;
         padding: 8px 13px !important;
         text-transform: uppercase;

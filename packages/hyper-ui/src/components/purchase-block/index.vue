@@ -1,5 +1,5 @@
 <template>
-    <c-block
+    <Block
         :title="title"
         class="purchase-block"
         :noGutter="true"
@@ -54,7 +54,7 @@
         </div>
 
         <div class="purchase-block__buttons-group padding-bottom-30 col-12">
-            <c-button
+            <Button
                 v-if="isReleased && price"
                 status="outline-success"
                 :href="purchaseLink"
@@ -63,9 +63,9 @@
                 :shadow="false"
                 @click="onClickPurchase">
                 Proceed to Purchase
-            </c-button>
+            </Button>
 
-            <c-button
+            <Button
                 v-if="!price && isReleased"
                 status="success"
                 size="lg"
@@ -73,17 +73,17 @@
                 :href="purchaseLink"
                 @click="onClickPurchase">
                 Free Download
-            </c-button>
+            </Button>
 
-            <c-button
+            <Button
                 v-if="demoLink"
                 iconHide
                 icon="download"
                 :href="demoLink">
                 Download Demo
-            </c-button>
+            </Button>
 
-            <c-button
+            <Button
                 v-if="playLink"
                 iconHide
                 status="success"
@@ -91,15 +91,15 @@
                 icon="download"
                 :href="playLink">
                 Play Now
-            </c-button>
+            </Button>
 
-            <c-button-fav
+            <ButtonFav
                 target="Wishlist"
                 :active="inWishlist"
                 class="mt-3"
                 @click="$emit('addToWishlist')" />
 
-            <c-button-fav
+            <ButtonFav
                 target="Shortcuts"
                 :active="inShortcut"
                 activeIcon="link"
@@ -107,7 +107,7 @@
                 class="mt-3"
                 @click="$emit('addToShortcut')" />
 
-            <c-button-fav
+            <ButtonFav
                 target="Collection"
                 :active="inShortcut"
                 activeIcon="link"
@@ -115,7 +115,7 @@
                 class="mt-3"
                 @click="$emit('addToCollection')" />
         </div>
-    </c-block>
+    </Block>
 </template>
 
 <script>
@@ -123,8 +123,10 @@ import moment from 'moment'
 
 export default {
     components: {
-        'c-button-fav': () => import('~/components/buttons/favorite').then(m => m.default || m),
-        'c-add-collection-popup': () => import('~/components/popups/add-collection').then(m => m.default || m)
+        'ButtonFav': () => import('../../').then(m => m.ButtonFav),
+        'Block': () => import('../../').then(m => m.Block),
+        'Button': () => import('../../').then(m => m.Button),
+        'AddCollectionPopup': () => import('../../').then(m => m.AddCollectionPopup)
     },
     props: {
         tags: {
@@ -266,7 +268,7 @@ export default {
         display: inline-flex;
         flex-direction: column;
         padding: 0;
-        .c-button{
+        .Button{
             width: auto;
             margin: 0 auto 15px 0;
             align-self: flex-start;

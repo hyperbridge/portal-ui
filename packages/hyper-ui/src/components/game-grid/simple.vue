@@ -13,11 +13,11 @@
                 <div
                     v-else
                     class="card-body padding-0">
-                    <c-button
+                    <Button
                         class="w-100"
                         status="none"
                         :to="`/product/${item.id}`">
-                        <c-img
+                        <Img
                             class="card-img-top"
                             :src="item.meta.images.mediumTile" />
                         <h4>
@@ -28,17 +28,17 @@
                             hidden>
                             {{ item.description }}
                         </p>
-                    </c-button>
-                    <c-tags v-if="item.tags" :tags="item.tags.map(t => t.value)" />
+                    </Button>
+                    <Tags v-if="item.tags" :tags="item.tags.map(t => t.value)" />
                 </div>
             </div>
         </div>
         <p v-if="!items.length">
-            Nothing could be found. Want to <c-button
+            Nothing could be found. Want to <Button
                 status="plain"
                 @click="$store.commit('application/activeModal', 'comingSoon')">
                 Check for updates
-            </c-button>?
+            </Button>?
         </p>
     </div>
 </template>
@@ -47,7 +47,9 @@
 export default {
     name: 'GameGrid',
     components: {
-        'c-tags': () => import('~/components/tags').then(m => m.default || m)
+        'Button': () => import('../../').then(m => m.Button),
+        'Img': () => import('../../').then(m => m.Img),
+        'Tags': () => import('../../').then(m => m.Tags)
     },
     props: {
         items: {

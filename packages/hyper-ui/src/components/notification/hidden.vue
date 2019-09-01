@@ -16,7 +16,7 @@
 
 <script>
 export default {
-    name: 'hiddenNotification',
+    name: 'HiddenNotification',
     props: {
         visibleNotification: {
             type: Boolean,

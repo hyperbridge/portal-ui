@@ -3,7 +3,7 @@
         <div class="wallet-header slim-header">
             <div class="wallet-header__top-bar">
                 <div class="network-status">
-                    <c-dropdown-second
+                    <DropdownSecond
                         name="Ethereum"
                         style="float: unset">
                         <ul class="p-0 m-0">
@@ -23,14 +23,14 @@
                                 </a>
                             </li>
                         </ul>
-                    </c-dropdown-second>
+                    </DropdownSecond>
                 </div>
             </div>
             <div class="wallet-header__bar-left">
                 BlockHub
             </div>
             <div class="wallet-header__bar-right">
-                <c-dropdown position="right">
+                <Dropdown position="right">
                     <div
                         slot="title"
                         class="account_btn">
@@ -71,7 +71,7 @@
                             </a>
                         </li>
                     </ul>
-                </c-dropdown>
+                </Dropdown>
             </div>
         </div>
         <div class="wallet__account-info">
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="qr-code">
-                        <c-img src="https://images-eu.ssl-images-amazon.com/images/I/31Umxl57vfL.png" />
+                        <Img src="https://images-eu.ssl-images-amazon.com/images/I/31Umxl57vfL.png" />
                     </div>
                     <div class="money-info">
                         <img
@@ -110,11 +110,11 @@
                             Don't see your tokens?
                         </div>
                         <div>
-                            Click <c-button
+                            Click <Button
                                 status="plain"
                                 class="p-0">
                                 here
-                            </c-button> to add token to your account
+                            </Button> to add token to your account
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
                 </div>
             </div>
             <div class="account-options text-right">
-                <c-dropdown position="right">
+                <Dropdown position="right">
                     <div
                         slot="title"
                         class="account-options_btn">
@@ -149,7 +149,7 @@
                             </a>
                         </li>
                     </ul>
-                </c-dropdown>
+                </Dropdown>
             </div>
         </div>
         <div class="wallet__body">
@@ -162,8 +162,8 @@
 export default {
     name: 'WalletPopup',
     components: {
-        'c-dropdown': () => import('~/components/dropdown-menu/type-4').then(m => m.default || m),
-        'c-dropdown-second': () => import('~/components/dropdown-menu/type-2').then(m => m.default || m)
+        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'DropdownSecond': () => import('../../').then(m => m.DropdownSecond)
     },
     props: {},
     data() {

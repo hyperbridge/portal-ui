@@ -1,5 +1,5 @@
 <template>
-    <c-basic-popup
+    <BasicPopup
         :activated="activated"
         :width="width">
         <div
@@ -7,7 +7,7 @@
             class="game-installer">
             <div class="game-installer__header">
                 <div class="game-installer__game-img">
-                    <c-img :src="img" />
+                    <Img :src="img" />
                 </div>
                 <div class="game-installer__game-description">
                     <div class="h5 mb-0 pb-0 font-weight-bold">
@@ -107,14 +107,14 @@
                 </div>
             </div>
         </div>
-    </c-basic-popup>
+    </BasicPopup>
 </template>
 
 <script>
 export default {
     components: {
-        'c-basic-popup': () => import('~/components/popups/basic').then(m => m.default || m),
-        'c-dropdown': () => import('~/components/dropdown-menu/type-2').then(m => m.default || m)
+        'BasicPopup': () => import('../../').then(m => m.BasicPopup),
+        'Dropdown': () => import('../../').then(m => m.Dropdown)
     },
     props: {
         activated: {

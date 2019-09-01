@@ -3,11 +3,11 @@
         class="additional-action"
         :class="customClass">
         {{ name }}
-        <c-icon
+        <Icon
             v-if="icon"
             :name="icon"
             class="additional-action__icon" />
-        <c-button-arrows
+        <ButtonArrows
             class="additional-action__button"
             :activeUp="activeUp"
             @clickUp="$emit('clickUp')"
@@ -19,7 +19,8 @@
 export default {
     name: 'AdditionalAction',
     components: {
-        'c-button-arrows': () => import('~/components/buttons/arrows').then(m => m.default || m)
+        'ButtonArrows': () => import('../../').then(m => m.ButtonArrows),
+        'Icon': () => import('../../').then(m => m.Icon)
     },
     props: {
         name: {

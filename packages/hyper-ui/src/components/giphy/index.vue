@@ -1,7 +1,7 @@
 <template>
     <div class="giphy">
         <div class="giphy__input-container">
-            <c-input
+            <Input
                 v-model="query"
                 placeholder="Type to search"
                 @input="getGifs()" />
@@ -9,7 +9,7 @@
         <div
             v-if="isLoading"
             class="giphy__is-loading">
-            <c-loading-bar-circle />
+            <LoadingBarCircle />
         </div>
         <div
             v-if="gifs.length"
@@ -29,8 +29,8 @@
 
 export default {
     components: {
-        'c-input': () => import('~/components/inputs/').then(m => m.default || m),
-        'c-loading-bar-circle': () => import('~/components/loading-bar/circle').then(m => m.default || m)
+        'Input': () => import('../../').then(m => m.Input),
+        'LoadingBarCircle': () => import('../../').then(m => m.LoadingBarCircle)
     },
     props: {},
     data() {

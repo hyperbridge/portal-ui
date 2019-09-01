@@ -1,11 +1,11 @@
 <template>
     <div class="simple-list-item">
-        <c-button
+        <Button
             status="none"
             :to="to"
             :href="link">
             <slot />
-        </c-button>
+        </Button>
     </div>
 </template>
 

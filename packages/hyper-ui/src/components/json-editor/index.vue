@@ -1,5 +1,5 @@
 <template>
-    <c-json-view
+    <JsonVie
         v-model="parsedData"
         :parsedData="parsedData" />
 </template>
@@ -9,7 +9,7 @@
 export default {
 
     components: {
-        'c-json-view': () => import('~/components/json-editor/json-view').then(m => m.default || m)
+        'JsonView': () => import('../../').then(m => m.JsonView)
     },
     props: {
         objData: {

@@ -1,7 +1,7 @@
 <template>
     <div class="searcher-bar">
         <div class="searcher-bar__input">
-            <c-input
+            <Input
                 v-model="searchQuery"
                 :class="{ 'search-active': searchQuery }"
                 placeholder="Type to search"
@@ -32,7 +32,7 @@
                     <div
                         v-if="isLoading"
                         class="searcher-bar__results-loader my-2">
-                        <c-loading-bar-circle
+                        <LoadingBarCircle
                             size="sm"
                             :showBg="false" />
                     </div>
@@ -45,7 +45,7 @@
                             Top results
                         </div>
                         <div class="searcher-bar__results-list-wrapper">
-                            <c-search-category
+                            <Search-category
                                 v-for="(item, idx) in results"
                                 :key="`result-item${idx}`"
                                 :category="item"
@@ -68,7 +68,7 @@
                                         </select>
                                     </div>
                                 </template>
-                            </c-search-category>
+                            </Search-category>
                         </div>
                     </div>
                 </transition>
@@ -138,9 +138,9 @@ const dummyData = [
 
 export default {
     components: {
-        'c-input': () => import('~/components/inputs').then(m => m.default || m),
-        'c-loading-bar-circle': () => import('~/components/loading-bar/circle').then(m => m.default || m),
-        'c-search-category': () => import('~/components/global-search/_includes/category').then(m => m.default || m)
+        'Input': () => import('../../').then(m => m.Input),
+        'LoadingBarCircle': () => import('../../').then(m => m.LoadingBarCircle),
+        'Search-category': () => import('../../').then(m => m.Search-category)
     },
     data() {
         return {

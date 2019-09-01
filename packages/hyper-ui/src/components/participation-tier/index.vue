@@ -20,18 +20,21 @@
             <div class="h5 font-weight-bold mb-1-0 p-0">
                 {{ title }}
             </div>
-            <c-button
+            <Button
                 status="success"
                 icon="hand-holding-usd"
                 @click="purchase">
                 Participate
-            </c-button>
+            </Button>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button)
+    },
     props: {
         id: Number,
         price: {
@@ -89,7 +92,7 @@ export default {
         display: inline-flex;
         flex-direction: column;
     }
-    .c-button{
+    .Button{
         margin-right: auto;
     }
 </style>

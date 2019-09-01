@@ -12,7 +12,7 @@
         </span>
         {{ text }}
         <slot />
-        <c-icon
+        <Icon
             v-if="!hideButton"
             name="times-circle"
             class="option-tag__del-btn"

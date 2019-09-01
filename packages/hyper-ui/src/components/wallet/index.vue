@@ -11,18 +11,18 @@
                 $ 0.00 USD
             </div>
             <div class="wallet__actions margin-top-20">
-                <c-button
+                <Button
                     status="opacity-success"
                     size="lg"
                     class="mx-2">
                     Deposit
-                </c-button>
-                <c-button
+                </Button>
+                <Button
                     status="opacity-info"
                     size="lg"
                     class="mx-2">
                     Send
-                </c-button>
+                </Button>
             </div>
         </div>
         <div class="wallet__history">

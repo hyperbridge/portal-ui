@@ -7,7 +7,7 @@
                 {{ asset.name }}
             </nuxt-link>
         </h5>
-        <c-img
+        <Img
             class="asset-preview-basic__image"
             :src="asset.image" />
         <p

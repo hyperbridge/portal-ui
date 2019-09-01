@@ -1,5 +1,5 @@
 <template>
-    <c-popup
+    <Popup
         ref="modal"
         :activated="activated"
         type="custom"
@@ -11,31 +11,31 @@
         <div
             slot="customContent"
             class="download-modal">
-            <c-tabs :tabNames="['Download']">
-                <c-tab :tabId="1">
+            <Tabs :tabNames="['Download']">
+                <Tab :tabId="1">
                     <div>
-                        <c-download-block :showPreview="false" />
+                        <DownloadBlock :showPreview="false" />
                     </div>
                     <div
                         slot="footer"
                         class="d-flex align-items-center justify-content-end">
                         <div>
-                            <c-button @click="$emit('close')">
+                            <Button @click="$emit('close')">
                                 Close
-                            </c-button>
+                            </Button>
                         </div>
                     </div>
-                </c-tab>
-            </c-tabs>
+                </Tab>
+            </Tabs>
         </div>
-    </c-popup>
+    </Popup>
 </template>
 
 <script>
 export default {
     components: {
-        'c-popup': () => import('~/components/popups').then(m => m.default || m),
-        'c-download-block': () => import('~/components/download-block').then(m => m.default || m)
+        'Popup': () => import('../../').then(m => m.Popup),
+        'DownloadBlock': () => import('../../').then(m => m.DownloadBlock)
     },
     props: ['activated'],
     data() {
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .c-popup__content {
+    .Popup__content {
         background: transparent;
         color: #fff;
     }

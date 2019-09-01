@@ -1,5 +1,5 @@
 <template>
-    <c-custom-modal
+    <CustomModal
         v-if="activated"
         title="Sign In"
         @close="$store.state.application.activeModal = null">
@@ -7,7 +7,7 @@
             slot="body"
             class=""
             style="width: 100%">
-            <c-loading
+            <Loading
                 :enabled="loading"
                 size="lg" />
 
@@ -21,7 +21,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <c-button
+                        <Button
                             status="second-info"
                             size="xl"
                             centered
@@ -29,8 +29,8 @@
                             style="display: block"
                             @click="socialLogin('google')">
                             Sign in with Google
-                        </c-button>
-                        <c-button
+                        </Button>
+                        <Button
                             status="second-info"
                             size="xl"
                             centered
@@ -38,40 +38,40 @@
                             style="display: block"
                             @click="socialLogin('github')">
                             Sign in with Github
-                        </c-button>
+                        </Button>
                     </div>
                 </div>
                 <div
                     v-access="`socialSignin`"
                     class="row">
                     <div class="col-12">
-                        <c-button
+                        <Button
                             status="second-info"
                             size="xl"
                             centered
                             class="mb-3"
                             style="display: block">
                             Sign in with Twitter
-                        </c-button>
-                        <c-button
+                        </Button>
+                        <Button
                             status="second-info"
                             size="xl"
                             centered
                             class="mb-3"
                             style="display: block">
                             Sign in with Facebook
-                        </c-button>
+                        </Button>
                     </div>
                 </div>
                 <div
                     v-access="`socialSignin`"
                     class="row mb-3">
                     <div class="col-12">
-                        <c-heading-bar-color
+                        <HeadingBarWithSimpleColor
                             colorCode="#fff"
                             textAlign="center">
                             or sign in with email
-                        </c-heading-bar-color>
+                        </HeadingBarWithSimpleColor>
                     </div>
                 </div>
                 <div class="row">
@@ -122,19 +122,19 @@
             v-if="!loading"
             slot="footer"
             class="text-right w-100">
-            <c-button
+            <Button
                 status="plain"
                 style="float: left; margin-right: 20px"
                 @click="$store.commit('application/activeModal', 'register')">
                 Don't have an account? Sign Up
-            </c-button>
-            <c-button
+            </Button>
+            <Button
                 size="md"
                 @click="next">
                 Sign In
-            </c-button>
+            </Button>
         </div>
-    </c-custom-modal>
+    </CustomModal>
 </template>
 
 <script>
@@ -142,12 +142,12 @@ import FormData from 'form-data'
 
 export default {
     components: {
-        'c-popup': () => import('~/components/popups').then(m => m.default || m),
-        'c-terms-popup': () => import('~/components/popups/terms').then(m => m.default || m),
-        'c-custom-modal': () => import('~/components/modal/custom').then(m => m.default || m),
-        'c-heading-bar-color': () => import('~/components/heading-bar/simple-colored').then(m => m.default || m),
-        'c-terms-block': () => import('~/components/terms-block').then(m => m.default || m),
-        'c-privacy-block': () => import('~/components/privacy-block').then(m => m.default || m)
+        'Popup': () => import('../../').then(m => m.Popup),
+        'TermsPopup': () => import('../../').then(m => m.TermsPopup),
+        'CustomModal': () => import('../../').then(m => m.CustomModal),
+        'HeadingBarWithSimpleColor': () => import('../../').then(m => m.HeadingBarWithSimpleColor),
+        'TermsBlock': () => import('../../').then(m => m.TermsBlock),
+        'PrivacyBlock': () => import('../../').then(m => m.PrivacyBlock)
     },
     props: ['activated'],
     data() {
@@ -303,7 +303,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .c-popup__content {
+    .Popup__content {
         background: transparent;
         color: #fff;
         text-align: left;

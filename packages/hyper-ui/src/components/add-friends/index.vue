@@ -56,11 +56,11 @@
                     friends who play Blizzard games.
                 </div>
                 <div class="text-center">
-                    <c-button
+                    <Button
                         status="second-info"
                         size="md">
                         Update Permission
-                    </c-button>
+                    </Button>
                 </div>
             </template>
             <template v-else-if="connected && permission">
@@ -109,12 +109,12 @@
                             <div class="h5 ml-3 mb-0 pb-0">
                                 {{ user.firstname }} {{ user.lastname }}
                             </div>
-                            <c-button
+                            <Button
                                 status="second-info"
                                 size="sm"
                                 class="py-0 ml-auto">
                                 Invite
-                            </c-button>
+                            </Button>
                         </li>
                     </ul>
                 </div>
@@ -124,11 +124,11 @@
                     Your are not connected to this social.
                 </div>
                 <div class="text-center my-4">
-                    <c-button
+                    <Button
                         status="second-info"
                         size="md">
                         Connect social
-                    </c-button>
+                    </Button>
                 </div>
             </template>
             <template v-else>
@@ -226,7 +226,7 @@ export default {
                     width: 25px;
                     border-radius: 100%;
                 }
-                .c-button{
+                .Button{
                     min-height: 18px;
                     line-height: 18px;
                 }

@@ -2,6 +2,7 @@
 
 .env
 build
+package-lock.json
 
 
 # compiled output

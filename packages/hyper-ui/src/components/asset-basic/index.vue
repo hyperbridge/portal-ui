@@ -4,7 +4,7 @@
             <span>{{ name }}</span>
             <span>{{ productName }}</span>
         </div>
-        <c-img :src="image" />
+        <Img :src="image" />
     </div>
 </template>
 

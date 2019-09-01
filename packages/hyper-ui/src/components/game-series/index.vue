@@ -1,6 +1,6 @@
 <template>
     <div class="game-series">
-        <c-heading-bar name="Featured Game Series" />
+        <HeadingBar name="Featured Game Series" />
         <div
             class="game-series__container"
             :class="{ 'bg-gradient' : bgGradient }">
@@ -13,9 +13,9 @@
 export default {
     name: 'GameStories',
     components: {
-        'c-heading-bar': () => import('~/components/heading-bar').then(m => m.default || m),
-        'c-game-includes-list': () => import('~/components/game-series/game-includes-item').then(m => m.default || m),
-        'c-game-description': () => import('~/components/game-series/game-description').then(m => m.default || m)
+        'HeadingBar': () => import('../../').then(m => m.HeadingBar),
+        'GameIncludesList': () => import('../../').then(m => m.GameIncludesList),
+        'GameDescription': () => import('../../').then(m => m.GameDescription)
     },
     props: {
         bgGradient: {

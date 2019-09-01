@@ -1,7 +1,7 @@
 <template>
     <div class="message">
         <div class="message__head">
-            <c-author
+            <Author
                 :name="msg.author.name"
                 :img="msg.author.img" />
             <span>
@@ -17,7 +17,7 @@ import moment from 'moment'
 export default {
     name: 'Message',
     components: {
-        'c-author': () => import('~/components/author').then(m => m.default || m)
+        'Author': () => import('../../').then(m => m.Author)
     },
     props: ['msg'],
     methods: {

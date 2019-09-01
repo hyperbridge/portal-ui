@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <c-drag
+        <Draggable
             v-if="active"
             :w="width"
             :h="height"
@@ -24,44 +24,44 @@
                         </video>
                     </div>
                     <div class="video-control">
-                        <c-button
+                        <Button
                             v-if="isPlaying"
                             status="none"
                             class="video-control__btn video-control__btn--expand"
                             @click="fullscreen">
                             <i class="fas fa-expand" />
-                        </c-button>
-                        <c-button
+                        </Button>
+                        <Button
                             v-if="!isPlaying"
                             status="none"
                             class="video-control__btn video-control__btn--play"
                             @click="play">
                             <i class="fas fa-play" />
-                        </c-button>
-                        <c-button
+                        </Button>
+                        <Button
                             v-if="isPlaying"
                             status="none"
                             class="video-control__btn video-control__btn--play"
                             @click="pause">
                             <i class="fas fa-pause" />
-                        </c-button>
-                        <c-button
+                        </Button>
+                        <Button
                             status="none"
                             class="video-control__btn video-control__btn--times"
                             @click="destroy">
                             <i class="fas fa-times" />
-                        </c-button>
+                        </Button>
                     </div>
                 </div>
             </div>
-        </c-drag>
+        </Draggable>
     </transition>
 </template>
 
 <script>
 export default {
     components: {
-        'c-drag': () => import('~/components/draggable').then(m => m.default || m)
+        'Draggable': () => import('../../').then(m => m.Draggable)
     },
     props: {
         active: {

@@ -1,10 +1,10 @@
 <template>
     <div class="row product-grid">
-        <c-block
+        <Block
             :noGutter="true"
             :bgGradient="true"
             :onlyContentBg="true">
-            <c-heading-bar
+            <HeadingBar
                 slot="title"
                 class="mb-0"
                 :headingTabs="[
@@ -18,7 +18,7 @@
                     <span
                         class="sort-title"
                         hidden>Sort by:</span>
-                    <c-heading-bar-fields
+                    <HeadingBarFields
                         v-for="(opt, index) in sortOptions"
                         :key="index"
                         :name="opt.title"
@@ -27,10 +27,10 @@
                         @clickUp="setSort(opt.property, true)"
                         @clickDown="setSort(opt.property, false)" />
                 </template>
-            </c-heading-bar>
+            </HeadingBar>
             <div class="product-grid__filters align-items-center">
                 <div class="d-flex align-items-center">
-                    <c-dropdown
+                    <Dropdown
                         id="product-genres"
                         name="Filter by Genre"
                         :showBg="true"
@@ -43,43 +43,43 @@
                                 :class="{ 'product-genre__btn--active': selectedGenres.includes(genre) }"
                                 @click.prevent="setGenre(genre)">{{ genre }}</a>
                         </div>
-                    </c-dropdown>
-                    <c-input-searcher
+                    </Dropdown>
+                    <InputSearcher
                         v-model="phrase" />
                 </div>
-                <c-button
+                <Button
                     status="lightpurple"
                     iconHide>
                     All New Releases
-                </c-button>
+                </Button>
             </div>
             <transition name="slide-in">
                 <div
                     v-if="filtersActive"
                     class="active-filters">
                     <div class="active-filters__content">
-                        <c-option-tag
+                        <OptionTag
                             v-if="phrase.length"
                             title="NAME:"
                             :text="phrase"
                             @delete="phrase = ''" />
-                        <c-option-tag
+                        <OptionTag
                             v-if="selectedGenres.length"
                             title="GENRES:"
                             isParent
                             @delete="selectedGenres = []">
-                            <c-option-tag
+                            <OptionTag
                                 v-for="(genre, index) in selectedGenres"
                                 :key="index"
                                 :text="genre"
                                 isChildren
                                 @delete="selectedGenres.splice(index, 1)" />
-                        </c-option-tag>
-                        <c-option-tag
+                        </OptionTag>
+                        <OptionTag
                             v-if="sortBy.property"
                             title="SORT BY:"
                             @delete="sortBy.property = null">
-                            <c-option-tag
+                            <OptionTag
                                 title="Property:"
                                 isChildren
                                 :isParent="false"
@@ -92,28 +92,28 @@
                                         {{ opt.title }}
                                     </option>
                                 </select>
-                            </c-option-tag>
-                            <c-option-tag
+                            </OptionTag>
+                            <OptionTag
                                 title="Direction:"
                                 isChildren
                                 :isParent="false"
                                 hideButton
                                 @delete="sortBy.asc = !sortBy.asc">
                                 {{ sortBy.asc ? 'Ascending' : 'Descending' }}
-                                <c-icon
+                                <Icon
                                     name="arrow-up"
                                     class="sort-button"
                                     :class="{ 'desc': !sortBy.asc }"
                                     @click="sortBy.asc = !sortBy.asc" />
-                            </c-option-tag>
-                        </c-option-tag>
+                            </OptionTag>
+                        </OptionTag>
                     </div>
                 </div>
             </transition>
-            <c-content-navigation
+            <ContentNavigation
                 v-if="filteredProducts.length"
                 :items="filteredProducts">
-                <c-game-grid
+                <GameGrid
                     slot-scope="{ items }"
                     :itemInRow="2"
                     :showRating="false"
@@ -121,44 +121,44 @@
                     showTime
                     itemBg="transparent"
                     pricePosition="right" />
-            </c-content-navigation>
+            </ContentNavigation>
             <div v-else-if="filtersActive">
                 <p>
-                    No products were found using these filters. Want to <c-button
+                    No products were found using these filters. Want to <Button
                         status="plain"
                         @click="$store.commit('application/activeModal', 'comingSoon')">
                         Check for updates
-                    </c-button>?
+                    </Button>?
                 </p>
-                <c-button
+                <Button
                     status="info"
                     size="md"
                     iconHide
                     @click="clearFilters()">
                     Clear filters
-                </c-button>
+                </Button>
             </div>
             <p v-else>
-                Nothing could be found. Want to <c-button
+                Nothing could be found. Want to <Button
                     status="plain"
                     @click="$store.commit('application/activeModal', 'comingSoon')">
                     Check for updates
-                </c-button>?
+                </Button>?
             </p>
-        </c-block>
+        </Block>
     </div>
 </template>
 
 <script>
 export default {
     components: {
-        'c-heading-bar': () => import('~/components/heading-bar').then(m => m.default || m),
-        'c-heading-bar-fields': () => import('~/components/heading-bar/additional-action').then(m => m.default || m),
-        'c-input-searcher': () => import('~/components/inputs/searcher').then(m => m.default || m),
-        'c-dropdown': () => import('~/components/dropdown-menu/type-2').then(m => m.default || m),
-        'c-game-grid': () => import('~/components/game-grid/with-description').then(m => m.default || m),
-        'c-content-navigation': () => import('~/components/content-navigation').then(m => m.default || m),
-        'c-option-tag': () => import('~/components/option-tag').then(m => m.default || m)
+        'HeadingBar': () => import('../../').then(m => m.HeadingBar),
+        'HeadingBarFields': () => import('../../').then(m => m.HeadingBarFields),
+        'InputSearcher': () => import('../../').then(m => m.InputSearcher),
+        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'GameGrid': () => import('../../').then(m => m.GameGrid),
+        'ContentNavigation': () => import('../../').then(m => m.ContentNavigation),
+        'OptionTag': () => import('../../').then(m => m.OptionTag)
     },
     props: {
         products: {

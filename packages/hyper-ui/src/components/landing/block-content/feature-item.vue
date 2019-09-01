@@ -3,15 +3,15 @@
         <a
             v-if="link"
             :href="link">
-            <c-img
+            <Img
                 :src="img"
                 :alt="title" />
         </a>
-        <c-img
+        <Img
             v-else
             :src="img"
             :alt="title" />
-        <c-landing-block-title fontSize="18">
+        <LandingBlockTitle fontSize="18">
             <a
                 v-if="link"
                 :href="link">
@@ -20,7 +20,7 @@
             <template v-else>
                 {{ title }}
             </template>
-        </c-landing-block-title>
+        </LandingBlockTitle>
         <slot />
     </div>
 </template>
@@ -29,7 +29,7 @@
 export default {
     name: 'LandingFeatureItem',
     components: {
-        'c-landing-block-title': () => import('~/components/landing/block-title/simple').then(m => m.default || m)
+        'LandingBlockTitle': () => import('../../').then(m => m.LandingBlockTitle)
     },
     props: {
         img: {

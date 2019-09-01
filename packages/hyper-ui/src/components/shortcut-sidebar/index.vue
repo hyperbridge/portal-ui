@@ -5,7 +5,7 @@
             href="#"
             hidden
             @click.prevent="showGrid" />
-        <c-grid
+        <Grid
             :center="false"
             :draggable="true"
             :sortable="true"
@@ -20,7 +20,7 @@
             @sort="sort">
             <template
                 v-slot:cell="props">
-                <c-icon
+                <Icon
                     :color="props.item"
                     :index="props.index"
                     :withButton="true"
@@ -38,7 +38,7 @@
                     :active="props.item.active"
                     @remove="props.remove()" />
             </template>
-        </c-grid>
+        </Grid>
     </div>
 </template>
 
@@ -54,8 +54,8 @@ const generateRGBColors = count => Array.apply(null, new Array(count)).map((none
 
 export default {
     components: {
-        'c-grid': () => import('~/components/shortcut-grid').then(m => m.default || m),
-        'c-icon': () => import('~/components/shortcut-icon').then(m => m.default || m)
+        'Grid': () => import('../../').then(m => m.Grid),
+        'Icon': () => import('../../').then(m => m.Icon)
     },
     props: {
         items: {

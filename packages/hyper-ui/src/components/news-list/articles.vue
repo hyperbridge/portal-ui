@@ -6,7 +6,7 @@
         :aria-labelledby="`tab_${index}-tab`"
         role="tabpanel">
         <ul class="home-tabs__news-list">
-            <c-news-article
+            <NewsArticle
                 v-for="(article, index) in articles"
                 :key="index"
                 :heading="article.heading"
@@ -20,7 +20,7 @@
 <script>
 export default {
     components: {
-        'c-news-article': () => import('~/components/news-list/article').then(m => m.default || m)
+        NewsArticle: () => import('../../').then(m => m.NewsArticle)
     },
     props: {
         articles: {
@@ -28,7 +28,10 @@ export default {
             required: true,
             default: () => []
         },
-        index: Number
+        index: {
+            type: Number,
+            default: null
+        }
     }
 }
 </script>

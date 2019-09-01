@@ -14,9 +14,9 @@
         </div>
         <div class="gift-box__content">
             <div class="gift-box_msg">
-                <c-block title="You have a gift">
+                <Block title="You have a gift">
                     <div v-html="text"></div>
-                </c-block>
+                </Block>
             </div>
             <div class="gift-box_action text-center text-white mt-auto mb-auto">
                 <div class="h5">
@@ -25,12 +25,12 @@
                 <div>
                     Status: {{ status }}
                 </div>
-                <c-button status="second-success" @click="$emit('accept')" size="md" class="margin-top-10 mx-2">
+                <Button status="second-success" @click="$emit('accept')" size="md" class="margin-top-10 mx-2">
                     Accept gift
-                </c-button>
-                <c-button status="second-warning" @click="$emit('decline')" size="md" class="margin-top-10 mx-2">
+                </Button>
+                <Button status="second-warning" @click="$emit('decline')" size="md" class="margin-top-10 mx-2">
                     Decline gift
-                </c-button>
+                </Button>
             </div>
         </div>
     </div>

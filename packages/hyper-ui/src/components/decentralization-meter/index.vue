@@ -1,5 +1,5 @@
 <template>
-    <c-block
+    <Block
         title="Decentralization Meter"
         :noGutter="true"
         :bgGradient="true"
@@ -69,7 +69,7 @@
                 </tr>
             </tbody>
         </table>
-    </c-block>
+    </Block>
 </template>
 
 <script>

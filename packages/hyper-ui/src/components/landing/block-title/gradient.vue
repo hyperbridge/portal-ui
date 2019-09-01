@@ -95,7 +95,7 @@ export default {
                 top: 0;
                 left: 0;
                 width: 100%;
-                @include gradient (right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
+                @include gradient (to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
             }
         }
         &.center-align{

@@ -3,7 +3,7 @@
         <div
             v-if="loading"
             class="col-12 text-center">
-            <c-spinner />
+            <Spinner />
         </div>
         <template v-else>
             <div
@@ -15,7 +15,7 @@
             <div
                 v-show="visibleItems.length"
                 class="content-navigation-wrapper">
-                <c-pagination
+                <Pagination
                     v-if="paginationMode"
                     v-bind="$attrs"
                     :activePage="activePage + 1"
@@ -27,13 +27,13 @@
                     <slot
                         slot="right-content"
                         name="right-content" />
-                </c-pagination>
-                <c-load-more
+                </Pagination>
+                <LoadMore
                     v-else
                     v-bind="$attrs"
                     @click="loadMore()">
                     {{ itemsLeft ? 'Load More +' + itemsLeft : 'Show Less' }}
-                </c-load-more>
+                </LoadMore>
             </div>
         </template>
     </div>
@@ -42,8 +42,8 @@
 <script>
 export default {
     components: {
-        'c-pagination': () => import('~/components/pagination').then(m => m.default || m),
-        'c-load-more': () => import('~/components/buttons/load-more').then(m => m.default || m)
+        'Pagination': () => import('../../').then(m => m.Pagination),
+        'LoadMore': () => import('../../').then(m => m.LoadMore)
     },
     inheritAttrs: false,
     props: {

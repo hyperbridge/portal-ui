@@ -15,7 +15,7 @@
                             ? 'negative'
                             : ''
                     ]">{{ price.sum > 0 ? '+' : '' }}{{ price.sum | convertCurrency }}</span>
-                <c-icon
+                <Icon
                     name="exchange-alt"
                     class="circle__icon"
                     :class="{ 'circle__icon--small': price.sum || price.yours || price.their }" />

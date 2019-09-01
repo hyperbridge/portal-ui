@@ -1,5 +1,5 @@
 <template>
-    <c-dropdown
+    <Dropdown
         :id="id"
         :name="title"
         class="product-genre"
@@ -12,14 +12,14 @@
                 :class="{ 'content__item--active': item.selected }"
                 @click.prevent="$emit('click', item)">{{ item.name }}</a>
         </div>
-    </c-dropdown>
+    </Dropdown>
 </template>
 
 <script>
 export default {
     name: 'DropdownList',
     components: {
-        'c-dropdown': () => import('~/components/dropdown-menu/type-2').then(m => m.default || m)
+        'Dropdown': () => import('../../').then(m => m.Dropdown)
     },
     props: {
         id: {

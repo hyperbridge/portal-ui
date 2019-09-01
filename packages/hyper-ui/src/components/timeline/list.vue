@@ -3,7 +3,7 @@
         <template
             v-for="(item, index) in sliced"
             v-if="items">
-            <c-timeline-item
+            <TimelineItem
                 :key="index"
                 :item="item"
                 :index="index"
@@ -20,11 +20,11 @@
                 class="posts-timeline__end">
                 <h3>End of updates</h3>
             </div>
-            <c-block v-if="!items">
+            <Block v-if="!items">
                 <h3>
                     There is no updates yet.
                 </h3>
-            </c-block>
+            </Block>
         </transition>
     </div>
 </template>
@@ -35,7 +35,8 @@ import moment from 'moment'
 export default {
     name: 'TimelineList',
     components: {
-        'c-timeline-item': () => import('~/components/timeline/item').then(m => m.default || m)
+        'Block': () => import('../../').then(m => m.Block),
+        'TimelineItem': () => import('../../').then(m => m.TimelineItem)
     },
     props: ['items', 'projectId'],
     data() {

@@ -9,24 +9,24 @@
         <div class="chat-group__welcome-action">
             <ul>
                 <li>
-                    <c-button status="plain">
+                    <Button status="plain">
                         <i class="fas fa-user-plus margin-right-5" />
                         Invite some friends
-                    </c-button>
+                    </Button>
                     to fill out your roster.
                 </li>
                 <li>
-                    <c-button status="plain">
+                    <Button status="plain">
                         <i class="fas fa-plus margin-right-5" />
                         Create channels
-                    </c-button>
+                    </Button>
                     to keep conversation organized.
                 </li>
                 <li>
-                    <c-button status="plain">
+                    <Button status="plain">
                         <i class="fas fa-cog margin-right-5" />
                         Customize
-                    </c-button>
+                    </Button>
                     your group to make it your own.
                 </li>
             </ul>

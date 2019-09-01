@@ -5,19 +5,19 @@
         </div>
         <div class="recommendation-block__body">
             <p>Sign in to view personalized recommendations</p>
-            <c-button
+            <Button
                 status="second-info"
                 class="mb-4 mt-2"
                 size="lg"
                 @click="$store.commit('application/activeModal', 'login')">
                 Sign In
-            </c-button>
+            </Button>
             <p>
-                or <c-button
+                or <Button
                     status="underline"
                     @click="$store.commit('application/activeModal', 'register')">
                     sign up
-                </c-button> and join BlockHub for free
+                </Button> and join BlockHub for free
             </p>
         </div>
     </div>

@@ -47,16 +47,16 @@
                     </select>
                 </div>
                 <div>
-                    <c-checkbox>
+                    <Checkbox>
                         Allow comments
-                    </c-checkbox>
+                    </Checkbox>
                 </div>
                 <div class="ml-auto">
-                    <c-button
+                    <Button
                         status="plain"
                         @click=" textFormatting = true ">
                         Formatting Help
-                    </c-button>
+                    </Button>
                 </div>
             </div>
             <div class="create-review__action mt-4">
@@ -64,52 +64,52 @@
                     <div class="mb-2">
                         Do you recommend this game?
                     </div>
-                    <c-button
+                    <Button
                         status="second-info"
                         size="sm"
                         icon="thumbs-up">
                         Yes
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="second-info"
                         size="sm"
                         icon="thumbs-down"
                         class="ml-2">
                         No
-                    </c-button>
+                    </Button>
                 </div>
                 <div>
-                    <c-button
+                    <Button
                         status="second-warning"
                         size="md"
                         class="mr-3"
                         @click="$emit('cancel')">
                         Cancel
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="second-success"
                         size="md">
                         Post review
-                    </c-button>
+                    </Button>
                 </div>
             </div>
         </div>
-        <c-basic-popup
+        <BasicPopup
             :activated="textFormatting"
             @close=" textFormatting = false ">
             <template slot="body">
-                <c-text-formatting />
+                <TextFormatting />
             </template>
-        </c-basic-popup>
+        </BasicPopup>
     </div>
 </template>
 
 <script>
 export default {
     components: {
-        'c-checkbox': () => import('~/components/checkbox').then(m => m.default || m),
-        'c-text-formatting': () => import('~/components/text-formatting').then(m => m.default || m),
-        'c-basic-popup': () => import('~/components/popups/basic').then(m => m.default || m)
+        'Checkbox': () => import('../../').then(m => m.Checkbox),
+        'TextFormatting': () => import('../../').then(m => m.TextFormatting),
+        'BasicPopup': () => import('../../').then(m => m.BasicPopup)
     },
     props: {
 

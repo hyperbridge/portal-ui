@@ -15,7 +15,7 @@
             <div
                 class="chat-message__content"
                 v-html="text" />
-            <!--<c-emoji />-->
+            <!--<Emoji />-->
         </div>
     </div>
 </template>
@@ -25,7 +25,7 @@ import moment from 'moment'
 
 export default {
     components: {
-        // 'c-emoji': () => import('~/components/emoji').then(m => m.default || m)
+        // 'Emoji': () => import('../../').then(m => m.Emoji)
     },
     props: {
         user: Object,

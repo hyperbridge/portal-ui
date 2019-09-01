@@ -5,7 +5,7 @@
         </div>
         <form class="user-input-field" :class="{ 'active': inputActive }">
             <div v-if="user" class="user-input--avatar">
-                <c-chat-user-avatar :avatar="user.avatar" :name="user.name" :number="user.number" style="width: 25px; height: 25px" />
+                <ChatUserAvatar :avatar="user.avatar" :name="user.name" :number="user.number" style="width: 25px; height: 25px" />
             </div>
             <div
                 role="button"
@@ -18,21 +18,21 @@
                 @blur="setInputActive(false)"
                 @keydown="handleKey"></div>
             <div class="user-input--buttons">
-                <c-button v-if="showAttachment" status="plain" @click="$emit('attachment')">
+                <Button v-if="showAttachment" status="plain" @click="$emit('attachment')">
                     <i class="fas fa-paperclip" />
-                </c-button>
-                <c-button v-if="showEmoji" status="plain" @click="$emit('emoji')">
+                </Button>
+                <Button v-if="showEmoji" status="plain" @click="$emit('emoji')">
                     <i class="far fa-smile" />
-                </c-button>
-                <c-button status="plain" @click="emitSendMessage">
+                </Button>
+                <Button status="plain" @click="emitSendMessage">
                     <img
                         class="user-input--send-icon"
                         src="./../../../assets/SVG/send.svg"
                         alt="send" />
-                </c-button>
-                <c-button status="plain" @click="$emit('like')">
+                </Button>
+                <Button status="plain" @click="$emit('like')">
                     <i class="fas fa-thumbs-up" style="color: #00aeff" />
-                </c-button>
+                </Button>
             </div>
         </form>
     </div>
@@ -43,7 +43,7 @@
 
 export default {
     components: {
-        'c-chat-user-avatar': () => import('~/components/chat-new/user-avatar').then(m => m.default || m)
+        'ChatUserAvatar': () => import('../../').then(m => m.ChatUserAvatar)
     },
 
     props: {

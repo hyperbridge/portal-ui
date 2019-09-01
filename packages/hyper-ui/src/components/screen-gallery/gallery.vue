@@ -5,10 +5,10 @@
         @mouseover="enableSlideshow(false)"
         @mouseout="mouseOut()">
         <div class="screen-gallery__main-img">
-            <c-icon
+            <Icon
                 v-show="!runSlideshow && !playVideo"
                 name="expand" />
-            <c-img
+            <Img
                 v-if="!playVideo"
                 :src="items[activeItem].overlay ? items[activeItem].src : items[activeItem]"
                 @click="showModal = true" />
@@ -25,7 +25,7 @@
                 v-show="runSlideshow"
                 class="screen-gallery__progress-bar" />
 
-            <c-image-overlay
+            <ImageOverlay
                 v-if="items[activeItem]['overlay']"
                 :title="items[activeItem]['overlay'].title"
                 :subtitle="items[activeItem]['overlay'].subtitle"
@@ -43,25 +43,25 @@
                     background: `black url(${items[randomItem].src}) no-repeat center`
                 }"
                 @click="enableVideoPlay()">
-                <c-icon name="play" />
+                <Icon name="play" />
             </li>
             <li
                 v-for="(item, index) in items"
                 :key="index"
                 :ref="`thumb-${index}`">
-                <c-img
+                <Img
                     :src="item.overlay ? item.src : item"
                     :class="{ 'inactive-item': index !== activeItem || playVideo }"
                     @click="changeActiveItem(index)" />
             </li>
         </ul>
-        <c-modal
+        <Modal
             v-if="showModal"
             @close="showModal=false">
-            <c-images-explorer
+            <ImagesExplorer
                 :images="items"
                 :startFrom="activeItem" />
-        </c-modal>
+        </Modal>
     </div>
 </template>
 
@@ -69,9 +69,9 @@
 <script>
 export default {
     components: {
-        'c-modal': () => import('~/components/modal').then(m => m.default || m),
-        'c-images-explorer': () => import('~/components/images-explorer').then(m => m.default || m),
-        'c-image-overlay': () => import('~/components/image-overlay').then(m => m.default || m)
+        'Modal': () => import('../../').then(m => m.Modal),
+        'ImagesExplorer': () => import('../../').then(m => m.ImagesExplorer),
+        'ImageOverlay': () => import('../../').then(m => m.ImageOverlay)
     },
     props: {
         main: {

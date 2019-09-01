@@ -2,7 +2,7 @@
     <div
         class="activity-chart"
         :class="[ 'size-' + size ]">
-        <c-heading-bar
+        <HeadingBar
             v-if="size != 'xs'"
             :name="title"
             :showArrows="false"
@@ -70,7 +70,7 @@
 <script>
 export default {
     components: {
-        'c-heading-bar': () => import('~/components/heading-bar').then(m => m.default || m)
+        'HeadingBar': () => import('../../').then(m => m.HeadingBar)
     },
     filters: {
         monthName(number) {

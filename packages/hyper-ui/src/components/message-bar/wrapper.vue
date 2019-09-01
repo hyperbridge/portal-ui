@@ -10,7 +10,7 @@
                 {{ title }}<span v-show="messages.length > 1">s</span>:
                 <span class="messages-bar__count">({{ messages.length }})</span>
             </h4>
-            <c-message-bar
+            <MessageBar
                 v-for="(message, index) in messages"
                 :key="index"
                 :text="message.text || message"
@@ -23,7 +23,7 @@
 export default {
     name: 'MessagesBar',
     components: {
-        'c-message-bar': () => import('~/components/message-bar').then(m => m.default || m)
+        'MessageBar': () => import('../../').then(m => m.MessageBar)
     },
     props: {
         messages: Array,

@@ -1,13 +1,13 @@
 <template>
     <div class="msg-form">
-        <c-input class="w-100" />
+        <Input class="w-100" />
     </div>
 </template>
 
 <script>
 export default {
     components: {
-        'c-input': () => import('~/components/inputs').then(m => m.default || m)
+        'Input': () => import('../../').then(m => m.Input)
     }
 }
 </script>

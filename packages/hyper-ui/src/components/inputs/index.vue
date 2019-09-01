@@ -11,7 +11,7 @@ export default {
     },
     render(h) {
         return h('input', {
-            staticClass: 'c-input',
+            staticClass: 'Input',
             on: this.listeners,
             attrs: {
                 ...this.$attrs,
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .c-input {
+    .Input {
         background: #222235;
         border-radius: 3px;
         padding: 0 10px;

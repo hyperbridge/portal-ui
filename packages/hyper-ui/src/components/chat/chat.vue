@@ -3,16 +3,16 @@
         id="chat"
         class="flex flex-column">
         <div class="col-12" style="height: 100%;">
-            <c-chat-base style="height: 100%" :channelInfo="channelIfo">
+            <ChatBase style="height: 100%" :channelInfo="channelIfo">
                 <template slot="sidebar">
-                    <c-chat-group-sidebar :channels="channels" @onChannelChange="onChannelChange($event)" />
+                    <ChatGroupSidebar :channels="channels" @onChannelChange="onChannelChange($event)" />
                 </template>
-                <c-chat-group :currentUser="user" :sendMessage="createMessage">
+                <ChatGroup :currentUser="user" :sendMessage="createMessage">
                     <template slot="messages">
-                        <c-chat-message v-for="msg in messages" :key="msg.id" :text="msg.value" :time="msg.createdAt" :user="msg.owner" />
+                        <ChatMessage v-for="msg in messages" :key="msg.id" :text="msg.value" :time="msg.createdAt" :user="msg.owner" />
                     </template>
                     <template slot="users">
-                        <c-chat-user
+                        <ChatUser
                             v-for="user in channelUsers"
                             :key="user.id"
                             :isAdmin="user.admin"
@@ -22,8 +22,8 @@
                             :game="user.game"
                             :status="user.status" />
                     </template>
-                </c-chat-group>
-            </c-chat-base>
+                </ChatGroup>
+            </ChatBase>
             <hr>
         </div>
     </div>
@@ -32,11 +32,11 @@
 <script>
 export default {
     components: {
-        'c-chat-base': () => import('~/components/chat-new/base').then(m => m.default || m),
-        'c-chat-message': () => import('~/components/chat-new/message').then(m => m.default || m),
-        'c-chat-user': () => import('~/components/chat-new/user').then(m => m.default || m),
-        'c-chat-group-sidebar': () => import('~/components/chat-new/content/group-list').then(m => m.default || m),
-        'c-chat-group': () => import('~/components/chat-new/content/group').then(m => m.default || m)
+        'ChatBase': () => import('../../').then(m => m.ChatBase),
+        'ChatMessage': () => import('../../').then(m => m.ChatMessage),
+        'ChatUser': () => import('../../').then(m => m.ChatUser),
+        'ChatGroupSidebar': () => import('../../').then(m => m.ChatGroupSidebar),
+        'ChatGroup': () => import('../../').then(m => m.ChatGroup)
     },
 
     props: {

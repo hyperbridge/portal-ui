@@ -25,14 +25,14 @@
             v-if="showActions"
             class="heading-bar__additional-action">
             <slot name="additional-action" />
-            <c-button
+            <Button
                 v-if="more"
                 status="plain"
                 :href="more"
                 icon="angle-right"
                 :swapOrder="true">
                 MORE
-            </c-button>
+            </Button>
             <div
                 v-if="showArrows"
                 class="heading-bar__nav">
@@ -40,13 +40,13 @@
                     href="#"
                     class="nav-prev"
                     @click.prevent="$emit('prevClick')">
-                    <c-icon name="arrow-left" />
+                    <Icon name="arrow-left" />
                 </a>
                 <a
                     href="#"
                     class="nav-next"
                     @click.prevent="$emit('nextClick')">
-                    <c-icon name="arrow-right" />
+                    <Icon name="arrow-right" />
                 </a>
             </div>
         </div>

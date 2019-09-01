@@ -4,10 +4,10 @@
             v-if="currentSlide"
             name="fade">
             <div class="landing-slider__main">
-                <c-swiper
+                <Swiper
                     ref="swiperTop"
                     class="gallery-top">
-                    <c-swiper-slide
+                    <SwiperSlide
                         v-for="slide in items"
                         :key="slide">
                         <div class="p-3">
@@ -22,37 +22,37 @@
                                     type="video/webm"
                                     :src="slide.src">
                             </video>
-                            <c-img
+                            <Img
                                 v-else
                                 :src="slide.image" />
-                            <c-landing-block-title
+                            <LandingBlockTitle
                                 v-if="slide.title"
                                 fontSize="32"
                                 class="text-uppercase p-0 mt-4 mb-0">
                                 {{ slide.title }}
-                            </c-landing-block-title>
-                            <c-landing-block-title
+                            </LandingBlockTitle>
+                            <LandingBlockTitle
                                 v-if="slide.subtitle"
                                 tag="div"
                                 fontSize="16"
                                 fontWeight="normal">
                                 {{ slide.subtitle }}
-                            </c-landing-block-title>
+                            </LandingBlockTitle>
                         </div>
-                    </c-swiper-slide>
-                </c-swiper>
+                    </SwiperSlide>
+                </Swiper>
             </div>
         </transition>
         <div class="landing-slider__thumbs">
-            <c-swiper
+            <Swiper
                 ref="swiperThumbs"
                 :options="swiperOptionThumbs">
                 <template v-for="slide in items">
-                    <c-swiper-slide>
-                        <c-img :src="slide.poster" />
-                    </c-swiper-slide>
+                    <SwiperSlide>
+                        <Img :src="slide.poster" />
+                    </SwiperSlide>
                 </template>
-            </c-swiper>
+            </Swiper>
             <div
                 class="swiper-button-next swiper-button-white"
                 @click.native="slider.slidePrev()" />
@@ -68,7 +68,7 @@ export default {
     name: 'LandingSlider',
     components: {
 
-        'c-landing-block-title': () => import('~/components/landing/block-title/simple').then(m => m.default || m)
+        'LandingBlockTitle': () => import('../../').then(m => m.LandingBlockTitle)
     },
     props: {
         items: {

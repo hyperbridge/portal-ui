@@ -4,19 +4,19 @@
             v-for="profile in profiles"
             :key="profile.id"
             class="profile-picker__profile">
-            <c-user-card
+            <UserCard
                 :user="profile"
                 :previewMode="true"
                 :class="{ 'default': profile.chosen }" />
             <div class="profile__action">
                 <slot>
-                    <c-button
+                    <Button
                         v-if="!profile.chosen"
                         status="info"
                         icon="check"
                         @click="$emit('chooseProfile', profile)">
                         Choose
-                    </c-button>
+                    </Button>
                 </slot>
             </div>
         </div>
@@ -26,7 +26,7 @@
 <script>
 export default {
     components: {
-        'c-user-card': () => import('~/components/user-card').then(m => m.default || m)
+        'UserCard': () => import('../../').then(m => m.UserCard)
     },
     props: {
         profiles: {
@@ -88,7 +88,7 @@ export default {
         bottom: -20px;
         width: 100%;
         height: 26px;
-        .c-button {
+        .Button {
             margin: 0 5px;
         }
     }

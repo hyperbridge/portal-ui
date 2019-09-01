@@ -6,6 +6,7 @@
 
 <script>
 import QArt from 'qartjs'
+
 export default {
     name: 'VueQart',
     props: {

@@ -8,7 +8,7 @@
             <div
                 v-if="parentImage"
                 class="img">
-                <c-img :src="parentImage" />
+                <Img :src="parentImage" />
             </div>
             <div class="text">
                 <h4>{{ parentName }}</h4>
@@ -17,21 +17,21 @@
                 </p>
             </div>
         </div>
-        <c-button
+        <Button
             status="none"
             :to="`/product/${id}`">
-            <c-img :src="image" />
+            <Img :src="image" />
             <div class="description">
                 {{ description }}
             </div>
-        </c-button>
+        </Button>
         <div class="item-action">
-            <c-button
+            <Button
                 status="info"
                 :to="`/product/${id}`"
                 iconHide>
                 Check it out
-            </c-button>
+            </Button>
         </div>
     </div>
 </template>

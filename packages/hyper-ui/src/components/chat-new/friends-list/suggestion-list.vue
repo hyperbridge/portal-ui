@@ -12,25 +12,25 @@
         <div
             v-if="open"
             class="chat-friends-suggestion__list">
-            <c-chat-user
+            <ChatUser
                 v-for="item in list"
                 :key="item.name"
                 :avatar="item.avatar"
                 :name="item.name"
                 :game="item.game">
                 <div>
-                    <c-button
+                    <Button
                         status="opacity-info"
                         size="xs">
                         Add
-                    </c-button>
-                    <c-button
+                    </Button>
+                    <Button
                         status="plain"
                         size="xs">
                         <i class="fas fa-times" />
-                    </c-button>
+                    </Button>
                 </div>
-            </c-chat-user>
+            </ChatUser>
         </div>
     </div>
 </template>
@@ -38,7 +38,7 @@
 <script>
 export default {
     components: {
-        'c-chat-user': () => import('~/components/chat-new/user').then(m => m.default || m)
+        'ChatUser': () => import('../../').then(m => m.ChatUser)
     },
     props: {
         list: [Array, Object]

@@ -1,5 +1,5 @@
 <template>
-    <c-block
+    <Block
         title="Language Support"
         :noGutter="true"
         :bgGradient="true"
@@ -66,12 +66,15 @@
                 </tr>
             </tbody>
         </table>
-    </c-block>
+    </Block>
 </template>
 
 <script>
 export default {
     name: 'LanguageSupport',
+    components: {
+        'Block': () => import('../../').then(m => m.Block)
+    },
     props: {
         languages: {
             type: Array,
