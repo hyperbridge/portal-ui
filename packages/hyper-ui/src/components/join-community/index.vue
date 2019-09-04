@@ -3,7 +3,7 @@
         v-if="!signedIn"
         class="join-community">
         <div class="join-community__wrapper">
-            <Img src="../../static/img/logo.fw.png" />
+            <Img src="/img/logo.fw.png" />
             <div class="h5 font-weight-bold">
                 Join the BlockHub community!
             </div>
@@ -21,6 +21,10 @@
 
 <script>
 export default {
+    components: {
+        'Img': () => import('../../').then(m => m.Img),
+        'Button': () => import('../../').then(m => m.Button),
+    },
     computed: {
         signedIn() {
             return this.$store.state.application.signedIn

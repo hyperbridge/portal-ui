@@ -47,6 +47,9 @@
 
 <script>
 export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    },
     props: {
         activated: {
             type: Boolean,

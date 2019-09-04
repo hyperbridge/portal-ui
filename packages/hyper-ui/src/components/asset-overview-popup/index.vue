@@ -73,7 +73,8 @@
 <script>
 export default {
     components: {
-        'HeadingBar': () => import('../../').then(m => m.HeadingBar)
+        'HeadingBar': () => import('../../').then(m => m.HeadingBar),
+        'Button': () => import('../../').then(m => m.Button),
     },
     props: {
         image: {

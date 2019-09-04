@@ -54,8 +54,8 @@ const generateRGBColors = count => Array.apply(null, new Array(count)).map((none
 
 export default {
     components: {
-        'Grid': () => import('../../').then(m => m.Grid),
-        'Icon': () => import('../../').then(m => m.Icon)
+        Grid: () => import('../../').then(m => m.ShortcutGrid),
+        Icon: () => import('../../').then(m => m.ShortcutIcon)
     },
     props: {
         items: {
@@ -69,64 +69,64 @@ export default {
             selected: null,
             fixedItems: [
                 {
-                    'r': null,
-                    'g': null,
-                    'b': null,
-                    'image': '/img/icons/twitch.png',
-                    'eventKey': 'application/activeModal',
-                    'eventValue': 'connectNetwork',
-                    'unread': false,
-                    'text': 'Go to Twitch',
-                    'sort': 1,
-                    'removable': false
+                    r: null,
+                    g: null,
+                    b: null,
+                    image: '/img/icons/twitch.png',
+                    eventKey: 'application/activeModal',
+                    eventValue: 'connectNetwork',
+                    unread: false,
+                    text: 'Go to Twitch',
+                    sort: 1,
+                    removable: false
                 },
                 {
-                    'r': null,
-                    'g': null,
-                    'b': null,
-                    'image': '/img/icons/discord.png',
-                    'eventKey': 'application/activeModal',
-                    'eventValue': 'connectNetwork',
-                    'unread': false,
-                    'text': 'Go to Discord',
-                    'sort': 2,
-                    'removable': false
+                    r: null,
+                    g: null,
+                    b: null,
+                    image: '/img/icons/discord.png',
+                    eventKey: 'application/activeModal',
+                    eventValue: 'connectNetwork',
+                    unread: false,
+                    text: 'Go to Discord',
+                    sort: 2,
+                    removable: false
                 },
                 {
-                    'r': null,
-                    'g': null,
-                    'b': null,
-                    'image': '/img/icons/steam.png',
-                    'eventKey': 'application/activeModal',
-                    'eventValue': 'connectNetwork',
-                    'unread': false,
-                    'text': 'Go to BlockHub',
-                    'sort': 3,
-                    'removable': false
+                    r: null,
+                    g: null,
+                    b: null,
+                    image: '/img/icons/steam.png',
+                    eventKey: 'application/activeModal',
+                    eventValue: 'connectNetwork',
+                    unread: false,
+                    text: 'Go to BlockHub',
+                    sort: 3,
+                    removable: false
                 },
                 {
-                    'r': null,
-                    'g': null,
-                    'b': null,
-                    'image': '/img/icons/instagram.png',
-                    'eventKey': 'application/activeModal',
-                    'eventValue': 'connectNetwork',
-                    'unread': false,
-                    'text': 'Go to Instagram',
-                    'sort': 5,
-                    'removable': false
+                    r: null,
+                    g: null,
+                    b: null,
+                    image: '/img/icons/instagram.png',
+                    eventKey: 'application/activeModal',
+                    eventValue: 'connectNetwork',
+                    unread: false,
+                    text: 'Go to Instagram',
+                    sort: 5,
+                    removable: false
                 },
                 {
-                    'r': null,
-                    'g': null,
-                    'b': null,
-                    'image': '/img/icons/youtube.png',
-                    'eventKey': 'application/activeModal',
-                    'eventValue': 'connectNetwork',
-                    'unread': false,
-                    'text': 'Go to Youtube',
-                    'sort': 6,
-                    'removable': false
+                    r: null,
+                    g: null,
+                    b: null,
+                    image: '/img/icons/youtube.png',
+                    eventKey: 'application/activeModal',
+                    eventValue: 'connectNetwork',
+                    unread: false,
+                    text: 'Go to Youtube',
+                    sort: 6,
+                    removable: false
                 }
             ]
         }

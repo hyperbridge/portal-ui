@@ -41,6 +41,14 @@
     </transition-group>
 </template>
 
+<script>
+    export default {
+        components: {
+            'Button': () => import('../../').then(m => m.Button),
+        },
+    }
+</script>
+
 <style lang="scss" scoped>
     .assets-list {
         width: 100%;

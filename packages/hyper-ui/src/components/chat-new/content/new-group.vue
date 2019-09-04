@@ -92,6 +92,9 @@ export default {
             create_new: true
         }
     },
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    },
     methods: {
         selectJoin() {
             this.join = true

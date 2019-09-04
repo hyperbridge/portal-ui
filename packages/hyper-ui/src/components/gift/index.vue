@@ -37,15 +37,18 @@
 </template>
 
 <script>
-    export default {
-        props: {
-            status: String,
-            user: String,
-            date: String,
-            text: String,
-            gift: Object
-        }
+export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button)
+    },
+    props: {
+        status: String,
+        user: String,
+        date: String,
+        text: String,
+        gift: Object
     }
+}
 </script>
 
 <style lang="scss" scoped>

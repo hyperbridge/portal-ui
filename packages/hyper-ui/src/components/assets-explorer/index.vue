@@ -177,6 +177,7 @@ import { mapGetters } from 'vuex'
 export default {
     name: 'AssetsExplorer',
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'ContentNavigation': () => import('../../').then(m => m.ContentNavigation),
         'Block': () => import('../../').then(m => m.Block),
         'HeadingBarFields': () => import('../../').then(m => m.HeadingBarFields),

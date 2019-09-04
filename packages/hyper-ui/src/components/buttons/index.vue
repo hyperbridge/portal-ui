@@ -37,6 +37,8 @@
 import { Howl } from 'howler'
 
 export default {
+    components: {
+    },
     props: {
         tag: {
             type: String,

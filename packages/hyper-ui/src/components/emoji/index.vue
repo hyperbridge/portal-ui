@@ -52,6 +52,7 @@ import { Picker, Emoji } from 'emoji-mart-vue'
 
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'EmojiPicker': Picker,
         'Emoji': Emoji
     },

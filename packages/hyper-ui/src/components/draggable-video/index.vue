@@ -61,6 +61,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'Draggable': () => import('../../').then(m => m.Draggable)
     },
     props: {

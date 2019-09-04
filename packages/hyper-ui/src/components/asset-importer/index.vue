@@ -261,6 +261,7 @@
 
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'Loading-bar': () => import('../../').then(m => m.Loading-bar),
         'Notification-inline': () => import('../../').then(m => m.Notification-inline),
         'Checkbox': () => import('../../').then(m => m.Checkbox)

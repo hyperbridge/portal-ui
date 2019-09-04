@@ -36,6 +36,7 @@
 export default {
     name: 'FrequentlyTradedAssets',
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'Block': () => import('../../').then(m => m.Block)
     },
     props: {

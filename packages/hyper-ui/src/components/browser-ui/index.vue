@@ -64,6 +64,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'Dropdown': () => import('../../').then(m => m.Dropdown)
     },
     data() {

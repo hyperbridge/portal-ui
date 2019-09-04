@@ -38,7 +38,8 @@
 <script>
 export default {
     components: {
-        'ChatUser': () => import('../../').then(m => m.ChatUser)
+        'ChatUser': () => import('../../').then(m => m.ChatUser),
+        'Button': () => import('../../').then(m => m.Button),
     },
     props: {
         list: [Array, Object]

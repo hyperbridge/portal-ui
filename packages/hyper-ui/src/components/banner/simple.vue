@@ -7,8 +7,23 @@
             :to="to"
             :href="link"
             class="block-link">
-            <div class="banner__text">
-                <slot />
+            <div class="d-flex align-items-center">
+                <div class="banner__text">
+                    <div>
+                        <slot />
+                    </div>
+                    <div class="banner__action">
+                        <Button
+                            tag="div"
+                            tatus="info"
+                            iconHide
+                            size="lg"
+                            :to="to"
+                            :href="link">
+                            JOIN NOW
+                        </Button>
+                    </div>
+                </div>
             </div>
         </Button>
     </div>
@@ -16,7 +31,9 @@
 
 <script>
 export default {
-    name: 'SimpleBanner',
+    components: {
+        'Button': () => import('@ericmuyser/hyper-ui').then(m => m.Button),
+    },
     props: {
         imgSrc: String,
         link: String,
@@ -28,7 +45,7 @@ export default {
 <style lang="scss" scoped>
     .banner{
         display: flex;
-        transition: transform .3s ease;
+        transition: all .3s ease;
         width: 100%;
         height: 100%;
         border-radius: 10px;
@@ -39,6 +56,7 @@ export default {
         background-size: cover;
         backdrop-filter: blur(2px);
         opacity: 0.9;
+        justify-content: space-between;
         &:hover{
             cursor: pointer;
             will-change: transform;
@@ -57,8 +75,9 @@ export default {
     .banner__text{
         display: flex;
         color: #fff;
-        flex-direction: column;
-        justify-content: center;
+        /*flex-direction: column;*/
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
         p{
             font-size: 1.5em;

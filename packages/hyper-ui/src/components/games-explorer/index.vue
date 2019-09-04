@@ -152,6 +152,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'HeadingBar': () => import('../../').then(m => m.HeadingBar),
         'HeadingBarFields': () => import('../../').then(m => m.HeadingBarFields),
         'InputSearcher': () => import('../../').then(m => m.InputSearcher),

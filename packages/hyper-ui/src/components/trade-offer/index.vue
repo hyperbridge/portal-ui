@@ -133,6 +133,7 @@
 export default {
     name: 'TradeOffer',
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'Author': () => import('../../').then(m => m.Author),
         'Tooltip': () => import('../../').then(m => m.Tooltip),
         'AssetPreview': () => import('../../').then(m => m.AssetPreview)

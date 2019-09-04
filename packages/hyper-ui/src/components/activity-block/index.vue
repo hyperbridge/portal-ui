@@ -69,6 +69,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'ProgressBar': () => import('../progress-bar').then(m => m.ProgressBar)
     },
     props: {
