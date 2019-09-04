@@ -23,20 +23,20 @@
 
                 <div class="filter-block d-flex justify-content-between align-items-center margin-bottom-20">
                     <div class="d-inline-flex align-items-center">
-                        <Dropdown-menu
+                        <DropdownMenu
                             class="margin-right-10"
                             title="FILTER BY PRODUCTS">
                             <List
                                 :items="selectableProducts"
                                 @click="item => item.selected = !item.selected" />
-                        </Dropdown-menu>
-                        <Dropdown-menu
+                        </DropdownMenu>
+                        <DropdownMenu
                             class="margin-right-10"
                             title="FILTER BY GENRE">
                             <List
                                 :items="selectableGenres"
                                 @click="item => item.selected = !item.selected" />
-                        </Dropdown-menu>
+                        </DropdownMenu>
                         <InputSearcher
                             v-model="phrase"
                             class="assets-explorer__input-searcher" />
@@ -172,8 +172,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
     name: 'AssetsExplorer',
     components: {
@@ -184,7 +182,7 @@ export default {
         'Dropdown': () => import('../../').then(m => m.Dropdown),
         'InputSearcher': () => import('../../').then(m => m.InputSearcher),
         'AssetsList': () => import('../../').then(m => m.AssetsList),
-        'Dropdown-menu': () => import('../../').then(m => m.Dropdown-menu),
+        'DropdownMenu': () => import('../../').then(m => m.DropdownMenu),
         'List': () => import('../../').then(m => m.List),
         'OptionTag': () => import('../../').then(m => m.OptionTag)
     },
