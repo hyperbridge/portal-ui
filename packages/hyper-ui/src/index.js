@@ -202,54 +202,56 @@ export const SimpleTable = require('./components/table-simple');
 export const ScrollTable = require('./components/scroll-table');
 export const TextFormatting = require('./components/text-formatting');
 
+
+
 // export const Swiper = re
 
 
 //BlockContentWithFeatureItem': () => import('~/components/landing / block - content / feature - item').then(m => m.default),
-        // 'c-header': () => import('~/components/headers/basic').then(m => m.default || m),
-        // 'c-slim-header': () => import('~/components/headers/slim').then(m => m.default || m),
-        // 'c-popup': () => import('@ericmuyser/hyper-ui').then(m => m.default || m),
-        // 'c-basic-popup': () => import('~/components/popups/basic').then(m => m.default || m),
-        // 'c-custom-modal': () => import('~/components/modal/custom').then(m => m.default || m),
-        // 'c-terms-popup': () => import('~/components/terms-popup').then(m => m.default || m),
-        // 'c-privacy-popup': () => import('~/components/privacy-popup').then(m => m.default || m),
-        // 'c-collection-navigation': () => import('~/components/navigation/collection').then(m => m.default || m),
-        // 'c-wallet-navigation': () => import('~/components/navigation/wallet').then(m => m.default || m),
-        // 'c-account-navigation': () => import('~/components/navigation/account').then(m => m.default || m),
-        // 'c-settings-navigation': () => import('~/components/navigation/settings').then(m => m.default || m),
-        // 'c-help-navigation': () => import('~/components/navigation/help').then(m => m.default || m),
-        // 'c-funding-navigation': () => import('~/components/navigation/funding').then(m => m.default || m),
-        // 'c-store-navigation': () => import('~/components/navigation/store').then(m => m.default || m),
-        // 'c-asset-navigation': () => import('~/components/navigation/asset').then(m => m.default || m),
-        // 'c-product-navigation': () => import('~/components/navigation/product').then(m => m.default || m),
-        // 'c-project-navigation': () => import('~/components/navigation/project').then(m => m.default || m),
-        // 'c-chat-navigation': () => import('~/components/navigation/chat').then(m => m.default || m),
-        // 'c-idea-navigation': () => import('~/components/navigation/idea').then(m => m.default || m),
-        // 'c-community-navigation': () => import('~/components/navigation/community').then(m => m.default || m),
-        // 'c-welcome-popup': () => import('~/components/welcome-popup').then(m => m.default || m),
-        // 'c-download-popup': () => import('~/components/download-popup').then(m => m.default || m),
-        // 'c-unlock-popup': () => import('~/components/unlock-popup').then(m => m.default || m),
-        // 'c-claim-popup': () => import('~/components/claim-popup').then(m => m.default || m),
-        // 'c-login-popup': () => import('~/components/login-popup').then(m => m.default || m),
-        // 'c-register-popup': () => import('~/components/register-popup').then(m => m.default || m),
-        // 'c-send-funds-popup': () => import('~/components/send-funds-popup').then(m => m.default || m),
-        // 'c-purchase-popup': () => import('~/components/purchase-popup').then(m => m.default || m),
-        // 'c-mission-control-popup': () => import('~/components/mission-control-popup').then(m => m.default || m),
-        // 'c-add-collection-popup': () => import('~/components/popups/add-collection').then(m => m.default || m),
-        // 'c-user-card': () => import('~/components/user-card').then(m => m.default || m),
-        // 'c-clock': () => import('~/components/clock').then(m => m.default || m),
-        // 'c-status-dot': () => import('~/components/status-dot').then(m => m.default || m),
-        // 'c-sidepanel': () => import('~/components/sidepanel').then(m => m.default || m),
-        // 'c-cookie-policy': () => import('~/components/cookie-policy').then(m => m.default || m),
-        // 'c-qr-code': () => import('~/components/qr-code').then(m => m.default || m),
-        // 'c-shortcut-sidebar': () => import('~/components/shortcut-sidebar').then(m => m.default || m),
-        // 'c-load-more': () => import('~/components/buttons/load-more').then(m => m.default || m),
-        // 'c-sidebar-menu-link': () => import('~/components/sidebar-menu/menu-item').then(m => m.default || m),
-        // 'c-profile-chooser': () => import('~/components/profile-chooser').then(m => m.default || m),
-        // 'c-settings': () => import('~/components/settings').then(m => m.default || m),
-        // 'c-social-connect': () => import('~/components/social-connect').then(m => m.default || m),
-        // 'c-draggable-video': () => import('~/components/draggable-video').then(m => m.default || m),
-        // 'c-video': () => import('~/components/draggable-video').then(m => m.default || m)
+// 'c-header': () => import('~/components/headers/basic').then(m => m.default || m),
+// 'c-slim-header': () => import('~/components/headers/slim').then(m => m.default || m),
+// 'c-popup': () => import('@ericmuyser/hyper-ui').then(m => m.default || m),
+// 'c-basic-popup': () => import('~/components/popups/basic').then(m => m.default || m),
+// 'c-custom-modal': () => import('~/components/modal/custom').then(m => m.default || m),
+// 'c-terms-popup': () => import('~/components/terms-popup').then(m => m.default || m),
+// 'c-privacy-popup': () => import('~/components/privacy-popup').then(m => m.default || m),
+// 'c-collection-navigation': () => import('~/components/navigation/collection').then(m => m.default || m),
+// 'c-wallet-navigation': () => import('~/components/navigation/wallet').then(m => m.default || m),
+// 'c-account-navigation': () => import('~/components/navigation/account').then(m => m.default || m),
+// 'c-settings-navigation': () => import('~/components/navigation/settings').then(m => m.default || m),
+// 'c-help-navigation': () => import('~/components/navigation/help').then(m => m.default || m),
+// 'c-funding-navigation': () => import('~/components/navigation/funding').then(m => m.default || m),
+// 'c-store-navigation': () => import('~/components/navigation/store').then(m => m.default || m),
+// 'c-asset-navigation': () => import('~/components/navigation/asset').then(m => m.default || m),
+// 'c-product-navigation': () => import('~/components/navigation/product').then(m => m.default || m),
+// 'c-project-navigation': () => import('~/components/navigation/project').then(m => m.default || m),
+// 'c-chat-navigation': () => import('~/components/navigation/chat').then(m => m.default || m),
+// 'c-idea-navigation': () => import('~/components/navigation/idea').then(m => m.default || m),
+// 'c-community-navigation': () => import('~/components/navigation/community').then(m => m.default || m),
+// 'c-welcome-popup': () => import('~/components/welcome-popup').then(m => m.default || m),
+// 'c-download-popup': () => import('~/components/download-popup').then(m => m.default || m),
+// 'c-unlock-popup': () => import('~/components/unlock-popup').then(m => m.default || m),
+// 'c-claim-popup': () => import('~/components/claim-popup').then(m => m.default || m),
+// 'c-login-popup': () => import('~/components/login-popup').then(m => m.default || m),
+// 'c-register-popup': () => import('~/components/register-popup').then(m => m.default || m),
+// 'c-send-funds-popup': () => import('~/components/send-funds-popup').then(m => m.default || m),
+// 'c-purchase-popup': () => import('~/components/purchase-popup').then(m => m.default || m),
+// 'c-mission-control-popup': () => import('~/components/mission-control-popup').then(m => m.default || m),
+// 'c-add-collection-popup': () => import('~/components/popups/add-collection').then(m => m.default || m),
+// 'c-user-card': () => import('~/components/user-card').then(m => m.default || m),
+// 'c-clock': () => import('~/components/clock').then(m => m.default || m),
+// 'c-status-dot': () => import('~/components/status-dot').then(m => m.default || m),
+// 'c-sidepanel': () => import('~/components/sidepanel').then(m => m.default || m),
+// 'c-cookie-policy': () => import('~/components/cookie-policy').then(m => m.default || m),
+// 'c-qr-code': () => import('~/components/qr-code').then(m => m.default || m),
+// 'c-shortcut-sidebar': () => import('~/components/shortcut-sidebar').then(m => m.default || m),
+// 'c-load-more': () => import('~/components/buttons/load-more').then(m => m.default || m),
+// 'c-sidebar-menu-link': () => import('~/components/sidebar-menu/menu-item').then(m => m.default || m),
+// 'c-profile-chooser': () => import('~/components/profile-chooser').then(m => m.default || m),
+// 'c-settings': () => import('~/components/settings').then(m => m.default || m),
+// 'c-social-connect': () => import('~/components/social-connect').then(m => m.default || m),
+// 'c-draggable-video': () => import('~/components/draggable-video').then(m => m.default || m),
+// 'c-video': () => import('~/components/draggable-video').then(m => m.default || m)
 // import HeadingBar from '@/components/heading-bar/simple-colored'
 // import DottedList from '@/components/list/dots'
 // Layout from '../components/front-layout'
@@ -302,8 +304,6 @@ export const TextFormatting = require('./components/text-formatting');
 // export const zzz = () => import('./components/zzz')
 
 
-export const init = function () {
+export const init = function() {
 
 }
-
-
