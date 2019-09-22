@@ -42,7 +42,7 @@
 export default {
     name: 'PromotionItem',
     components: {
-        'Button': () => import('../buttons').then(m => m.Button),
+        'Button': () => import('../../').then(m => m.Button),
     },
     props: {
         title: {

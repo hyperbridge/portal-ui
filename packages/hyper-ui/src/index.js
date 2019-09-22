@@ -43,6 +43,7 @@ export const AssetsGrid = require('./components/assets-grid');
 export const Toggle = require('./components/toggle');
 export const AssetsList = require('./components/assets-list-item/featured-list');
 export const AssetsListDetail = require('./components/assets-list-item');
+export const AssetsItem = require('./components/assets-list-item/item');
 export const Block = require('./components/block');
 export const SimpleBlock = require('./components/block/simple');
 export const CustomModal = require('./components/modal/custom');
@@ -53,7 +54,7 @@ export const DropdownPost = require('./components/dropdown-menu/index');
 export const DropdownCurrency = require('./components/dropdown-menu/currency');
 export const DropdownLang = require('./components/dropdown-menu/language');
 export const DropdownMenu = require('./components/dropdown-menu/type-2');
-export const FTradedAssets = require('./components/frequently-traded-assets/index');
+export const TradedAssets = require('./components/frequently-traded-assets/index');
 export const GamePlan = require('./components/game-plans/plan');
 export const GamesGrid = require('./components/game-grid/with-description');
 export const GamesGridSimple = require('./components/game-grid/simple');
@@ -181,6 +182,8 @@ export const LoadingLogo = require('./components/loading-bar/logo-loader');
 export const CurrencyDropdown = require('./components/dropdown-menu/currency');
 export const LanguageDropdown = require('./components/dropdown-menu/language');
 
+export const CryptoIcon = require('./components/icon/crypto');
+
 export const ImageOverlay = require('./components/image-overlay');
 export const ProductCards = require('./components/product-card/product-cards');
 export const ProductSlider = require('./components/product-slider');
@@ -201,6 +204,11 @@ export const Drawer = require('./components/drawer');
 export const SimpleTable = require('./components/table-simple');
 export const ScrollTable = require('./components/scroll-table');
 export const TextFormatting = require('./components/text-formatting');
+// export const Switch = require('./components/switch');
+
+
+export const Claim = require('./components/curator-panel/claim');
+export const AssetPopup = require('./components/asset-overview-popup');
 
 
 

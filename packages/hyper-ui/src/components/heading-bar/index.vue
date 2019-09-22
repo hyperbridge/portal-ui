@@ -70,8 +70,8 @@ export default {
             default: false
         },
         more: {
-            type: Boolean,
-            default: false
+            type: String,
+            default: ""
         },
         showActions: {
             type: Boolean,
@@ -86,6 +86,7 @@ export default {
     },
     components: {
         'Button': () => import('../../').then(m => m.Button),
+        'Icon': () => import('../../').then(m => m.Icon),
     },
     data() {
         return {
