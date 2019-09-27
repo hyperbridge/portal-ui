@@ -39,6 +39,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
     },
     filters: {
         currencySign(cur_name) {

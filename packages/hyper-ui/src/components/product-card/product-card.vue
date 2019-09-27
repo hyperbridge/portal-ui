@@ -25,6 +25,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'Tags': () => import('../../').then(m => m.Tags)
     },
     props: {

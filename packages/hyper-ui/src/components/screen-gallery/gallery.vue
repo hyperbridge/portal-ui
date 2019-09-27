@@ -70,6 +70,8 @@
 export default {
     components: {
         'Modal': () => import('../../').then(m => m.Modal),
+        'Icon': () => import('../../').then(m => m.Icon),
+        'Img': () => import('../../').then(m => m.Img),
         'ImagesExplorer': () => import('../../').then(m => m.ImagesExplorer),
         'ImageOverlay': () => import('../../').then(m => m.ImageOverlay)
     },

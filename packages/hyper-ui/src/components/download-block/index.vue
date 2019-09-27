@@ -9,7 +9,7 @@
                     alt="Logo" />
                 <Img
                     v-if="showPreview"
-                    src="static/img/download-block-bg.png"
+                    src="/img/download-block-bg.png"
                     class="absolute_img"
                     alt="Logo" />
             </div>
@@ -74,6 +74,9 @@
 
 <script>
 export default {
+    components :{
+        'Button': () => import('../../').then(m => m.Button)
+    },
     props: {
         showPreview: {
             type: Boolean,

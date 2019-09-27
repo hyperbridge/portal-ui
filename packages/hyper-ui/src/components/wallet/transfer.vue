@@ -144,7 +144,8 @@
 export default {
     components: {
         'Dropdown': () => import('../../').then(m => m.Dropdown),
-        'Multiselect': () => import('vue-multiselect').then(m => m.default)
+        'Multiselect': () => import('vue-multiselect').then(m => { return m.default; } ),
+        'Button': () => import('../../').then(m => m.Button)
     },
     data() {
         return {

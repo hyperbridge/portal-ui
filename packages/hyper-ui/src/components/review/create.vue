@@ -107,6 +107,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'Checkbox': () => import('../../').then(m => m.Checkbox),
         'TextFormatting': () => import('../../').then(m => m.TextFormatting),
         'BasicPopup': () => import('../../').then(m => m.BasicPopup)

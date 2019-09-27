@@ -268,7 +268,7 @@ export default {
         display: inline-flex;
         flex-direction: column;
         padding: 0;
-        .Button{
+        .button{
             width: auto;
             margin: 0 auto 15px 0;
             align-self: flex-start;

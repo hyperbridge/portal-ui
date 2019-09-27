@@ -26,6 +26,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'UserCard': () => import('../../').then(m => m.UserCard)
     },
     props: {
@@ -88,7 +89,7 @@ export default {
         bottom: -20px;
         width: 100%;
         height: 26px;
-        .Button {
+        .button {
             margin: 0 5px;
         }
     }

@@ -189,7 +189,7 @@
                     class="developer-banner">
                     <div class="img">
                         <img
-                            src="/static/img/block-sdk.png">
+                            src="/img/block-sdk.png">
                     </div>
                     <div class="text">
                         <h3>Are you a developer?</h3>
@@ -350,6 +350,7 @@ import Vue from 'vue'
 
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button)
     },
     props: [],
     data() {
@@ -395,7 +396,7 @@ export default {
         })
     },
     created() {
-        if (process.client) {
+        // if (process.client) {
             this.$('body').off('click').on('click', "[data-action='fixedpanel-toggle']", e => {
                 const btn = this.$('#sidebar-toggle-btn span')
 
@@ -409,7 +410,7 @@ export default {
                     this.$('.snotify').hide()
                 }
             })
-        }
+        // }
     },
     methods: {
         ensureDesktopWelcome(to) {

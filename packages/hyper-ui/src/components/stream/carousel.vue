@@ -35,7 +35,6 @@
 
 <script>
 export default {
-    name: 'ProductSlider',
     components: {
         'StreamItem': () => import('../../').then(m => m.StreamItem)
     },

@@ -5,49 +5,8 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin porta vel quam in hendrerit.
             </div>
         </div>
+
         <div class="wallet-deposit__body mt-auto">
-            <div class="wallet-deposit__item">
-                <div class="h4">
-                    Proin porta vel quam in hendrerit.
-                </div>
-                <p>
-                    Vestibulum magna nisl, vehicula eu orci sed, viverra venenatis nisi.
-                    Vivamus nulla metus, tempus id rhoncus ac, ullamcorper eget felis.
-                </p>
-                <Button
-                    status="opacity-info"
-                    size="lg">
-                    Buy
-                </Button>
-            </div>
-            <div class="wallet-deposit__item">
-                <div class="h4">
-                    Proin porta vel quam in hendrerit.
-                </div>
-                <p>
-                    Vestibulum magna nisl, vehicula eu orci sed, viverra venenatis nisi.
-                    Vivamus nulla metus, tempus id rhoncus ac, ullamcorper eget felis.
-                </p>
-                <Button
-                    status="opacity-info"
-                    size="lg">
-                    Buy
-                </Button>
-            </div>
-            <div class="wallet-deposit__item">
-                <div class="h4">
-                    Proin porta vel quam in hendrerit.
-                </div>
-                <p>
-                    Vestibulum magna nisl, vehicula eu orci sed, viverra venenatis nisi.
-                    Vivamus nulla metus, tempus id rhoncus ac, ullamcorper eget felis.
-                </p>
-                <Button
-                    status="opacity-info"
-                    size="lg">
-                    Buy
-                </Button>
-            </div>
             <div class="wallet-deposit__item">
                 <div class="h4">
                     Proin porta vel quam in hendrerit.
@@ -67,46 +26,12 @@
 </template>
 
 <script>
-export default {
-    components: {
-        'Dropdown': () => import('../../').then(m => m.Dropdown),
-        'Multiselect': () => import('vue-multiselect').then(m => m.default)
-    },
-    data() {
-        return {
-            options: [
-                {
-                    title: 'account 1',
-                    eth: '1342.123',
-                    usd: '13412'
-                },
-                {
-                    title: 'account 2',
-                    eth: '42.13',
-                    usd: '92'
-                },
-                {
-                    title: 'account 3',
-                    eth: '132.123',
-                    usd: '412'
-                }
-            ],
-            options2: ['0xs89d7f9ay8f98dfy', '0x0294u0hefoihwef0', '0x98weu023h0h09wef', '0xowefhoi2h3r922983'],
-            value: {
-                title: 'account 3',
-                eth: '132.123',
-                usd: '412'
-            },
-            value2: '0x0294u0hefoihwef0'
-        }
-    },
-    methods: {
-        addNew(address) {
-            this.options2.push(address)
-            this.value2 = address
-        }
+    export default {
+        props: {},
+        components: {
+            'Button': () => import('../../').then(m => m.Button)
+        },
     }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -123,6 +48,7 @@ export default {
     }
     .wallet-deposit__body{
         display: flex;
+        height: 100%;
         flex-direction: column;
         color: #fff;
         overflow-y: auto;
@@ -136,7 +62,7 @@ export default {
             border-bottom: 0;
             padding-bottom: 0;
         }
-        .Button{
+        .c-button{
             margin-top: 15px;
         }
     }

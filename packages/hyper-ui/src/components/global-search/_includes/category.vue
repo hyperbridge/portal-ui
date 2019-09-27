@@ -101,6 +101,9 @@ export default {
             type: Object
         }
     },
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    },
     data() {
         return {
             showDetails: false

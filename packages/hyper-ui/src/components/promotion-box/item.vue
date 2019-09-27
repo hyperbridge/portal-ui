@@ -42,7 +42,7 @@
 export default {
     name: 'PromotionItem',
     components: {
-        'Button': () => import('../buttons').then(m => m.Button),
+        'Button': () => import('../../').then(m => m.Button),
     },
     props: {
         title: {
@@ -102,7 +102,7 @@ export default {
         color: #fff;
         width: calc(80% - 40px);
     }
-    .Button {
+    .button {
         font-size: 16px;
         padding: 8px 13px !important;
         text-transform: uppercase;

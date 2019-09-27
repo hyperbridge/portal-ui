@@ -62,6 +62,7 @@
 export default {
     name: 'OptionBlock',
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'ButtonFav': () => import('../../').then(m => m.ButtonFav),
         'OptionListItem': () => import('../../').then(m => m.OptionListItem)
     },

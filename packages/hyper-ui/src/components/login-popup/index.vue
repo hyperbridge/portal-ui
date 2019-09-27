@@ -102,7 +102,7 @@
                     </div>
                 </div>
 
-                <p
+                <div
                     v-if="errors.length"
                     class="errors">
                     <br>
@@ -114,7 +114,7 @@
                             {{ error }}
                         </li>
                     </ul>
-                </p>
+                </div>
             </div>
         </div>
 
@@ -138,16 +138,16 @@
 </template>
 
 <script>
-import FormData from 'form-data'
-
 export default {
     components: {
         'Popup': () => import('../../').then(m => m.Popup),
         'TermsPopup': () => import('../../').then(m => m.TermsPopup),
         'CustomModal': () => import('../../').then(m => m.CustomModal),
         'HeadingBarWithSimpleColor': () => import('../../').then(m => m.HeadingBarWithSimpleColor),
+        'Button': () => import('../../').then(m => m.Button),
         'TermsBlock': () => import('../../').then(m => m.TermsBlock),
-        'PrivacyBlock': () => import('../../').then(m => m.PrivacyBlock)
+        'PrivacyBlock': () => import('../../').then(m => m.PrivacyBlock),
+        'Loading': () => import('../../').then(m => m.Loading),
     },
     props: ['activated'],
     data() {

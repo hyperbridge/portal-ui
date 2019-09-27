@@ -202,6 +202,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'SimpleTable': () => import('../../').then(m => m.SimpleTable)
     }
 }

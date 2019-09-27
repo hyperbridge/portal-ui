@@ -12,7 +12,10 @@
 <script>
 export default {
     name: 'ArticleListItem',
-    props: ['to', 'link']
+    props: ['to', 'link'],
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    }
 }
 </script>
 
@@ -21,7 +24,7 @@ export default {
         padding: 0;
         margin-bottom: 15px;
         display: block;
-        .Button{
+        .button{
             display: flex;
             justify-content: space-between;
             align-items: center;

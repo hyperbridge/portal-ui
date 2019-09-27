@@ -43,6 +43,7 @@
 
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'ChatUserAvatar': () => import('../../').then(m => m.ChatUserAvatar)
     },
 

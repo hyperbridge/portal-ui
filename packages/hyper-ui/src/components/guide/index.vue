@@ -501,7 +501,7 @@ export default {
     .buttons-container{
         flex-direction: column;
         display: flex;
-        .Button{
+        .button{
             margin: 10px auto;
         }
     }

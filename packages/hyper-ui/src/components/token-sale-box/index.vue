@@ -3,7 +3,7 @@
         <div class="token-sale-box__head">
             <div class="d-flex align-items-center">
                 <div class="coin-img">
-                    <img src="../../static/img/icons/token-icon.png">
+                    <img src="/img/icons/token-icon.png">
                 </div>
                 <div class="box-title">
                     <h1 class="text-uppercase p-0 m-0">
@@ -143,6 +143,7 @@
 export default {
     name: 'TokenSale',
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'ProgressBar': () => import('../../').then(m => m.ProgressBar)
     },
     props: {

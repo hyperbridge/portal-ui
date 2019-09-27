@@ -15,13 +15,16 @@
 <script>
 export default {
     name: 'TopicListItem',
-    props: ['link', 'to', 'icon', 'size']
+    props: ['link', 'to', 'icon', 'size'],
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    }
 }
 </script>
 
 <style lang="scss" scoped>
     .topiListItem{
-        .Button {
+        .button {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -45,7 +48,7 @@ export default {
             }
         }
         &.block-size-lg{
-            .Button{
+            .button{
                 font-size: 18px;
                 i{
                     font-size: 32px;

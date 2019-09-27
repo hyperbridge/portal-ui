@@ -49,7 +49,11 @@ export default {
             type: Boolean,
             default: false
         }
-    }
+    },
+    components: {
+        'Img': () => import('../../').then(m => m.Img),
+        'Icon': () => import('../../').then(m => m.Icon),
+    },
 }
 </script>
 

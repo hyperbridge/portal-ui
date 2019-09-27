@@ -3,12 +3,11 @@
         <div
             class="currency-dropdown__current"
             @click="toggleList">
-            <CountryFlag
-                v-if="currentCurrency.country"
-                :country="currentCurrency.country"
-                size="small" />
+<!--            <CountryFlag-->
+<!--                v-if="currentCurrency.country"-->
+<!--                :country="currentCurrency.country"-->
+<!--                size="small" />-->
             <CryptoIcon
-                v-else
                 :name="currentCurrency.code" />
             <span class="currency-name">
                 {{ currentCurrency.code }}
@@ -28,12 +27,11 @@
                         :key="index"
                         class="currency-dropdown__list-item"
                         @click="changeCurrency(currency)">
-                        <CountryFlag
-                            v-if="currency.country"
-                            :country="currency.country"
-                            size="small" />
+<!--                        <CountryFlag-->
+<!--                            v-if="currency.country"-->
+<!--                            :country="currency.country"-->
+<!--                            size="small" />-->
                         <CryptoIcon
-                            v-else
                             :name="currency.code" />
                         <span class="currency-name">
                             {{ currency.code }}

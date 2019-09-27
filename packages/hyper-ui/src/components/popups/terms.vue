@@ -47,6 +47,9 @@
 
 <script>
 export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    },
     props: {
         activated: {
             type: Boolean,
@@ -56,6 +59,9 @@ export default {
             type: String,
             default: null
         }
+    },
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
     },
     data() {
         return {
@@ -166,7 +172,7 @@ export default {
         justify-content: flex-end;
         align-items: center;
         margin-top: 30px;
-        .Button{
+        .button{
             &.color-red{
                 color: #F75D5D;
                 &:hover{

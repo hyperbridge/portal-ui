@@ -51,7 +51,7 @@
         <Vote
             v-if="hovering"
             v-access="'rating.read'"
-            :votes="rating" />
+            :votes="rating || 0" />
     </div>
 </template>
 

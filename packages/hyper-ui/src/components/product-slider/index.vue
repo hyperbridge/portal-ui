@@ -47,6 +47,10 @@
 <script>
 export default {
     components: {
+        'Swiper': () => import('../../').then(m => m.Swiper),
+        'SwiperSlide': () => import('../../').then(m => m.SwiperSlide),
+        'HeadingBar': () => import('../../').then(m => m.HeadingBar),
+        'Block': () => import('../../').then(m => m.Block),
         'ProductCard': () => import('../../').then(m => m.ProductCard),
         'ProductCardDynamic': () => import('../../').then(m => m.ProductCardDynamic)
     },

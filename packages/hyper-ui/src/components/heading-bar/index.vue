@@ -70,8 +70,8 @@ export default {
             default: false
         },
         more: {
-            type: Boolean,
-            default: false
+            type: String,
+            default: ""
         },
         showActions: {
             type: Boolean,
@@ -83,6 +83,10 @@ export default {
         },
         activeIndex: Number,
         itemsLength: Number
+    },
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+        'Icon': () => import('../../').then(m => m.Icon),
     },
     data() {
         return {
@@ -113,7 +117,7 @@ export default {
         width: 100%;
         justify-content: space-between;
         border-bottom: 2px solid #fff;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;

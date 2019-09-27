@@ -4,7 +4,7 @@
             Welcome to ChanelName!
         </div>
         <div class="welcome-logo">
-            <img src="../../../static/img/logo.png">
+            <img src="/img/logo.png">
         </div>
         <div class="chat-group__welcome-action">
             <ul>
@@ -33,6 +33,14 @@
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        components: {
+            'Button': () => import('../../').then(m => m.Button),
+        },
+    }
+</script>
 
 
 <style lang="scss" scoped>

@@ -43,19 +43,19 @@
         <template slot="footer">
             <div class="d-flex align-items-center justify-content-between border-top pt-4">
                 <img
-                    src="../../static/img/icons/steam-square-icon.png"
+                    src="/img/icons/steam-square-icon.png"
                     alt="BlockHub"
                     width="45"
                     style="opacity: .5"
                     class="mr-4">
                 <div>
                     BlockHub is premier desktop gaming platform. It's free to join and ease to use.
-                    <Button
-                        status="plain"
-                        href="https://store.steampowered.com/about/"
-                        class="p-0">
-                        Learn more about BlockHub
-                    </Button>
+<!--                    <Button-->
+<!--                        status="plain"-->
+<!--                        href="https://store.steampowered.com/about/"-->
+<!--                        class="p-0">-->
+<!--                        Learn more about BlockHub-->
+<!--                    </Button>-->
                 </div>
             </div>
         </template>

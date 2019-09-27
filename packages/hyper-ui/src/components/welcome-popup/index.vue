@@ -34,6 +34,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'Popup': () => import('../../').then(m => m.Popup),
         'WelcomeBox': () => import('../../').then(m => m.WelcomeBox)
     },

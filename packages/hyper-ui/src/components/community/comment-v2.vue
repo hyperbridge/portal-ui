@@ -54,6 +54,7 @@ export default {
     components: {
         'Dropdown-menu': () => import('../../').then(m => m.Dropdown-menu),
         'CommunityReply': () => import('../../').then(m => m.CommunityReply),
+        'Button': () => import('../../').then(m => m.Button),
         'ButtonArrows': () => import('../../').then(m => m.ButtonArrows),
         'EmojiPicker': VueEmojiReact
     },

@@ -67,7 +67,7 @@ export default {
             max-width: calc( 100% - 115px );
             display: inline-block;
         }
-        .Button {
+        .button {
             min-width: 90px;
             height: 24px;
         }

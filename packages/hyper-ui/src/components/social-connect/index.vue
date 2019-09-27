@@ -29,6 +29,9 @@
 
 <script>
 export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    },
     props: ['icon', 'name', 'description', 'connected'],
     methods: {
         connect() {

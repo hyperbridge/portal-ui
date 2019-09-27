@@ -159,6 +159,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'TermsPopup': () => import('../../').then(m => m.TermsPopup),
         'CustomModal': () => import('../../').then(m => m.CustomModal),
         'TermsBlock': () => import('../../').then(m => m.TermsBlock),

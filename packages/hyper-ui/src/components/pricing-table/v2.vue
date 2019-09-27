@@ -30,14 +30,17 @@
 </template>
 
 <script>
-    export default {
-        props: {
-            items: {
-                type: Array,
-                default: () => []
-            },
-        }
+export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    },
+    props: {
+        items: {
+            type: Array,
+            default: () => []
+        },
     }
+}
 </script>
 
 <style lang="scss">

@@ -97,7 +97,8 @@
 <script>
 export default {
     components: {
-        'Input': () => import('../../').then(m => m.Input)
+        'Input': () => import('../../').then(m => m.Input),
+        'Button': () => import('../../').then(m => m.Button)
     },
     data() {
         return {
@@ -267,7 +268,7 @@ export default {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        .Button{
+        .button{
             width: 45%;
             justify-content: center;
         }

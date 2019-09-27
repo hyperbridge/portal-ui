@@ -154,55 +154,56 @@
 </template>
 
 <script>
-    export default {
-        components: {
-            'SidebarMenuItem': () => import('../../').then(m => m.SidebarMenuItem),
-            'SidebarMenu': () => import('../../').then(m => m.SidebarMenu),
-            'SocialLink': () => import('../../').then(m => m.SocialLink)
-        },
-        data() {
-            return {
-                sliderOptions: {
-                    slidesPerView: 8,
-                    spaceBetween: 40,
-                    loop: true,
-                    breakpoints: {
-                        1920: {
-                            slidesPerView: 10,
-                            spaceBetween: 40
-                        },
-                        1440: {
-                            slidesPerView: 8,
-                            spaceBetween: 40
-                        },
-                        1368: {
-                            slidesPerView: 6,
-                            spaceBetween: 30
-                        },
-                        1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 20
-                        },
-                        768: {
-                            slidesPerView: 2,
-                            spaceBetween: 10
-                        }
+export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+        'SidebarMenuItem': () => import('../../').then(m => m.SidebarMenuItem),
+        'SidebarMenu': () => import('../../').then(m => m.SidebarMenu),
+        'SocialLink': () => import('../../').then(m => m.SocialLink)
+    },
+    data() {
+        return {
+            sliderOptions: {
+                slidesPerView: 8,
+                spaceBetween: 40,
+                loop: true,
+                breakpoints: {
+                    1920: {
+                        slidesPerView: 10,
+                        spaceBetween: 40
+                    },
+                    1440: {
+                        slidesPerView: 8,
+                        spaceBetween: 40
+                    },
+                    1368: {
+                        slidesPerView: 6,
+                        spaceBetween: 30
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 10
                     }
-                },
-                logos: [
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Teradata_logo_2018.png/1600px-Teradata_logo_2018.png',
-                    'http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Southern-Company-Logo-PNG-Transparent.png',
-                    'http://arckpack.com.br/assets/images/arckpack-logo.gif',
-                    'https://vignette.wikia.nocookie.net/logopedia/images/7/79/TVS_Motor_Company_Logo.png/revision/latest/scale-to-width-down/640?cb=20121212235421',
-                    'http://www.s3infotech.in/images/portfolio/2000px-Fujitsu-Logo.svg.png',
-                    'http://www.s3infotech.in/images/portfolio/sd-logo.png',
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Komatsu_company_logos.svg/1280px-Komatsu_company_logos.svg.png',
-                    'https://agrobiz.net/static-files/img/goods/0a/d7/prokladka-87553152-107783.png',
-                    'http://skladtechnika.ru/pics/images/informations/articles/Mitsubishi_logo.gif'
-                ]
-            }
+                }
+            },
+            logos: [
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Teradata_logo_2018.png/1600px-Teradata_logo_2018.png',
+                'http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Southern-Company-Logo-PNG-Transparent.png',
+                'http://arckpack.com.br/assets/images/arckpack-logo.gif',
+                'https://vignette.wikia.nocookie.net/logopedia/images/7/79/TVS_Motor_Company_Logo.png/revision/latest/scale-to-width-down/640?cb=20121212235421',
+                'http://www.s3infotech.in/images/portfolio/2000px-Fujitsu-Logo.svg.png',
+                'http://www.s3infotech.in/images/portfolio/sd-logo.png',
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Komatsu_company_logos.svg/1280px-Komatsu_company_logos.svg.png',
+                'https://agrobiz.net/static-files/img/goods/0a/d7/prokladka-87553152-107783.png',
+                'http://skladtechnika.ru/pics/images/informations/articles/Mitsubishi_logo.gif'
+            ]
         }
     }
+}
 </script>
 
 <style lang="scss" scoped>

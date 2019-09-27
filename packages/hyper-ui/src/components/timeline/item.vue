@@ -100,7 +100,7 @@ export default {
                 text-align: right;
                 padding-right: 50px;
                 margin-right: -1px;
-                .Button{
+                .button{
                     margin-right: 0;
                 }
                 &:after{
@@ -114,7 +114,7 @@ export default {
                 text-align: left;
                 align-self: flex-end;
                 padding-left: 50px;
-                .Button{
+                .button{
                     margin-left: 0;
                 }
                 &:after{
@@ -154,7 +154,7 @@ export default {
             padding-right: 30px;
             margin-right: -1px;
             width: calc( 100% - 10px );
-            .Button{
+            .button{
                 margin-right: 0;
             }
             &:after{

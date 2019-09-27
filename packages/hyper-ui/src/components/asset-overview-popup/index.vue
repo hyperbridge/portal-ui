@@ -73,7 +73,11 @@
 <script>
 export default {
     components: {
-        'HeadingBar': () => import('../../').then(m => m.HeadingBar)
+        'HeadingBar': () => import('../../').then(m => m.HeadingBar),
+        'Button': () => import('../../').then(m => m.Button),
+        'Icon': () => import('../../').then(m => m.Icon),
+        'Img': () => import('../../').then(m => m.Img),
+        'Toggle': () => import('../../').then(m => m.Toggle),
     },
     props: {
         image: {

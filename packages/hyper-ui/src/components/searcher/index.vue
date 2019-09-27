@@ -53,6 +53,7 @@ import { debounce } from '@/mixins'
 
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'InputSearcher': () => import('../../').then(m => m.InputSearcher)
     },
     mixins: [debounce],

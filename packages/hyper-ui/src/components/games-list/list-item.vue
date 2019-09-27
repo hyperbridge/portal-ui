@@ -140,6 +140,9 @@
 
 <script>
 export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    },
     props: {
         name: {
             type: String,
@@ -436,7 +439,7 @@ export default {
                 &:last-child{
                     margin-bottom: 0;
                 }
-                .Button.plain{
+                .button.plain{
                     color: #0f85ca;
                 }
             }

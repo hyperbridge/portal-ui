@@ -131,6 +131,7 @@ import beautify from 'json-beautify'
 
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'HtmlEditor': () => import('../../').then(m => m.HtmlEditor),
         'JsonEditor': () => import('../../').then(m => m.JsonEditor),
         'Multiselect': () => import('vue-multiselect').then(m => m.default)
