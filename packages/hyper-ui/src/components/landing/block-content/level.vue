@@ -77,7 +77,7 @@ export default {
         }
     }
     .landing-level__number{
-        background: url("../../../static/img/landing/shield.png") no-repeat center;
+        background: url("../../../assets/img/landing/shield.png") no-repeat center;
         background-size: cover;
         display: flex;
         flex-direction: column;
