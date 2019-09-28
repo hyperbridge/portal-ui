@@ -144,7 +144,7 @@ export default {
         position: relative;
         z-index: 999;
         display: inline-flex;
-        .Button{
+        .button{
             line-height: 26px;
             font-size: 13px;
             color: rgba(255, 255, 255, .6);

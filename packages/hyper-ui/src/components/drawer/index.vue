@@ -189,7 +189,7 @@
                     class="developer-banner">
                     <div class="img">
                         <img
-                            src="/static/img/block-sdk.png">
+                            src="/img/block-sdk.png">
                     </div>
                     <div class="text">
                         <h3>Are you a developer?</h3>
@@ -350,7 +350,7 @@ import Vue from 'vue'
 
 export default {
     components: {
-        'Button': () => import('@ericmuyser/hyper-ui').then(m => m.Button)
+        'Button': () => import('../../').then(m => m.Button)
     },
     props: [],
     data() {

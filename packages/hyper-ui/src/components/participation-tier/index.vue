@@ -92,7 +92,7 @@ export default {
         display: inline-flex;
         flex-direction: column;
     }
-    .Button{
+    .button{
         margin-right: auto;
     }
 </style>

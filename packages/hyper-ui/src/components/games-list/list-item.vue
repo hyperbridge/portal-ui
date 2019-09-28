@@ -439,7 +439,7 @@ export default {
                 &:last-child{
                     margin-bottom: 0;
                 }
-                .Button.plain{
+                .button.plain{
                     color: #0f85ca;
                 }
             }

@@ -89,7 +89,7 @@ export default {
         bottom: -20px;
         width: 100%;
         height: 26px;
-        .Button {
+        .button {
             margin: 0 5px;
         }
     }

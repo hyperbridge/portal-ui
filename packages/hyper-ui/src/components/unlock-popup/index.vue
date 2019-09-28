@@ -240,7 +240,7 @@ export default {
             box-shadow: 0 0 3px rgba(0, 0, 0, .4) inset;
             background: #303049;
         }
-        .Button--lg {
+        .button--lg {
             border: 2px solid transparent;
 
             &.wrong {

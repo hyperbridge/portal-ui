@@ -138,7 +138,7 @@ export default {
         justify-content: space-between;
         align-items: center;
         margin-bottom: 40px;
-        .Button{
+        .button{
             padding: 5px 0;
             border-radius: 0;
             border-bottom: 2px solid transparent;

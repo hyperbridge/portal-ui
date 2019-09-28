@@ -229,7 +229,7 @@ export default {
                     width: 25px;
                     border-radius: 100%;
                 }
-                .Button{
+                .button{
                     min-height: 18px;
                     line-height: 18px;
                 }

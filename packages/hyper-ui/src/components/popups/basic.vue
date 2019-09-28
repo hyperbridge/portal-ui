@@ -140,7 +140,7 @@ export default {
         align-items: center;
         margin-top: 30px;
         flex-wrap: wrap;
-        .Button{
+        .button{
             &.color-red{
                 color: #F75D5D;
                 &:hover{

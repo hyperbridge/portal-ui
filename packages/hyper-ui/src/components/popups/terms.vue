@@ -169,7 +169,7 @@ export default {
         justify-content: flex-end;
         align-items: center;
         margin-top: 30px;
-        .Button{
+        .button{
             &.color-red{
                 color: #F75D5D;
                 &:hover{

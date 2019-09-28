@@ -47,7 +47,7 @@ export default {
             margin: 0 auto 15px;
             display: block;
         }
-        .Button{
+        .button{
             margin: 20px auto auto;
         }
     }

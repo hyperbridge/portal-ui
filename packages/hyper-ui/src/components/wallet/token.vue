@@ -268,7 +268,7 @@ export default {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        .Button{
+        .button{
             width: 45%;
             justify-content: center;
         }
