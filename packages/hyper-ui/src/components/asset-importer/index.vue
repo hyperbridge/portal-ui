@@ -8,12 +8,12 @@
                 Now let's match the columns in your uploaded file to your MailChimp list.
             </p>
             <p><a href="#">See an example of the import field match process</a></p>
-            <Notification-inline
+            <NotificationInline
                 type="info"
                 size="md"
                 class="my-4">
                 A simple primary alert—check it out!
-            </Notification-inline>
+            </NotificationInline>
             <Checkbox
                 id="test"
                 v-model="skippedState">
@@ -263,7 +263,8 @@ export default {
     components: {
         'Button': () => import('../../').then(m => m.Button),
         'Loading-bar': () => import('../../').then(m => m.Loading-bar),
-        'Notification-inline': () => import('../../').then(m => m.Notification-inline),
+        'Button': () => import('../../').then(m => m.Button),
+        'NotificationInline': () => import('../../').then(m => m.NotificationInline),
         'Checkbox': () => import('../../').then(m => m.Checkbox)
     },
     props: ['showSkipped'],

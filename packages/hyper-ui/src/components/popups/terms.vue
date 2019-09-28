@@ -60,6 +60,9 @@ export default {
             default: null
         }
     },
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    },
     data() {
         return {
             isRead: false

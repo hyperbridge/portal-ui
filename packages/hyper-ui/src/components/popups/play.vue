@@ -50,12 +50,12 @@
                     class="mr-4">
                 <div>
                     BlockHub is premier desktop gaming platform. It's free to join and ease to use.
-                    <Button
-                        status="plain"
-                        href="https://store.steampowered.com/about/"
-                        class="p-0">
-                        Learn more about BlockHub
-                    </Button>
+<!--                    <Button-->
+<!--                        status="plain"-->
+<!--                        href="https://store.steampowered.com/about/"-->
+<!--                        class="p-0">-->
+<!--                        Learn more about BlockHub-->
+<!--                    </Button>-->
                 </div>
             </div>
         </template>
