@@ -10,7 +10,7 @@
 
 		<template slot="body">
 			<div class="img d-flex justify-content-center margin-bottom-30">
-				<img src="static/img/mature-icon.svg" height="150" />
+				<img src="/img/mature-icon.svg" height="150" />
 			</div>
 			<div class="h4 text-center">
 				You must be at least eighteen years old to view this game.

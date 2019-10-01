@@ -12,7 +12,10 @@
 <script>
 export default {
     name: 'SimpleListItem',
-    props: ['to', 'link']
+    props: ['to', 'link'],
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    }
 }
 </script>
 

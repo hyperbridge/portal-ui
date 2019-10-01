@@ -142,6 +142,9 @@
 
 <script>
 export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button)
+    },
     props: {
         permission: {
             type: Boolean,

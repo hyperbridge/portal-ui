@@ -39,6 +39,9 @@
 <script>
 export default {
     name: 'AssetListItem',
+    components: {
+        'Button': () => import('../../').then(m => m.Button)
+    },
     props: {
         asset: {
             type: Object,

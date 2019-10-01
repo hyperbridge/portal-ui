@@ -22,6 +22,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'Tooltip': () => import('../../').then(m => m.Tooltip),
         'ProgressBar': () => import('../../').then(m => m.ProgressBar)
     },

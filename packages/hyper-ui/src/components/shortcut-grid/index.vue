@@ -9,7 +9,7 @@
                 <div
                     class="grid"
                     :style="gridStyle">
-                    <GridItem
+                    <Item
                         v-for="v in list"
                         :key="v.index"
                         :index="v.index"
@@ -31,7 +31,7 @@
                             :index="v.index"
                             :sort="v.sort"
                             :remove="() => { removeItem(v) }" />
-                    </GridItem>
+                    </Item>
                 </div>
             </div>
             <div
@@ -71,12 +71,11 @@
 
 <script>
 import { getWindowSize } from '@/mixins'
-import GridItem from '@/components/shortcut-grid-item'
 
 export default {
     components: {
-        GridItem,
-        'Icon': () => import('../../').then(m => m.Icon)
+        'Item': () => import('../../').then(m => m.ShortcutGridItem),
+        'Icon': () => import('../../').then(m => m.ShortcutIcon)
     },
     mixins: [getWindowSize],
     props: {

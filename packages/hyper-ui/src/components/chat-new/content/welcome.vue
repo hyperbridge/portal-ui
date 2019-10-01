@@ -4,7 +4,7 @@
             Welcome to ChanelName!
         </div>
         <div class="welcome-logo">
-            <img src="../../../static/img/logo.png">
+            <img src="/img/logo.png">
         </div>
         <div class="chat-group__welcome-action">
             <ul>

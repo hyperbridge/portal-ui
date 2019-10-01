@@ -37,13 +37,13 @@
                                 </span>
                                 <span class="enter-icon">
                                     ENTER
-                                    <img src="../../static/img/icons/enter-arrow.png">
+                                    <img src="/img/icons/enter-arrow.png">
                                 </span>
                             </a>
                         </div>
                     </div>
                     <div class="keyboard-nav-info">
-                        <img src="../../static/img/icons/keyboard-arrows.png">
+                        <img src="/img/icons/keyboard-arrows.png">
                         Use arrows to select
                     </div>
                 </div>

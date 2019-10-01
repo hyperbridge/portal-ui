@@ -98,7 +98,7 @@
                     </div>
                     <div class="money-info">
                         <img
-                            src="static/img/icons/token-icon.png"
+                            src="/img/icons/token-icon.png"
                             alt="Token">
                         <div>
                             <strong>0 HBX</strong>
@@ -188,7 +188,7 @@ export default {
         width: 350px;
         padding: 30px 20px 20px;
         height: 540px;
-        /*background-image: url("/static/img/backgrounds/1.jpg");*/
+        /*background-image: url("/img/backgrounds/1.jpg");*/
         background-size: 300%;
     }
     .wallet-header {

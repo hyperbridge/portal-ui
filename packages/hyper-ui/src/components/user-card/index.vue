@@ -33,7 +33,7 @@
                     <Img
                         v-else
                         class="user-data__avatar user-avatar"
-                        src="../../static/img/user.png" />
+                        src="/img/user.png" />
                 </Button>
             </div>
             <div
@@ -47,7 +47,7 @@
                 </a>
                 <Img
                     v-else
-                    src="../../static/img/user.png" />
+                    src="/img/user.png" />
             </div>
 
             <div style="text-align: left;">

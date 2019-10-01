@@ -21,42 +21,43 @@
 </template>
 
 <script>
-    export default {
-        components: {
-            'HeadingBar': () => import('../../').then(m => m.HeadingBar),
-            'CuratorReview': () => import('../../').then(m => m.CuratorReview)
+export default {
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+        'HeadingBar': () => import('../../').then(m => m.HeadingBar),
+        'CuratorReview': () => import('../../').then(m => m.CuratorReview)
+    },
+    props: {
+        reviews: {
+            type: Array,
+            require: true
         },
-        props: {
-            reviews: {
-                type: Array,
-                require: true
-            },
-            maxPerView: {
-                type: Number,
-                default: 3
-            }
-        },
-        data() {
-            return {
-                sliderOptions: {
-                    slidesPerView: this.maxPerView,
-                    spaceBetween: 15
-                }
-            }
-        },
-        computed: {
-            slider() {
-                return this.$refs.slider.swiper
-            }
-        },
-        methods: {
-            showArrowsState(el, count) {
-                if (el.length > count) {
-                    return true
-                }
-                return false
+        maxPerView: {
+            type: Number,
+            default: 3
+        }
+    },
+    data() {
+        return {
+            sliderOptions: {
+                slidesPerView: this.maxPerView,
+                spaceBetween: 15
             }
         }
+    },
+    computed: {
+        slider() {
+            return this.$refs.slider.swiper
+        }
+    },
+    methods: {
+        showArrowsState(el, count) {
+            if (el.length > count) {
+                return true
+            }
+            return false
+        }
     }
+}
 </script>
 

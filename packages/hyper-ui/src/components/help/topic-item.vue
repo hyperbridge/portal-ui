@@ -15,7 +15,10 @@
 <script>
 export default {
     name: 'TopicListItem',
-    props: ['link', 'to', 'icon', 'size']
+    props: ['link', 'to', 'icon', 'size'],
+    components: {
+        'Button': () => import('../../').then(m => m.Button),
+    }
 }
 </script>
 

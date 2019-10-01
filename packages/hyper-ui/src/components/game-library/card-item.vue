@@ -112,6 +112,7 @@
 export default {
     name: 'GameLibraryItem',
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'Dropdown': () => import('../../').then(m => m.Dropdown),
         'ShareList': () => import('../../').then(m => m.ShareList),
         'LoadingBarCircle': () => import('../../').then(m => m.LoadingBarCircle)

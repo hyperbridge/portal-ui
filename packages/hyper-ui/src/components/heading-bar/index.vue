@@ -117,7 +117,7 @@ export default {
         width: 100%;
         justify-content: space-between;
         border-bottom: 2px solid #fff;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;

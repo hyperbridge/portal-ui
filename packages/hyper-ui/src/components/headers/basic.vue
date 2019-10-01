@@ -213,7 +213,7 @@
                             <DropdownMenu
                                 class="ml-4 account-menu"
                                 style="z-index: 12"
-                                name="Ololo"
+                                name=""
                                 @show="onShowMenu"
                                 @hide="onHideMenu">
                                 <template slot="title">

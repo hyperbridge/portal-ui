@@ -310,6 +310,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'Benchmark': () => import('../../').then(m => m.Benchmark),
         'InlineNotification': () => import('../../').then(m => m.InlineNotification),
         'Toggle': () => import('../../').then(m => m.Toggle),

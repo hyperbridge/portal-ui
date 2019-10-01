@@ -44,6 +44,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'ProgressBar': () => import('../../').then(m => m.ProgressBar),
         'Checkbox': () => import('../../').then(m => m.Checkbox)
     },

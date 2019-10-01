@@ -53,6 +53,9 @@
 <script>
 export default {
     name: 'Benchmark',
+    components: {
+        'Button': () => import('../../').then(m => m.Button)
+    },
     props: {
         settings: Object
     },

@@ -63,6 +63,7 @@
 <script>
 export default {
     components: {
+        'Button': () => import('../../').then(m => m.Button),
         'UserCard': () => import('../../').then(m => m.UserCard)
     },
     props: {

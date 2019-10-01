@@ -32,8 +32,6 @@
 
 <script>
 export default {
-    name: 'Modal',
-    // props: ['id', 'title', 'modalClass'],
     props: {
         id: String,
         title: String,

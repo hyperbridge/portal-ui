@@ -66,6 +66,8 @@ import { debounce } from '@/mixins'
 
 export default {
     components: {
+        'Img': () => import('../../').then(m => m.Img),
+        'Button': () => import('../../').then(m => m.Button),
         'Tags': () => import('../../').then(m => m.Tags)
     },
     mixins: [debounce],
