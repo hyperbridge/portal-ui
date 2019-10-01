@@ -280,7 +280,7 @@
                                 <span
                                     v-if="tokenCount === null"
                                     class="token__count token__count--loading">
-                                    <Loading :enabled="true" />
+                                    <LoadingIndicator :enabled="true" />
                                 </span>
                                 <span
                                     v-if="tokenCount !== null"
@@ -426,6 +426,7 @@
 
 export default {
     components: {
+        'LoadingIndicator': () => import('../../').then(m => m.LoadingIndicator),
         'LoadingLogo': () => import('../../').then(m => m.LoadingLogo),
         'QuickLaunch': () => import('../../').then(m => m.QuickLaunch),
         'DropdownMenu': () => import('../../').then(m => m.DropdownMenu),

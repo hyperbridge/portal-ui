@@ -22,7 +22,6 @@
                 <div class="row">
                     <div class="col-12">
                         <Button
-                            status="second-info"
                             size="xl"
                             centered
                             class="mb-3"
@@ -31,7 +30,6 @@
                             Sign in with Google
                         </Button>
                         <Button
-                            status="second-info"
                             size="xl"
                             centered
                             class="mb-3"
@@ -42,7 +40,7 @@
                     </div>
                 </div>
                 <div
-                    v-access="`socialSignin`"
+                    v-access="`socialSignIn`"
                     class="row">
                     <div class="col-12">
                         <Button
@@ -50,7 +48,8 @@
                             size="xl"
                             centered
                             class="mb-3"
-                            style="display: block">
+                            style="display: block"
+                            @click="socialLogin('twitter')">
                             Sign in with Twitter
                         </Button>
                         <Button
@@ -58,13 +57,13 @@
                             size="xl"
                             centered
                             class="mb-3"
-                            style="display: block">
+                            style="display: block"
+                            @click="socialLogin('facebook')">
                             Sign in with Facebook
                         </Button>
                     </div>
                 </div>
                 <div
-                    v-access="`socialSignin`"
                     class="row mb-3">
                     <div class="col-12">
                         <HeadingBarWithSimpleColor
@@ -140,6 +139,7 @@
 <script>
 export default {
     components: {
+        'Icon': () => import('../../').then(m => m.Icon),
         'Popup': () => import('../../').then(m => m.Popup),
         'TermsPopup': () => import('../../').then(m => m.TermsPopup),
         'CustomModal': () => import('../../').then(m => m.CustomModal),
