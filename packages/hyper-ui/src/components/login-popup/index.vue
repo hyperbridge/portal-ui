@@ -271,39 +271,35 @@ export default {
             this.errors.push('Missing fields.')
         },
         socialLogin(social) {
-            const hello = this.$hello;
-            const $this = this
-
-            // START setup hellojs
-            hello.init({
+            this.$hello.init({
                 google: process.env.GOOGLE_CLIENT_ID,
                 github: process.env.GITHUB_CLIENT_ID
             }, {
                 redirect_uri: process.env.SOCIAL_LOGIN_REDIRECT_URI
             }, {
                 oauth_proxy: process.env.OAUTH_PROXY
-            });
-            hello(social).login({
-                    scope: ['email']
-                })
-            hello.on('auth.login', async function (auth) {
-                const socialToken = auth.authResponse.access_token;
-                const userInfo = await hello(auth.network).api('me');
-                console.log('userInfo', userInfo)
-                const userId = userInfo.id;
-                $this.email = auth.network == 'github' ? `${userInfo.login}.com`:userInfo.email;
-                $this.password = 'socialLogin';
-                $this.socialSigin()
-            });
+            })
+
+            this.$hello(social).login({
+                scope: ['email']
+            })
+
+            this.$hello.on('auth.login', async (auth) => {
+                const socialToken = auth.authResponse.access_token
+                const userInfo = await this.$hello(auth.network).api('me')
+
+                const userId = userInfo.GOOGLE_CLIENT_ID
+                this.email = auth.network == 'github' ? `${userInfo.login}.com` : userInfo.email
+                this.password = 'socialLogin'
+                this.socialSigin()
+            })
         },
-    },
-    mounted(){
     }
 }
 </script>
 
 <style lang="scss" scoped>
-    .Popup__content {
+    .popup__content {
         background: transparent;
         color: #fff;
         text-align: left;
