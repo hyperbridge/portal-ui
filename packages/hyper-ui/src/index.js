@@ -1,6 +1,7 @@
 import * as directives from './directives'
 import Vue from 'vue'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+//TODO I think we should install it
+// import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 // export const ActivityBlock = require('./components/activity-block')
 // export const ActivityChart = require('./components/activity-chart')
@@ -438,3 +439,4 @@ export const Loading = require('./components/loading-indicator')
 export const Message = require('./components/message')
 export const Drawer = require('./components/drawer')
 export const SimpleTable = require('./components/table-simple')
+// export const InfiniteContent = require('./components/infinite-content')
