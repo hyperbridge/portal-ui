@@ -23,7 +23,6 @@
 
 <script>
 export default {
-    name: 'Level',
     props: {
         textPosition: {
             type: String,

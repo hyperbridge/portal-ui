@@ -74,6 +74,9 @@
 
 <script>
 export default {
+    components: {
+        'Block': () => import('../../').then(m => m.Block),
+    },
     data() {
         return {
             options_icons: {
