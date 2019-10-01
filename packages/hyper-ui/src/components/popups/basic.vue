@@ -58,7 +58,7 @@ export default {
     .basic-popup {
         display: flex;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         position: fixed;
         justify-content: center;
         align-items: center;
