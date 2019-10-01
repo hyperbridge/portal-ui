@@ -19,13 +19,17 @@
                 </p>
             </div>
             <div v-else class="haiku">
-                <h1>{{ haiku[0] }}</h1>
-                <h3>{{ haiku[1] }}</h3>
-                <h3>{{ haiku[2] }}</h3>
-                <p class="error">
-                    Error status: {{ isError.statusCode }}<br>
-                    Error message: {{ isError.message }}
-                </p>
+                <h1 class="haiku__first">{{ haiku[0] }}</h1>
+                <h3 class="haiku__second">{{ haiku[1] }}</h3>
+                <h3 class="haiku__third">{{ haiku[2] }}</h3>
+                <br />
+                <Block onlyContentBg>
+                    <Button v-if="!showDetails" status="plain" @click="showDetails = true">Show Error Details</Button>
+                    <div v-if="showDetails">
+                        Error status: {{ isError.statusCode }}<br>
+                        Error message: {{ isError.message }}
+                    </div>
+                </Block>
             </div>
             <br>
             <br><br>
@@ -44,6 +48,7 @@
 export default {
     components: {
         'Button': () => import('../../').then(m => m.Button),
+        'Block': () => import('../../').then(m => m.Block),
     },
     props: {
         isError: {
@@ -93,6 +98,7 @@ export default {
         haikus = [...haikus['general'], ...(haikus[this.isError.statusCode] || [])]
 
         return {
+            showDetails: false,
             haiku: haikus[Math.floor(Math.random() * haikus.length)]
         }
     },
@@ -131,6 +137,7 @@ export default {
             transform: rotate(-20deg) translateX(-5%) translateY(-70%) !important;
             width: 140%;
             overflow: hidden;
+            animation: none;
 
             &:before {
                 position: absolute;
@@ -157,7 +164,7 @@ export default {
         .haiku {
             display: inline-block;
             text-align: left;
-            h3 {
+            .haiku__second, .haiku__third {
                 margin-left: 30px;
             }
         }
