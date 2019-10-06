@@ -33,7 +33,7 @@
                     <Img
                         v-else
                         class="user-data__avatar user-avatar"
-                        src="/img/user.png" />
+                        src="https://via.placeholder.com/150" />
                 </Button>
             </div>
             <div
@@ -47,7 +47,7 @@
                 </a>
                 <Img
                     v-else
-                    src="/img/user.png" />
+                    src="https://via.placeholder.com/150" />
             </div>
 
             <div style="text-align: left;">
@@ -123,6 +123,7 @@
 export default {
     components: {
         'Button': () => import('../../').then(m => m.Button),
+        'Img': () => import('../../').then(m => m.Img),
         'Loading': () => import('../../').then(m => m.Loading)
     },
     props: {

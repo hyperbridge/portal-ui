@@ -78,8 +78,9 @@ import moment from 'moment'
 
 export default {
     components: {
-        'PostComment': import('../../').then(m => m.PostComment),
-        'CommunityReply': () => import('../../').then(m => m.CommunityReply)
+        'Img': import('../../').then(m => m.Img),
+        'PostComment': import('../../').then(m => m.ProductCommunityComment),
+        'CommunityReply': () => import('../../').then(m => m.ProductCommunityReply)
     },
     props: {
         id: {

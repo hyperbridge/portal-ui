@@ -52,10 +52,11 @@ import VueEmojiReact from 'vue-emoji-react'
 
 export default {
     components: {
-        'Dropdown-menu': () => import('../../').then(m => m.Dropdown-menu),
-        'CommunityReply': () => import('../../').then(m => m.CommunityReply),
+        'DropdownMenu': () => import('../../').then(m => m.Dropdown4),
+        'CommunityReply': () => import('../../').then(m => m.ProductCommunityReply),
         'Button': () => import('../../').then(m => m.Button),
         'ButtonArrows': () => import('../../').then(m => m.ButtonArrows),
+        'Img': () => import('../../').then(m => m.Img),
         'EmojiPicker': VueEmojiReact
     },
     props: {

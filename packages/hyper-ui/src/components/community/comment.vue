@@ -16,7 +16,7 @@
             <div
                 class="comment-container"
                 :class="{ 'w-100' : !rate }">
-                <Dropdown-menu
+                <DropdownMenu
                     dropPosition="right"
                     style="right: 5px; top: 10px;" />
                 <div class="comment-content">
@@ -45,13 +45,12 @@
 </template>
 
 <script>
-import moment from 'moment'
 
 export default {
     name: 'Comment',
     components: {
-        'Dropdown-menu': () => import('../../').then(m => m.Dropdown-menu),
-        'CommunityReply': () => import('../../').then(m => m.CommunityReply),
+        'DropdownMenu': () => import('../../').then(m => m.Dropdown4),
+        'CommunityReply': () => import('../../').then(m => m.ProductCommunityReply),
         'ButtonArrows': () => import('../../').then(m => m.ButtonArrows)
     },
     props: {

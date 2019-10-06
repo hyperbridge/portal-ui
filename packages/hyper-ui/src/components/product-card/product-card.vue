@@ -26,6 +26,7 @@
 export default {
     components: {
         'Button': () => import('../../').then(m => m.Button),
+        'Img': () => import('../../').then(m => m.Img),
         'Tags': () => import('../../').then(m => m.Tags)
     },
     props: {

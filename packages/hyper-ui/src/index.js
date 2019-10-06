@@ -1,7 +1,7 @@
 import * as directives from './directives'
 import Vue from 'vue'
 //TODO I think we should install it
-// import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 // export const ActivityBlock = require('./components/activity-block')
 // export const ActivityChart = require('./components/activity-chart')
@@ -304,6 +304,7 @@ export const Pagination = require('./components/pagination/index')
 export const ProductCommunity = require('./components/community/post-item')
 export const ProductCommunityComment = require('./components/community/comment')
 export const ProductCommunityReply = require('./components/community/reply')
+export const ProductCommunityPost = require('./components/community/post-item')
 export const ProjectCard = require('./components/project/card')
 export const UserCard = require('./components/user-card')
 export const ScreenGallery = require('./components/screen-gallery/gallery')
@@ -439,4 +440,5 @@ export const Loading = require('./components/loading-indicator')
 export const Message = require('./components/message')
 export const Drawer = require('./components/drawer')
 export const SimpleTable = require('./components/table-simple')
+export const SendingFundsPopup = require('./components/send-funds-popup')
 // export const InfiniteContent = require('./components/infinite-content')

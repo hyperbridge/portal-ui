@@ -193,6 +193,8 @@ export default {
     components: {
         'Button': () => import('../../').then(m => m.Button),
         'Popup': () => import('../../').then(m => m.Popup),
+        'Tabs': () => import('../../').then(m => m.Tabs),
+        'Tab': () => import('../../').then(m => m.Tab),
     },
     props: ['activated'],
     data() {
