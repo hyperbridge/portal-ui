@@ -49,8 +49,9 @@
 export default {
     name: 'Comment',
     components: {
-        'DropdownMenu': () => import('../../').then(m => m.Dropdown4),
+        'DropdownMenu': () => import('../../').then(m => m.DropdownPost),
         'CommunityReply': () => import('../../').then(m => m.ProductCommunityReply),
+        'Img': () => import('../../').then(m => m.Img),
         'ButtonArrows': () => import('../../').then(m => m.ButtonArrows)
     },
     props: {

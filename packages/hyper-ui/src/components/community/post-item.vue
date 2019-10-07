@@ -75,11 +75,12 @@
 
 <script>
 import moment from 'moment'
+import a from './../../index'
 
 export default {
     components: {
-        'Img': import('../../').then(m => m.Img),
-        'PostComment': import('../../').then(m => m.ProductCommunityComment),
+        'Img': () => import('./../../index').then(m => m.Img),
+        'PostComment': () => import('../../').then(m => m.ProductCommunityComment),
         'CommunityReply': () => import('../../').then(m => m.ProductCommunityReply)
     },
     props: {
