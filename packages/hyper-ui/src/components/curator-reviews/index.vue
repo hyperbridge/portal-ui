@@ -25,7 +25,9 @@ export default {
     components: {
         'Button': () => import('../../').then(m => m.Button),
         'HeadingBar': () => import('../../').then(m => m.HeadingBar),
-        'CuratorReview': () => import('../../').then(m => m.CuratorReview)
+        'CuratorReview': () => import('../../').then(m => m.CuratorReview),
+        'Swiper': () => import('../../').then(m => m.Swiper),
+        'SwiperSlide': () => import('../../').then(m => m.SwiperSlide),
     },
     props: {
         reviews: {

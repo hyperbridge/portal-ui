@@ -1,14 +1,15 @@
 <template>
     <div class="product-grid-wrapper">
+<!--        {{ products }}-->
         <ProductCardDynamic
             v-for="(product, index) in products"
             :key="index"
             :id="product.id"
             :price="product.price"
-            :mediumTile="product.images.mediumTile"
+            :mediumTile="product.meta.images.mediumTile"
             :video="product.video"
             :shortDescription="product.shortDescription"
-            :previewImages="product.images.review"
+            :previewImages="product.meta.images.review"
             :developerTags="product.developerTags" />
     </div>
 </template>

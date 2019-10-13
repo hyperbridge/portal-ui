@@ -64,9 +64,6 @@
                 {{ show_more ? 'HIDE REVIEW' : 'READ MORE...' }}
             </a>
         </div>
-        <!--<BasicPopup :activated="show_more" @close=" show_more = !show_more " width="800">-->
-        <!--<Post :post="post"/>-->
-        <!--</BasicPopup>-->
     </div>
 </template>
 
@@ -77,7 +74,8 @@ export default {
         'RatingStars': () => import('../../').then(m => m.RatingStars),
         'Author': () => import('../../').then(m => m.Author),
         'BasicPopup': () => import('../../').then(m => m.BasicPopup),
-        'Post': () => import('../../').then(m => m.Post)
+        'Post': () => import('../../').then(m => m.Post),
+        'Img': () => import('../../').then(m => m.Img),
     },
     props: {
         review: {

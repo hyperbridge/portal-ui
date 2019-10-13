@@ -10,7 +10,7 @@
                 :key="item.id"
                 class="game-includes__item-container"
                 :style="{ width: 'calc(100% / ' + showNumber + ')'}">
-                <IncludesItem
+                <GameIncludesItem
                     :id="item.id"
                     :name="item.name"
                     :developer="item.developer"
@@ -37,7 +37,7 @@
 <script>
 export default {
     components: {
-        'IncludesItem': () => import('../../').then(m => m.IncludesItem),
+        'GameIncludesItem': () => import('../../').then(m => m.GameIncludesItem),
         'LoadMore': () => import('../../').then(m => m.LoadMore)
     },
     props: {

@@ -64,7 +64,8 @@ export default {
     components: {
         'Author': () => import('../../').then(m => m.Author),
         'RatingStars': () => import('../../').then(m => m.RatingStars),
-        'Button': () => import('../../').then(m => m.Button)
+        'Button': () => import('../../').then(m => m.Button),
+        'Img': () => import('../../').then(m => m.Img),
     },
     props: {
         review: {

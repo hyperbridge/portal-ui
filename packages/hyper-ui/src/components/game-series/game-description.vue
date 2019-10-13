@@ -51,14 +51,15 @@
 </template>
 
 <script>
-import moment from 'moment'
+import moment from 'moment';
 
 export default {
     components: {
         'Button': () => import('../../').then(m => m.Button),
         'Swiper': () => import('../../').then(m => m.Swiper),
         'SwiperSlide': () => import('../../').then(m => m.SwiperSlide),
-        'Tags': () => import('../../').then(m => m.Tags)
+        'Tags': () => import('../../').then(m => m.Tags),
+        'Img': () => import('../../').then(m => m.Img),
     },
     props: {
         id: Number,

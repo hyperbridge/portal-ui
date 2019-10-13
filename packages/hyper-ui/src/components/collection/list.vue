@@ -91,6 +91,7 @@ export default {
         position: relative;
         backdrop-filter: blur(2px);
         display: flex;
+        flex-direction: column;
     }
     .collection-list__header{
         display: flex;
