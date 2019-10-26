@@ -67,7 +67,7 @@
             <div
                 v-if="comments"
                 class="w-100">
-                <Comment
+                <ProductCommunityComment
                     v-for="(comment, idx) in comments"
                     :key="`comment=${idx}`"
                     :canReply="false"
@@ -90,7 +90,7 @@
 export default {
     components: {
         'Button': () => import('../../').then(m => m.Button),
-        'Comment': () => import('../../').then(m => m.Comment)
+        'ProductCommunityComment': () => import('../../').then(m => m.ProductCommunityComment)
     },
     props: {
         isRecommend: {
