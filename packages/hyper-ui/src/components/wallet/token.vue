@@ -98,7 +98,8 @@
 export default {
     components: {
         'Input': () => import('../../').then(m => m.Input),
-        'Button': () => import('../../').then(m => m.Button)
+        'Button': () => import('../../').then(m => m.Button),
+        'Img': () => import('../../').then(m => m.Img),
     },
     data() {
         return {

@@ -43,7 +43,8 @@ export default {
     name: 'WalletPopup',
     props: {},
     components: {
-        'Button': () => import('../../').then(m => m.Button)
+        'Button': () => import('../../').then(m => m.Button),
+        'Img': () => import('../../').then(m => m.Img),
     },
 }
 </script>

@@ -43,7 +43,7 @@
 <script>
 export default {
     component: {
-        'Button': () => import('../../').then(m => m.Button)
+        'Button': () => import('../../').then(m => m.Button),
     },
     data() {
         return {

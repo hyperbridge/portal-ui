@@ -7,7 +7,7 @@
             slot="customContent"
             class="video-popup">
             <div class="video-popup__video-container">
-                <LoadingBarCircle v-if="showLoader" />
+                <LoadingCircle v-if="showLoader" />
                 <youtube
                     v-if="youtube"
                     :video-id="youtube"
@@ -74,8 +74,9 @@ export default {
         'HeadingBar': () => import('../../').then(m => m.HeadingBar),
         'Youtube': () => import('../../').then(m => m.Youtube),
         'Video': () => import('../../').then(m => m.Video),
-        'Twitch': () => import('../../').then(m => m.Twitch),
-        'LoadingBarCircle': () => import('../../').then(m => m.LoadingBarCircle)
+        // 'Twitch': () => import('../../').then(m => m.Twitch),
+        'Button': () => import('../../').then(m => m.Button),
+        'LoadingCircle': () => import('../../').then(m => m.LoadingCircle)
     },
     props: {
         activated: {

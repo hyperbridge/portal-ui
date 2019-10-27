@@ -38,7 +38,7 @@ export default {
     components: {
         'Twitch': () => import('../../').then(m => m.Twitch),
         'LocalVideo': () => import('./_local.vue').then(m => m.default),
-        'LoadingBarCircle': () => import('../../').then(m => m.LoadingBarCircle)
+        'LoadingCircle': () => import('../../').then(m => m.LoadingCircle)
     },
     props: {
         src: {

@@ -163,8 +163,9 @@ export default {
     name: 'WalletPopup',
     components: {
         'Dropdown': () => import('../../').then(m => m.Dropdown),
-        'DropdownSecond': () => import('../../').then(m => m.DropdownSecond),
-        'Button': () => import('../../').then(m => m.Button)
+        'DropdownSecond': () => import('../../').then(m => m.Dropdown),
+        'Button': () => import('../../').then(m => m.Button),
+        'Img': () => import('../../').then(m => m.Img),
     },
     props: {},
     data() {
