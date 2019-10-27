@@ -38,15 +38,15 @@ export default {
     props: {
         id: Number,
         price: {
-            type: Number,
+            type: [Number, String],
             default: 0
         },
         sold: {
-            type: Number,
+            type: [Number, String],
             default: 0
         },
         left: {
-            type: Number,
+            type: [Number, String],
             default: 0
         },
         tag: {

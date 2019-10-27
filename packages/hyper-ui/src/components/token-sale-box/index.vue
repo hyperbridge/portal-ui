@@ -3,7 +3,7 @@
         <div class="token-sale-box__head">
             <div class="d-flex align-items-center">
                 <div class="coin-img">
-                    <img src="/img/icons/token-icon.png">
+                    <img src="https://via.placeholder.com/150">
                 </div>
                 <div class="box-title">
                     <h1 class="text-uppercase p-0 m-0">

@@ -33,6 +33,9 @@ export default {
             default: 'heart'
         }
     },
+    components:{
+        'Icon': () => import('../../').then(m => m.Icon),
+    },
     computed: {
         dynamicTitle() {
             const { target, active } = this

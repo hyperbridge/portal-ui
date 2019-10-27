@@ -79,7 +79,7 @@ export default {
             default: '$'
         },
         minPrice: {
-            type: String,
+            type: [Number, String],
             default: null
         },
         title: {

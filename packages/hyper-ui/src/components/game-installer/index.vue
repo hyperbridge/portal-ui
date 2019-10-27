@@ -114,7 +114,8 @@
 export default {
     components: {
         'BasicPopup': () => import('../../').then(m => m.BasicPopup),
-        'Dropdown': () => import('../../').then(m => m.Dropdown)
+        'Dropdown': () => import('../../').then(m => m.Dropdown),
+        'Img': () => import('../../').then(m => m.Img),
     },
     props: {
         activated: {

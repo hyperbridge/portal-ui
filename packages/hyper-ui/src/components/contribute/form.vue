@@ -40,8 +40,14 @@ export default {
             type: Boolean,
             default: false
         },
-        value: Number,
-        defaultValue: Number,
+        value: {
+            type: [Number, String],
+            default: 0
+        },
+        defaultValue: {
+            type: [Number, String],
+            default: 0
+        },
         currency: String
     },
     data() {

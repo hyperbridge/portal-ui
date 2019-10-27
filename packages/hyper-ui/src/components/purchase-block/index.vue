@@ -146,8 +146,8 @@ export default {
             default: 0
         },
         releaseDate: {
-            type: String,
-            default: new Date()
+            type: [String, Date],
+            default: () => new Date()
         },
         offersPurchases: {
             type: Boolean,
