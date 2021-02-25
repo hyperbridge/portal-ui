@@ -144,6 +144,7 @@ export const Milestone = require('./components/project/milestone')
 export const MilestonesLine = require('./components/milestones-line')
 export const Modal = require('./components/modal/')
 export const ModalList = null
+export const Annoying = null
 export const MoneyInfo = require('./components/money-info')
 export const NewsArticle = require('./components/news-list/article')
 export const NewsList = require('./components/news-list/articles')
