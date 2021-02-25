@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .Popup__content {
+    .popup__content {
         background: transparent;
         color: #fff;
     }
