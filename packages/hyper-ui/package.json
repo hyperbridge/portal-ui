@@ -1,6 +1,6 @@
 {
     "name": "@ericmuyser/hyper-ui",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Hyper UI",
     "license": "SEE LICENSE IN LICENSE.md",
     "main": "src/index.js",
