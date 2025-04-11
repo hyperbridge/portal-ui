@@ -100,7 +100,7 @@ export default {
                     eventKey: 'application/activeModal',
                     eventValue: 'connectNetwork',
                     unread: false,
-                    text: 'Go to BlockHub',
+                    text: 'Go to Steam',
                     sort: 3,
                     removable: false
                 },

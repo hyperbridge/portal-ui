@@ -7,7 +7,7 @@
                 </div>
                 <div class="box-title">
                     <h1 class="text-uppercase p-0 m-0">
-                        HBX
+                        RXS
                     </h1>
                     <h3 class="text-uppercase p-0 m-0">
                         token sale
@@ -21,7 +21,7 @@
                     </div>
                     <div>
                         <h2 class="font-weight-bold p-0 m-0">
-                            HBX
+                            RXS
                         </h2>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         size="lg"
                         iconHide
                         @click="$emit('purchase')">
-                        Purchase HBX
+                        Purchase RXS
                     </Button>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                         {{ soldDollar | convertCurrency }}
                     </span>
                     <span class="ml-3">
-                        {{ soldTokens | numeralFormat(0,0) }} HBX
+                        {{ soldTokens | numeralFormat(0,0) }} RXS
                     </span>
                 </div>
                 <div class="mt-3">
@@ -61,7 +61,7 @@
                             Supply
                         </strong>
                         <span>
-                            {{ volume | numeralFormat(0,0) }} HBX
+                            {{ volume | numeralFormat(0,0) }} RXS
                         </span>
                     </div>
                     <div>
@@ -83,12 +83,12 @@
                 </div>
                 <div class="token-sale-box_body-links">
                     <h3>
-                        More on HBX
+                        More on RXS
                     </h3>
                     <ul>
                         <li>
                             <a
-                                href="https://hyperbridge.org/downloads/whitepaper.pdf"
+                                href="https://return.gg/downloads/whitepaper.pdf"
                                 target="_blank">
                                 <i class="fas fa-file-alt" />
                                 White Paper
@@ -96,7 +96,7 @@
                         </li>
                         <li>
                             <a
-                                href="https://hyperbridge.org/team"
+                                href="https://return.gg/team"
                                 target="_blank">
                                 <i class="fas fa-users" />
                                 Team
@@ -104,7 +104,7 @@
                         </li>
                         <li>
                             <a
-                                href="https://hyperbridge.org/roadmap"
+                                href="https://return.gg/roadmap"
                                 target="_blank">
                                 <i class="fas fa-gamepad" />
                                 Roadmap
@@ -112,7 +112,7 @@
                         </li>
                         <li>
                             <a
-                                href="https://hyperbridge.org/"
+                                href="https://return.gg/"
                                 target="_blank">
                                 <i class="fas fa-home" />
                                 Corp. website

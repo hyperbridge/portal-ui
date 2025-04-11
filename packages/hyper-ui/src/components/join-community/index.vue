@@ -2,7 +2,7 @@
     <div v-if="!signedIn" class="join-community">
         <div class="join-community__wrapper">
             <Img src="../../static/img/logo.fw.png" />
-            <div class="h5 font-weight-bold">Join the BlockHub community!</div>
+            <div class="h5 font-weight-bold">Join the Portal community!</div>
             <div>Discover the best games before they're mainstream.</div>
             <Button
                 class="margin-top-15"

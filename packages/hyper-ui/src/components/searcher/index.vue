@@ -100,54 +100,62 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .searcher__wrapper, .results__wrapper {
-        position: relative;
-    }
-    .searcher__results-count {
-        position: absolute;
-        top: -20px;
-        right: 0;
-    }
-    .results__content {
-        background-color: #30314c;
-        border-radius: 0;
-        position: absolute;
-        z-index: 5;
-        top: 0;
-        width: 100%;
-        animation: rotate-in .3s ease;
-        max-height: 180px;
-        overflow-y: auto;
-        &:hover {
-            border-radius: 0;
-        }
-    }
-    .results__text {
-        padding: 8px;
-        border-radius: 4px;
-    }
-    .results__list {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-    }
+.searcher__wrapper,
+.results__wrapper {
+  position: relative;
+}
 
-    /deep/ .list__result {
-        @extend .results__text;
-        &:hover {
-            background-color: #444670;
-        }
-        a {
-            color: #fff;
-        }
-    }
+.searcher__results-count {
+  position: absolute;
+  top: -20px;
+  right: 0;
+}
 
-    @keyframes rotate-in {
-        0% {
-            transform: rotateX(90deg);
-        }
-        100% {
-            transform: rotateX(0);
-        }
-    }
+.results__content {
+  background-color: #30314c;
+  border-radius: 0;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  width: 100%;
+  animation: rotate-in 0.3s ease;
+  max-height: 180px;
+  overflow-y: auto;
+
+  &:hover {
+    border-radius: 0;
+  }
+}
+
+.results__text {
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.results__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.list__result {
+  @extend .results__text;
+
+  &:hover {
+    background-color: #444670;
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+@keyframes rotate-in {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
 </style>

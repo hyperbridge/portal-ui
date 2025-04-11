@@ -32,7 +32,7 @@ export default {
     },
     async created() {
         // this.$store.state.application.signedIn = false
-        console.log(`[BlockHub] Render condition - ${this.type}`)
+        console.log(`[Portal] Render condition - ${this.type}`)
         if (this.type === 'initialized') {
             const jwt = this.$cookies.get('feathers-jwt')
 

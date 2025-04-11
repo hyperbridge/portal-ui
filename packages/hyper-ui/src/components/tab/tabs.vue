@@ -121,7 +121,7 @@ export default {
   }
 }
 
-/deep/ .tabs__content {
+.tabs__content {
   position: relative;
   // overflow: hidden;
 }
@@ -130,7 +130,7 @@ export default {
   .tabs__list {
     justify-content: center;
   }
-  .tabsl__list-item {
+  .tabs__list-item {
     margin: 0 15px;
   }
   .list-item__link {
@@ -147,7 +147,7 @@ export default {
       color: rgba(255, 255, 255, 0.5);
     }
   }
-  /deep/ .tabs__content {
+  .tabs__content {
     margin-top: 15px;
   }
 }
@@ -223,7 +223,7 @@ export default {
       }
     }
   }
-  /deep/ .tabs__content {
+  .tabs__content {
     background-color: #3e3e5c;
     border-radius: 0 5px 5px 5px;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
@@ -240,6 +240,15 @@ export default {
   }
   .layer4 a {
     z-index: 4;
+  }
+}
+
+@keyframes rotate-in {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0);
   }
 }
 </style>

@@ -1,67 +1,66 @@
 {
-    "name": "@ericmuyser/hyper-ui",
-    "version": "1.0.2",
-    "description": "Hyper UI",
-    "license": "SEE LICENSE IN LICENSE.md",
-    "main": "src/index.js",
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {},
-    "engines": {
-        "node": ">8.11.1"
-    },
-    "eslintConfig": {
-        "extends": [
-            "aqua/vue",
-            "aqua/node"
-        ],
-        "rules": {
-            "vue/component-name-in-template-casing": "off",
-            "vue/max-attributes-per-line": [
-                "error",
-                {
-                    "singleline": 5,
-                    "multiline": {
-                        "max": 1,
-                        "allowFirstLine": false
-                    }
-                }
-            ],
-            "vue/html-closing-bracket-newline": [
-                "error",
-                {
-                    "singleline": "never",
-                    "multiline": "never"
-                }
-            ],
-            "vue/html-closing-bracket-spacing": "error",
-            "vue/html-indent": [
-                "error",
-                4
-            ],
-            "vue/attribute-hyphenation": 0,
-            "vue/no-v-html": "off",
-            "max-statements-per-line": 2,
-            "quote-props": 0,
-            "no-alert": 0,
-            "prefer-destructuring": 0,
-            "indent": [
-                "error",
-                4
-            ],
-            "semi": [
-                "error",
-                "never"
-            ]
+  "name": "@hyperbridge/portal-ui",
+  "version": "1.0.4",
+  "description": "Portal UI",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {},
+  "engines": {
+    "node": ">8.11.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "aqua/vue",
+      "aqua/node"
+    ],
+    "rules": {
+      "vue/component-name-in-template-casing": "off",
+      "vue/max-attributes-per-line": [
+        "error",
+        {
+          "singleline": 5,
+          "multiline": {
+            "max": 1,
+            "allowFirstLine": false
+          }
         }
-    },
-    "gitHead": "90606585cf99e0396f49a43df8833ce96dbd7978",
-    "dependencies": {
-        "emoji-mart-vue": "^2.6.6",
-        "howler": "^2.1.2",
-        "moment": "^2.24.0",
-        "vue-multiselect": "^2.1.6",
-        "vue-youtube": "^1.3.5"
+      ],
+      "vue/html-closing-bracket-newline": [
+        "error",
+        {
+          "singleline": "never",
+          "multiline": "never"
+        }
+      ],
+      "vue/html-closing-bracket-spacing": "error",
+      "vue/html-indent": [
+        "error",
+        4
+      ],
+      "vue/attribute-hyphenation": 0,
+      "vue/no-v-html": "off",
+      "max-statements-per-line": 2,
+      "quote-props": 0,
+      "no-alert": 0,
+      "prefer-destructuring": 0,
+      "indent": [
+        "error",
+        4
+      ],
+      "semi": [
+        "error",
+        "never"
+      ]
     }
+  },
+  "gitHead": "90606585cf99e0396f49a43df8833ce96dbd7978",
+  "dependencies": {
+    "emoji-mart-vue": "^2",
+    "howler": "^2",
+    "moment": "^2",
+    "vue-multiselect": "^2",
+    "vue-youtube": "^1"
+  }
 }

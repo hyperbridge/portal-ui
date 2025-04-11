@@ -16,7 +16,7 @@
                     <div
                         class="col-12"
                         style="text-align: center">
-                        <h2>Sign in to BlockHub</h2>
+                        <h2>Sign in to Portal</h2>
                     </div>
                 </div>
                 <div class="row">

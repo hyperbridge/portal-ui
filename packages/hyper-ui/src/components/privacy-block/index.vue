@@ -5,8 +5,8 @@
         <p>
             These Website Standard Privacy Policy written on this webpage shall
             manage
-            your use of our website, <span class="highlight preview_website_name">BlockHub</span>
-            accessible at <span class="highlight preview_website_url">BlockHub.gg</span>.
+            your use of our website, <span class="highlight preview_website_name">Portal</span>
+            accessible at <span class="highlight preview_website_url">Portal.gg</span>.
         </p>
 
         <p>
@@ -23,7 +23,7 @@
 
         <p>
             Other than the content you own, under these Terms, <span
-                class="highlight preview_company_name">Hyperbridge Technology Inc.</span> and/or its
+                class="highlight preview_company_name">Arken Technologies Inc.</span> and/or its
             licensors
             own all the intellectual property rights and materials contained in this
             Website.
@@ -69,7 +69,7 @@
         <p>
             Certain areas of this Website are restricted from being access by you and
             <span
-                class="highlight preview_company_name">Hyperbridge Technology Inc.</span> may further
+                class="highlight preview_company_name">Arken Technologies Inc.</span> may further
             restrict
             access by you to any areas of this Website, at any time, in absolute
             discretion.
@@ -84,7 +84,7 @@
             In these Website Standard Privacy Policy, “Your Content” shall mean any
             audio, video text, images or other material you choose to display on this
             Website. By displaying Your Content, you grant <span
-                class="highlight preview_company_name">Hyperbridge Technology Inc.</span> a
+                class="highlight preview_company_name">Arken Technologies Inc.</span> a
             non-exclusive,
             worldwide irrevocable, sub licensable license to use, reproduce, adapt,
             publish,
@@ -94,7 +94,7 @@
         <p>
             Your Content must be your own and must not be invading any third-party's
             rights.
-            <span class="highlight preview_company_name">Hyperbridge Technology Inc.</span> reserves
+            <span class="highlight preview_company_name">Arken Technologies Inc.</span> reserves
             the
             right to remove any of Your Content from this Website at any time without
             notice.
@@ -104,7 +104,7 @@
 
         <p>
             This Website is provided “as is,” with all faults, and <span
-                class="highlight preview_company_name">Hyperbridge Technology Inc.</span> express no
+                class="highlight preview_company_name">Arken Technologies Inc.</span> express no
             representations or warranties, of any kind related to this Website or the
             materials contained on this Website. Also, nothing contained on this Website
             shall be interpreted as advising you.
@@ -114,12 +114,12 @@
 
         <p>
             In no event shall <span
-                class="highlight preview_company_name">Hyperbridge Technology Inc.</span>, nor any of its
+                class="highlight preview_company_name">Arken Technologies Inc.</span>, nor any of its
             officers, directors and employees, shall be held liable for anything arising
             out
             of or in any way connected with your use of this Website whether such
             liability
-            is under contract. &nbsp;<span class="highlight preview_company_name">Hyperbridge Technology Inc.</span>,
+            is under contract. &nbsp;<span class="highlight preview_company_name">Arken Technologies Inc.</span>,
             including its officers, directors and employees shall not be held liable for
             any
             indirect, consequential or special liability arising out of or in any way
@@ -131,7 +131,7 @@
 
             <p>
                 You hereby indemnify to the fullest extent <span
-                    class="highlight preview_company_name">Hyperbridge Technology Inc.</span> from and
+                    class="highlight preview_company_name">Arken Technologies Inc.</span> from and
                 against
                 any and/or all liabilities, costs, demands, causes of action, damages
                 and
@@ -152,7 +152,7 @@
         <h2>Variation of Terms</h2>
 
         <p>
-            <span class="highlight preview_company_name">Hyperbridge Technology Inc.</span> is permitted
+            <span class="highlight preview_company_name">Arken Technologies Inc.</span> is permitted
             to
             revise these Terms at any time as it sees fit, and by using this Website you
             are
@@ -162,7 +162,7 @@
         <h2>Assignment</h2>
 
         <p>
-            The <span class="highlight preview_company_name">Hyperbridge Technology Inc.</span> is
+            The <span class="highlight preview_company_name">Arken Technologies Inc.</span> is
             allowed
             to assign, transfer, and subcontract its rights and/or obligations under
             these
@@ -175,7 +175,7 @@
 
         <p>
             These Terms constitute the entire agreement between <span
-                class="highlight preview_company_name">Hyperbridge Technology Inc.</span> and you in
+                class="highlight preview_company_name">Arken Technologies Inc.</span> and you in
             relation
             to your use of this Website, and supersede all prior agreements and
             understandings.

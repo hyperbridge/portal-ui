@@ -193,7 +193,7 @@
                     </div>
                     <div class="text">
                         <h3>Are you a developer?</h3>
-                        <p>Start developing for blockchain with BlockHub SDK</p>
+                        <p>Start developing for blockchain with Portal SDK</p>
                         <Button
                             status="info"
                             to="/developer#apply"
@@ -472,15 +472,15 @@ export default {
             }
         },
         importSeedData() {
-            this.$blockhub.importSeedData()
+            this.$portal.importSeedData()
         },
         resetSeedData() {
-            this.$blockhub.resetSeedData()
+            this.$portal.resetSeedData()
         },
         saveSettings() {
-            this.$blockhub.saveDatabase()
+            this.$portal.saveDatabase()
 
-            this.$blockhub.Notification.info('', 'Settings saved', {
+            this.$portal.Notification.info('', 'Settings saved', {
                 timeout: 2000,
                 pauseOnHover: true
             })

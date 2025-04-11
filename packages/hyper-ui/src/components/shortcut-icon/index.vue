@@ -37,7 +37,7 @@ export default {
         },
         image: {
             type: String,
-            default: 'https://via.placeholder.com/400x300'
+            default: '/img/icons/pixel.png'
         },
         href: {
             type: String,
@@ -109,8 +109,8 @@ export default {
         },
         style() {
             if (this.color) {
-                const { r, g, b } = this.color
-                const background = `rgb(${r}, ${g}, ${b})`
+                const { r, g, b, a = 1 } = this.color
+                const background = `rgba(${r}, ${g}, ${b}, ${a})`
                 const shadow = `rgba(${r}, ${g}, ${b}, 0.5)`
 
                 return {
@@ -162,7 +162,7 @@ export default {
         text-align: center;
         transition: all 0.1s;
         cursor: pointer;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        // border: 1px solid rgba(255, 255, 255, 0.2);
 
         a {
             background-size: cover;

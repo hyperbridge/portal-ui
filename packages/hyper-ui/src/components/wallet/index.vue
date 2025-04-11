@@ -5,7 +5,7 @@
                 src="/img/icons/token-icon.png"
                 alt="Token">
             <div class="h2">
-                0 HBX
+                0 RXS
             </div>
             <div class="h4">
                 $ 0.00 USD

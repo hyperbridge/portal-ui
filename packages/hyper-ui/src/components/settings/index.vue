@@ -183,7 +183,7 @@
                 <div class="row">
                     <div class="col-12 d-flex flex-column">
                         <div class="w-100">
-                            Advanced settings can be managed here. These are primarily for @BlockHub developers.
+                            Advanced settings can be managed here. These are primarily for @Portal developers.
                             <br><strong>Warning:</strong> Only use these if you know what you're doing.
                         </div>
                         <div class="w-100 mt-3">

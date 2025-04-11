@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="wallet-header__bar-left">
-                BlockHub
+                Portal
             </div>
             <div class="wallet-header__bar-right">
                 <Dropdown position="right">
@@ -101,7 +101,7 @@
                             src="/img/icons/token-icon.png"
                             alt="Token">
                         <div>
-                            <strong>0 HBX</strong>
+                            <strong>0 RXS</strong>
                             <span>$ 0.00 USD</span>
                         </div>
                     </div>

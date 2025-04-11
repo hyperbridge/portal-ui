@@ -4,14 +4,14 @@
         @close="$emit('close')">
         <template slot="header">
             <div class="h2 p-0">
-                Got BlockHub?
+                Got Portal?
             </div>
         </template>
 
         <template slot="body">
             <p>
-                You need to have the BlockHub desktop application installed before ypu can install and launch <strong>{{ gameName }}</strong>.
-                Do you have BlockHub installed on this computer?
+                You need to have the Portal desktop application installed before ypu can install and launch <strong>{{ gameName }}</strong>.
+                Do you have Portal installed on this computer?
             </p>
             <div class="d-flex mt-3 justify-content-between align-items-center">
                 <a
@@ -19,7 +19,7 @@
                     href="#"
                     @click="$emit('play')">
                     <div class="h5 font-weight-bold p-0 m-0">
-                        Yes, BlockHub is installed
+                        Yes, Portal is installed
                     </div>
                     <div>
                         Play this game now
@@ -31,10 +31,10 @@
                     href="https://store.steampowered.com/about/"
                     target="_blank">
                     <div class="h5 font-weight-bold p-0 m-0">
-                        No, I need BlockHub
+                        No, I need Portal
                     </div>
                     <div>
-                        Read about and download BlockHub
+                        Read about and download Portal
                     </div>
                 </a>
             </div>
@@ -44,17 +44,17 @@
             <div class="d-flex align-items-center justify-content-between border-top pt-4">
                 <img
                     src="/img/icons/steam-square-icon.png"
-                    alt="BlockHub"
+                    alt="Portal"
                     width="45"
                     style="opacity: .5"
                     class="mr-4">
                 <div>
-                    BlockHub is premier desktop gaming platform. It's free to join and ease to use.
+                    Portal is premier desktop gaming platform. It's free to join and ease to use.
 <!--                    <Button-->
 <!--                        status="plain"-->
 <!--                        href="https://store.steampowered.com/about/"-->
 <!--                        class="p-0">-->
-<!--                        Learn more about BlockHub-->
+<!--                        Learn more about Portal-->
 <!--                    </Button>-->
                 </div>
             </div>

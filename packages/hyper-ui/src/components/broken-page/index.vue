@@ -66,32 +66,32 @@ export default {
     data() {
         let haikus = {
             general: [
-                ['Page you are seeking', 'From your path it is fleeing', 'Its winter has come.'],
-                ['The web page you seek', 'Lies beyond our perception', 'But others await.'],
-                ['Cables have been cut', 'Southwest of Northeast somewhere', 'We are not amused.'],
+                ['Page you are seeking', 'From your path it is fleeing', 'Its winter has come'],
+                ['The web page you seek', 'Lies beyond our perception', 'But others await'],
+                ['Cables have been cut', 'Southwest of Northeast somewhere', 'We are not amused'],
             ],
             404: [
-                ['Not a pretty sight', 'When the web dies screaming loud', 'The page is not found.'],
-                ['With searching comes loss', 'And the presence of absence:', 'The page is not found.'],
-                ['Mourning and sorrow', 'Page not with us now', 'Lost in 404.'],
-                ['Rather than a beep', 'Or a rude error message,', `These words: 'Page not found.'`],
-                ['These three are certain:', 'Death, taxes, and page not found.', 'You, victim of one.'],
-                ['Click exciting link', 'Silicon holds you back', '404 not found.'],
+                ['Not a pretty sight', 'When the web dies screaming loud', 'The page is not found'],
+                ['With searching comes loss', 'And the presence of absence:', 'The page is not found'],
+                ['Mourning and sorrow', 'Page not with us now', 'Lost in 404'],
+                ['Rather than a beep', 'Or a rude error message,', `These words: 'Page not found'`],
+                ['These three are certain:', 'Death, taxes, and page not found', 'You, victim of one'],
+                ['Click exciting link', 'Silicon holds you back', '404 not found'],
             ],
             500: [
-                ['Error reduces', 'Your expensive computer', 'To a simple stone.'],
-                ['Aborted effort:', 'The site, passed this veil of tears.', 'You ask way too much.'],
-                ['Chaos reigns within.', 'Reflect, repent, and retry.', 'Server shall return.'],
+                ['Error reduces', 'Your expensive computer', 'To a simple stone'],
+                ['Aborted effort:', 'The site, passed this veil of tears', 'You ask way too much'],
+                ['Chaos reigns within', 'Reflect, repent, and retry', 'Server shall return'],
                 [`Won't you please observe`, 'A brief moment of silence', 'For the dead page'],
                 ['To have no errors', 'Would be life without meaning', 'No struggle, no joy'],
-                ['First snow, then silence.', 'This expensive server dies', 'So beautifully.'],
-                ['Silicon shudders', 'The page is down for the count', 'One big knockout punch.'],
-                ['Errors have occurred.', `We won't tell you where or why.`, 'Lazy programmers.'],
-                ['Yesterday it worked', 'Today it is not working', 'The web is like that.'],
-                ['The code was willing', 'It considered your request,', 'But the proposal was weak.']
+                ['First snow, then silence', 'This expensive server dies', 'So beautifully'],
+                ['Silicon shudders', 'The page is down for the count', 'One big knockout punch'],
+                ['Errors have occurred', `We won't tell you where or why`, 'Lazy programmers'],
+                ['Yesterday it worked', 'Today it is not working', 'The web is like that'],
+                ['The code was willing', 'It considered your request,', 'But the proposal was weak']
             ],
             700: [
-                [`Server's poor response`, 'Not quick enough for browser.', 'Timed out, plum blossom.']
+                [`Server's poor response`, 'Not quick enough for browser', 'Timed out, plum blossom']
             ]
         }
 

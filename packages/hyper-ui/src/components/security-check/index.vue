@@ -66,7 +66,7 @@
 
             <template v-if="codeIsSend">
                 <p>
-                    We have sent a security code to your BlockHub account {{ confirmType == 'email' ? 'email address' : 'phone number' }}.
+                    We have sent a security code to your Portal account {{ confirmType == 'email' ? 'email address' : 'phone number' }}.
                     Enter the code below
                 </p>
                 <div class="invert">

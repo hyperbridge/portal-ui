@@ -27,7 +27,7 @@
             <div v-if="eligibleTokens">
                 Eligible for up to <i
                     class="fas fa-coins mx-1"
-                    style="color: #FADC72" /> HBX +{{ eligibleTokens }}
+                    style="color: #FADC72" /> RXS +{{ eligibleTokens }}
             </div>
             <div v-if="offersPurchases">
                 Offers In-Game Purchases

@@ -16,7 +16,7 @@
                     v-if="prompt"
                     class="h4">
                     Some actions are not safe within a browser,
-                    so we built BlockHub it's own fortress,
+                    so we built Portal it's own fortress,
                     a safer environment for you to do much more!
                 </p>
                 <h4
@@ -27,7 +27,7 @@
                 <p
                     v-if="!prompt"
                     class="h4">
-                    Some actions are not safe within a browser, so we built BlockHub it's own fortress, a safer environment for you to do much more!
+                    Some actions are not safe within a browser, so we built Portal it's own fortress, a safer environment for you to do much more!
                 </p>
                 <div
                     v-if="defaultDownload"

@@ -21,7 +21,7 @@ export default {
     props: {
         title: {
             type: String,
-            default: 'BlockHub'
+            default: 'Portal'
         }
     },
     methods: {

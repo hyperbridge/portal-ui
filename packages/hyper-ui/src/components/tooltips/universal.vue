@@ -73,6 +73,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
+
 .tooltip-universal__content {
   position: relative;
   width: 100%;
@@ -94,7 +96,7 @@ export default {
 
 $distance: 10px;
 $triangle: 15px;
-$triangleHalf: $triangle / 2;
+$triangleHalf: math.div($triangle, 2);
 $triangleDist: $triangleHalf + 2;
 
 .tooltip-universal {
@@ -137,19 +139,19 @@ $triangleDist: $triangleHalf + 2;
     }
   }
   &.top:before {
-    bottom: $triangleHalf * -1;
+    bottom: #{-1 * $triangleHalf};
     left: $triangleDist;
   }
   &.right:before {
-    left: $triangleHalf * -1;
+    left: #{-1 * $triangleHalf};
     top: $triangleDist;
   }
   &.bottom:before {
-    top: $triangleHalf * -1;
+    top: #{-1 * $triangleHalf};
     left: $triangleDist;
   }
   &.left:before {
-    right: $triangleHalf * -1;
+    right: #{-1 * $triangleHalf};
     top: $triangleDist;
   }
   &:before {

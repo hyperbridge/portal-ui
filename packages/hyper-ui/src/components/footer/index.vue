@@ -146,7 +146,7 @@
             </div>
             <div class="col-12 col-md-6 text-right">
                 <span class="text-muted">
-                    2018 BlockHub. All rights reserved.
+                    2018 Portal. All rights reserved.
                 </span>
             </div>
         </div>

@@ -109,63 +109,78 @@ export default {
 
 <style lang="scss" scoped>
     .carousel-3d {
-        display: flex;
-        align-items: center;
-    }
+  display: flex;
+  align-items: center;
+}
 
-    .carousel-3d__btn {
-        cursor: pointer;
-        font-size: 35px;
-        color: rgba(255,255,255,.6);
-        &--left {
-            order: -1;
-        }
-    }
+.carousel-3d__btn {
+  cursor: pointer;
+  font-size: 35px;
+  color: rgba(255, 255, 255, 0.6);
 
-    /deep/.carousel-3d__item {
-        &.left {
-        }
-        &.right {
-        }
-        &--main {
-        }
-        &--1 {
-            transform: scale(.9);
-        }
-        &--2 {
-            transform: scale(.8);
-        }
-        @keyframes fade-in {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-    }
-    /deep/.carousel-3d__content {
-        user-select: none;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        height: 100%;
-    }
+  &--left {
+    order: -1;
+  }
+}
 
-    /deep/.carousel-3d__transition {
-        &-enter, &-leave-to {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        &-leave-active {
-            position: absolute;
-            width: 100%;
-        }
-    }
+.carousel-3d__item {
+  &.left {
+  }
 
-    .assets-list-enter, .assets-list-leave-to {
-        opacity: 0;
-        transform: translateY(30px);
+  &.right {
+  }
+
+  &--main {
+  }
+
+  &--1 {
+    transform: scale(0.9);
+  }
+
+  &--2 {
+    transform: scale(0.8);
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
     }
-    .assets-list-leave-active {
-        position: absolute;
-        width: calc(100% - 30px);
+    100% {
+      opacity: 1;
     }
+  }
+}
+
+.carousel-3d__content {
+  user-select: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.carousel-3d__transition {
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  &-leave-active {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.assets-list-enter,
+.assets-list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.assets-list-leave-active {
+  position: absolute;
+  width: calc(100% - 30px);
+}
 </style>
 

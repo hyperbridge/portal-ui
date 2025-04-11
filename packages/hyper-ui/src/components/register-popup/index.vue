@@ -16,7 +16,7 @@
                     To manage your product listing, you'll need to verify your connection with this company. <br>
                     What you'll get with verification:
                     <br><br>
-                    <i class="fas fa-check" /> Allow new customers to find you on BlockHub Search<br>
+                    <i class="fas fa-check" /> Allow new customers to find you on Portal Search<br>
                     <i class="fas fa-check" /> Promote your business with bounties<br>
                     <i class="fas fa-check" /> Track product analytics to understand your customers<br>
                     <i class="fas fa-check" /> Respond to customer reviews<br>
@@ -128,7 +128,7 @@
             <div
                 slot="header"
                 class="h4">
-                Terms and Conditions for BlockHub
+                Terms and Conditions for Portal
             </div>
             <div slot="body">
                 <div class="termsBlock">
@@ -145,7 +145,7 @@
             <div
                 slot="header"
                 class="h4">
-                Privacy Policy for BlockHub
+                Privacy Policy for Portal
             </div>
             <div slot="body">
                 <div class="termsBlock">

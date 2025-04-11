@@ -1,7 +1,7 @@
 <template>
     <div class="logo-loader">
         <img
-            src="/img/blockhub-logotype-color.png"
+            src="/img/logo-color.png"
             draggable="false"
             @click="$router.push({ path: '/' })">
     </div>

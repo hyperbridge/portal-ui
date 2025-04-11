@@ -48,8 +48,8 @@ export default {
                 background: rgba(50, 49, 74, 0.8);
                 content: "";
                 right: -1px;
-                top: -10px;
-                bottom: -10px;
+                top: -2px;
+                bottom: -2px;
                 display: inline-block;
                 transform: rotate(25deg);
                 z-index: 10;
